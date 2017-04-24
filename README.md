@@ -1,4 +1,4 @@
-# aims_rwanda_2017_essays
+## aims_rwanda_2017_essays
 
 To establish the repository:
 1) `cd` to the folder you are going to use.
