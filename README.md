@@ -8,15 +8,15 @@ To establish the repository:
 4) Do not remove the `stub.txt` file.
 
 You should be doing all the work on your essay in the directory with your name. For every file that is needed for compilation (like `.tex` files, `.bib` file or pictures) you need to add it to the repository. For example, for `blah.tex`:
-`git add blah.tex`
-`git commit -m "Added blah"`
-`git push origin master`
+1) `git add blah.tex`
+2) `git commit -m "Added blah"`
+3) `git push origin master`
 
 The message after `-m` should give a brief summary of what change was made in the repository.
 
 Later, whenever you edit some files and you want to send changes to repository:
-`git commit -m "Changed this and that"`
-`git push origin master`
+1) `git commit -m "Changed this and that"`
+2) `git push origin master`
 
 To update your repository with changes done by others:
 `git pull`
