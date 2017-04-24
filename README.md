@@ -12,6 +12,7 @@ You should be doing all the work on your essay in the directory with your name. 
 2) `git commit -m "Added blah"`
 3) `git push origin master`
 
+BLAH BLAH TROLOLO
 The message after `-m` should give a brief summary of what change was made in the repository.
 
 Later, whenever you edit some files and you want to send changes to repository:
