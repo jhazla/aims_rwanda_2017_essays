@@ -1,0 +1,39 @@
+\chapter{SEIR Model for ZIKA VIRUS}
+
+Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
+
+Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
+
+The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
+
+Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infection \citep{posen2016epidemiology}.
+
+The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
+
+\section{ Model Assumptions}
+
+
+
+The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
+
+All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
+
+All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
+
+To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
+
+\section{Compartmental Model}
+
+\section{Mathematical Model}
+
+The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
+\begin{align}
+\begin{array}{lcl}  S'_h & = &\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
+\\ I'_h &= &\alpha_h E_h - \gamma I_h 
+\\ R'_h &=& \gamma I_h 
+\\ 
+S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
+\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
+\\ I'_v & = &\alpha_v E_v - \delta I_V
+ \end{array}
+\end{align}
