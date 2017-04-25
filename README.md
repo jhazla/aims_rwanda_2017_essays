@@ -1,6 +1,5 @@
 # aims_rwanda_2017_essays
 
-
 ### Establishing the repository:
 1) `cd` to the folder you are going to use.
 2) Download the repository:
@@ -26,3 +25,12 @@
 ### Making your changes visible online
 `git commit -m "<commit message>"`<br>
 `git push origin master` (just `git push` also works most of the time)
+
+### Merging a conflict
+`git pull`<br>
+`git mergetool`<br>
+`git commit -m "<message>"`<br>
+`git push`
+
+### Deleting a file
+`git rm <file>` (later also commit and push)
