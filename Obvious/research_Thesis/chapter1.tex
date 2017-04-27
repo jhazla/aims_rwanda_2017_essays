@@ -4,7 +4,7 @@ Zika virus is a member of the Flaviridae family
 and the flavivirus genus, it is related to other mosquito borne viruses such as Dengue Virus, Yellow-Fever (YFV) virus  and West Nile virus \citep{doi}.The Virus originates from the Zika forest of Uganda and the first case was first isolated in 1947 from a rhesus monkey in the forest. Then later in 1954 a human was diagonised with the virus in Nigeria,\citep{2015zika}. Since then the virus has spread to different parts o the world. 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{images/areas attached with zika.png}
+\includegraphics[scale=0.5]{images/map_zika.png} 
 \caption{Counties with Zika Virus: Source CDC}\label{fig 1}
 \end{figure}
 
@@ -33,7 +33,37 @@ Epidemiologist together with mathematicians have for years been involved in infe
 Over a  century, Mathematical representation and analysis of infectious diseases has been the centre of  infectious disease epidemiology \citep{b2005}. Differential equation have been used in the modelling of the dynamics of infectious diseases. They are base on the assumption of uniform mixing, that is everyone in the population has an equal probability of contracting an infectious disease \citep{kaplan2002emergency}.
 Compartmental Mathematical models have been used to describe the transmission dynamic of Zika Virus \citep{gao2016}.
 
-Graph theory has over the year develop such that Graphs have been used to study spread.  Small world networks, introduced by Strogatz and Watts, on the other
+Graph theory has over the years grown and has found its application many fields. The concept of random graphs was first introduced by \cite{erdodblac1959ldquo}. A random graph can be defined as , given a $N$ number of vertices edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$ \citep{newman2002random}. For example in \ref{fig:randomgraphs}, there are 3 random graphs with 10 vertices, with a probability of nodes $i,j$ being connect being 0, 0.5 and 0.8 in figure \ref{fig:a} \ref{fig:b} and \ref{fig:c} respectively.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[scale=0.3]{images/rgraph2.png} 
+        \caption{ $p =0$}
+        \label{fig:a}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/rgraph1.png}
+        \caption{$p=0.5$}
+        \label{fig:b}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/rgraph3}
+        \caption{$p= 0.8$}
+        \label{fig:c}
+    \end{subfigure}
+    \caption{Random Graphs}\label{fig:randomgraphs}
+\end{figure}
+
+
+The spread of disease in a community largely depends on the interaction of the individuals in a community. This can be expressed in a network, where each individual of the community is a vertex and when ever there is contact likely to result in the transmission of the disease an edge is drawn between any such nodes. Traditional epidemiological models , which the class of Susceptible, Exposed, Infectious, Recovered (SEIR) models are built on the assumption of random and uncorrelated mix in the population thus they form a random graph. $p$. 
+
+
+  Small world networks, introduced by Strogatz and Watts, on the other
 hand assume that one is more likely to spread the disease to someone in their family, someone
 who lives near the, or someone you they. It combines this sort of clustering in the graph with a probability to model the spread of disease as a dynamical system \citep{newman2001random}.
 
