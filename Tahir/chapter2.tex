@@ -1,0 +1,367 @@
+\chapter{Quantum game}
+\section{Quantum XOR game}
+In this game there are  two players, Alice and Bob.They are far away from each other and they are not able to communicate through classical channel at all.The referee sent to them    $(x,y)\in \{0,1\}$  from uniform distribution and independent\citep{PhysRevA.93.022333},They respond  to him by $(a,b)\in \{0,1\}$ .  The   wining  condition  satisfied when $x\wedge y= a\oplus b$.
+
+In the opposed of classical version of such game, We will consider that the players shared entangled system initialized in one of Bell's states and the connection with the referee is still classic, more specifically let's say that the shared state is the state below.
+\begin{equation}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left( \ket{00} +\ket{11} \right)\label{eq1} .
+\end{equation}
+	  
+	  
+According to what they received from the referee, applied unitary transformation to the shared system  and measured with respect to  Qubits , the out comes send back to the referee as their response. Alice has two unitary transformation and Bob also,Let's say Alice's unitary operators  are $R_1$ and $R_2$, while Bob's are $R_3$ and $R_4$.
+	 
+$$	R_1= \begin{bmatrix}
+\cos(\alpha) & -\sin(\alpha)\\
+\\sin(\alpha) &  \cos(\alpha)
+\end{bmatrix}$$	
+
+	
+ $$	R_2= \begin{bmatrix}
+ \cos(\beta)  &  -\sin(\beta) \\
+  \sin(\beta) &  \cos(\beta)
+ \end{bmatrix}
+ $$
+ 	
+
+ 
+ $$
+ R_3= \begin{bmatrix}
+ \cos(\gamma)  &  -\sin(\gamma) \\
+ \sin(\gamma)  &  \cos(\gamma)
+ \end{bmatrix}
+ $$	
+
+$$
+R_4= \begin{bmatrix}
+\cos(\xi)  &  -\sin(\xi) \\
+\sin(\xi) &  \cos(\xi)
+\end{bmatrix}
+$$
+For simplicity propose,  We will use A for Alice and B for Bob,If both A and B  received $0$ they applied $R_1\otimes R_3$ for  state in \ref{eq1}.the state collapse to eigenstate of those operators .
+
+
+
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left( \left(\cos(\alpha)|0>+\sin(\alpha)\ket{1} \right) \left(\cos(\gamma)\ket{0}+\sin(\gamma)\ket{1} \right) \right)  \\  
++  \frac{1}{\sqrt{2}} \left( \left(-\sin(\alpha)|0>+\cos(\alpha)\ket{1} \right) \left(-sin(\gamma)\ket{0}+\cos(\gamma)\ket{1} \right) \right)
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi} = \frac{1}{\sqrt{2}}\left(\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha) \sin(\gamma)\right)|00>+\left( \cos(\alpha)  \sin(\gamma)-\sin(\alpha)  \cos(\gamma)\right)|01>\right)\\
++\frac{1}{\sqrt{2}}\left( \left( \sin(\alpha)  \cos(\gamma)-\cos(\alpha) \sin(\gamma)\right)|10>+\left(\sin(\alpha)  \sin(\gamma)+cos(\alpha)  \cos(\gamma)\right)|11>\right)
+\end{aligned}
+\end{equation*}
+In this case A and B are win probability.
+\begin{align}
+ \Pr[A,B \text{win}  \mid  x=0 \wedge y=0]&=\frac{1}{2}\left(\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2   +\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2  \right)\nonumber\\ 
+&=\cos^2(\alpha-\gamma)\label{eq2}
+\end{align}
+
+Now we consider what would be the winning probability value if A received $0$ and B received $1$ were they applied $R_1\otimes R_4$ to the state in \ref{eq1} so that it maps  to new state given by.
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi} = \frac{1}{\sqrt{2}}\left( \left(\cos(\alpha)\ket{0}+\sin(\alpha)\ket{1} \right) \left(\cos(\xi)|0>+\sin(\xi)\ket{1} \right) \right)  \\  
++\frac{1}{\sqrt{2}} \left( \left(-\sin(\alpha)\ket{0}+\cos(\alpha)\ket{1} \right) \left(-\sin(\xi)\ket{0}+\cos(\xi)\ket{1} \right) \right)
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left(\left(\cos(\alpha) \cos(\xi)+\sin(\alpha) \sin(\xi)\right)\ket{00}+\left( \cos(\alpha)  \sin(\xi)\sin(\alpha)  \cos(\xi)\right)\ket{01}\right)\\
++\frac{1}{\sqrt{2}}\left( \left( \sin(\alpha)  \cos(\xi)-\cos(\alpha) \sin(\xi)\right)\ket{10}+\left(sin(\alpha)  \sin(\xi)+\cos(\alpha)  \cos(\xi)\right)\ket{11}\right)
+\end{aligned}
+\end{equation*}
+With winning expectation value given as below.
+\begin{align} 
+\Pr[A,B \text{win}  \mid  x=0 \wedge y=1]&=\frac{1}{2}\left(\left(\cos(\alpha)  \cos(\xi)+\sin(\alpha)\sin(\xi)\right)^2  +\left(\cos(\alpha)  \cos(\xi)+\sin(\alpha)\sin(\xi)\right)^2  \right)\nonumber\\ 
+&=\cos^2(\alpha-\xi)\label{eq3}
+\end{align}
+
+Now let's consider  the case were  A received $1$ and B received $0$  and they applied $R_2\otimes R_3$ to the state in \ref{eq1}  due that maps to eigenstate for the operators as in flowing form.
+
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left( \left(\cos(\beta)\ket{0}+\sin(\beta)\ket{1} \right) \left(\cos(\gamma)\ket{0}+\sin(\gamma)\ket{1} \right) \right)  \\  
++  \frac{1}{\sqrt{2}} \left( \left(-\sin(\beta)\ket{0}+\cos(\beta)\ket{1} \right) \left(-\sin(\gamma)|0>+\cos(\gamma)\ket{1} \right) \right)
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left(\left(\cos(\beta) \cos(\gamma)+\sin(\beta) \sin(\gamma)\right)\ket{00}+\left( cos(\beta)  sin(\gamma)-sin(\beta)  cos(\gamma)\right)\ket{01}\right)\\
++\frac{1}{\sqrt{2}}\left( \left( sin(\beta)  cos(\gamma)-cos(\beta) sin(\gamma)\right)\ket{10}+\left(sin(\beta) sin(\gamma)+cos(\beta)  cos(\gamma)\right)\ket{11}\right)
+\end{aligned}
+\end{equation*}
+The expectation of this case is.
+\begin{align} 
+\Pr[A,B \text{win} \mid x=1 \wedge y=0]&=\frac{1}{2}\left(\left(cos(\beta) cos(\gamma)+sin(\beta)sin(\gamma)\right)^2 +\left(cos(\alpha) cos(\gamma)+sin(\beta)sin(\gamma)\right)^2  \right)\nonumber\\ 
+&=\cos^2(\beta-\gamma)\label{eq4}
+\end{align}
+Finally, When $x=y=1$ in this case they applied $R_2\otimes R_4$ and the state become.
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left( \left(\cos(\beta)\ket{0}+\sin(\beta)\ket{1} \right) \left(\cos(\xi)\ket{0}+\sin(\xi)\ket{1} \right) \right)  \\  
++\frac{1}{\sqrt{2}} \left( \left(-\sin(\beta)\ket{0}+\cos(\beta)\ket{1} \right) \left(-\sin(\xi)\ket{0}+\cos(\xi)\ket{1} \right) \right)
+\end{aligned}
+\end{equation*}
+\begin{equation*}
+\begin{aligned}
+\ket{\Psi}= \frac{1}{\sqrt{2}}\left(\left(|cos(\beta) \cos(\xi)+\sin(\beta) \sin(\xi)\right)\ket{00}+\left( \cos(\beta)  \sin(\xi)-\sin(\beta)  \cos(\xi)\right)\ket{01}\right)\\
++\frac{1}{\sqrt{2}}\left( \left( \sin(\beta)  \cos(\xi)-\cos(\beta) \sin(\xi)\right)\ket{10}+\left(\sin(\beta) \sin(\xi)+\cos(\beta)  \cos(\xi)\right)\ket{11}\right)
+\end{aligned}
+\end{equation*}
+With  probability of pay-off given by.
+\begin{align}
+\Pr[A,B \text{win} \mid x=1 \wedge y=1]&=\frac{1}{2}\left (\left(( \cos(\beta)  \sin(\xi)-\sin(\beta)  \cos(\xi)\right)^2+\left( \sin(\beta)  \cos(\xi)-\cos(\beta) \sin(\xi)\right)^2\right)\nonumber\\ 
+&=\sin^2(\beta-\xi)\label{eq4}
+\end{align}
+ Total wining probability  is of sum of all individual probability divided by its number .
+\begin{align}
+\Pr[A,B \textbf{win}]=\frac{1}{4} \cos^2(\alpha-\gamma)+\frac{1}{4} \cos^2(\alpha-\xi)+\frac{1}{4} \cos^2(\beta-\gamma)+\frac{1}{4} \sin^2(\beta-\xi)\label{eq5}
+\end{align}
+were $\alpha,\beta,\gamma ,\xi \in [-\pi,\pi]$.
+Without the loss of generality we assume that $\alpha=0$, so that the total winning probability density function in equation \ref{eq5} becomes function of three variables despite of four,this can reduced the number need to manipulate in order to find the optimal values .
+
+\begin{align}
+Pr[A,B \textbf{win}]=& \frac{1}{4} \cos^2(\gamma)+\frac{1}{4} \cos^2(\xi)+\frac{1}{4} \cos^2(\beta-\gamma)+\frac{1}{4} \sin^2(\beta-\xi)\label{finpr}\\ 
+=&\frac{4}{8} +\frac{1}{8}  \cos(2 \gamma)+\frac{1}{8}  \cos(2 \xi)+\frac{1}{8}  \cos(2\beta-2\gamma)-\frac{1}{8} \cos(2\beta-2\xi)\label{eq6}
+\end{align}
+To search for critical points of this probability density function in \ref{eq6} we take the partial derivatives with respect $\beta ,\gamma  \text{and} \quad \xi$,  and equal it by zero simultaneously.
+\begin{align}
+\frac{\partial \Pr}{\partial \beta}=& \frac{-1}{4}\cos(2\beta-2\gamma)+ \frac{1}{4}\sin(2\beta-2\xi)=0\label{eq7} \\
+\frac{\partial\Pr}{\partial \gamma}=& \frac{-1}{4}\sin(2\gamma)+ \frac{1}{4}\sin(2\beta-2\gamma)=0\label{eq8}\\
+\frac{\partial \Pr}{\partial \xi}=& \frac{-1}{4}\sin(2\xi)+ \frac{1}{4}\cos(2\beta-2\xi)=0\label{eq9}.
+\end{align}
+Using trigonometric formulas and  equation  \ref{eq9} we found $2\beta=\pi/2$ which implies $\beta=\pi/4$
+using this result in equation \ref{eq8} we have $ \gamma=\frac{\pi}{8}$ by substituting these results in equation \ref{eq7} we have the flowing .
+\begin{equation}
+\sin(\frac{2\pi}{4}-2\xi)=\cos(\frac{\pi}{4})\label{10}
+\end{equation}
+Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This implies we have two critical points which are $E\Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{\pi}{8}] \quad \text{and}\quad \Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{-\pi}{8}]$,It easy to see that the maximum occur in the  later critical point $0.853$.
+\section*{Probability  and expectation value}
+Suppose that we are no longer dealing with unitary operators,we can used any hermitian operator allowed us maximum possible winning probability how we can obtain the winning probability using the expectation value which is the multiple of probability with  eigenvalues of that  hermitian operator.We know that the total probability for each of our four situation is tern to the unit.
+$$\Pr[A,B \text{win} \mid  x=i \wedge y=j]+\Pr[A,B \text{lose}  \mid  x=i \wedge y=j]=1$$ for all $i,j \in \{0,1\}$
+
+$A$ and $B$ are win when their output is similar whenever  different values of $x \quad \text{and} \quad y$ received or same but $0$ , the only situation were win when their out put is different is $x \quad \text{and} \quad y$ both are equal $1$.This means the expectation values for  each of first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
+\begin{align*}
+E[A,B \text{win}  \mid  x=0 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=0]\\
+E[A,B \text{win}  \mid  x=0 \wedge y=1]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=1]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=1]\\
+E[A,B \text{win}  \mid  x=1 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=1 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=1 \wedge y=0]\\
+E[A,B \text{win}  \mid  x=1 \wedge y=1]&=\Pr[A,B \text{lose}  \mid  x=1 \wedge y=1]-\Pr[A,B \text{win}  \mid  x=1 \wedge y=1]
+\end{align*}
+Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is unit.In order to transform the expectation value to probability we introduce notation for that, the winning expectation for similar output say $\Pr[A,B \text{sim output}]$ , losing expectation similarly $\Pr[A,B \text{diff output}]$ and $E$the expectation value of win.
+
+\begin{align*}
+\Pr[A,B \text{sim output}]=\frac{1+E}{2}\\
+\Pr[A,B \text{diff output}]=\frac{1-E}{2}
+\end{align*}
+
+
+\section*{Proof of maximum winning limits of XOR game}
+In order to prove what we get is maximum winning  probability we will consider isomorphic between  the first group   which is $G(\{0,1\},+) \mod(2)$, and it's isomorphic  $ G_1(\{-1,1\},*)$. In the later our unitary operators  become hermitian with eigenvalues ${-1,1}$ the property need to proof there is  no existence wining probability greater than this for any choices of Operators using Tsirelson’s  upper bound inequality~\citep{Cirel'son1980}~ along with properties of norm of operators  and other inequalities .%\footnote{reference3}
+\begin{align}
+\bra{\Psi}R_1\otimes R_3+ R_1\otimes R_4+R_2\otimes R_3 -R_2\otimes R_4\ket{\Psi}\leqslant 2\sqrt{2}\label{TE}
+\end{align}
+This Tsirelson’s inequality equation in  \ref{TE} is valid for any choice of operators with condition of their eigenvalue $\left[-1,1\right]$ and any state $\Psi$.The total probability equation \ref{finpr} can be written as
+\begin{align}
+Pr[A,B \textbf{win}]&=\frac{1}{4} \cos^2(\alpha-\gamma)+\frac{1}{4} \cos^2(\alpha-\xi)+\frac{1}{4} \cos^2(\beta-\gamma)+\frac{1}{4} (1-\cos^2(\beta-\xi))\nonumber\\
+&=\parallel R_1\otimes R_3+ R_1\otimes R_4+R_2\otimes R_3 -R_2\otimes R_4\ket{\Psi}\parallel \label{TE2}
+\end{align}
+\begin{lemma}
+\label{lem:tensor-norm}
+For any hermitian matrix $A$ and $B$, if $\Vert A\Vert \leqslant 1$ then $\Vert A\otimes B \Vert \leqslant \Vert I\otimes B \Vert$.
+\end{lemma}
+
+\begin{proof}
+Let's suppose that $A$ has eigenvalues $\lambda_1,\lambda_2,\dots ,\lambda_n$ and eigenvectors $v_1,v_2,v_3,\dots v_n$, $B$ also has eigenvalues $\iota_1,\iota_2,\iota_2,\dots \iota_n$ with eigenvectors $u_1,u_2,u_3, \dots ,u_n$ then the eigenvalues of $A\otimes B$ is all possible combination of their eigenvalues product with eigenvectors given by tensor product of their eigenvectors.
+\begin{equation}
+\parallel A \parallel=Max_{v=\parallel v\parallel=1}\parallel A v\parallel\label{fact}
+\end{equation}
+using the fact in equation \ref {fact} along with tensor product of two hermitian matrix is hermitian.and the   assumption in the  beginning which said that $A$ has at most eigenvalue equal to one. Since the maximum possible eigenvalue of $A$ is one the identity matrix $I$ has eigenvalues one we can replace $A$ with $I$.
+\end{proof}
+
+By substituting into the right hand side of equation \ref{TE} by the right hand side of equation \ref{TE2} and using   triangle equality as will as Lemma~\ref{lem:tensor-norm} we have
+\begin{align}
+\bra{\Psi}R_1\otimes R_3 &+ R_1\otimes R_4+R_2\otimes R_3 -R_2\otimes R_4\ket{\Psi} \\
+&\leqslant  \parallel R_1\otimes R_3+ R_1\otimes R_4+R_2\otimes R_3 -R_2\otimes R_4\ket{\Psi}\parallel \nonumber\\
+&\leqslant \parallel R_1\otimes (R_3+ R_4)\ket{\Psi}\parallel +\parallel R_2\otimes( R_3 - R_4)\ket{\Psi}\parallel\nonumber \\
+&\leqslant \parallel I\otimes (R_3+ R_4)\ket{\Psi}\parallel +\parallel I\otimes( R_3 - R_4)\ket{\Psi}\parallel\label{eq16}
+\end{align}
+We can rewrite the right hand side in equation \ref{eq16} using lemma 1 and Pythagorean theorem.
+\begin{align}
+\parallel \ket{\Phi_0}+ \ket{\Phi}\parallel +\parallel \ket{\Phi_0}- \ket{\Phi}\parallel \leq &\sqrt{\bra{\Phi_0}\ket{\Phi_0}+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
+&+\sqrt{\bra{\Phi_0}\ket{\Phi_0}-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
+ &\leq \sqrt{2+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}}+\sqrt{2-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}}\label{uu}
+\end{align}
+Were $\ket{\Phi_0}=I\otimes R_3\ket{\Psi} \text{and}\ket{\Phi}=I\otimes R_4\ket{\Psi}$, This expression in equation \ref{uu} has maximum value when $\bra{\Phi}\ket{\Phi_0}=\bra{\Phi_0}\ket{\Phi}=0$ which exactly the Tsirelson’s  upper bound value.
+
+\section{Quantum NAND game}
+
+\subsection{Set up of the game} 
+Consider the Game where two players Alice and Bob  do not allowed to  communicate at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x \quad \text{and} \quad y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \quad \text{and} \quad y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a\quad \text{and}\quad  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \quad \text{and} \quad y$ ,They must response independently by  $a \quad \text{and} \quad b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}+\bar{b}$.
+\subsection{Classical strategy} 
+The best way for Alice and Bob play such game is by preparing good strategy in term of how they should answer the judge's questions after studding the game structure and the best way to maximize their profit the best  strategy proposed by them is whatever they received  from the  judge they reply by $a=b=0$.
+
+\begin {table}[htp]
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c r| }
+  \hline
+  x & y & a & b &  $x \wedge y $ & $\bar{a}+\bar{b}$\\
+  \hline 
+  0 & 0 & 1 & 1 &$0$  & $0$\\
+  \hline
+  0 &1 & 1 & 1 &$0$  & $0$\\
+  \hline
+   1 & 0 & 1 & 1 &$0$ &  $0$\\
+  \hline
+  1 & 1 & 1 & 1 &$1$  & $0$\\
+  \hline
+\end{tabular}
+\caption {The Best strategy for AND NAND game}
+\end{center}
+\end{table}
+
+The table above shows the number of times Alice and Bob win or lose using the best possible  classical strategy available to apply,it clear from the table they win three times out of four and lose at fourth time when $x=y=1$ and the answer $a=b=0$, where $AND$ output for the question is $1$ and the $NAND$ outcome for their answer is $0$.Now the question is there any non-local  strategy  to improve the winning chances with respect no-signalling constrain?
+
+\subsection{Quantum Strategy}
+In order to investigate whether is possible better strategy for Alice and Bob such that they could  win the game with better probability, let's assume  than both our player has a qubit from maximally  entangled state initialized in Bell's states which are  at same degree of correlation.
+\begin{equation}
+\ket{\Psi }= \frac{1}{\sqrt{2}}\left( \ket{00} +\ket{11} \right)\label{EQ:1} .
+\end{equation}
+Alice has two operator $A_1$ and $A_2$,she apply $A_1$ whenever the judge sent to her the bit $0$ and $A_2$ when she receive the bit$1$.Bob also equipped with $B_1$ and $B_2$ he always apply $B_1$ for his Qubit when the question he asked $0$ and $B_2$ else.$A_i \text{and} B_j$ are in unitary operator form.
+
+\[
+A_1=
+  \begin{bmatrix}
+   \cos(a_1) & -\sin(a_1)\\
+   \sin(a_1) & \cos(a_1)
+  \end{bmatrix}
+\]
+\[
+A_2=
+  \begin{bmatrix}
+   \cos(a_2) & -\sin(a_2)\\
+   \sin(a_2) & \cos(a_2)
+  \end{bmatrix}
+\]
+
+\[
+B_1=
+  \begin{bmatrix}
+   \cos(b_1) & -\sin(b_1)\\
+   \sin(b_1) & \cos(b_1)
+  \end{bmatrix}
+\]
+\[
+B_1=
+  \begin{bmatrix}
+   \cos(b_2) & -\sin(b_2)\\
+   \sin(b_2) & \cos(b_2)
+  \end{bmatrix}
+\]
+\textbf{Step:1 $x=0 ,y=0$}
+The questions  for both Alice and Bob is  $0$, they apply $A_1$ and $B_1$ and the state in \ref{EQ:1} then collapse to eigenstate for $A_1$ and $B_1$.
+\begin{align*}
+\ket{\Phi}=&\frac{1}{\sqrt{2}}\left( \left(\cos(a_1) \cos(b_1) +\sin(a_1) \sin(b_1)\right)\ket{00}  +\left(\cos(a_1) \sin(b_1) -\sin(a_1) \cos(b_1)\right)\ket{01}\right)\\
+&+\frac{1}{\sqrt{2}}\left(\left(\sin(a_1) \cos(b_1)-\cos(a_1) \sin(b_1)\right)\ket{10} +\left(\sin(a_1) \sin(b_1+\cos(a_1) \cos(b_1) )\right)\ket{11}\right)
+\end{align*}
+Alice and Bob win with with probability  it's value is exactly squared  coefficient of $\ket{00} $
+$$\Pr[A\quad \text{and}\quad B \quad \text{win}\mid   x=y=0]=\frac{1}{2}\cos^2(a_1-b_1)$$
+\textbf{step 2 $x=0 ,y=1$}
+In this situation Alice question is $0$ while Bob received question in form of $1$ bit, Alice still apply$A_1$ but Bob operate his second operator $B_2$, the state in \ref{EQ:1} collapse for eigenstate of $A_1 \otimes B_2$ with eigenvalue of them as coefficients.
+ \begin{align*}
+\ket{\Phi}=&\frac{1}{\sqrt{2}}\left( \left(\cos(a_1) \cos(b_2) +\sin(a_1) \sin(b_2)\right)\ket{00}  +\left(\cos(a_1) \sin(b_2) -\sin(a_1) \cos(b_2)\right)\ket{01}\right)\\
+&+\frac{1}{\sqrt{2}}\left(\left(\sin(a_1) \cos(b_2)-\cos(a_1) \sin(b_2)\right)\ket{10} +\left(\sin(a_1) \sin(b_2)+\cos(a_1) \cos(b_2) )\right)\ket{11}\right)
+\end{align*}
+Once again, the probability  Alice and Bob answer $a=b=0$  given as squared coefficient  $\ket{00}$
+$$\Pr[A\quad \text{and}\quad B \quad \text{win}\mid   x=0 ,y=1]=\frac{1}{2}\cos^2(a_1-b_2)$$
+\textbf{Step:3 $x=1 ,y=0$}
+Since Alice asked about $1$ her operator in this case $A_2$, but Bob question is $0$ so that he applied his operator $B_1$ as total of their operation to shared state in  \ref{EQ:1} will be tensor product of $A_2$ and $B_1$ due that the state maps to new state in the flowing form.
+\begin{align*}
+\ket{\Phi}=&\frac{1}{\sqrt{2}}\left( \left(\cos(a_2) \cos(b_1) +\sin(a_2) \sin(b_1)\right)\ket{00}  +\left(\cos(a_2) \sin(b_1) -\sin(a_2) \cos(b_1)\right)\ket{01}\right)\\
+&+\frac{1}{\sqrt{2}}\left(\left(\sin(a_2) \cos(b_1)-\cos(a_2) \sin(b_1)\right)\ket{10} +\left(\sin(a_2) \sin(b_1)+\cos(a_2) \cos(b_1) )\right)\ket{11}\right)
+\end{align*}
+We can estimate the associated probability with of Alice and Bob win by measuring the state above using the basic basis  $\ket{00}$ which has the value below.
+$$\Pr[A\quad \text{and}\quad B \quad \text{win}\mid   x=1 ,y=0]=\frac{1}{2}\cos^2(a_2-b_1)$$
+\textbf{Step:4 $x=1 ,y=1$}
+In this case Alice and Bob received similar questions $ x=y=1$ both apply their second operator$A_2\otimes B_2$.so that the state fall to eigenstate of those operator with eigenvalues as coefficients.
+\begin{align*}
+\ket{\Phi}=&\frac{1}{\sqrt{2}}\left( \left(\cos(a_2) \cos(b_2) +\sin(a_2) \sin(b_2)\right)\ket{00}  +\left(\cos(a_2) \sin(b_2) -\sin(a_2) \cos(b_2)\right)\ket{01}\right)\\
+&+\frac{1}{\sqrt{2}}\left(\left(\sin(a_2) \cos(b_2)-\cos(a_2) \sin(b_2)\right)\ket{10} +\left(\sin(a_2) \sin(b_2)+\cos(a_2) \cos(b_2) )\right)\ket{11}\right)
+\end{align*}
+Since the winning require from Alice and Bob at least one reply $1$, thus,implied the probability associated with that squared sum all terms  coefficients except  the term $\ket{00}$.
+\begin{align*}
+\Pr[A\quad \text{and}\quad B \quad \text{win}\mid   x=1 ,y=1]=&\frac{1}{2} \left(\cos^2(a_2-b_2)+2 \sin^2(a_2-b_2)\right)
+\end{align*}
+Obtrusively, Alice and Bob win with total probability given as average of all individual case.
+\begin{align}\label{AND:Pr}
+\Pr[A\quad \text{and}\quad B \quad \text{win }  ]=&\frac{1}{8}\left( \cos^2(a_1-b_1)+\cos^2(a_1-b_2)\right)\nonumber\\
+&+\frac{1}{8}\left(\cos^2(a_2-b_1)+\cos^2(a_2-b_2)+2\sin^2(a_2-b_2)\right)
+\end{align}
+Our goal is to now find the absolute maximum  value of multi-variable function in \ref{AND:Pr} over prescribed domains which is $\{-\pi,\pi\}$.First we find  all possible critical points of the function in \ref{AND:Pr} which are possible candidates  attains to be a maximum or minimum value over the interval. by taking the first partial derivative with respect each of $a_1,a_2,b_1 \quad \text{and} \quad b_2$.thus, equalizing by zero simultaneously. We can determine the nature of this critical points in the function take the maximum as the absolute maximum point.
+\begin{align}
+0=&\frac{\partial \Pr}{\partial a_1}=-2\sin(2a_1-2b_1)- 2\sin(2a_1-2b_2)\label{Q:1}\\
+0=&\frac{\partial \Pr}{\partial a_2}=-2\sin(2a_2-2b_1)+2\sin(2a_2-2b_2)\label{Q:2}\\
+0=&\frac{\partial \Pr}{\partial b_1}=2\sin(2a_1-2b_1)+ 2\sin(2a_2-2b_1)\label{Q:3}\\
+0=&\frac{\partial \Pr}{\partial b_2}=2\sin(2a_1-2b_2)- 2\sin(2a_2-2b_2)\label{Q:4}
+\end{align}
+From equations \ref{Q:1}, \ref{Q:2} ,\ref{Q:3} and \ref{Q:4} and using basic trigonometric rule  we have .
+\begin{align}
+a_1=&\frac{b_1}{2}+\frac{b_2}{2}\label{QQ:1}\\
+b_2=&b_1\label{QQ:2}\\
+a_2=&b_1\label{QQ:3}
+\end{align} 
+We can easily say the critical points are all points in the interval such  that justifying  condition $a_1=a_2= b_1=b_2$.Consistently,  this means the function in \ref{AND:Pr} is constant function under the given condition with exact value equal the maximum value of classical strategy, is this the maximum winning possibility for any chooses of operators ? let's investigate whether this result satisfying the Tsilrson's upper bound inequality or not, we can rewrite the total probability equation in \ref{AND:Pr} in the fallowing form.
+
+\begin{align}\label{NAND:Pr}
+\Pr[A\quad \text{and}\quad B \quad \text{win }  ]=&\frac{1}{8}\left( \cos^2(a_1-b_1)+\cos^2(a_1-b_2)
++\cos^2(a_2-b_1)-\cos^2(a_2-b_2)\right)
+\end{align}
+\subsection{Maximum limit of NAND game.}
+Suppose  there is pay off higher than  in \ref{AND:Pr},so let's say Alice has two Hermitian  operators  namely $A_0 ,A_1$, therefore, Bob's operators are $B_0$ and $B_1$  with eigenvalues $0,1$, thereby the upper bound inequality is.
+\begin{align}\label{GGG}
+\bra{\Psi} A_0\otimes B_0+A_0\otimes B_1+A_1\otimes B_0-& A_1\otimes B_1 \ket{\Psi}\nonumber\\
+& \leq \parallel A_0\otimes B_0+A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \parallel
+\end{align}
+%&\leq 1+ \parallel I\otimes B_1\ket{\Psi}\parallel+ A_1\otimes I\ket{\Psi}\parallel- \parallel A_1\otimes B_1 \ket{\Psi} \parallel\label{TAHIR1}
+
+
+\begin{proof}
+
+Since the norm of $B_j$ and $A_j$  have value  at most $1$ we can rewrite the left hand side of equation  \ref{GGG} using lemma \ref{lem:tensor-norm}  and triangle inequality into. 
+\begin{align}\label{RHs}
+ \bra{\Psi}A_0\otimes B_0\ket{\Psi}+ \bra{\Psi} I\otimes B_1\ket{\Psi}+ \bra{\Psi}A_1\otimes I\ket{\Psi}-  \bra{\Psi}A_1\otimes B_1 \ket{\Psi} \leq 2
+\end{align}
+ Indeed, we allowed by quantum mechanics to  write any of our operators as projective operators. 
+$$\Delta_{i,j}=\sum_{i}^{n}c_j \ket{\alpha_j}\bra{\alpha_j}$$
+Where $\Delta_{j},\alpha_j \in A_j \text{and} B_j$, while $c_j$ is eigenvalue associated the operator, let's say that  $\alpha_1,\dots \alpha_k$ is eigenvectors for $A_0$ such that extended to identity bases $\alpha_1,\dots \alpha_k,\alpha_{k+1},\dots \alpha_{n}$,
+and also  $B_0$ same $\beta_1,\dots \beta_s$ extend to identity bases $\beta_1,\dots \beta_s,\beta_{s+1},\dots \beta_n$. 
+\begin{align}
+A_0 \otimes B_1=\sum_{j=1,z=1}^{k,s}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW}\\
+I \otimes B_1=\sum_{j=1,z=1}^{n,s}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW1}\\
+A_1 \otimes I=\sum_{j=1,z=1}^{k,n}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW2}
+\end{align}
+From equation \ref{QEW1}  \ref{QEW} and \ref{QEW} the operation in right hand  side of  equation  \ref{RHs} can be write as below.
+\begin{align}\label{NAND:TINEQ}
+\bra{\Psi} I\otimes I\ket{\Psi}+\bra{\Psi}I\otimes B_1\ket{\Psi}+\bra{\Psi}A_1\otimes I\ket{\Psi}-\bra{\Psi}A_1\otimes B_1 \ket{\Psi} \leq 2\\
+\bra{\Psi}I\otimes B_1\ket{\Psi}+\bra{\Psi}A_1\otimes I\ket{\Psi}-\bra{\Psi}A_1\otimes B_1 \ket{\Psi} \leq 1
+\end{align}
+Because of $\bra{\Psi} A_0\otimes B_0\ket{\Psi} \leq \bra {\Psi} \ket{\Psi}$ with equality occur when $A_0=B_0=I$ the extended bases from identity contain  
+\begin{align*}
+\bra{\Psi} A_0\otimes B_1\ket{\Psi}=\sum_{j=1,z=1}^{k,s}|\bra{\Psi}c_{j,z}\ket{a_j\beta _s}|^2\\
+\bra{\Psi} A_0\otimes B_1\ket{\Psi}=\sum_{j=1,z=1}^{n,s}|\bra{\Psi}c_{j,z}\ket{a_j\beta _s}|^2
+\end{align*}
+
+Substitute the result above in equation \ref{GGG}  using the fact that $c_{j,s}$ is a sum over all possible combination of eigenvalues of $A_j,B_j$ which is $0,1$, long away with the  norm of vector we have.
+\begin{align}\label{Proof}
+\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \parallel & \leq 1\nonumber\\
+\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \parallel& \leq \parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\parallel \parallel \ket{\Psi} \parallel\nonumber\\
+\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\parallel& \leq  1
+\end{align}
+Since the norm of matrix is maximum over all norm of it product with normalised basis and all these operators are hermitian with discrete eigenvalues either $0$ or $1$ this means the left hand side of equation \ref{Proof} is have three possible outcomes for any $A$ and $B$ satisfying conditions.
+\begin{itemize}
+\item if $j\leq k$ and $z\leq s$ this means the result is zero
+\item if $j\geqslant k$ and $z\leq s$ this means the result turn to $\ket{a_j \beta_s}$ , which is again at most one.
+\item if $j\geqslant k$ and $z\geqslant s$ this implies the result to be $\ket{a_j \beta_s}+ \ket{a_j \beta_z}- \ket{a_j \beta_z}$ once again at most 1.
+\end{itemize}
+\end{proof}
