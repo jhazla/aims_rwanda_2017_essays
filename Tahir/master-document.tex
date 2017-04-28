@@ -40,8 +40,10 @@
 % For links and hyper references
 \usepackage{hyperref}
 \urlstyle{same}
+\usepackage{verbatim}
 % \usepackage{listings} % more flexible and complicated 
-                        % than moreverb and algorithm
+
+% than moreverb and algorithm
 % 
 % Others
 % \usepackage[all]{xy} 
@@ -161,7 +163,15 @@ Tahir Mohammed Elamin Adreani  (tahir.adreani@aims.ac.rw)\\
 \date{{\small June 2017}\\ [0.5cm]
   {\scriptsize\it AN ESSAY PRESENTED TO AIMS RWANDA IN PARTIAL FULFILMENT OF THE REQUIREMENTS FOR THE AWARD OF MASTER OF SCIENCE IN MATHEMATICAL SCIENCES}\\%
   \vspace{3cm}{\includegraphics[scale=.3]{images/aimsrw_logo.png}}}
-%-------------------------------------------------------------------------
+% -------------------------------------------------------------------------
+% Supervisor feedback
+\definecolor{DSgray}{cmyk}{0,0,0,0.7}
+\definecolor{DSred}{cmyk}{0,0.7,0,0.7}
+\newcommand{\Authornote}[2]{\noindent{\small\textcolor{DSgray}{\sf{
+\textcolor{red}{[#1: #2]\marginpar{\textcolor{red}{\fbox{\Large !}}}}}}}}
+\newcommand{\Jnote}{\Authornote{Jan}}
+\newcommand{\Tnote}{\Authornote{Tahir}}
+% -------------------------------------------------------------------------
 \begin{document}
 %\selectlanguage{english}
 \pagestyle{empty}

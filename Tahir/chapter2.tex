@@ -37,6 +37,7 @@ R_4= \begin{bmatrix}
 \sin(\xi) &  \cos(\xi)
 \end{bmatrix}
 $$
+
 For simplicity propose,  We will use A for Alice and B for Bob,If both A and B  received $0$ they applied $R_1\otimes R_3$ for  state in \ref{eq1}.the state collapse to eigenstate of those operators .
 
 
@@ -122,11 +123,14 @@ With  probability of pay-off given by.
 were $\alpha,\beta,\gamma ,\xi \in [-\pi,\pi]$.
 Without the loss of generality we assume that $\alpha=0$, so that the total winning probability density function in equation \ref{eq5} becomes function of three variables despite of four,this can reduced the number need to manipulate in order to find the optimal values .
 
+\Jnote{Why is this without loss of generality?}
+
 \begin{align}
 Pr[A,B \textbf{win}]=& \frac{1}{4} \cos^2(\gamma)+\frac{1}{4} \cos^2(\xi)+\frac{1}{4} \cos^2(\beta-\gamma)+\frac{1}{4} \sin^2(\beta-\xi)\label{finpr}\\ 
 =&\frac{4}{8} +\frac{1}{8}  \cos(2 \gamma)+\frac{1}{8}  \cos(2 \xi)+\frac{1}{8}  \cos(2\beta-2\gamma)-\frac{1}{8} \cos(2\beta-2\xi)\label{eq6}
 \end{align}
 To search for critical points of this probability density function in \ref{eq6} we take the partial derivatives with respect $\beta ,\gamma  \text{and} \quad \xi$,  and equal it by zero simultaneously.
+\Jnote{We don't say ``critical points''. It is ``extremum points''.}
 \begin{align}
 \frac{\partial \Pr}{\partial \beta}=& \frac{-1}{4}\cos(2\beta-2\gamma)+ \frac{1}{4}\sin(2\beta-2\xi)=0\label{eq7} \\
 \frac{\partial\Pr}{\partial \gamma}=& \frac{-1}{4}\sin(2\gamma)+ \frac{1}{4}\sin(2\beta-2\gamma)=0\label{eq8}\\
@@ -138,9 +142,13 @@ using this result in equation \ref{eq8} we have $ \gamma=\frac{\pi}{8}$ by subst
 \sin(\frac{2\pi}{4}-2\xi)=\cos(\frac{\pi}{4})\label{10}
 \end{equation}
 Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This implies we have two critical points which are $E\Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{\pi}{8}] \quad \text{and}\quad \Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{-\pi}{8}]$,It easy to see that the maximum occur in the  later critical point $0.853$.
+\Jnote{Say that $0.853$ is just approximation.}
 \section*{Probability  and expectation value}
 Suppose that we are no longer dealing with unitary operators,we can used any hermitian operator allowed us maximum possible winning probability how we can obtain the winning probability using the expectation value which is the multiple of probability with  eigenvalues of that  hermitian operator.We know that the total probability for each of our four situation is tern to the unit.
 $$\Pr[A,B \text{win} \mid  x=i \wedge y=j]+\Pr[A,B \text{lose}  \mid  x=i \wedge y=j]=1$$ for all $i,j \in \{0,1\}$
+
+\Jnote{What are possible eigenvalues of $A$ and $B$? What happens to the eigenvalues
+  under tensor product?}
 
 $A$ and $B$ are win when their output is similar whenever  different values of $x \quad \text{and} \quad y$ received or same but $0$ , the only situation were win when their out put is different is $x \quad \text{and} \quad y$ both are equal $1$.This means the expectation values for  each of first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
 \begin{align*}
@@ -149,6 +157,7 @@ E[A,B \text{win}  \mid  x=0 \wedge y=1]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=
 E[A,B \text{win}  \mid  x=1 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=1 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=1 \wedge y=0]\\
 E[A,B \text{win}  \mid  x=1 \wedge y=1]&=\Pr[A,B \text{lose}  \mid  x=1 \wedge y=1]-\Pr[A,B \text{win}  \mid  x=1 \wedge y=1]
 \end{align*}
+\Jnote{Above we have expectation of what?}
 Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is unit.In order to transform the expectation value to probability we introduce notation for that, the winning expectation for similar output say $\Pr[A,B \text{sim output}]$ , losing expectation similarly $\Pr[A,B \text{diff output}]$ and $E$the expectation value of win.
 
 \begin{align*}
@@ -179,6 +188,7 @@ Let's suppose that $A$ has eigenvalues $\lambda_1,\lambda_2,\dots ,\lambda_n$ an
 \end{equation}
 using the fact in equation \ref {fact} along with tensor product of two hermitian matrix is hermitian.and the   assumption in the  beginning which said that $A$ has at most eigenvalue equal to one. Since the maximum possible eigenvalue of $A$ is one the identity matrix $I$ has eigenvalues one we can replace $A$ with $I$.
 \end{proof}
+\Jnote{You need to expand this proof. Maybe add more lemmas in preliminaries.}
 
 By substituting into the right hand side of equation \ref{TE} by the right hand side of equation \ref{TE2} and using   triangle equality as will as Lemma~\ref{lem:tensor-norm} we have
 \begin{align}
@@ -194,11 +204,14 @@ We can rewrite the right hand side in equation \ref{eq16} using lemma 1 and Pyth
  &\leq \sqrt{2+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}}+\sqrt{2-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}}\label{uu}
 \end{align}
 Were $\ket{\Phi_0}=I\otimes R_3\ket{\Psi} \text{and}\ket{\Phi}=I\otimes R_4\ket{\Psi}$, This expression in equation \ref{uu} has maximum value when $\bra{\Phi}\ket{\Phi_0}=\bra{\Phi_0}\ket{\Phi}=0$ which exactly the Tsirelson’s  upper bound value.
+\Jnote{Why is maximum at this point?}
 
 \section{Quantum NAND game}
 
 \subsection{Set up of the game} 
-Consider the Game where two players Alice and Bob  do not allowed to  communicate at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x \quad \text{and} \quad y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \quad \text{and} \quad y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a\quad \text{and}\quad  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \quad \text{and} \quad y$ ,They must response independently by  $a \quad \text{and} \quad b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}+\bar{b}$.
+Consider the Game where two players Alice and Bob  do not allowed to  communicate
+at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x \quad \text{and} \quad y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \quad \text{and} \quad y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a\quad \text{and}\quad  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \quad \text{and} \quad y$ ,They must response independently by  $a \quad \text{and} \quad b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}+\bar{b}$.
+\Jnote{Why those large spaces for $x$ and $y$?}
 \subsection{Classical strategy} 
 The best way for Alice and Bob play such game is by preparing good strategy in term of how they should answer the judge's questions after studding the game structure and the best way to maximize their profit the best  strategy proposed by them is whatever they received  from the  judge they reply by $a=b=0$.
 
@@ -333,6 +346,7 @@ Since the norm of $B_j$ and $A_j$  have value  at most $1$ we can rewrite the le
  \bra{\Psi}A_0\otimes B_0\ket{\Psi}+ \bra{\Psi} I\otimes B_1\ket{\Psi}+ \bra{\Psi}A_1\otimes I\ket{\Psi}-  \bra{\Psi}A_1\otimes B_1 \ket{\Psi} \leq 2
 \end{align}
  Indeed, we allowed by quantum mechanics to  write any of our operators as projective operators. 
+\Jnote{Allowed by quantum mechanics? You need a lemma in preliminaries.}
 $$\Delta_{i,j}=\sum_{i}^{n}c_j \ket{\alpha_j}\bra{\alpha_j}$$
 Where $\Delta_{j},\alpha_j \in A_j \text{and} B_j$, while $c_j$ is eigenvalue associated the operator, let's say that  $\alpha_1,\dots \alpha_k$ is eigenvectors for $A_0$ such that extended to identity bases $\alpha_1,\dots \alpha_k,\alpha_{k+1},\dots \alpha_{n}$,
 and also  $B_0$ same $\beta_1,\dots \beta_s$ extend to identity bases $\beta_1,\dots \beta_s,\beta_{s+1},\dots \beta_n$. 
