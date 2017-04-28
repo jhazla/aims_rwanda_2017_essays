@@ -19,7 +19,7 @@
 
 \subsection{ mathematical Preliminaries }
 
- \textbf{definitions}{(Complex Vector space)}
+\begin{defn}[Complex vector space]
 
  \Jnote{Never use textbf. You should use begin\{defn\} etc.}
 
@@ -41,11 +41,13 @@ In addition  of that, the scaler  multiplication has flowing properties in compl
 \item $\forall ~ a \in C ~\text{and} ~ \vec{x}, \vec{y}\in V:a\left(\vec{x}+\vec{y}\right)=a\vec{x}+a\vec{y}$
 \item $\forall ~ a,b \in C ~\text{and} ~ \vec{x}\in V:\left(a+b\right)\vec{x}=a\vec{x}+b\vec{x}$
 \end{itemize}
+\end{defn}
+
 The main reason of representing quantum mechanics by complex  vector space framework is to remain consistent with the superposition principle.
 
 \textbf{Definition}{(Norm of vector)}
 
-The norm of vector $\vec{x} \in V$ is given by $\parallel \vec{x}\parallel=\sqrt{\left(\vec{x}.\vec{x}\right)}$.
+The norm of vector $\vec{x} \in V$ is given by $\| \vec{x}\|=\sqrt{\left(\vec{x}.\vec{x}\right)}$.
 
 \Jnote{Scalar product is not defined yet.}
 
@@ -66,7 +68,8 @@ $$\parallel v_1+v_2+\dots+v_n\parallel^2=\parallel v_1\parallel^2+\parallel v_2\
 
 \textbf{Definition}{(Cauchy Schwartz Inequality)}
 
-$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,then $\mid \bra{y} \ket{x} \mid^2~\leq \mid \bra{x} \ket{x} \mid^2+\mid \bra{y} \ket{y} \mid^2$
+$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,
+then $|\bra{y}\ket{x} |^2~\leq \mid \braket{x}{x} \mid^2+\mid \bra{y} \ket{y} \mid^2$
 
 \Jnote{Don't use mid (use it only if it is in the middle). Use braket instead
 of separate bra and ket.} 
@@ -121,6 +124,6 @@ The actual demonstration of entanglement by an experiment testing Bell’s inequ
 In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the  complex Hilbert space $C^2$ , whose basis vectors denoted.
 
 \begin{equation}
-\ket{0}~~~~\text{or}~~~~ \ket{1}
+\ket{0}\text{or}\ket{1}
 \end{equation}
 

@@ -56,7 +56,7 @@ For simplicity propose,  We will use A for Alice and B for Bob,If both A and B  
 \end{equation*}
 In this case A and B are win probability.
 \begin{align}
- \Pr[A,B \text{win}  \mid  x=0 \wedge y=0]&=\frac{1}{2}\left(\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2   +\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2  \right)\nonumber\\ 
+ \Pr[A,B \text{ win}  \mid  x=0 \wedge y=0]&=\frac{1}{2}\left(\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2   +\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha)\sin(\gamma)\right)^2  \right)\nonumber\\ 
 &=\cos^2(\alpha-\gamma)\label{eq2}
 \end{align}
 
@@ -184,7 +184,7 @@ For any hermitian matrix $A$ and $B$, if $\Vert A\Vert \leqslant 1$ then $\Vert 
 \begin{proof}
 Let's suppose that $A$ has eigenvalues $\lambda_1,\lambda_2,\dots ,\lambda_n$ and eigenvectors $v_1,v_2,v_3,\dots v_n$, $B$ also has eigenvalues $\iota_1,\iota_2,\iota_2,\dots \iota_n$ with eigenvectors $u_1,u_2,u_3, \dots ,u_n$ then the eigenvalues of $A\otimes B$ is all possible combination of their eigenvalues product with eigenvectors given by tensor product of their eigenvectors.
 \begin{equation}
-\parallel A \parallel=Max_{v=\parallel v\parallel=1}\parallel A v\parallel\label{fact}
+\| A \|=\max_{v: \| v\|=1}\| A v\|\label{fact}
 \end{equation}
 using the fact in equation \ref {fact} along with tensor product of two hermitian matrix is hermitian.and the   assumption in the  beginning which said that $A$ has at most eigenvalue equal to one. Since the maximum possible eigenvalue of $A$ is one the identity matrix $I$ has eigenvalues one we can replace $A$ with $I$.
 \end{proof}
