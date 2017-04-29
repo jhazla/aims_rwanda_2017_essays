@@ -19,8 +19,9 @@
 
 \subsection{ mathematical Preliminaries }
 
+\begin{defn}[Complex vector space]
 
- \begin{defn}{(Complex Vector space)}
+ \Jnote{Never use textbf. You should use begin\{defn\} etc.}
 
 A complex vector space, $V$, is a set that is closed under both vector addition
 ($ +$) and scalar multiplication (.) and satisfying all this following properties:
@@ -41,11 +42,14 @@ In addition  of that, the scaler  multiplication has flowing properties in compl
 \item $\forall ~ a,b \in C ~\text{and} ~ \vec{x}\in V:\left(a+b\right)\vec{x}=a\vec{x}+b\vec{x}$
 \end{itemize}
 \end{defn}
+
 The main reason of representing quantum mechanics by complex  vector space framework is to remain consistent with the superposition principle.
 
 \textbf{Definition}{(Norm of vector)}
 
-The norm of vector $\vec{x} \in V$ is given by $\parallel \vec{x}\parallel=\sqrt{\left(\vec{x}.\vec{x}\right)}$.
+The norm of vector $\vec{x} \in V$ is given by $\| \vec{x}\|=\sqrt{\left(\vec{x}.\vec{x}\right)}$.
+
+\Jnote{Scalar product is not defined yet.}
 
 \textbf{Definition}{(orthogonal)}
 
@@ -60,9 +64,15 @@ Hilbert space $H$ is complex vector space  each vector in it normalized to the u
 Let $v_1,\dots v_n$ mutually orthogonal vectors, then the fallowing propriety  is satisfactory.
 $$\parallel v_1+v_2+\dots+v_n\parallel^2=\parallel v_1\parallel^2+\parallel v_2\parallel^2+\dots +\parallel v_n\parallel^2$$
 
+\Jnote{Better way to write norm: $\|v\|$ (look at the code).}
+
 \textbf{Definition}{(Cauchy Schwartz Inequality)}
 
-$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,then $\mid \bra{y} \ket{x} \mid^2~\leq \mid \bra{x} \ket{x} \mid^2+\mid \bra{y} \ket{y} \mid^2$
+$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,
+then $|\bra{y}\ket{x} |^2~\leq \mid \braket{x}{x} \mid^2+\mid \bra{y} \ket{y} \mid^2$
+
+\Jnote{Don't use mid (use it only if it is in the middle). Use braket instead
+of separate bra and ket.} 
 
 Note that the above notation called Dirac notation $\ket{x}$ vector and $\bra{x}$ is dual vector, in this notation the inner product of vector$\ket{x}$ ~ given $\bra{x}\ket{x}$.
 \subsection{Quantum Postulates}
@@ -97,10 +107,14 @@ This kind of composited system can be factorizes for it elementary elements,but 
 \begin{center}
 “Einstein’s elements of reality do not exist. No explanation of the beautiful dance among the 	three particles can be given in terms of an objectively real world. The particles
 simply do not do what they do because of how they are;they do what they do because of quantum magic.”
+
 \end{center}
 \begin{flushright}
 \textbf{Michael Horne}
 \end{flushright}
+
+\Jnote{Do not insert quotes. Only famous people are allowed to do that.}
+
 Entanglement is one of most especial and surprising phenomena, which is no analogue to it exists in classical theory of  interaction between two particles or more\citep{PhysRevLett.78.5022}.The interacted particle influences by measurement of each another even if they separated,  and no longer interacting . This phenomena  called spooky action at distance by Einstein in his will known paper~\cite{EPR}.
 
 
@@ -110,6 +124,6 @@ The actual demonstration of entanglement by an experiment testing Bell’s inequ
 In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the  complex Hilbert space $C^2$ , whose basis vectors denoted.
 
 \begin{equation}
-\ket{0}~~~~\text{or}~~~~ \ket{1}
+\ket{0}\text{or}\ket{1}
 \end{equation}
 
