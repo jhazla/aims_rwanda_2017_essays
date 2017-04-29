@@ -150,7 +150,7 @@ $$\Pr[A,B \text{win} \mid  x=i \wedge y=j]+\Pr[A,B \text{lose}  \mid  x=i \wedge
 \Jnote{What are possible eigenvalues of $A$ and $B$? What happens to the eigenvalues
   under tensor product?}
 
-$A$ and $B$ are win when their output is similar whenever  different values of $x \quad \text{and} \quad y$ received or same but $0$ , the only situation were win when their out put is different is $x \quad \text{and} \quad y$ both are equal $1$.This means the expectation values for  each of first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
+$A$ and $B$ are win when their output is same whenever  different values of $x \quad \text{and} \quad y$ received or same but $0$ , the only situation were win when their out put is different is $x \quad \text{and} \quad y$ both are equal $1$.This means the expectation values for  each of first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
 \begin{align*}
 E[A,B \text{win}  \mid  x=0 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=0]\\
 E[A,B \text{win}  \mid  x=0 \wedge y=1]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=1]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=1]\\
@@ -158,7 +158,7 @@ E[A,B \text{win}  \mid  x=1 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=1 \wedge y=
 E[A,B \text{win}  \mid  x=1 \wedge y=1]&=\Pr[A,B \text{lose}  \mid  x=1 \wedge y=1]-\Pr[A,B \text{win}  \mid  x=1 \wedge y=1]
 \end{align*}
 \Jnote{Above we have expectation of what?}
-Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is unit.In order to transform the expectation value to probability we introduce notation for that, the winning expectation for similar output say $\Pr[A,B \text{sim output}]$ , losing expectation similarly $\Pr[A,B \text{diff output}]$ and $E$the expectation value of win.
+Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is one. In order to transform the expectation value to probability we introduce notation for that, the winning expectation for similar output say $\Pr[A,B \text{sim output}]$ , losing expectation similarly $\Pr[A,B \text{diff output}]$ and $E$the expectation value of win.
 
 \begin{align*}
 \Pr[A,B \text{sim output}]=\frac{1+E}{2}\\
