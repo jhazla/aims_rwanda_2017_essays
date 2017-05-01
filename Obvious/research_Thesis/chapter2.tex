@@ -24,11 +24,93 @@ To model Zika virus on a random network, We take every person in the population 
 
 \section{Compartmental Model}
 
+\begin{tikzpicture}
+\newcommand{\sirboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SI)[right=of S]{};
+	\node(I)[bigcompartment, right=of SI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, right=of IR]{R};
+}
+ 
+\newcommand{\seirboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SE)[right=of S]{};
+	\node(E)[bigcompartment, right=of SE]{E};
+	\node(EI)[right=of E]{};
+	\node(I)[bigcompartment, right=of EI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, right=of IR]{R};
+}
+ 
+\newcommand{\seirdboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SE)[right=of S]{};
+	\node(E)[bigcompartment, right=of SE]{E};
+	\node(EI)[right=of E]{};
+	\node(I)[bigcompartment, right=of EI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, above right=of IR]{R};
+	\node(D)[bigcompartment, below right=of IR]{D};
+}
+ 
+\newcommand{\msirboxes}{
+	\node(S1)[bigcompartment]{$S_1$};
+	\node(SI1)[right=of S1]{};
+	\node(I1)[bigcompartment, right=of SI1]{$I_1$};
+	\node(IR1)[right=of I1]{};
+	\node(R1)[bigcompartment, right=of IR1]{$R_1$};
+}
+Vectors
+vectors.tex
+\newcommand{\sirvec}{ 
+	\draw[->, very thick] (S) to (I); 
+	\draw[->, very thick] (I) to (R); 
+}
+ 
+\newcommand{\seirvec}{ 
+	\draw[->, very thick] (S) to (E); 
+	\draw[->, very thick] (E) to (I); 
+	\draw[->, very thick] (I) to (R); 
+}
+ 
+\newcommand{\idvec}{ 
+	\draw[->, very thick] (I) to (D); 
+}
+ 
+\newcommand{\sirbd}{ 
+	\node(b)[above=of S]{};
+	\node(mS)[below=of S]{};
+	\node(mI)[below=of I]{};
+	\node(mR)[below=of R]{};
+ 
+	\draw[->, thick, dark green] (b) to (S); 
+	\draw[->, thick, dark green] (S) to (mS); 
+	\draw[->, thick, dark green] (I) to (mI); 
+	\draw[->, thick, dark green] (R) to (mR); 
+}
+ 
+\newcommand{\sirs}{ 
+	\draw[->, very thick] (R) 
+		to [bend left=45] (S); 
+}
+ 
+\newcommand{\isipoint}{
+	\draw[->, blue, dashed, very thick] (I)
+		to [bend left=45] (SI);
+}
+ 
+\newcommand{\isepoint}{
+	\draw[->, blue, dashed, very thick] (I)
+		to [bend left=60] (SE);
+}
+\end{tikzpicture}
+
 \section{Mathematical Model}
 
 The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
 \begin{align}
-\begin{array}{lcl}  S'_h & = &\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
+\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
 \\ I'_h &= &\alpha_h E_h - \gamma I_h 
 \\ R'_h &=& \gamma I_h 
 \\ 
@@ -37,3 +119,16 @@ S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
 \\ I'_v & = &\alpha_v E_v - \delta I_V
  \end{array}
 \end{align}
+where :
+
+$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+
+$\alpha_h$ -  Is the rate at which exposed people become infectious.
+
+$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+
+$\delta$ -This is the birth rate of mosquitoes.
+
+$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+
+

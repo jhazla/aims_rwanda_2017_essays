@@ -1,4 +1,4 @@
-1\chapter{Introduction}
+\chapter{Introduction}
 
 Zika virus is a member of the Flaviridae family
 and the flavivirus genus, it is related to other mosquito borne viruses such as Dengue Virus, Yellow-Fever (YFV) virus  and West Nile virus \citep{doi}.The Virus originates from the Zika forest of Uganda and the first case was first isolated in 1947 from a rhesus monkey in the forest. Then later in 1954 a human was diagonised with the virus in Nigeria,\citep{2015zika}. Since then the virus has spread to different parts o the world. 
@@ -33,8 +33,19 @@ Epidemiologist together with mathematicians have for years been involved in infe
 Over a  century, Mathematical representation and analysis of infectious diseases has been the centre of  infectious disease epidemiology \citep{b2005}. Differential equation have been used in the modelling of the dynamics of infectious diseases. They are base on the assumption of uniform mixing, that is everyone in the population has an equal probability of contracting an infectious disease \citep{kaplan2002emergency}.
 Compartmental Mathematical models have been used to describe the transmission dynamic of Zika Virus \citep{gao2016}.
 
-Graph theory has over the years grown and has found its application many fields. The concept of random graphs was first introduced by \cite{erdodblac1959ldquo}. A random graph can be defined as , given a $N$ number of vertices edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$ \citep{newman2002random}. For example in \ref{fig:randomgraphs}, there are 3 random graphs with 10 vertices, with a probability of nodes $i,j$ being connect being 0, 0.5 and 0.8 in figure \ref{fig:a} \ref{fig:b} and \ref{fig:c} respectively.
+Graph theory has over the years grown and has found its application many fields. A graph also known as a network   can be  defined as triple $G = (V,E,f)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}.
 
+Some network properties that can be used to describe networks or graphs.A network is said to be connected if between any pair of node there exists a path. In modelling disease spread a connected network is one in which an infection could travel from one person to any other person in the network through some steps. Another property that is used to describe networks is distance. Distance between any two nodes in a network is defined as the length of the shortest path by each a node can be reached. This can be summed up as the average distance taken over al, pairs of individuals , which gives the idea of the typical distance between nodes in a network or the diameter of the graph which is the largest distance taken over all pairs \citep{chung2002average}.
+
+The number of of neighbour is denoted by $k$ is known as the degree of connectivity. Looking at the entire population (space), the quantities  give a connectivity distribution. The degree is also describe as a mean and denoted by $<k>$.
+
+Some other measures that can be used to describe a network measure are cliquishness, clustering coefficient, transitivity  coefficients and mutuality examine the extend to which the neighbourhood individual have a common neighbour,  leading to the appearance of triangles in  in the network.
+
+ The concept of random graphs was first introduced by \cite{erdodblac1959ldquo}. A graph or network is said to have a small world property if it has a high clustering coefficient and a small average path length. This means that every node in the network can be connected with another using only few connections \citep{estrada2015first}. In 1967 there was an experiment carried out by Milgram, in which randomly selected individuals living in Kansas and Nabraska were asked to send a latter to someone in Boston, directly if they knew the person or through someone they new personally. It was found that the latter was sent through an average of 6 people and it was discovered that some acquaintances of an in individual were feeding the letter into back into the cycle \citep{travers1967small}.
+
+A random graph can be defined as , given a $N$ number of vertices edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$ \citep{newman2002random}. For example in \ref{fig:randomgraphs}, there are 3 random graphs with 10 vertices, with a probability of nodes $i,j$ being connect being 0, 0.5 and 0.8 in figure \ref{fig:a} \ref{fig:b} and \ref{fig:c} respectively. A random network model can exhibit the small world network property, it has an average degree $z= pN$. Random networks have a a low clustering coefficient $ c = \frac{z}{N}$ \citep{newman2003structure}.
+
+Classical models are built on an assumption of full mixture , random networks on the other hand are said to be well mixed. Thus they have a much lower epidemic threshold than the expected real world population \citep{witten2007simulations}.
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
@@ -60,12 +71,18 @@ Graph theory has over the years grown and has found its application many fields.
 \end{figure}
 
 
-The spread of disease in a community largely depends on the interaction of the individuals in a community. This can be expressed in a network, where each individual of the community is a vertex and when ever there is contact likely to result in the transmission of the disease an edge is drawn between any such nodes. Traditional epidemiological models , which the class of Susceptible, Exposed, Infectious, Recovered (SEIR) models are built on the assumption of random and uncorrelated mix in the population thus they form a random graph. $p$. 
+In addition to Random graphs there are other networks on which epidemiology models have been built on   Watts–Strogatz, lattice,Barabasí–Albert, and power-law or “scale-free” \citep{witten2007simulations}. These networks have a small world properties except for the Barabasí–Albert network.The model have different network structures and network statistics, which is not the scope of this paper.
 
 
-  Small world networks, introduced by Strogatz and Watts, on the other
-hand assume that one is more likely to spread the disease to someone in their family, someone
-who lives near the, or someone you they. It combines this sort of clustering in the graph with a probability to model the spread of disease as a dynamical system \citep{newman2001random}.
+Regular lattices and random graphs have a long history of use in network theory and to model population structures,\cite{harris1974contact}  gives an example of classic lattice. Models built on latices assume that individuals are located as nodes on a regular lattice and connections are made of some collection of near neighbours or each node. For example people may be spread out such that connections are made to their four nearest neighbours, one on the left,right, up and down this is called a Neuman neighbours  or eight neighbours where four diagonal elements are added to the Neuman neighbours and this is called the Moore neighbour hood \citep{lloyd2006infection}.To avoid the effect of the nodes at the end not being connected the last and first neighbours are made neighbours.
+
+The main difference between a random graph and lattices is that interactions are local, that is individuals are only related to their neighbours. Where as in random networks the connections are made are global, that is connections are made without taking spatial locations of an individual into consideration. 
+
+
+Small world networks  were first introduced by Watts and Strogatz as an intermediate between the regular lattice and randomly rewiring certain proportions $p$ of the network links\citep{watts1998collective}. The small world networks allows for random contacts across the network. That is in addition to near neighbours as in a regular lattice, each node has a random distant neighbour connected to it \citep{watts1998collective}.
+
+ 
+ on the other hand assume that one is more likely to spread the disease to someone in their family, someonewho lives near the, or someone you they. It combines this sort of clustering in the graph with a probability to model the spread of disease as a dynamical system \citep{newman2001random}.
 
 
 In this research we will compare the traditional epidemiological model based on Random network assumption and the Small world networks to model the population Dynamics in the spread of Zika Virus. This infection of of Zika virus will be modelled using the SEIR compartmental model based on the two assumptions of transmission. Then real life data will be fit on both models to validate each model and to test which on is better.
