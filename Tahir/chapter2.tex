@@ -1,6 +1,30 @@
 \chapter{Quantum game}
-\section{Quantum XOR game}
-In this game there are  two players, Alice and Bob.They are far away from each other and they are not able to communicate through classical channel at all.The referee sent to them    $(x,y)\in \{0,1\}$  from uniform distribution and independent\citep{PhysRevA.93.022333},They respond  to him by $(a,b)\in \{0,1\}$ .  The   wining  condition  satisfied when $x\wedge y= a\oplus b$.
+\section{XOR game}
+\subsection{Best classical strategy}
+In this game there are  two players, Alice and Bob.They are far away from each other and not able to communicate through classical channel at all, but they allowed to prepare strategy  before starting the game. The referee sent to them    $(x,y)\in \{0,1\}$  from uniform distribution and independent\citep{PhysRevA.93.022333},They respond  to him by $(a,b)\in \{0,1\}$ .  The   wining  condition  satisfied when $x\wedge y= a\oplus b$.
+
+ Among all possible strategies the best one to maximize their winning probability described in table below.
+
+\begin {table}[htp]
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c r| }
+  \hline
+  x & y & a & b &  $x \wedge y $ & $a\bigoplus b$\\
+  \hline 
+  0 & 0 & 0 & 0&$0$  & $0$\\
+  \hline
+  0 &1 & 0 & 0 &$0$  & $0$\\
+  \hline
+   1 & 0 & 0 & 0 &$0$ &  $0$\\
+  \hline
+  1 & 1 & 0 & 0 &$1$  & $0$\\
+  \hline
+\end{tabular}
+\caption {The Best classical strategy for XOR game }
+\end{center}
+\end{table}
+From the table above we can realise that if Alice and Bob used the best classical strategy, they will win with total probability $\frac{3}{4}$.
+\subsection{Rotation Quantum strategy}
 
 In the opposed of classical version of such game, We will consider that the players shared entangled system initialized in one of Bell's states and the connection with the referee is still classic, more specifically let's say that the shared state is the state below.
 \begin{equation}
@@ -51,7 +75,7 @@ For simplicity propose,  We will use A for Alice and B for Bob,If both A and B  
 \begin{equation*}
 \begin{aligned}
 \ket{\Psi} = \frac{1}{\sqrt{2}}\left(\left(\cos(\alpha) \cos(\gamma)+\sin(\alpha) \sin(\gamma)\right)|00>+\left( \cos(\alpha)  \sin(\gamma)-\sin(\alpha)  \cos(\gamma)\right)|01>\right)\\
-+\frac{1}{\sqrt{2}}\left( \left( \sin(\alpha)  \cos(\gamma)-\cos(\alpha) \sin(\gamma)\right)|10>+\left(\sin(\alpha)  \sin(\gamma)+cos(\alpha)  \cos(\gamma)\right)|11>\right)
++\frac{1}{\sqrt{2}}\left( \left( \sin(\alpha)  \cos(\gamma)-\cos(\alpha) \sin(\gamma)\right)|10>+\left(\sin(\alpha)  \sin(\gamma)+\cos(\alpha)  \cos(\gamma)\right)|11>\right)
 \end{aligned}
 \end{equation*}
 In this case A and B are win probability.
@@ -73,7 +97,7 @@ Now we consider what would be the winning probability value if A received $0$ an
 +\frac{1}{\sqrt{2}}\left( \left( \sin(\alpha)  \cos(\xi)-\cos(\alpha) \sin(\xi)\right)\ket{10}+\left(sin(\alpha)  \sin(\xi)+\cos(\alpha)  \cos(\xi)\right)\ket{11}\right)
 \end{aligned}
 \end{equation*}
-With winning expectation value given as below.
+With winning probability value given as below.
 \begin{align} 
 \Pr[A,B \text{win}  \mid  x=0 \wedge y=1]&=\frac{1}{2}\left(\left(\cos(\alpha)  \cos(\xi)+\sin(\alpha)\sin(\xi)\right)^2  +\left(\cos(\alpha)  \cos(\xi)+\sin(\alpha)\sin(\xi)\right)^2  \right)\nonumber\\ 
 &=\cos^2(\alpha-\xi)\label{eq3}
@@ -90,10 +114,10 @@ Now let's consider  the case were  A received $1$ and B received $0$  and they a
 \begin{equation*}
 \begin{aligned}
 \ket{\Psi }= \frac{1}{\sqrt{2}}\left(\left(\cos(\beta) \cos(\gamma)+\sin(\beta) \sin(\gamma)\right)\ket{00}+\left( cos(\beta)  sin(\gamma)-sin(\beta)  cos(\gamma)\right)\ket{01}\right)\\
-+\frac{1}{\sqrt{2}}\left( \left( sin(\beta)  cos(\gamma)-cos(\beta) sin(\gamma)\right)\ket{10}+\left(sin(\beta) sin(\gamma)+cos(\beta)  cos(\gamma)\right)\ket{11}\right)
++\frac{1}{\sqrt{2}}\left( \left( \sin(\beta)  \cos(\gamma)-\cos(\beta) \sin(\gamma)\right)\ket{10}+\left(sin(\beta) \sin(\gamma)+\cos(\beta)  \cos(\gamma)\right)\ket{11}\right)
 \end{aligned}
 \end{equation*}
-The expectation of this case is.
+In this case they win with probability given by.
 \begin{align} 
 \Pr[A,B \text{win} \mid x=1 \wedge y=0]&=\frac{1}{2}\left(\left(cos(\beta) cos(\gamma)+sin(\beta)sin(\gamma)\right)^2 +\left(cos(\alpha) cos(\gamma)+sin(\beta)sin(\gamma)\right)^2  \right)\nonumber\\ 
 &=\cos^2(\beta-\gamma)\label{eq4}
@@ -129,7 +153,7 @@ Without the loss of generality we assume that $\alpha=0$, so that the total winn
 Pr[A,B \textbf{win}]=& \frac{1}{4} \cos^2(\gamma)+\frac{1}{4} \cos^2(\xi)+\frac{1}{4} \cos^2(\beta-\gamma)+\frac{1}{4} \sin^2(\beta-\xi)\label{finpr}\\ 
 =&\frac{4}{8} +\frac{1}{8}  \cos(2 \gamma)+\frac{1}{8}  \cos(2 \xi)+\frac{1}{8}  \cos(2\beta-2\gamma)-\frac{1}{8} \cos(2\beta-2\xi)\label{eq6}
 \end{align}
-To search for critical points of this probability density function in \ref{eq6} we take the partial derivatives with respect $\beta ,\gamma  \text{and} \quad \xi$,  and equal it by zero simultaneously.
+To search for extremum points of this probability density function in \ref{eq6} we take the partial derivatives with respect $\beta ,\gamma  \text{and} \quad \xi$,  and equal it by zero simultaneously.
 \Jnote{We don't say ``critical points''. It is ``extremum points''.}
 \begin{align}
 \frac{\partial \Pr}{\partial \beta}=& \frac{-1}{4}\cos(2\beta-2\gamma)+ \frac{1}{4}\sin(2\beta-2\xi)=0\label{eq7} \\
@@ -141,32 +165,34 @@ using this result in equation \ref{eq8} we have $ \gamma=\frac{\pi}{8}$ by subst
 \begin{equation}
 \sin(\frac{2\pi}{4}-2\xi)=\cos(\frac{\pi}{4})\label{10}
 \end{equation}
-Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This implies we have two critical points which are $E\Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{\pi}{8}] \quad \text{and}\quad \Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{-\pi}{8}]$,It easy to see that the maximum occur in the  later critical point $0.853$.
+Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This implies we have two critical points which are $E\Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{\pi}{8}] \quad \text{and}\quad \Pr[0,\frac{\pi}{4},\frac{\pi}{8} ,\frac{-\pi}{8}]$,It easy to see that the maximum occur at the  later  point which is  approximately $0.853$.
 \Jnote{Say that $0.853$ is just approximation.}
 \section*{Probability  and expectation value}
-Suppose that we are no longer dealing with unitary operators,we can used any hermitian operator allowed us maximum possible winning probability how we can obtain the winning probability using the expectation value which is the multiple of probability with  eigenvalues of that  hermitian operator.We know that the total probability for each of our four situation is tern to the unit.
-$$\Pr[A,B \text{win} \mid  x=i \wedge y=j]+\Pr[A,B \text{lose}  \mid  x=i \wedge y=j]=1$$ for all $i,j \in \{0,1\}$
+Suppose that we are no longer dealing with unitary operators, we can used any hermitian operator with eigenvalue $1,-1$. How we can obtain the winning probability using the expectation value which is the product  of probability with  eigenvalue of operator.
+
+We know that the total probability( winning pulse losing) for each situation is turn to one.
+$$\Pr[A,B \text{ win} \mid  x=i \wedge y=j]+\Pr[A,B \text{ lose}  \mid  x=i \wedge y=j]=1$$ for all $i,j \in \{0,1\}$
 
 \Jnote{What are possible eigenvalues of $A$ and $B$? What happens to the eigenvalues
   under tensor product?}
 
-$A$ and $B$ are win when their output is similar whenever  different values of $x \quad \text{and} \quad y$ received or same but $0$ , the only situation were win when their out put is different is $x \quad \text{and} \quad y$ both are equal $1$.This means the expectation values for  each of first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
+$A$ and $B$ are win when their output is same whenever  different values of $x  \text{and}  y$ received or same but $0$ , the only situation were win when their out put is different is $x  \text{and} y$ both are equal to $1$.This means the expectation values for  the first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
 \begin{align*}
-E[A,B \text{win}  \mid  x=0 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=0]\\
-E[A,B \text{win}  \mid  x=0 \wedge y=1]&=\Pr[A,B \text{win}  \mid  x=0 \wedge y=1]-\Pr[A,B \text{lose}  \mid  x=0 \wedge y=1]\\
-E[A,B \text{win}  \mid  x=1 \wedge y=0]&=\Pr[A,B \text{win}  \mid  x=1 \wedge y=0]-\Pr[A,B \text{lose}  \mid  x=1 \wedge y=0]\\
-E[A,B \text{win}  \mid  x=1 \wedge y=1]&=\Pr[A,B \text{lose}  \mid  x=1 \wedge y=1]-\Pr[A,B \text{win}  \mid  x=1 \wedge y=1]
+E[A,B \text{ win}]-\Pr[A,B \text{ lose}  \mid  x=0 \wedge y=0]\\
+E[A,B \text{ win}]-\Pr[A,B \text{ lose}  \mid  x=0 \wedge y=1]\\
+E[A,B \text{ win} ]-\Pr[A,B \text{ lose}  \mid  x=1 \wedge y=0]\\
+E[A,B \text{ win} ]-\Pr[A,B \text{ win}  \mid  x=1 \wedge y=1]
 \end{align*}
 \Jnote{Above we have expectation of what?}
-Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is unit.In order to transform the expectation value to probability we introduce notation for that, the winning expectation for similar output say $\Pr[A,B \text{sim output}]$ , losing expectation similarly $\Pr[A,B \text{diff output}]$ and $E$the expectation value of win.
+Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is one. In order to transform the expectation value to probability we introduce notation for that, the winning probability for same output say $\Pr[A,B \text{ sam output}]$ , losing probability for $\Pr[A,B \text{ diff output}]$ and $E$the expectation value of win.
 
 \begin{align*}
-\Pr[A,B \text{sim output}]=\frac{1+E}{2}\\
-\Pr[A,B \text{diff output}]=\frac{1-E}{2}
+\Pr[A,B \text{ sam output}]=\frac{1+E}{2}\\
+\Pr[A,B \text{ diff output}]=\frac{1-E}{2}
 \end{align*}
 
 
-\section*{Proof of maximum winning limits of XOR game}
+\section*{The upper bound for XOR game}
 In order to prove what we get is maximum winning  probability we will consider isomorphic between  the first group   which is $G(\{0,1\},+) \mod(2)$, and it's isomorphic  $ G_1(\{-1,1\},*)$. In the later our unitary operators  become hermitian with eigenvalues ${-1,1}$ the property need to proof there is  no existence wining probability greater than this for any choices of Operators using Tsirelson’s  upper bound inequality~\citep{Cirel'son1980}~ along with properties of norm of operators  and other inequalities .%\footnote{reference3}
 \begin{align}
 \bra{\Psi}R_1\otimes R_3+ R_1\otimes R_4+R_2\otimes R_3 -R_2\otimes R_4\ket{\Psi}\leqslant 2\sqrt{2}\label{TE}
@@ -203,14 +229,16 @@ We can rewrite the right hand side in equation \ref{eq16} using lemma 1 and Pyth
 &+\sqrt{\bra{\Phi_0}\ket{\Phi_0}-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
  &\leq \sqrt{2+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}}+\sqrt{2-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}}\label{uu}
 \end{align}
-Were $\ket{\Phi_0}=I\otimes R_3\ket{\Psi} \text{and}\ket{\Phi}=I\otimes R_4\ket{\Psi}$, This expression in equation \ref{uu} has maximum value when $\bra{\Phi}\ket{\Phi_0}=\bra{\Phi_0}\ket{\Phi}=0$ which exactly the Tsirelson’s  upper bound value.
+Were $\ket{\Phi_0}=I\otimes R_3\ket{\Psi} \text{and}\ket{\Phi}=I\otimes R_4\ket{\Psi}$, 
+
+From equation \ref{uu},It easy to see that the  maximum value  occur when $\bra{\Phi}\ket{\Phi_0}=-\bra{\Phi_0}\ket{\Phi}$ which turned to be exactly the Tsirelson’s  upper bound value.
 \Jnote{Why is maximum at this point?}
 
 \section{Quantum NAND game}
 
 \subsection{Set up of the game} 
 Consider the Game where two players Alice and Bob  do not allowed to  communicate
-at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x \quad \text{and} \quad y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \quad \text{and} \quad y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a\quad \text{and}\quad  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \quad \text{and} \quad y$ ,They must response independently by  $a \quad \text{and} \quad b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}+\bar{b}$.
+at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x  \text{and} y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \text{and} y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a \text{and}  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \text{and}  y$ ,They must response independently by  $a \quad \text{and}  b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}\vee\bar{b}$.
 \Jnote{Why those large spaces for $x$ and $y$?}
 \subsection{Classical strategy} 
 The best way for Alice and Bob play such game is by preparing good strategy in term of how they should answer the judge's questions after studding the game structure and the best way to maximize their profit the best  strategy proposed by them is whatever they received  from the  judge they reply by $a=b=0$.
@@ -330,7 +358,7 @@ We can easily say the critical points are all points in the interval such  that 
 \Pr[A\quad \text{and}\quad B \quad \text{win }  ]=&\frac{1}{8}\left( \cos^2(a_1-b_1)+\cos^2(a_1-b_2)
 +\cos^2(a_2-b_1)-\cos^2(a_2-b_2)\right)
 \end{align}
-\subsection{Maximum limit of NAND game.}
+\subsection{The upper bound for NAND game.}
 Suppose  there is pay off higher than  in \ref{AND:Pr},so let's say Alice has two Hermitian  operators  namely $A_0 ,A_1$, therefore, Bob's operators are $B_0$ and $B_1$  with eigenvalues $0,1$, thereby the upper bound inequality is.
 \begin{align}\label{GGG}
 \bra{\Psi} A_0\otimes B_0+A_0\otimes B_1+A_1\otimes B_0-& A_1\otimes B_1 \ket{\Psi}\nonumber\\
@@ -345,15 +373,15 @@ Since the norm of $B_j$ and $A_j$  have value  at most $1$ we can rewrite the le
 \begin{align}\label{RHs}
  \bra{\Psi}A_0\otimes B_0\ket{\Psi}+ \bra{\Psi} I\otimes B_1\ket{\Psi}+ \bra{\Psi}A_1\otimes I\ket{\Psi}-  \bra{\Psi}A_1\otimes B_1 \ket{\Psi} \leq 2
 \end{align}
- Indeed, we allowed by quantum mechanics to  write any of our operators as projective operators. 
+ Indeed,$A_j$ and $B_j$ are hermitian operators we can write them in diagonalized form. 
 \Jnote{Allowed by quantum mechanics? You need a lemma in preliminaries.}
-$$\Delta_{i,j}=\sum_{i}^{n}c_j \ket{\alpha_j}\bra{\alpha_j}$$
+$$\Delta_{j}=\sum_{i}^{k,s}c_j \ket{\alpha_j}\bra{\alpha_j}$$
 Where $\Delta_{j},\alpha_j \in A_j \text{and} B_j$, while $c_j$ is eigenvalue associated the operator, let's say that  $\alpha_1,\dots \alpha_k$ is eigenvectors for $A_0$ such that extended to identity bases $\alpha_1,\dots \alpha_k,\alpha_{k+1},\dots \alpha_{n}$,
 and also  $B_0$ same $\beta_1,\dots \beta_s$ extend to identity bases $\beta_1,\dots \beta_s,\beta_{s+1},\dots \beta_n$. 
 \begin{align}
 A_0 \otimes B_1=\sum_{j=1,z=1}^{k,s}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW}\\
-I \otimes B_1=\sum_{j=1,z=1}^{n,s}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW1}\\
-A_1 \otimes I=\sum_{j=1,z=1}^{k,n}c_{j,s}\ket{a_j\beta _z} \bra{\beta_s a_j }\label{QEW2}
+I \otimes B_1=\sum_{j=1,z=1}^{n,s}c_{j,z}\ket{a_j\beta _z} \bra{\beta_z a_j }\label{QEW1}\\
+A_1 \otimes I=\sum_{j=1,z=1}^{k,n}c_{j,z}\ket{a_j\beta _z} \bra{\beta_z a_j }\label{QEW2}
 \end{align}
 From equation \ref{QEW1}  \ref{QEW} and \ref{QEW} the operation in right hand  side of  equation  \ref{RHs} can be write as below.
 \begin{align}\label{NAND:TINEQ}
@@ -368,14 +396,14 @@ Because of $\bra{\Psi} A_0\otimes B_0\ket{\Psi} \leq \bra {\Psi} \ket{\Psi}$ wit
 
 Substitute the result above in equation \ref{GGG}  using the fact that $c_{j,s}$ is a sum over all possible combination of eigenvalues of $A_j,B_j$ which is $0,1$, long away with the  norm of vector we have.
 \begin{align}\label{Proof}
-\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \parallel & \leq 1\nonumber\\
-\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \parallel& \leq \parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\parallel \parallel \ket{\Psi} \parallel\nonumber\\
-\parallel A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\parallel& \leq  1
+\| A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \| & \leq 1\nonumber\\
+\| A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1 \ket{\Psi} \|& \leq \| A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\| \| \ket{\Psi} \|\nonumber\\
+\| A_0\otimes B_1+A_1\otimes B_0-A_1\otimes B_1\|& \leq  1
 \end{align}
 Since the norm of matrix is maximum over all norm of it product with normalised basis and all these operators are hermitian with discrete eigenvalues either $0$ or $1$ this means the left hand side of equation \ref{Proof} is have three possible outcomes for any $A$ and $B$ satisfying conditions.
 \begin{itemize}
 \item if $j\leq k$ and $z\leq s$ this means the result is zero
-\item if $j\geqslant k$ and $z\leq s$ this means the result turn to $\ket{a_j \beta_s}$ , which is again at most one.
-\item if $j\geqslant k$ and $z\geqslant s$ this implies the result to be $\ket{a_j \beta_s}+ \ket{a_j \beta_z}- \ket{a_j \beta_z}$ once again at most 1.
+\item if $j\geqslant k$ and $z\leq s$ this means the result turn to $\ket{a_j \beta_z}$ , which is again at most one.
+\item if $j\geqslant k$ and $z\geqslant s$ this implies the result to be $\ket{a_j \beta_z}+ \ket{a_j \beta_z}- \ket{a_j \beta_z}$ once again at most 1.
 \end{itemize}
 \end{proof}

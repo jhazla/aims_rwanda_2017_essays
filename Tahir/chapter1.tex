@@ -1,23 +1,8 @@
 \chapter{Introduction}
 
-%Explain the context of your essay topic, so that the
-%topic itself appears motivated, natural and important.bhvvnvn v vn  nv/KVKV
-%
-%\begin{figure}[h]
-%\psfrag{A}{$d^2$}
-%\includegraphics[scale=0.5]{images/drawing.eps}
-%\end{figure}
-%
-%Paragraphs are separated by blank lines in the \LaTeX\ code, 
-%and the line spacing, paragraph indentation,
-%and paragraph spacing are set in the preamble for you, 
-%according to AIMS house style.
-%
-%This is a textual citation \citet{shannon44}. And this is a parenthetical citation \citep{shannon44}. You probably want to use the latter more often.\cite{Cirel'son1980}
-
 \section{ Preliminaries }
 
-\subsection{ mathematical Preliminaries }
+\subsection*{ mathematical Preliminaries }
 
 \begin{defn}[Complex vector space]
 
@@ -26,55 +11,65 @@
 A complex vector space, $V$, is a set that is closed under both vector addition
 ($ +$) and scalar multiplication (.) and satisfying all this following properties:
 \begin{itemize}
-\item $\forall~ \vec{x},~\vec{y} \in ~ V : ~\vec{x}+\vec{y} ~\in~ V $.
-\item $\forall \vec{x},~\vec{y} \in ~ V : \vec{x}+\vec{y}=\vec{y}+\vec{x}$
-\item $\forall~ \vec{x},~\vec{y}, ~\vec{z} \in ~ V:\left(\vec{x}+\vec{y}\right)+\vec{z}=\vec{x}+\left(\vec{y}+\vec{z}\right)$
-\item $\exists ~\vec{I} \in ~V~ \text{such that }~  \forall~ \vec{x} ~\in  V: \vec{x}+\vec{I}=\vec{x}$
-\item $\forall ~\vec{x} \in V,~ \exists \vec{b} ~ \text{such that }  ~\vec{x}+\vec{b}= \vec{I}$
+\item $\forall~ \ket{x},~\ket{y} \in ~ V : ~\ket{x}+\ket{y} ~\in~ V $.
+\item $\forall \ket{x},~\ket{y} \in ~ V : \ket{x}+\ket{y}=\ket{y}+\ket{x}$
+\item $\forall~ \ket{x},~\ket{y}, ~\ket{z} \in ~ V:\left(\ket{x}+\ket{y}\right)+\ket{z}=\ket{x}+\left(\ket{y}+\ket{z}\right)$
+\item $\exists ~\ket{I} \in ~V~ \text{such that }~  \forall~ \ket{x} ~\in  V: \ket{x}+\ket{I}=\vec{x}$
+\item $\forall ~\ket{x} \in V,~ \exists \ket{b} ~ \text{such that }  ~\ket{x}+\ket{b}= \ket{I}$
 \end{itemize}
-Where $I$ is the natural element of addition and $\vec{b}$ is the inverse of $\vec{x}$. ~
+Where $\ket{I}$ is the natural element of addition and $\ket{b}$ is the inverse of $\ket{x}$. ~
 In addition  of that, the scaler  multiplication has flowing properties in complex vector space $V$.
 \begin{itemize}
-\item $\forall a~\in ~C$, $\vec{x}~\in ~V~ :~ a\vec{x}~ \in V$.
-\item $\forall ~\vec{x} \in ~V,~ \exists~ k ~\in C :k\vec{x}=\vec{x}$
-\item $\forall ~ a,b \in ~C ~\text{and} ~ \vec{x}\in V :\left(a.b\right) \vec{x}=a.\left(b \vec{x}\right)$
-\item $\forall ~ a \in C ~\text{and} ~ \vec{x}, \vec{y}\in V:a\left(\vec{x}+\vec{y}\right)=a\vec{x}+a\vec{y}$
-\item $\forall ~ a,b \in C ~\text{and} ~ \vec{x}\in V:\left(a+b\right)\vec{x}=a\vec{x}+b\vec{x}$
+\item $\forall a~\in ~C$, $\ket{x}~\in ~V~ :~ a\ket{x}~ \in V$.
+\item $\forall ~\ket{x} \in ~V,~ \exists~ k ~\in C :k\ket{x}=\vec{x}$
+\item $\forall ~ a,b \in ~C ~\text{and} ~ \ket{x}\in V :\left(a.b\right) \ket{x}=a.\left(b \ket{x}\right)$
+\item $\forall ~ a \in C ~\text{and} ~ \ket{x}, \ket{y}\in V:a\left(\ket{x}+\ket{y}\right)=a\ket{x}+a\ket{y}$
+\item $\forall ~ a,b \in C ~\text{and} ~ \ket{x}\in V:\left(a+b\right)\ket{x}=a\ket{x}+b\ket{x}$
 \end{itemize}
 \end{defn}
 
 The main reason of representing quantum mechanics by complex  vector space framework is to remain consistent with the superposition principle.
+\begin{defn}[Norm of vector]
 
-\textbf{Definition}{(Norm of vector)}
-
-The norm of vector $\vec{x} \in V$ is given by $\| \vec{x}\|=\sqrt{\left(\vec{x}.\vec{x}\right)}$.
-
+The norm of vector $\ket{x} \in V$ is given by $\| \ket{x}\|=\sqrt{\left(\bra{x}\ket{x}\right)}$.
+\end{defn}
 \Jnote{Scalar product is not defined yet.}
 
-\textbf{Definition}{(orthogonal)}
+\begin{defn}[orthogonal]
 
-The vectors $\vec{x},~ \vec{y} \in V$ said orthogonal if and if $\vec{x}.\vec{y}=0$
+The vectors $\ket{x},~ \ket{y} \in V$ said orthogonal if and  only if $\bra{x}\ket{y}=0$
+\end{defn}
 
-\textbf{Definition}{(Hilbert Space)}
+\begin{defn}[Hilbert Space]
 
-Hilbert space $H$ is complex vector space  each vector in it normalized to the unit and completely  respect the inner product relation above\citep{book:4365}.
+Hilbert space $H$ is complete complex vector space  each vector in it normalized to the one and completely  respect the inner product relation above\citep{book:4365}.
+\end{defn}
 
-\textbf{Definition}{(Pythagoras)}
+\begin{defn}[Pythagoras]
 
 Let $v_1,\dots v_n$ mutually orthogonal vectors, then the fallowing propriety  is satisfactory.
-$$\parallel v_1+v_2+\dots+v_n\parallel^2=\parallel v_1\parallel^2+\parallel v_2\parallel^2+\dots +\parallel v_n\parallel^2$$
-
+$$\|v_1+v_2+\dots+v_n\|^2=\| v_1\|^2+\| v_2\|^2+\dots +\| v_n\|^2$$
+\end{defn}
 \Jnote{Better way to write norm: $\|v\|$ (look at the code).}
 
-\textbf{Definition}{(Cauchy Schwartz Inequality)}
+\begin{defn}[Cauchy Schwartz Inequality]
 
 $\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,
-then $|\bra{y}\ket{x} |^2~\leq \mid \braket{x}{x} \mid^2+\mid \bra{y} \ket{y} \mid^2$
-
+then $\|\bra{y}\ket{x}\|^2~\leq \| \braket{x}{x} \|^2+\|\bra{y} \ket{y} \|^2$
+\end{defn}
 \Jnote{Don't use mid (use it only if it is in the middle). Use braket instead
 of separate bra and ket.} 
 
 Note that the above notation called Dirac notation $\ket{x}$ vector and $\bra{x}$ is dual vector, in this notation the inner product of vector$\ket{x}$ ~ given $\bra{x}\ket{x}$.
+
+\begin{defn}[Diagonalization of Hermitian operators]
+
+The matrix  $A$ said be  hermitian  matrix if and only if  $$A=A^\dagger$$
+ For such matrix there is always possibility to find a particular  set of orthonormal basis  $\{\ket{a_j}\}$ such that in this basis the matrix $A$ is diagonal $\bra{a_j}A\ket{a_k}=0$, that is,   whenever $j\neq k$. The diagonal elements $\bra{a_j}A\ket{a_j}=a_j$ must be real numbers.
+So that we can write $A$ as combination of the orthogonal basis
+$$A=\sum_j a_j \ket{a_j} \bra{a_j}$$s
+\end{defn}
+
 \subsection{Quantum Postulates}
 
 
@@ -104,21 +99,13 @@ $$\ket{\Psi_1}\otimes\dots \otimes\ket{\Psi_n}$$
 \end{itemize}
 This kind of composited system can be factorizes for it elementary elements,but there are special mixed states the factorization is not possible  on it such state called entangled state.
 \subsection{Entanglement}
-\begin{center}
-“Einstein’s elements of reality do not exist. No explanation of the beautiful dance among the 	three particles can be given in terms of an objectively real world. The particles
-simply do not do what they do because of how they are;they do what they do because of quantum magic.”
-
-\end{center}
-\begin{flushright}
-\textbf{Michael Horne}
-\end{flushright}
 
 \Jnote{Do not insert quotes. Only famous people are allowed to do that.}
 
 Entanglement is one of most especial and surprising phenomena, which is no analogue to it exists in classical theory of  interaction between two particles or more\citep{PhysRevLett.78.5022}.The interacted particle influences by measurement of each another even if they separated,  and no longer interacting . This phenomena  called spooky action at distance by Einstein in his will known paper~\cite{EPR}.
 
 
-The actual demonstration of entanglement by an experiment testing Bell’s inequality, with results favouring quantum mechanics, carried out by Michael Horne ,Clauser and Freedman\citep{PhysRevLett.23.880}.The success of CHSH and its attendant experimental demonstrations received wide attention in the physics literature and open new can thinking such that how one we can implement this quantum mechanics unique phenomenon.
+The actual demonstration of entanglement by an experiment testing Bell’s inequality, with results favouring quantum mechanics, carried out by Michael Horne ,Clauser and Freedman\citep{PhysRevLett.23.880}.The success of CHSH and its attendant experimental demonstrations received wide attention in the physics literature and open new kind of thinking, such that how one we can implement the quantum mechanics uniqueness.
 \subsection{Quantum Bits}
 
 In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the  complex Hilbert space $C^2$ , whose basis vectors denoted.
@@ -126,4 +113,6 @@ In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$
 \begin{equation}
 \ket{0}\text{or}\ket{1}
 \end{equation}
-
+Instead of a simple two state system that can either be in state $0$ or $1$, a qubit is a quantum two level system, that in addition to the two eigenstate $\ket{0}$ and $\ket{1}$ it can be set in any superposition of the form
+$$\ket{\Psi}=c_1\ket{0}+c_2\ket{1}$$
+Where $c_i$ is complex number.Although a qubit can be prepared in an infinite number of different quantum states using $c_i$,But we can  not usess that to transmit more than one bit of classical information because the process of detecting can not reliably the different between non orthogonal states,moreover,a Quibit could also entangled with another.
