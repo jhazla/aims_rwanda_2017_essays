@@ -1,8 +1,12 @@
 \chapter{On the Hales-Jewett theorem}
 
-In this part, some notions about Hales-Jewett theorem are presented. Firstly, we will start by some basic notions on arithmetic progression, which will be important for understanding the next point. After, we will introduce some elementary notions about  Van der Warden’s theorem and  Szemerédi's theorem. We will highlight that  Van der Waerden's theorem is a particular case of Szemerédi's theorem. Ultimately, we will present the two forms of Hales-Jewett theorem and link these one to the two first theorems.
+In this part, some notions about Hales-Jewett theorem are presented. Firstly, we will start by some basic notions on arithmetic progression, which will be important for understanding the next point. After, we will introduce some elementary notions about  Van der Waerden’s theorem and  Szemerédi's theorem. We will highlight that  Van der Waerden's theorem is a particular case of Szemerédi's theorem. Ultimately, we will present the two forms of Hales-Jewett theorem and link these one to the two first theorems.
 
 \section{Arithmetic progression}
+
+\Jnote{This section is OK, but since we don't need infinite arithmetic
+  progressions, I would merge those definitions into one, where you just
+  deal with the finite case.}
 
 \begin{defn}
 Let be a sequence of numbers: $a_1, a_2, \cdots, a_n, \cdots.$ 
@@ -34,47 +38,69 @@ We denote by AP(k) or AP-k, the arithmetic progression of length $k.$
 Before stating the Van der Waerden's theorem, let us introduce and define some concepts and notation.
 
 A \textit{partition} of a set $A$ is a collection of nonempty and mutually disjoint subsets $A_i$ of $A$, such that  $A=\cup A_i$ and $A_i \cap A_j=\emptyset, \quad i\neq j.$ Thus, a partition is also a sequence $A_1, A_2, \cdots, A_n$ of mutually nonempty and  disjoint subsets of set $A$ \citep{dransfield2004}. $A_i$ are known as \textit{blocks}.
+\Jnote{This is a common definition, no need for a reference.}
 
 We denote by $\mathbb{Z}^+$, the set of positive integers.
 Let $m \in \mathit{Z}^+$, we designate by $[m]$ the set $\{1,2, \cdots, m\}.$
+\Jnote{Use ldots instead of cdots}.
 
 Let $X$ be a set and $r$ be a positive integer. We want to colour elements of set $X$ with some colours. If $C$ represents the set of colours, then $|C|=r$ is the number of colours.
 
 \begin{defn} An $r-colouring$ of $X$ is a mapping $c \ : \ X \longrightarrow [r].$  \label{rcol}\end{defn}
+\Jnote{For words like $r$-coloring, write ``\$r\$-coloring'' instead of
+  ``\$r-coloring\$".}
+
 
 If $|X|=n$, then the number of possibilities of colouring the $n$ elements is $n^r.$
 
+\Jnote{Better: ``the number of $r$-colorings of $X$ is''}
+
 Let $Y$ be a subset of $X.$ $Y$ is $monochromatic$ when the restriction $c|Y$ is constant, that is   if $c(y)$ is the same for every $y \in Y.$
 
-According to \cite{Polymath2009new} , the Van der Waerden is stated as follows:
+\Jnote{For restriction better use \textbackslash restriction and write $Y$
+  in lower script, like this: $c\restriction_Y$.}
+
+According to \cite{Polymath2009new} , the Van der Waerden's theorem is stated as follows:
 
 \begin{thm}[Van der Waerden]
 For every pair $(k,r) \in \mathbb{Z}^+ \times \mathbb{Z}^+$, there exists $N \in \mathbb{Z}^+$ such that for
 every $r-colouring$ of [N] there is a monochromatic AP-k.  \label{vd1}
 \end{thm}
 
+\Jnote{I think it is more consistent with other theorems to state this as:
+  ``there exists $N_0$ such that for every $N \ge N_0$''}
+
 We know that a $r-$colouring is a function called $c$ in definition \eqref{rcol}. So, in other words there exists $a$,  $d \ \in \mathbb{N}$ with $d\neq 0$ such that: $c(a)=c(a+d)=c(a+2d)=\cdots =c(a+(k-1)d).$
 
 This Van der Waerden's theorem can also be formulated using partition \citep{dransfield2004} as:
 
 \begin{thm}[Van der Waerden]
-For every $k, r \in \mathbb{Z}^+$ , there exists $N \in \mathbb{Z}^+$ such that for every partition $A_1, \cdots , A_r$ of $[N]$, there is $i$, $1 \leq i \leq r$, such that block $A_i$ contains length at one arithmetic progression of  least $k$.   \label{vd2}
+For every $k, r \in \mathbb{Z}^+$ , there exists $N \in \mathbb{Z}^+$ such that for every partition $A_1, \cdots , A_r$ of $[N]$, there is $i$, $1 \leq i \leq r$, such that block $A_i$ contains an arithmetic progression of  least $k$.   \label{vd2}
 \end{thm}
+
+\Jnote{Note that for this version a block in a partition can be empty.}
 
 The existence of the number $N$ for which any $r-$colouring of the integer $\{1, \cdots, N\}$ is certain to have a monochromatic subset of cardinality $k$ of which elements form an arithmetic progression was demonstrated constructively in 1927 by Bartel Leendert van der Waerden \cite{van1927beweis}.
 
-\cite{graham1974short} gave a proof of this theorem. The book entitled "\textit{Purely Combinatorial Proofs of Van Der Waerden-Type Theorem}" written by \cite{gasarch2010purely} condenses  the proof of Van Der Waerden theorem. 
+\cite{graham1974short} gave a proof of this theorem. The book entitled "\textit{Purely Combinatorial Proofs of Van Der Waerden-Type Theorem}" written by \cite{gasarch2010purely} condenses  the proof of Van Der Waerden theorem.
+
+\Jnote{G. and R. gave \emph{another} proof of this theorem.}
 
 In this theorem, the difficult problem is to find the number $N$. The least such number is called \textit{Van der Waerden number} denoted as $W(k,l).$ The general expression of $W(k,l)$ is not known, but for some $k$ and $l$ there are exact values or there are some lower and upper bounds \citep{dransfield2004}.
 
+\Jnote{Be consistent: before you used $k$ and $r$, now it is $k$ and $l$.}
+
 $W(1,r), \ W(k,1)$ and $W(2,r)$ are known as \textit{trivial} Van der Waerden numbers. So, 
 
- $W(1,r)=1$: this is an $AP-1$.  $W(k,1)=k$: this is an $AP-k$. $W(2,r)=r+1$: this is an $AP-2.$ 
+$W(1,r)=1$: this is an $AP-1$.  $W(k,1)=k$: this is an $AP-k$. $W(2,r)=r+1$: this is an $AP-2.$
+\Jnote{Either leave the formulas without explanation or explain better.}
  
 
 For instance, let us find the Van der Waerden number $W(2,3)$, that is a $2-$colouring  of the set $[W(2,3)]$ such that there is a monochromatic arithmetic progression of length $3.$
+\Jnote{Shouldn't it be $W(3, 2)$?}
 
-The value of $W(2,3)$ is greater than $8$ because for any $2-$colouring of $[n],\quad n\in \{3,4,5,6,7,8\}$, we can find a $2-$colouring which does not contain a monochromatic arithmetic progression of length 3.
+The value of $W(2,3)$ is greater than $8$ because for any $2-$colouring of $[n],\quad n\in \{3,4,5,6,7,8\}$, we can find a $2-$colouring which does not contain a monochromatic arithmetic progression of length 3. \Jnote{Don't use \textbackslash quad like this,
+  normal space is OK. Maybe give an example for $n=8$?}
 
 So, when $W(2,3)=9$ we always find a monochromatic arithmetic progression of length 3 for any $2-$colouring of $[9].$ The table \eqref{van23} shows one of the possibilities of colouring $\{1,2,3,4,5,6,7,8,9\}.$  If the ninth number is {\color{blue} blue}, then{ \color{blue}3, 6, 9}  form an arithmetic progression. If the ninth number is {\color{red} red}, then {\color{red}1, 5, 9} form an arithmetic progression. Therefore, by adding a ninth number and colouring it using any of the two colors, we always create an form an arithmetic progression of length 3.
 
@@ -113,7 +139,7 @@ $k \setminus r$ & 2 & 3 & 4  \\
 \caption{The 7 exact non-trivial values of Van der Waerden numbers.} \label{vdn}
 \end{table} 
 
-As related previously, searching the non-trivial value of $W(k,r)$ remains a difficult problem to find solution as long as the values of $k$ and $r$ increase. However, for some $k$ and $r$ there is an approximation of the lower or upper bound of $W(k,r)$ \citep{stevens1978computer, herwig2007new, beeler1979some, dransfield2004, brown2008bounds, rabung2012, kouril2008van}. The table \eqref{vdw1} summaries these known lower bounds and includes the seven Van der Waerden numbers known exactly.
+As related previously, searching for the exact value of $W(k,r)$ remains a difficult problem to find solution as the values of $k$ and $r$ increase. However, for some $k$ and $r$ there is an approximation of the lower or upper bound of $W(k,r)$ \citep{stevens1978computer, herwig2007new, beeler1979some, dransfield2004, brown2008bounds, rabung2012, kouril2008van}. The table \eqref{vdw1} summarizes these known lower bounds and includes the seven Van der Waerden numbers known exactly.
 
 \begin{table}[h]
 \begin{tabular}{|c||c|c|c|c|c|}
@@ -134,13 +160,14 @@ $\mathbf{k \setminus r}$ & \textbf{ 2 }& \textbf{3} & \textbf{4} & \textbf{5} & 
 \caption{Some lower bounds and exact values of Van der Waerden numbers $W(k,r).$} \label{vdw1}
 \end{table}
 
-The estimation of lower and upper bounds is still an open problem. There exists some expression that bounded Van der Waerden numbers.  Researchers are still looking for closer bound or exact general expression of these numbers.
+The estimation of lower and upper bounds is still an open problem. There exist some expressions that bound Van der Waerden numbers.  Researchers are still looking for closer bound or exact general expression of these numbers.
  \cite{erdos1952combinatorial}, cited by \cite{dransfield2004} established an inequality for the lower bound for $W(k,r).$
 \begin{equation}
 (2(k-1)2^{k-1})^{\frac{1}{2}} < W(k,r). \label{erdos}
 \end{equation}
 
- \cite{brk1968} found a better bound when $k-1$= prime number  and for $r=2$ (colors). But these bounds still  require improvement.
+\cite{brk1968} found a better bound when $k-1$= prime number  and for $r=2$ (colors). But these bounds still  require improvement. \Jnote{Do not use symbols inside sentences,
+  write ``when $k-1$ is prime''.}
  \begin{equation}
  (k-1)2^{k-1}<W(k,2). \label{berlk}
  \end{equation}
@@ -148,13 +175,14 @@ The estimation of lower and upper bounds is still an open problem. There exists 
 For $p=k-1$, the expression \eqref{berlk} becomes:
  \begin{equation}
  p2^{p}<W(p+1,r). \label{berlk1}
- \end{equation}
+\end{equation}
+\Jnote{Is $r$ above equal to two?}
 
 So, $W(6,2) >5 \times 2^5=160$, $W(8,2) >7 \times 2^7= 896$ and $W(12,2) >11 \times 2^11= 22528.$
 \citep{dransfield2004} improve this lower bound by using propositional satisfiability solvers  for some small van der Waerden numbers for instance $W(2, 8) > 1322$. \cite{rabung2012} performs more. Thus, as related in table \eqref{vdw1}, most of the lower bounds used came from \cite{rabung2012}.
+\Jnote{W(2, 8) or W(8, 2)?}
 
-The best known upper bound of $W(k,r)$ is the expression  \eqref{gow} which came from the work of \cite{gowers2001new} on a  new proof of Szemerédi's theorem. The section \eqref{sz} will talk about this theorem. Szemerédi's theorem is the extension of Van der Waerden's theorem, that is Van der Waerden's theorem is a particular case of Szemerédi's theorem.
-
+The best known upper bound of $W(k,r)$ is the expression  \eqref{gow} which came from the work of \cite{gowers2001new} on a  new proof of Szemerédi's theorem. Section \eqref{sz} will talk about this theorem. Szemerédi's theorem is the extension of Van der Waerden's theorem, that is Van der Waerden's theorem is a particular case of Szemerédi's theorem:
 \begin{equation}
 W(k,r) \leq 2^{2^{r^{2^{2^{k+9}}}}}     \label{gow}
 \end{equation}
@@ -169,6 +197,7 @@ Szemerédi's theorem is merely an extension of Van der Waerden's theorem in term
 Let us consider $A$ a nonempty subset of the set $[N]$. The density of $A$ inside $[N]$ is a positive real number $\delta=\frac{|A|}{N}$. It is clear that $0< \delta \leq 1.$ 
 
 \begin{thm}[Szemerédi’s theorem]\citep{Polymath2009new}	For every  $k \in \mathbb{Z}^+$ and every $0< \delta \leq  1$ there exists an integer $N(k,\delta) \geq 1$ such that every subset $A \subseteq [N]$ of size $|A|\geq \delta N$ contains an arithmetic progression of length $k.$  \label{sz1} \end{thm}
+\Jnote{Don't cite Polymath above. Cite nothing or Szemeredi.}
 
 As conjecture, Szemerédi's theorem was formulated by \cite{JLMS}. There are several proofs of this theorem. The cases $k=1$ and $k=2$ are trivial. \cite{roth1953certain, roth1970irregularities} proved the case $k=3.$ The case $k=4$ was proved by \cite{szemeredi1969sets} and he gave the general case \citep{szemeredi1975sets}.
 
@@ -177,15 +206,22 @@ Some of proofs necessitated the use of other theories external to combinatoric. 
 \subsection{Szemerédi's theorem implies Van der Waerden's theorem.} \label{vsz}
 
 \begin{proof}
-Let us assume that all conditions of Szemerédi's theorem \eqref{sz1} are verified.  From Van der Waerden's theorem, let us show that $\forall k, r \in \mathbb{Z}^+, \quad \exists\  N(k,r) \in \mathbb{Z}^+ $ such that by $r-$colouring the set $\{1,2,\cdots, N\}$ (the number $N(k,r)$ depending on $k$ and $r$), we obtain at least one monochromatic arithmetic progression of length $k.$ Let us notice that we have shown \eqref{vd1} and \eqref{vd2} that $r-$colouring a set  is to partition it to $r$ blocks.
+  Let us assume that all conditions of Szemerédi's theorem \eqref{sz1} are verified.  From Van der Waerden's theorem, let us show that $\forall k, r \in \mathbb{Z}^+, \quad \exists\  N(k,r) \in \mathbb{Z}^+ $ such that by $r-$colouring the set $\{1,2,\cdots, N\}$ (the number $N(k,r)$ depending on $k$ and $r$), we obtain at least one monochromatic arithmetic progression of length $k.$ Let us notice that we have shown \eqref{vd1} and \eqref{vd2} that $r-$colouring a set  is to partition it to $r$ blocks.
+  \Jnote{Better first sentence: Assume Szemeredi's theorem is true.}
+  \Jnote{s/From VDW theorem/To obtain VDW theorem}
 
-Let be a partition of $\{1, \cdots, N\}$ to $r$ blocks, that is $ \{1, \cdots, N\} =A_1 \cup A_2 \cup \cdots \cup A_r$, with $A_i \cap A_j \neq 0.$ This implies that $A_i \neq \emptyset.$ The color of the block $A_i$ is indicated by the number $i$. There are two blocks with the same colour.
+  Let be a partition of $\{1, \cdots, N\}$ to $r$ blocks, that is $ \{1, \cdots, N\} =A_1 \cup A_2 \cup \cdots \cup A_r$, with $A_i \cap A_j \neq 0.$ This implies that $A_i \neq \emptyset.$ The color of the block $A_i$ is indicated by the number $i$. There are two blocks with the same colour.
+  \Jnote{s/Let be a partition/Partition $[N]$ into $r$ blocks}
 
-Let $A_{max}$ be the set having the largest number of elements. By partitioning $\{1, \cdots, N\}$ to $r$ equal parts, we have: $A_{max}=A_i=\frac{N}{r}$, for $1\leq i \leq r.$
+  Let $A_{max}$ be the set having the largest number of elements. By partitioning $\{1, \cdots, N\}$ to $r$ equal parts, we have: $A_{max}=A_i=\frac{N}{r}$, for $1\leq i \leq r.$
+  \Jnote{I don't get this part.}
 
-If $|A_i| < \frac{N}{r}$, for $1\leq i \leq r$, then $|A_1|+|A_2|+ \cdots +|A_r| < \frac{N}{r}+\cdots +\frac{N}{r}=\frac{rN}{r}=N$, that is $\displaystyle{ \sum_{i=1}^{r}|A_i|<N}$, therefore $A_i$ for $1\leq i \leq r$ does not form in this case a partition.
+  If $|A_i| < \frac{N}{r}$, for $1\leq i \leq r$, then $|A_1|+|A_2|+ \cdots +|A_r| < \frac{N}{r}+\cdots +\frac{N}{r}=\frac{rN}{r}=N$, that is $\displaystyle{ \sum_{i=1}^{r}|A_i|<N}$, therefore $A_i$ for $1\leq i \leq r$ does not form in this case a partition.
+  \Jnote{... which is a contradiction.}
 
-If $|A_i| \leq  \frac{N}{r}$, for $1\leq i \leq r-1$, then $\displaystyle{ \sum_{i=1}^{r-1}|A_i|\leq  \frac{(r-1)N}{r}}.$ There exists a positive integer $a$ such that  $\displaystyle{ \sum_{i=1}^{r-1}|A_i|=\frac{(r-1)N}{r}}-a.$
+  If $|A_i| \leq  \frac{N}{r}$, for $1\leq i \leq r-1$, then $\displaystyle{ \sum_{i=1}^{r-1}|A_i|\leq  \frac{(r-1)N}{r}}.$ There exists a positive integer $a$ such that  $\displaystyle{ \sum_{i=1}^{r-1}|A_i|=\frac{(r-1)N}{r}}-a.$
+  \Jnote{How do you know that $a$ is integer? What if $A_{max}$ is not
+    $A_r$?}
 
 Thus, \begin{align*}
 |A_1|+|A_2|+ \cdots +|A_r|=N & \Longleftrightarrow \frac{(r-1)N}{r}-a+|A_r|=N \\
@@ -201,17 +237,21 @@ So, \begin{align*}
 \end{align*}
 
 $|A_{max}| \geq \frac{N}{r} \Longleftrightarrow |A_{max}| \geq \frac{1}{r} N \Longleftrightarrow |A_{max}| \geq \delta N$, with $\delta = \frac{1}{r}$, implies according to Szemerédi's theorem \eqref{sz1} $A_{max}$  contains an arithmetic progression of length $k.$
+\Jnote{If $N$ is bigger than what?}
 
 Therefore, $A_{max}$ is monochromatic arithmetic progression of length $k.$
+\Jnote{$A_{max}$ is not a progression.}
 \end{proof}
 
 \subsection{Quantitative bounds of Szemerédi's theorem}
 
-In the previous section \eqref{vsz} we have shown that Van der Waerden's theorem is a particular case of Szemerédi's theorem. This implies that the Szemerédi's number $N(k, \delta)$ is equal to the Van der Waerden's number $W(k,r)$ when $\delta=\frac{1}{r}.$ There is still no a general exact expression of $W(k,r),$ but there are exact values of $W(k,r)$ (7 exact values are known) for some smaller $k$ and $r$, as far as for the remain cases there are some  approximations of the lower and upper bounds of it. 
+In the previous section \eqref{vsz} we have shown that Van der Waerden's theorem is a particular case of Szemerédi's theorem. This implies that the Szemerédi's number $N(k, \delta)$ is equal to the Van der Waerden's number $W(k,r)$ when $\delta=\frac{1}{r}.$
+\Jnote{No, you only know that $W(k, r) \le N(k, 1/r)$.}
+There is still no a general exact expression of $W(k,r),$ but there are exact values of $W(k,r)$ (7 exact values are known) for some smaller $k$ and $r$, as far as for the remain cases there are some  approximations of the lower and upper bounds of it. 
 
-Likewise, for Szemerédi's theorem, the general exact value of $N(k, \delta)$ is not known. The seek of this number is an open problem. However, there are some quantitative approximations of the lower and upper bounds of the Szemerédi's number.  
+Likewise, for Szemerédi's theorem, the general exact value of $N(k, \delta)$ is not known. The search for this number is an open problem. However, there are some quantitative approximations of the lower and upper bounds of the Szemerédi's number.  
 
-Before giving quantitative bounds of Szemerédi's theorem existing in the literature review, let us formulate differently the Szmerédi's number. Knowing the number $N(k, \delta)$, all subset $A$ of $[N]$ such that $|A|\geq \delta N$ contains an arithmetic progression of length $k.$ Otherwise, we can define the Szemerédi's number as the largest subset of $[N]$ without containing an arithmetic progression of length $k.$ Let us denote by $r_k(N)$ the size of this largest subset. 
+Before giving quantitative bounds of Szemerédi's theorem existing in the literature, let us formulate differently the Szemerédi's number. Knowing the number $N(k, \delta)$, all subset $A$ of $[N]$ such that $|A|\geq \delta N$ contains an arithmetic progression of length $k.$ Otherwise, we can define the Szemerédi's number as the largest subset of $[N]$ without containing an arithmetic progression of length $k.$ Let us denote by $r_k(N)$ the size of this largest subset. \Jnote{This paragraph is not clear, rewrite it.}
 
 \begin{description}
 \item[Lower bound]
@@ -219,16 +259,22 @@ Before giving quantitative bounds of Szemerédi's theorem existing in the litera
 \begin{equation}
 r_3(N) \geq \frac{CN}{2^{2\sqrt{2}(1+\epsilon) \sqrt{\log N}}} \label{beh}
 \end{equation}
+\Jnote{Don't write $\log=\log_2$, just say that all your logarithms are binary.
+  Is this for every $\epsilon>0$?}
 
 \cite{elkin2010improved} improved the result of Behrend \eqref{beh} by a factor $\Theta (\sqrt{\log N)}$ and showed that:
 \begin{equation}
 r_3(N) \geq \frac{CN (\log N)^{1/4}}{2^{2\sqrt{2} \sqrt{\log N}}} \label{elkin}
 \end{equation}
+\Jnote{$\sqrt{\log N}$ or $(\log N)^{1/4}$?}
 
+\Jnote{Expressions below are very complicated, can you give some explanations
+  or approximations for those numbers?}
 For $k \geq 1+2^{n-1}$,  $n=[\log k]$, $\epsilon >0$, \cite{rankin1961xxiv}, cited by \cite{o2011sets} proved that if $N$ is sufficiently large then:
 \begin{equation}
 r_k(N) \geq \frac{CN}{2^{n2^{(n-1)/2}(1+\epsilon) \sqrt[n]{\log N}}} \label{rak}
 \end{equation}
+
 
 Basing on \eqref{beh}, \eqref{elkin} and \eqref{rak}, \cite{o2011sets} constructed  the following expressions:
 \begin{align}
@@ -245,7 +291,7 @@ where $C_k >0$ is an unspecified constant. The expression \eqref{ob} is presentl
 r_k(N) \leq N \left(\log \log N\right)^{-2^{-2^{k+9}}} \label{gow}
 \end{equation}
 
-where $\delta= \left(\log \log N\right)^{-2^{-2^{k+9}}}.$
+where $\delta= \left(\log \log N\right)^{-2^{-2^{k+9}}}.$ \Jnote{What is $\delta$ for?}
 
 \cite{bloom2016quantitative} improved the upper bound for $r_3(N):$
 \begin{equation}
@@ -258,6 +304,7 @@ r_4(N) \leq C N\mathrm{e}^{-c\sqrt{\log \log N}} \label{r4}
 \end{equation}
 for some absolute constant $c > 0.$
 \end{description}
+\Jnote{It is usual to write $e$ in normal font, not mathrm.}
 
 Therefore, quantitative bounds of $r_k(N)$ are:
 \begin{align}
@@ -268,6 +315,8 @@ Quantitative bounds for  $k=3$  and $k=4$ have been enhanced. Thus, for $k=4$ we
 \begin{equation}
 N \left( \frac{\sqrt{360}}{\mathrm{e}\pi^{3/2}}-\epsilon \right) \frac{\sqrt[4]{2\log N}}{4^{\sqrt{2\log N}}} \leq r_3(N) \leq C \frac{(\log \log N)^4}{\log N} N  \label{r33}
 \end{equation}
+\Jnote{Again, if you insert those bounds, please comment on them. What is
+  the nature of expressions on the left and right? How big is the gap?}
 
 \section{Hales-Jewett theorem}
 
@@ -279,27 +328,32 @@ For instance, $k=3$ and $n=6$, an element of the set $[3]^6$ is : $121132.$
 
 Let us consider the set $([k]\times \{x\})^n.$ Similarly, the set $([k]\times \{x\})^n$ contains $(k+1)^n$ elements.
 
-Elements of $([k]\times \{x\})^n$ are called \textit{coordinates.} $x$ is called \textit{wildcard.}
+Elements of $([k]\times \{x\})^n$ are called \textit{coordinates.}
+\Jnote{No, coordinate is something else.}
+$x$ is called \textit{wildcard.}
 
 %Given ${k,N\in{\mathbb N}}$, a ${N}-$dimensional \textit{variable word} on ${k}$ letters is an element of  $\displaystyle \left([k]\cup\{x\}\right)^d\setminus[k]^N.$ Similarly, given ${k,N, m\in{\mathbb N}}$, a ${N}-$dimensional  ${m}-$\textit{variable word} on ${k}$ letters is an element of ${\left([k]\cup\{x_1, \cdots,x_m\}\right)^N\setminus [k]^N}$ that uses all the symbols ${x_i}$ at least once.
 
-Given ${k,n\in{\mathbb N}}$, we call $x-string$ (or ${n}-$dimensional \textit{variable word} on ${k}$ letters),  a finite word $a_1a_2\cdots a_n$ of the symboles $a_i \in [k] \cup \{x\}$, where at least one symbol $a_i$ is $x.$ $w(x)$ denotes an $x-string.$ Let $V$ denote  the set of all string: $V=\{w(x)\}$. The cardinal of $V$ is: $V=(k+1)^n-k^n.$ 
+Given ${k,n\in{\mathbb N}}$, we call $x-string$ (or ${n}-$dimensional \textit{variable word} on ${k}$ letters),  a finite word $a_1a_2\cdots a_n$ of the symboles $a_i \in [k] \cup \{x\}$, where at least one symbol $a_i$ is $x.$ $w(x)$ denotes an $x-string.$ Let $V$ denote  the set of all strings: $V=\{w(x)\}$. The cardinality of $V$ is: $V=(k+1)^n-k^n.$ 
 
 For any integer $i \in [k]$ and $x-string$ $w(x)$, the string obtained from $w(x)$ by replacing each $x$ by $i$ is denoted by $w(x;i).$ 
 A \textit{combinatorial line} is a set of $k$ strings $\{w(x;i): \  i\in [k] \}$ where $w(x)$ is an $x-string$ \citep{beck2008combinatorial}. That is a combinatorial line is a set of $k$ finite words obtained by replacing $x$ in the word $w(x;i)$ by $i \in \{1,2, \cdots k\}.$
 
 For instance, for $k=3$ and $n=8$, a combinatorial line is :
 
- $\{w(x)=1xx2x23x: \ x\in [3]\}=  \{11121231, 12222232, 13323233 \}.$
+$\{w(x)=1xx2x23x: \ x\in [3]\}=  \{11121231, 12222232, 13323233 \}.$
+\Jnote{This is not consistent with your previous notation.}
 
-Sets which do not contain any combinatorial lines is called a \textit{line-free}. 
+Sets which do not contain any combinatorial lines are called a \textit{line-free}. 
 
 \begin{thm}[Hales-Jewett theorem]   For every pair of positive integers $k$ and $r$ there exists a positive number $HJ(k, r)$ such that for every $n \geq HJ(k, r)$ and every $r-$colouring of the set $[k]^n$ there is a
 monochromatic combinatorial line.   \label{hj1} 	\end{thm}
 
-There are several proofs of Hales-Jewett theorem. The original proof has been given by \cite{hales1987regularity}. \cite{shelah1988primitive} proved through primitive recursive bound using simple induction. \cite{nilli1990shelah} presented a compact form of Shelah’s Proof of the Hales-Jewett Theorem. \cite{matet2007shelah} presented a variant of Shelah’s proof of the Hales–Jewett theorem by replacing Shelah’s pigeonhole lemma by an appeal to Ramsey’s theorem.
+There are several proofs of Hales-Jewett theorem. The original proof has been given by \cite{hales1987regularity}. \cite{shelah1988primitive} proved a primitive recursive bound using simple induction. \Jnote{What does primitive recursive mean? When you are
+  writing something, you should be able to explain at least general idea.}
+\cite{nilli1990shelah} presented a compact form of Shelah’s Proof of the Hales-Jewett Theorem. \cite{matet2007shelah} presented a variant of Shelah’s proof of the Hales–Jewett theorem by replacing Shelah’s pigeonhole lemma by an appeal to Ramsey’s theorem.
 
-The Hales-Jewett's theorem has also a density version. By considering a nonempty subset  $A$ of the set $[k]^n$, the density of $A$ inside $[k]^n$ is a positive real number $\delta=\frac{|A|}{k^n}$. Values of $\delta$ are bounded by $0$ and $1$, that is $0< \delta \leq 1.$ 
+The Hales-Jewett theorem has also a density version. By considering a nonempty subset  $A$ of the set $[k]^n$, the density of $A$ inside $[k]^n$ is a positive real number $\delta=\frac{|A|}{k^n}$. Values of $\delta$ are bounded by $0$ and $1$, that is $0< \delta \leq 1.$ 
 
 Let denote by $DHJ(k, \delta)$ the density Hales-Jewett number. The density version of Hales-Jewett theorem is announced as follows:
 
@@ -307,15 +361,17 @@ Let denote by $DHJ(k, \delta)$ the density Hales-Jewett number. The density vers
 
 The proof of the density version of Hales-Jewett theorem has been demonstrated by \cite{furstenberg1991density} using ergodic methods. \cite{Polymath2009new} gave an elementary non-ergodic proof of the density version of Hales-Jewett theorem by using the equal-slices measure. A simplified version of \cite{Polymath2009new} has been given by \cite{dodos2013simple} using  a purely combinatorial proof of the density Hales–Jewett Theorem.
 
-To show that this density version of Hales-Jewett implies the Hales-Jewett, we need only to set as in  \eqref{vsz}, $\delta=\frac{1}{r}.$ By $r-$colouring the set $[k]^n$, that is by partitioning to $r$ classes,  if $a_{max}$ is the set containing the maximum number then $|A_{max} \geq \frac{k^n}{r}=\delta k^n.$ Hence, according to \eqref{hj2}, $a_{max}$ contains a combinatorial line.
+To show that this density version of Hales-Jewett implies the Hales-Jewett, we need only to set as in  \eqref{vsz}, $\delta=\frac{1}{r}.$ By $r-$colouring the set $[k]^n$, that is by partitioning to $r$ classes,  if $A_{max}$ is the set containing the maximum number then $|A_{max}| \geq \frac{k^n}{r}=\delta k^n.$ Hence, according to \eqref{hj2}, $A_{max}$ contains a combinatorial line.
 
 \subsection{Hales-Jewett theorem implies Van der Waerden's theorem.}
 
 To show that the Hales-Jewett theorem implies Van der Waerden's theorem, we need only to show that combinatorial lines corresponds to the arithmetic progression.
+\Jnote{``combinatorial lines correspond to arithmetic progressions''.}
 
 In \eqref{vsz} we have shown that Szemeredi's theorem implies Van der Waerden's theorem. To show that the density version of Hales-Jewett theorem implies Van der Waerden's theorem, we need to show that the density version of Hales-Jewett theorem implies Szemerédi's theorem. Hence, by transitivity, the density version of Hales-Jewett theorem implies Van der Waerden's theorem. 
 
 Thereupon, whatever the kind of Hales-Jewett theorem used to establish the implication, we need  only to show that the combinatorial line involves the arithmetic progression.
+\Jnote{I'm not sure what you are trying to say here.}
 
 Let us  assume that the Hales-Jewett theorem is verified and show that the combinatorial line of $k$ elements contained to the subset $A$ corresponds to the arithmetic progression of length $k$.
 
@@ -325,15 +381,17 @@ Let $n$ be the positive number of the Hales-Jewett theorem, then the set $[k]^n=
 
 Let us consider the bijection $f:[k]^n \longrightarrow [k^n]$ defines as follows:
 
-$$f(y_0,y_1,\cdots, y_{n-1})=y_0+y_1k+y_2+k^2+\cdots+y_{n-1}k^{n-1}.$$
+$$f(y_0,y_1,\cdots, y_{n-1})=y_0+y_1k+y_2 k^2+\cdots+y_{n-1}k^{n-1}.$$
 
 Let $w(x) \in ([k] \cup \{x\})^n\setminus [k]^n$ be an $x-tring.$ The combinatorial line generates by $w(x)$ is a set of $k$ elements.
 
 The difference between two consecutive elements $w(x;i_1)$ and $w(x;i_2)$ of this combinatorial line is a constant. Let us call this constant $l=(l_0, l_1, \cdots, l_{n-1})= w(x;i_1)-w(x;i_2)$ with $i_1 > i_2.$
+\Jnote{If they are consecutive, why not call them $w(x;c)$ and $w(x;c+1)$?}
 
 For $j\in \{0,1,\cdots, n-1\}$, $l_j$ has two values:
 
 $l_j= \left\lbrace \begin{array}{ll}1 & \text{ if } l_j=x \\ 0 & \text{ otherwise}    \end{array} \right.$
+\Jnote{$l_j=1$ or $l_j=x$?}
 
 Let $w(x;0)=(y_{0,0},y_{1,0},\cdots, y_{n-1,0})$ be the first element of the combinatorial line generated by $w(x)$ . Then, for $0\leq i \leq n-1$ an element $w(x;i)$ of the combinatorial line can be expressed as: $$w(x;i)=w(x;o)+il.$$
 
@@ -341,7 +399,10 @@ Let call by $a$ the image of $w(x;0)$ by $f$, that is $a=f(w(x;0))$ and by $d$ t
 $$d=f(l)=l_0+l_1k+\cdots+l_{n-1}k^{n-1}=\sum_{j=0}^{n-1}l_jk^j= \sum_{j\in D} k^j.$$
 Thus, $f(w(x;i))=a+id$, $a$ and $d$ fixed, $0\leq i \leq k-1$, the set $\{a+id: \ i\in [k]\}$ forms an arithmetic progression of length $k.$ So, for any combinatorial line of $k$ elements corresponds an arithmetic progression of length $k.$
 
-We just need to take $N(k,\delta)=k^n$ to establish that the Hales-Jewett theorem implies the Szemerédi's theorem. As this latter implies the Van der Waerden's theorem. Similarly, we need to take $N(k,r)=k^n$ to show that the Hales-Jewett theorem implies the Van der Waerden's theorem.
+We just need to take $N(k,\delta)=k^n$ to establish that the Hales-Jewett theorem implies the Szemerédi's theorem.
+\Jnote{What is $n$ here?}
+As this latter implies the Van der Waerden's theorem. Similarly, we need to take $N(k,r)=k^n$ to show that the Hales-Jewett theorem implies the Van der Waerden's theorem.
+\Jnote{There is one small additional complication for the density version.}
 
 
 
