@@ -17,6 +17,8 @@ There is no known vaccination to prevent or treat for Zika virus. Prevention mea
 
 
 The spread of Zika virus has resulted in Zika epidemics in some part of the world as can be seen in figure \ref{fig 1} above. This cause a worry as the effects of an epidemic are more diver stating and if not controlled can affect the whole country region and World at large. 
+
+
  
  Mathematical models for disease transmission have been used to link biological processes of disease transmission and emergent of dynamics of infections at the population level. Researchers try to understand the environmental, biological  and behavioural infectiousness of a disease .
  
@@ -33,7 +35,47 @@ Epidemiologist together with mathematicians have for years been involved in infe
 Over a  century, Mathematical representation and analysis of infectious diseases has been the centre of  infectious disease epidemiology \citep{b2005}. Differential equation have been used in the modelling of the dynamics of infectious diseases. They are base on the assumption of uniform mixing, that is everyone in the population has an equal probability of contracting an infectious disease \citep{kaplan2002emergency}.
 Compartmental Mathematical models have been used to describe the transmission dynamic of Zika Virus \citep{gao2016}.
 
-Graph theory has over the years grown and has found its application many fields. A graph also known as a network   can be  defined as triple $G = (V,E,f)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}.
+Mathematical modelling of infections diseases, started by the works of Daniel Bernoulli in \cite{bernoulli1760essai},in the quest to model the spread of small box and possible eradication. A century later the modelling become well established. The modelling of infectious disease dynamics is important for science and public policy among others. The models for infectious disease is helpful for prevention and planning the control of the spread of these disease. Policy makers use the information generated from the models in their policy formulation. In science it opens up new field of science and is vital in the study and development of drugs.
+
+The dynamics of infectious disease propagation are modelled as dynamical system. A dynamical system is a system that evolves with time over a state space according to a fixed rule. Thus let $\mathbb{X}$ be a state space $\mathbb{T}$ set of times and $\mathbb{R}$ rule that specifies how the state evolves with time. the rule is a function that whose domain is $\mathbb{X} \mathbb{T}$ and co domain $\mathbb{X}$ that is,
+\begin{equation*}
+\mathbb{R}: \mathbb{X} \mathbb{T} \longrightarrow \mathbb{X}.
+\end{equation*}
+
+The population is characterized as $S(t)$, $E(t)$,$I(t)$ and $R(t)$ . Where $S(t)$ is the number of individuals susceptible but not infected at time $t$, $E(t)$ is the number of people exposed or infected but not infectious at time $t$, $I(t)$ is the number of infected and infectious people at time $t$ and $R(t)$ is the number of people removed from the ability of being infected.Removal is carried by either immunization,death,recovery from the disease. The epidemiological models can be classified as Susceptible,Infected and Recovered (SIR) , Susceptible Infected (SIS or SIS) , Susceptible -Exposed - Infectious and Removed (SEIR)  and any other intermediate category can be added.
+
+The SIS model assumes that there is no immunity after recovery used to model infections where once a person recovers they become susceptible again for example infectious like flue. SIR model assumes that once a person recovers they become immune to the infection for example chicken pox. The SEIR assumes that onnce a person get becomes infected they do not  become infectious intermediately hence the intermediate compartment for exposed. 
+
+The independent variable in the compartmental model is the time $t$ and the rates of transfer between compartments are expressed mathematically as a result models are formulated initially as differential equations. The most epidemic models are built on the SIR proposed by \cite{m1925applications}. The system can be written as;
+
+
+\begin{center}
+\begin{equation} \label{eqn1_1}
+\left\lbrace \begin{array}{ccl}
+\frac{dS}{dt} &= &-\alpha S_{(t)} I_{(t)},\\
+ \frac{dI}{dt} &=& \alpha S_{(t)} I_{(t)} - \gamma  I_{(t)}, \\
+ \frac{dR}{dt} &= &\gamma  I_{(t)},
+\end{array} \right. 
+\end{equation}
+\end{center}
+
+ with assumptions that there is homogeneous mixing in the population. That is the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. Which the main assumption deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. In formulating these models , in terms of derivatives of the sizes of the compartments and it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established  but not valid at the beginning of a disease out break when they are few infectives. When they are a few out breaks the number of infectious depends on random contacts of between small number of individuals.
+ 
+ On the other hand Stochastic models are obtained by setting by adding a random variable called noise to the transmission dynamics of deterministic models.These random fluctuations may impact the evolution of the infection. Unlike deterministic model which assume homogeneous mix , an assumption which only holds in small populations. It is quiet unlikely that all people in will be equally susceptible to the disease and effective in spreading it \citep{ball1985deterministic}. A stochastic model can be further be described as a model in which the distribution of the length of the infectious period as allowed to have any distribution that can be describe by its Laplace transform \citep{addy1991generalized}.
+ 
+ Lets an SIR compartmental model, for $t > 0$, $S(t),I(t),R(t)$ is the number of individuals in susceptible, infectious and removed. $N(t)$ the total number of particles at time $t$. The Poisson process, which is the underlying structure basic to the class of stochastic models and all Markov chain processes\citep{greenwood2009stochastic}. The individuals enter each compartment at random times and the initial fixed values , $S(0)$,$I(0)$ and $R(0)$ are fixed for some $\lambda > 0$. Letting $\beta$ to be the average number of  contacts an infectious person makes per unit of time that take leads to infection. The probability of a susceptible individual moving from compartment S to compartment I in the time interval $\left[ t,\triangle t \right]$ that is  S $\rightarrow S-1$ and I $\rightarrow I + 1 $ is $ \beta$ S I $ \triangle t + o (\triangle t)$. If it is assumed the an infected person recovers at the rate $\gamma$ hence the probability of an infected person moving from infected to recovered over an interval $\left[ t,\triangle t \right]$  given by $\gamma I_{t + \triangle t} -o (\triangle t)$ .It is known that,
+ \begin{align*}
+ N_t = S_t + I_t + R_t
+ \\ \Rightarrow  R_t = N_t - S_t - I_t
+\end{align*}  
+Which implies that knowing $S_t,I_t$ is knowing $R_t$. Hence the model becomes an $S_t,I_t$ and thus the stochastic dynamical system can be written as;
+ \begin{align}
+ P((S_{t + \triangle t}, I_{t + \triangle t} - (S_t ,I_t) = ( - 1,1)) =  \beta S I  \triangle t + o (\triangle t).
+ \\ P (((S_{t + \triangle t}, I_{t + \triangle t} - (S_t ,I_t) = ( 0,-1)) = \gamma I_{t + \triangle t} -o (\triangle t).
+ \end{align}
+ 
+
+Graph theory has over the years grown and has found its application many fields. A graph also known as a network   can be  defined as triple $G = (V,E,f)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}. 
 
 Some network properties that can be used to describe networks or graphs.A network is said to be connected if between any pair of node there exists a path. In modelling disease spread a connected network is one in which an infection could travel from one person to any other person in the network through some steps. Another property that is used to describe networks is distance. Distance between any two nodes in a network is defined as the length of the shortest path by each a node can be reached. This can be summed up as the average distance taken over al, pairs of individuals , which gives the idea of the typical distance between nodes in a network or the diameter of the graph which is the largest distance taken over all pairs \citep{chung2002average}.
 
