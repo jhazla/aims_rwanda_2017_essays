@@ -3,9 +3,27 @@
 A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. Blei (2012) described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. from the analysis of the original document the topics are obtained. Given an very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
 \section{Topic Model methods}
 Topic modelling techniques have been developed to automatically summarize document or large text. These techniques are: latent semantic indexing/allocation  (LSI/LSA), the latent dirichlet allocation (LDA) and the probabilistic latent semantic analysis (PLSA) . This research will narrow between LDA and LSA.
+\section{Vector Space Model (VSM)}
+In Natural Language Processing (NLP) specially in semantics similarity documents can be represented as a vector of words in in a vector space model (Salton et al, 1975). The frequency of the word in the document determines its importance. Given two documents with words  desk and shirt. Say desk appears 6 and 4 times in document 1 and document 2 respectively, and the word shirt appears 3 times in document 1 and 5 times in document 2. Geometrically this can be represented as shown in \eqref{figure 2.1}.
+\captionof{table}{ Document of words}
+$$\begin{array}{cccc}
+ &\text{desk} & \text{shirt} \\ 
+ Doc_1 & 6 & 3\\ 
+ Doc_2 & 4 & 5
+\end{array} $$
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=1]{words_in_vs.png}
+\caption{Words represented in vector space}
+\end{figure}
+\label{figure 2.1}
+Computing the distance between them tells the extent to which their similarity. The dot product shows how close the two vectors are to each other. The dot product of two vectors is given as
+$$X\cdot Y=|X||Y|cos (\theta)$$.
+Although the VSM is a simple model to use, one main limitation is that, it cannot handle polysemy and synonyms issues. Polysemy is a term that describes words with multiple meaning and synonyms are words that have similar meaning. Considering a query search in Google, by the SVM, the documents relating to the query will not be revealed in the search results. However a research conducted by Erk and Pado pointed out the the reason behind the reason leading to the limitations in SVM. The paper indicated that the existing model does not take syntatic structure into account. Their research resulted in a novel called "structured vector space (SVS)". This work incorporates the selectional preferences for words argument position. With this it is possible to integrate syntax computation of word meaning in context.
 \section{Latent Semantic Analysis} 
 Also known as the latent semantic indexing (LSI) is a topic model method
-that transforms documents of high dimension to low dimension of words. One useful role played by LSI in topic modelling is its ability to deal with polysemy (Griffiths, Steyvors, 2006). Polysemy is a term that describes words with multiple meaning.
+that transforms documents of high dimension to low dimension of words. One useful role played by LSI in topic modelling is its ability to deal with polysemy and synonyms (Griffiths, Steyvors, 2006).
 \section{How The LSA Works}
 Preliminarily it constructs a matrix $M\in \mathbb{R}^{k*n}$, from the documents $d_1, d_2,..., d_k$ of words $w_1, w_2, ... w_n$. The rows represents the different words and the columns can be viewed as different documents. For example from \eqref{table:Table 2.1}, $m_{ij}$ shows the position and the frequency of the word $w_j$ in document $d_i$.
 .To achieve reduction in the dimension of the matrix $M$ the truncated Singular Value Decomposition is applied, given as $M\approx A_t \sum B^{T}_t.$
