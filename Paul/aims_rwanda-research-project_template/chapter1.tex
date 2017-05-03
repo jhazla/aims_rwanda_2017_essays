@@ -1,14 +1,41 @@
 \chapter{Introduction}
+
+\Jnote{Some general comments:}
+
+\Jnote{Read everything you write again, for example one day after it is written.
+  Read every sentence carefully and check if it makes sense.
+  Correct grammar errors, typos and punctuation.}
+
+\Jnote{I said this many times: while you are writing a summary, you are not
+  supposed to be looking at the paper you are summarizing. Many sentences in sections
+  on LDA are too close to sentences from Blei paper.}
+
+\Jnote{It is not acceptable to copy pictures without clearly indicating the source.
+  In my opinion, for an essay it is not acceptable to copy pictures at all
+  unless you have a very good reason. Yabebal might disagree with me,
+  please clarify with him.}
+
 In today's world where the most popular and convenient way of storing information is the electronic storage. Electronic storage provides an effective way to process this form of data storage with less human effort. As the stored information increases the difficulty it turns we face in trying access and extract what we need.For the purpose of easily understanding the contents of the data or know what it talks about, topic models serves as a tool for handling this task.
 Topic models were discovered by researchers in  machine learning (ML).  It is a statistical tool with a collection of algorithms that reveals the key components to understanding a document.Huge magnitude of unlabelled text can be analysed with a topic model. Topic model algorithms provides the environment that allows   users to explore the text in details and summarize it irrespective their size. Topic model is very useful in identifying the patterns of words in a document and in the event that more than one document is involved in the ML, documents with similar patterns can be related. 
-Topic models are unsupervised method of ML, through various algorithms is able to produce cluster of words that represent somewhat a summary of a document. They are applied in search engines to recommend to users what they are interested . A typical summary for a collection of documents is for the analysis of web search, producing results for users in further search Turpin et al (2007). This research focuses on summarizing reports from the international federation of red cross and crescent societies (IFRC). The summary provides  a  representative topic for each document or in other words best cluster of words that summarize the document.Mathematically, it can be perceived as a function that takes a large text and converts to small one, in a way that thematic structure of the large or original document is preserved.This can be represented as :
+Topic models are unsupervised method of ML, through various algorithms is able to produce cluster of words that represent somewhat a summary of a document. They are applied in search engines to recommend to users what they are interested . A typical summary for a collection of documents is for the analysis of web search, producing results for users in further search Turpin et al (2007). \Jnote{No manual citations, use \textbackslash cite} This research focuses on summarizing reports from the international federation of red cross and crescent societies (IFRC). The summary provides  a  representative topic for each document or in other words best cluster of words that summarize the document.Mathematically, it can be perceived as a function that takes a large text and converts to small one, in a way that thematic structure of the large or original document is preserved.This can be represented as :
 $$f:L \longrightarrow S, \quad \text{Such that} \quad |L| << |S|      $$
-Where $L=$ Large text or document and $S=$ Summarized document or small document. Intuitively the size of $S$ is smaller than $L$.
-Manually going through the reports and trying to understand what each is talking about can be time consuming and challenging. The IFRC is a Non governmental organization that provides humanitarian assistance to victims who suffers a disaster event. Through this aid the 	IFRC generates data of the occurrences of disaster worldwide. Large volumes of complex information    are locked in the reports and it hard extracting them going by the manual approach.. 
+\Jnote{What is smaller, $L$ or $S$? Also use ``\textbackslash ll'' instead
+  of $<<$.}
+Where $L=$ Large text or document and $S=$ Summarized document or small document.
+\Jnote{Do not mix formulas and text like that. Say ``Where $L$ is a large text...''
+  instead.}
+Intuitively the size of $S$ is smaller than $L$.
+Manually going through the reports and trying to understand what each is talking about can be time consuming and challenging. The IFRC is a Non governmental organization
+\Jnote{We say ``non-governmental organization''.}
+that provides humanitarian assistance to victims who suffers a disaster event. Through this aid the 	IFRC generates data of the occurrences of disaster worldwide. Large volumes of complex information    are locked in the reports and it hard extracting them going by the manual approach.. 
 %Presently a number of research have been %carried out in topic modelling, Nagwani %(2015) conducted a research in this area %based on the model known as MapRule. 
-This research will employ the Latent Drischlet Algorithm (LDA) the Latent Semantic Algorithm (LSA). Both models extract the contextual meaning from a given large text. 
+This research will employ the Latent Drischlet Algorithm (LDA)
+\Jnote{It is ``Dirichlet''. It is a name of a French guy. Please correct it
+  throughout the document.}
+the Latent Semantic Algorithm (LSA). Both models extract the contextual meaning from a given large text. 
 This research is divided into five chapters, the second chapter elaborates some key concepts of topic modelling, IFRC and similar work. The third chapter discuss explicitly LDA, LSA and the tools that were also used to arrive at the final results. The fourth chapter covers results and discussions. Chapter five presents conclusion and recommendation.
 
-
-
-
+\Jnote{Are you familiar with paragraphs? You discuss ML in general, Red Cross, purpose
+  of topic modeling, mathematical description of topic modeling, and what
+  algorithms you will use, all mixed together.
+  Each of those issues should be discussed in a separate paragraph.}
