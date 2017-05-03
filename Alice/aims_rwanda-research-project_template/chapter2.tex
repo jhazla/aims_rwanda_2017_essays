@@ -32,22 +32,32 @@ The meanings of the used tags for S :
 \item CC :\textbf{Coordinate Conjugation}:,'and'
 \end{itemize}
 The parse tree is formed based on the POS, the classification of word and the way words are aranged in a sentence show a kind of relationship between words.
-%\begin{figure}[hbtp]
-%\caption{The parse of the above sentense}
-%\centering
-%\includegraphics[scale=0.5]{../../../Desktop/parse.png}
-%\end{figure}
+\begin{figure}[hbtp]
+\caption{The parse of the above sentense}
+\centering
+\includegraphics[scale=0.5]{../../../Desktop/parse.png}
+\end{figure}
 
 
 The process of classifying entities can be more explained in the following picture
 
-%\begin{figure}[hbtp]
-%\caption{information extraction process}
-%\centering
-%\includegraphics[scale=0.4]{../images/nltk.png}
-%\end{figure}
-%\end{itemize}
+\begin{figure}[hbtp]
+\caption{information extraction process}
+\centering
+\includegraphics[scale=0.4]{../images/nltk.png}
+\end{figure}
+\end{itemize}
 
+To label the boundaries of sentences is one of the important prerequisite steps in Natural language processing(NLP) but the punctuation marks cause some ambiguity \citep{palmer1994adaptive} for example it is challenging to differentiate the the point in abbreviations and a full stop. 
+To handle this ambiguity some systems use the special purpose-regular expression grammar ,exception rule method etc.
+
+David D.Palmer and Marti A.Hearst worked on the problem of punctuations \citep{palmer1994adaptive}, They developed an efficient system with high accuracy in automatic labelling the boundaries of the sentence  by using the feed forwarding neural - networks where the input was the POS probabilities of all tokens which are surrounding the punctuation  and output was found as the label to be assigned to the token.This work was able to correct up to $98.5\%$ for punctuation of  sentence- boundaries.A proposed  new approach was how to  represent the context of punctuation marks without ambiguities. 
+
+This research will also look at how neural networks can be used to label different tokens.
+
+
+
+Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc. Considering the English language text , if we are given a  particular token it is not by chance  to  determine whether it is a name or not. some of the approaches to indicate a name are to  use capitalization ,detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
 
 \section*{2.1. Named Entity Recognation and Classification  NERC}
 The term "Named entity" has been coined in 1996 in "sixth  Message understanding Conference"(MUC-6  R. Grishman and  Sundheim 1996).Entity can be referred as a task, the entity is "named" when it is restricted to one or many rigid designators \citep{sharnagat2014named}, example: persons,location ,product are the named entities.
