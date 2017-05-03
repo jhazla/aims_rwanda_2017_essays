@@ -6,15 +6,23 @@ It is a multidisciplinary area that deals with the automatic processing of human
 This automation allows communication between humans and computers. The computer accept input in the form of text or speech and then produces structured representations showing the meaning of those strings as their output.
 \section{Data}
 The source of the data for this research is from the website of IFRC. Practically the data was obtained by algorithms implemented in the R studio, automatically downloaded the over one thousand pdf reports from the website. Each report is named a a name of a country depicting that the reports describes disaster that occurred in a particular country. Each report has an appeal id, several documents might refer to the same appeal id.
+\Jnote{Explain what is appeal and what is appeal id.}
 \section{Word Embeddings}
 Word embeddings is a dense representation of words in a low dimensional vector space. Bigo et al(2003) introduced the  concept of word embedding and then train them in neural language jointly with model parameters. Mikolov et al (2013)came out with the popular word embedding model known as the Word2vec. 
 Pemigton et al (2014) released Glove. The Glove and the Wor2vec are both aimed at producing word embeddings that ecode the general semantic relationship.
 \section{Term Frequency Inverse Document Frequency (TFID)}
-This measures the extent to which words are important in a document.  In topic modelling we to find a group of words that describes a vocabulary. For example topic modelling a document that talks about a university, words such as classrooms, library, lectures, Courses, Grades would tend to be the most important words that describe the topic. It is worth noting that important words are not necessarily the most frequent words, possible to be judged by our intuitive notions. The TFIDF transforms a vector of integer values into a vector of real values, maintaining the dimension of the original vector.After transformation  features which are not frequent in the corpus will have their values increased. That does not mean that rare words all rare words, some may not be significant at all in the description of the topic. For instance dealing with our "university" document, a word lik e"congregation" may rare but then it is significant towards describing the vocabulary. On the other hand a word such as "consequently" may appear very frequent which in this case does not really say anything about the topic. The most frequent words are
+This measures the extent to which words are important in a document.  In topic modelling we to find a group of words that describes a vocabulary. For example topic modelling a document that talks about a university, words such as classrooms, library, lectures, Courses, Grades would tend to be the most important words that describe the topic. It is worth noting that important words are not necessarily the most frequent words, possible to be judged by our intuitive notions. The TFIDF transforms a vector of integer values into a vector of real values, maintaining the dimension of the original vector.After transformation  features which are not frequent in the corpus will have their values increased. That does not mean that rare words all rare words, some may not be significant at all in the description of the topic.
+\Jnote{Rare words all rare words?}
+For instance dealing with our "university" document, a word lik e"congregation" may rare but then it is significant towards describing the vocabulary. On the other hand a word such as "consequently" may appear very frequent which in this case does not really say anything about the topic. The most frequent words are
 most words such as “the” or “and,” which helps to construct a more sentence, thereby making it readable and understandable.These words do not carry any importance to help topic model a document.They are stop words and they are removed before the modelling irrespective of their number. Given a collection of document with each document $d$ containing words, where each word in the document is denoted $i$. The frequency of occurrence of a word $i$ in document $d$ is denoted $f_{id}$. The term frequency $TF_{id}$ computed as
 $$TF_{id}=\frac{f_{id}}{max_tf_{tj}}$$.
+\Jnote{What is $j$?}
 Which means that the  frequency of the word  i in document d is fij normalized by dividing
-it by the term with the highest frequency in the same document of occurrence with stop words exclusive. Intuitively the word which occurs would have a $TF$ of 1, and other words get fractions as their term frequency for this
+it by the term with the highest frequency in the same document of occurrence with stop words exclusive.
+\Jnote{You forgot math mode.}
+Intuitively the word which occurs would have a $TF$ of 1,
+\Jnote{word which occurs what?}
+and other words get fractions as their term frequency for this
 document.
 %Theorems before the chapter's first section will be dot-zero, 
 %and their numbering is completely wrong. You can avoid this
