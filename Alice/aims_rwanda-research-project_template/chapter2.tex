@@ -3,7 +3,13 @@
 %This researdh has been initiated by a discussion between IFRC and  Datasauri in order summarize and extract entities about Cash Transfer Program .
 %The PDF report has been found on following website:https:// www.ifrc.org/en/publications-and-reports/appeals/
 
-In today's life, many organizations are generating unstructured data while they are communicating.The entities to be extracted from the reports are wealth,In this research,English is the considered language. 
+In today's life, many organizations are generating unstructured data while they are communicating.The entities to be extracted from the reports are wealth.
+\Jnote{This is not good english, you can write
+  ``There are plenty of entities to be extracted...''}
+In this research, English is the considered language.
+\Jnote{Be more specific, e.g.,
+  ``All reports that we consider are written in English.'' Also, should
+this be in literature review?}
 %composed by different many sentences and every sentence is composed by words, verbs and common words. 
 %\section*{2.1.Natural language toolkit NLTK}
 Natural language toolkit(NLTK) is a a tool which deals with natural language, it is also  python platform for human linguistic data. 
@@ -31,15 +37,21 @@ The meanings of the used tags for S :
 \item CD :\textbf{Cardinal Number}:'117','544','12,794','7,384',
 \item CC :\textbf{Coordinate Conjugation}:,'and'
 \end{itemize}
+\Jnote{Can you give a citation for this method?}
 The parse tree is formed based on the POS, the classification of word and the way words are arranged in a sentence show a kind of relationship between words.
 \begin{figure}[hbtp]
 \caption{The parse of the above sentence}
 \centering
 \includegraphics[scale=0.5]{images/parse.png}
 \end{figure}
+\Jnote{The figure is too small to read it.}
 
 
 The process of classifying entities can be more explained in the following picture
+\Jnote{s/more explained/better explained}
+\Jnote{Is this figure taken from somewhere? If yes, you \emph{have to}
+  provide source. Also, I don't think it is acceptable at all to copy
+  pictures in a research essay. Consult this with Yabebal, maybe he allows it.}
 
 \begin{figure}[hbtp]
 \caption{information extraction process}
@@ -51,16 +63,21 @@ The process of classifying entities can be more explained in the following pictu
 To label the boundaries of sentences is one of the important prerequisite steps in Natural language processing(NLP) but the punctuation marks cause some ambiguity \citep{palmer1994adaptive} for example it is challenging to differentiate the the point in abbreviations and a full stop. 
 To handle this ambiguity some systems use the special purpose-regular expression grammar ,exception rule method etc.
 
-David D.Palmer and Marti A.Hearst worked on the problem of punctuations \citep{palmer1994adaptive}, They developed an efficient system with high accuracy in automatic labelling the boundaries of the sentence  by using the feed forwarding neural - networks where the input was the POS probabilities of all tokens which are surrounding the punctuation  and output was found as the label to be assigned to the token.This work was able to correct up to $98.5\%$ for punctuation of  sentence- boundaries.A proposed  new approach was how to  represent the context of punctuation marks without ambiguities. 
+David D.Palmer and Marti A.Hearst worked on the problem of punctuations \citep{palmer1994adaptive}, They developed an efficient system with high accuracy in automatic labelling the boundaries of the sentence  by using the feed forwarding neural - networks where the input was the POS probabilities of all tokens which are surrounding the punctuation  and output was found as the label to be assigned to the token.This work was able to correct up to $98.5\%$ for punctuation of  sentence- boundaries.A proposed  new approach was how to  represent the context of punctuation marks without ambiguities.
 
 This research will also look at how neural networks can be used to label different tokens.
 
-
-
 Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc. Considering the English language text , if we are given a  particular token it is not by chance  to  determine whether it is a name or not. some of the approaches to indicate a name are to  use capitalization ,detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
 
+\Jnote{Consider putting text above into separate section (preprocessing for NLP).} 
+
 \section*{2.1. Named Entity Recognation and Classification  NERC}
-The term "Named entity" has been coined in 1996 in "sixth  Message understanding Conference"(MUC-6  R. Grishman and  Sundheim 1996).Entity can be referred as a task, the entity is "named" when it is restricted to one or many rigid designators \citep{sharnagat2014named}, example: persons,location ,product are the named entities.
+\Jnote{Please do not number sections by hand.}
+The term "Named entity" has been coined in 1996 in "sixth  Message understanding Conference"(MUC-6  R. Grishman and  Sundheim 1996).
+\Jnote{No manual citations, use \textbackslash cite in LaTeX. Also it
+  is not usual to write the conference name, just
+``has been coined in 1996 by \textbackslash cite\{\}''}
+Entity can be referred as a task, the entity is "named" when it is restricted to one or many rigid designators \citep{sharnagat2014named}, example: persons,location ,product are the named entities.
 
 Based on the classification of Standard Generalizes Markup Language(SGML) a task can be divided into three subtasks:
 \begin{itemize}
@@ -79,7 +96,12 @@ P(TN|SW) & = \frac{P(SW|TN)P(TN)}{P(SW)}\label{eq2.0.1}
 \end{align}
 The equation  \eqref{eq2.0.1} is conditional probability, $P(TN|SW)$ can be  called posterior and it is  the probability of an event Sequence of word occurring given Tagged names has observed. 
 $P(SW|TN)$ is also called likelihood means it is the probability of obsvering the sequence of words(SW) when the given hypothesis tagged name(TN) is true. on another hand P(TN) doesn't depend on the evidences,P(TN) is called prior means that it is true even if there is no given evidence at all(masters thesis).
-Hence,the above sentence is true, there is a permission to say  that P(SW) can be ignored. the remaining purpose is to maximise the probability of getting the sequence of tagged names when sequence of words is given.
+Hence,the above sentence is true, there is a permission to say  that P(SW) can be ignored.
+\Jnote{``The above sentence is true.'' Delete that.}
+\Jnote{s/there is a permission to say/we can ignore}
+the remaining purpose
+\Jnote{s/remaining purpose/remaining objective}
+is to maximise the probability of getting the sequence of tagged names when sequence of words is given.
 \begin{align}
 Max\left[P(TN|SW)\right] \label{eq2.0.2}
 \end{align}
@@ -91,6 +113,10 @@ Where ${TN}_{i}$ is a tag in the sequence of names (TN) , for the likelihood pro
 \begin{align}
 P(SW|TN){\approx} \prod_{i=1}^{n} P({SW}_{i}|{SW}_{i})\label{2.0.4}
 \end{align}
+\Jnote{There is a typo in formula above.
+  Try explaining better what those estimates mean, something like
+  ``we make a simplifying assumption that the tags occur independently
+  from each other''.}
 The above estimations was for a small sequence where ${TN}_{i}$ is a tag in the sequence of names (TN) and ${SW}_{i}$ is a tag at index i in a sequence words (SW).For the large training corpus , the needed step is estimate based on the number of times the tag occurs and the position of the tag in a given corpus.
 \begin{align}
 P(T_{i}|T_{i-1}) = \frac{K(T_{i-1},T_{i})}{K(T_{i-1})}\label{2.0.5}
@@ -103,12 +129,21 @@ P(C_{i}|T_{i}) =  \frac{K(T_{i},C_{i})}{K(T_{i})} \label{2.0.6}
 \end{align}
 From the equation \eqref{2.0.6} , the term $K(T_{i},C_{i})$  is referred as the sum of the times that a word "$C_{i}$" has a tag $T_{i}$in the training corpus.
 The process of computing the posterior using the above steps is called Markov model.
+
+\Jnote{This is a beginning of a good explanation, but you need to rewrite
+  to correct language mistakes and clarify some points.}
+
 \section*{2.1.1.1. Advantages of Hidden Markov Model}
+\Jnote{There is no need for a separate section, just put it in another
+  paragraph.}
+
 It is one of the most powerful statistical and machine learning (ML) techniques in modelling and high qualified in entities extraction.When the researcher is willing to train new data, HMM is very robust and efficient in computations.
 \section*{2.1.1.2. Disadvantages of Hidden Markov Model}
 One of the limitations of HMM is that the researcher must have the notion of model topology and statistical techniques on how to deal with large amount of training data.
 \section*{2.1.2.  Supporting Vector Machine based model}
-This model has an aims of classifying the named entities by using the linear support vector machine which separate input train documents into two categories, a document must be categorized as either positive or negative and be represented in two dimensional graph.Hyperplane is for separating train documents based on their categories and "w" is a weight vector  which is perperndicul to hyperplane is represented by the following equation: 
+This model has an aims of classifying the named entities by using the linear support vector machine which separate input train documents into two categories, a document must be categorized as either positive or negative and be represented in two dimensional graph.
+\Jnote{You will have many dimensions, not just two}
+Hyperplane is for separating train documents based on their categories and "w" is a weight vector  which is perperndicul to hyperplane is represented by the following equation: 
 \begin{align}
 w.x- b = 0 \label{2.0.7}
 \end{align}
@@ -123,17 +158,20 @@ w.x- b = 0 \label{2.0.7}
 From the \eqref{2.0.7}, the offset of the hyperplane is $ \frac{b}{\parallel  w \parallel} $
 
 The target is to maximize the the margin between the the points which represent two categories.remember that the vectors which pass through each of the point representative is perpendicular to the w , suppose that there will be an imaginary line which join two borders points $ h_{-}$ and $ h_{+}$.
+\Jnote{I didn't understand this explanation.}
 Supporting vectors which are demonstrated by the dashed lines on the figure above  are formed by :
 \begin{align}
 w.x- b & = 1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
 w.x- b & = -1 \label{2.0.9}
 \end{align}
-There are many algorithms with different approaches to optimization problems but all tends to the same solution says that minimize $\parallel w \parallel$ automatically maximize the margin between $ h_{-}$ and $ h_{+}$ where the boundary is a half way. 
-Now,add another constraint for each document category from the equations \eqref{2.0.8} and \eqref{2.0.9}, in order to hit the target 
+There are many algorithms with different approaches to optimization problems but all tends to the same solution says that minimize $\parallel w \parallel$ automatically maximize the margin between $ h_{-}$ and $ h_{+}$ where the boundary is a half way.
+\Jnote{Don't use \textbackslash parallel for norm, instead use \textbackslash\textbar}
+Now,add another constraint for each document category from the equations \eqref{2.0.8} and \eqref{2.0.9}, in order to hit the target
 \begin{align}
 w.x- b & \geq     1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
 w.x- b & \leq -1 \label{2.0.9}
 \end{align}
+\Jnote{Again, I didn't really understand this part.}
 ......The consideration of non- linear training data[............still working on it ]........ 
 
 \section*{2.1.2.1 Disadvantages of SVM} 
