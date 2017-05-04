@@ -1,31 +1,132 @@
 \chapter{The Second Squared Chapter}
+Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
 
-An average essay may contain five chapters, but I didn't plan my work properly
-and then ran out of time. I spent too much time positioning my figures and worrying
-about my preferred typographic style, rather than just using what was provided.
-I wasted days bolding section headings and using double slash line endings, and 
-had to remove them all again. I spent sleepless nights configuring manually numbered lists
-to use the \LaTeX\ environments because I didn't use them from the start or understand
-how to search and replace easily with texmaker.
+Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
 
-Everyone has to take some shortcuts
-at some point to meet deadlines. Time did not allow to test model 
-B as well. So I'll skip right ahead and put that under my Future Work section.
+The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
+
+Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infection \citep{posen2016epidemiology}.
+
+The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
+
+\section{ Model Assumptions}
 
 
-\section{This is a section} 
-Text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text. 
 
-Some essays may have 3, 5 or 6 chapters. This is just an example. 
-More importantly, do you have at most 35 pages?  
-Luck has nothing to do with it. Use the techniques suggested for
-writing your essay.
+The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
 
-Now you're demonstrating pure talent and newly acquired skills. 
-Perhaps some persistence. Definitely some inspiration. What was that about perspiration? 
-Some team work helps, so every now and then why not browse your friends' essays and provide
-some constructive feedback?
+All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
+
+All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
+
+To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
+
+\section{Compartmental Model}
+
+\begin{tikzpicture}
+\newcommand{\sirboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SI)[right=of S]{};
+	\node(I)[bigcompartment, right=of SI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, right=of IR]{R};
+}
+ 
+\newcommand{\seirboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SE)[right=of S]{};
+	\node(E)[bigcompartment, right=of SE]{E};
+	\node(EI)[right=of E]{};
+	\node(I)[bigcompartment, right=of EI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, right=of IR]{R};
+}
+ 
+\newcommand{\seirdboxes}{
+	\node(S)[bigcompartment]{S};
+	\node(SE)[right=of S]{};
+	\node(E)[bigcompartment, right=of SE]{E};
+	\node(EI)[right=of E]{};
+	\node(I)[bigcompartment, right=of EI]{I};
+	\node(IR)[right=of I]{};
+	\node(R)[bigcompartment, above right=of IR]{R};
+	\node(D)[bigcompartment, below right=of IR]{D};
+}
+ 
+\newcommand{\msirboxes}{
+	\node(S1)[bigcompartment]{$S_1$};
+	\node(SI1)[right=of S1]{};
+	\node(I1)[bigcompartment, right=of SI1]{$I_1$};
+	\node(IR1)[right=of I1]{};
+	\node(R1)[bigcompartment, right=of IR1]{$R_1$};
+}
+Vectors
+vectors.tex
+\newcommand{\sirvec}{ 
+	\draw[->, very thick] (S) to (I); 
+	\draw[->, very thick] (I) to (R); 
+}
+ 
+\newcommand{\seirvec}{ 
+	\draw[->, very thick] (S) to (E); 
+	\draw[->, very thick] (E) to (I); 
+	\draw[->, very thick] (I) to (R); 
+}
+ 
+\newcommand{\idvec}{ 
+	\draw[->, very thick] (I) to (D); 
+}
+ 
+\newcommand{\sirbd}{ 
+	\node(b)[above=of S]{};
+	\node(mS)[below=of S]{};
+	\node(mI)[below=of I]{};
+	\node(mR)[below=of R]{};
+ 
+	\draw[->, thick, dark green] (b) to (S); 
+	\draw[->, thick, dark green] (S) to (mS); 
+	\draw[->, thick, dark green] (I) to (mI); 
+	\draw[->, thick, dark green] (R) to (mR); 
+}
+ 
+\newcommand{\sirs}{ 
+	\draw[->, very thick] (R) 
+		to [bend left=45] (S); 
+}
+ 
+\newcommand{\isipoint}{
+	\draw[->, blue, dashed, very thick] (I)
+		to [bend left=45] (SI);
+}
+ 
+\newcommand{\isepoint}{
+	\draw[->, blue, dashed, very thick] (I)
+		to [bend left=60] (SE);
+}
+\end{tikzpicture}
+
+\section{Mathematical Model}
+
+The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
+\begin{align}
+\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
+\\ I'_h &= &\alpha_h E_h - \gamma I_h 
+\\ R'_h &=& \gamma I_h 
+\\ 
+S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
+\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
+\\ I'_v & = &\alpha_v E_v - \delta I_V
+ \end{array}
+\end{align}
+where :
+
+$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+
+$\alpha_h$ -  Is the rate at which exposed people become infectious.
+
+$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+
+$\delta$ -This is the birth rate of mosquitoes.
+
+$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+
