@@ -1,0 +1,116 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\title{Anti-$K_{T}$ algorithm}
+% -------------------------------------------------------------------------
+% Supervisor feedback
+\definecolor{DSgray}{cmyk}{0,0,0,0.7}
+\definecolor{DSred}{cmyk}{0,0.7,0,0.7}
+\newcommand{\Authornote}[2]{\noindent{\small\textcolor{DSgray}{\sf{
+\textcolor{red}{[#1: #2]\marginpar{\textcolor{red}{\fbox{\Large !}}}}}}}}
+\newcommand{\Jnote}{\Authornote{Jan}}
+\newcommand{\Tnote}{\Authornote{Tahir}}
+% -------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\section{Formulae}
+\begin{equation}
+\Delta_{ij} = \sqrt{(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2} 
+\end{equation}
+\begin{equation}
+\eta = \frac{1}{2} ln\left(\frac{|p| + p_l}{|p|-p_l}\right)
+\end{equation}
+\Jnote{Use straight font for mathematical functions. For example,
+  write \textbackslash ln instead of ln. This works only for some
+functions, for arctan google ``declaremathoperator''.}
+Where $p_l$ is the momentum in the beam direction.
+\Jnote{Say which direction is beam direction.}
+\begin{equation}
+\phi = arctan\left(\frac{p_y}{p_x}\right)
+\end{equation}
+\begin{equation}
+p_T = \sqrt{p_x^2 + p_y^2}
+\end{equation}
+\begin{equation}\label{1}
+d_{ij} = min\left(p_{Ti}^{2p},p_{Tj}^{2p}\right)\times \frac{\Delta_{ij}}{R}
+\end{equation}
+\begin{equation}\label{2}
+d_{iB} = p^{2p}_{Ti}
+\end{equation}
+\Jnote{Write formulas in logical order, so all values used in a formula
+  have been previously defined. For example, $\Delta$ uses
+  $\eta$ and $\phi$ so they should be defined before it.}
+
+\Jnote{Give names to the values you are defining.}
+\section{How the code works}
+The beginning of the code contains the old information from parton shower 3d code with few changes; \\
+Now the Energy of the partons follows the exponential distribution $e^{(-\alpha E_{parton})}$
+\begin{verbatim}
+def E(alpha= 0.5):
+    while True:
+        x = np.random.uniform(0,10)
+        y = np.random.uniform(-alpha,0)
+        f = alpha*np.exp(-alpha*x)
+        if y <=f:
+            return x
+\end{verbatim}
+\Jnote{Probably you will have lots of code in your writeup, google
+  ``listings'' latex package for that.}
+
+\Jnote{Why is $y$ negative? I don't think that's correct.}
+and the function \textit{parton3d()} returns a list of final state particles which are the corner stone of the algorithm. Also, since we have two partons, there is a function which creates and concatenates the two lists of final state particles from each parton shower.
+\begin{verbatim}
+def partons(E):
+    J1 = parton3d(E)
+    J2 = parton3d(-E)
+    return J1 + J2
+\end{verbatim}
+\Jnote{Make corrections and add additional discussion as we discussed offline.}
+The first part is followed by the functions $d_{ij}$ and $d_{iB}$, which follows  eqns \ref{1}, \ref{2} of the formulae above respectively.  
+
+The whole algorithm is included in the function $jetcluster(p,R,J)$.
+\Jnote{It is more common to use \textbackslash verb to write program function
+  names.}
+In the heart of the algorithm, there is heap queue which is an implementation of the priority queue algorithm. The interesting property of heap is that it gives the smallest element in a list, maintaining the list invariant, this is done with the method $heap.pop$.
+\Jnote{heapq.pop}
+
+Regarding storing of the data and processing it, the $class$ idea is implemented, with the help of a function called \textit{combine()} which performs the date processing.
+\Jnote{``data processing'' doesn't mean anything. Write what combine exactly does.}
+Where the class $Pseudojet$ works as a container of all the final state particles defined as Pseudojets in the class with the attributes momentum, index, jet, and exists .
+\Jnote{Pseudojet is a pseudojet, not just ``final state particle''.}
+\begin{verbatim}
+class Pseudojet:
+    instances  = []
+    def __init__(self, v_momentum):
+        self.momentum = v_momentum
+        self.index = len(Pseudojet.instances)
+        self.is_jet = False
+        self.exists = True 
+        Pseudojet.instances.append(self)
+\end{verbatim}  
+
+The first attribute describes the momentum
+of the Pseudojet, the second attributes describes the location of the particle, and the third attribute is meant to judge the particle after it's being checked through the heap queue, it changes to $True$ under the condition of the algorithm.
+The last attribute describes the existence, where after the smallest distance turns to be $d_{ij}$ i.e if we don't have a jet, then those pseudojets will be combined into one pseudojet. For each pseudojet, one of the existed attributes will change to False. The last two attributes are controlled by the function below.
+\Jnote{Read your explanation again and make it clearer.
+  If I didn't know your code already,
+  I would have no idea what you are talking about.}
+\begin{verbatim}
+def combine(J1, J2,p,R):
+    J = J1.momentum + J2.momentum
+    J1.exists = False
+    J2.exists = False
+    J  = Pseudojet(J)
+    di_B = diB(J,p)
+    heapq.heappush(H,(di_B,J.index,-1))
+    for i in range(len(lis)-1):
+        if lis[i].exists:
+            di_j = dij(J,lis[i],p,R)
+            heapq.heappush(H,(di_j,J.index,i))
+\end{verbatim}        
+\end{document}
