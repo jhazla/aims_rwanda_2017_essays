@@ -1,8 +1,8 @@
 \chapter{Introduction}
 
-\section{ Preliminaries }
+\section{ mathematical Preliminaries }
 
-\subsection*{ mathematical Preliminaries }
+
 
 \begin{defn}[Complex vector space]
 
@@ -70,6 +70,7 @@ So that we can write $A$ as combination of the orthogonal basis
 $$A=\sum_j a_j \ket{a_j} \bra{a_j}$$s
 \end{defn}
 
+\section{ Quantum Mechanics Preliminaries }
 \subsection{Quantum Postulates}
 
 
@@ -106,6 +107,34 @@ Entanglement is one of most especial and surprising phenomena, which is no analo
 
 
 The actual demonstration of entanglement by an experiment testing Bell’s inequality, with results favouring quantum mechanics, carried out by Michael Horne ,Clauser and Freedman\citep{PhysRevLett.23.880}.The success of CHSH and its attendant experimental demonstrations received wide attention in the physics literature and open new kind of thinking, such that how one we can implement the quantum mechanics uniqueness.
+\subsection{Density operators}
+Density operator also called (density matrix), which encode all the accessible information about a quantum mechanical system.  It turns out that the ideal description of pure states by state vectors $\ket{\Psi}$  on Hilbert Space might not be describe the statistical properties of mixture state, Indeed,this can be done via  GNS (Gelfand Neumark-Segal)  construction \citep{book:72351}which required some level of knowledge in function analysis  to have  vectors description  for  mixture state  $\ket{\Psi}$ that preserve all statistical characteristic of quantum mechanical mixture state, which frequently occur in nature.
+
+For any pure state $\ket{\Psi}$ the Density operator $\rho$ given by
+\begin{align}
+\rho:=\ket{\Psi}\bra{\Psi}
+\end{align}
+with properties 
+\begin{itemize}
+\item[1.] ~$\rho^2=\rho$ ~Projector 
+\item [2.]~$\rho^\dagger =\rho$ ~Hermitian
+\item [3.]~$Tr(\rho)=1$ ~Normalization
+\item [4.]~$\rho \geqslant 0$ ~Positivity
+\end{itemize}
+On the other hand, the mixed state is the state that satisfied all those property except $\rho^2\neq\rho$, thus lead to the density matrix of mixed state to be in the flowing form.
+\begin{equation}
+\rho_{mix }= \sum_{i} p_i \ket{\Psi_i}\bra{\Psi_i}
+\end{equation}
+Where $p_i$ is the probability to find the an ensemble  system in individual state  described by $\ket{\Psi_i} $ ,and $\sum_{i}^n p_i=1$
+
+\subsection{expectation value of density operator}
+
+The expectation value for observable $A$ in pure a state, represented  by density matrix $\rho$ is
+$$\left<A\right>_\rho=Tr(\rho A)$$
+However, we can  also express the expectation value of the mixtures state as a convex sum of expectation values of its constituent pure states as.
+$$\left<A\right>=$$
+
+
 \subsection{Quantum Bits}
 
 In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the  complex Hilbert space $C^2$ , whose basis vectors denoted.
