@@ -96,58 +96,115 @@ R_0 = \frac{\beta}{\mu + \gamma}
  \end{align}
  Thus the endemic equilibrium point $( S^*,I^*,R^*)$ is 
 $\left( \frac{1}{R_0}, \frac{\mu}{\beta} (R_0 -1), 1 -  \frac{1}{R_0} \frac{\mu}{\beta} (R_0 -1) - \frac{1}{R_0} \right)$
- 
+ \subsection{stability of the model}
+ Once an out break occurs its important to understand the long term behaviour of the out break and finding the stability of the model gives an insight on this. In other words calculating the stability of the model is establishing at which point the epedemic burn out will occur.
  \subsection{SEIR Model}
-The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected they become infectious immediately. 
+The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected they become infectious immediately. In this model an assumption is made that one a person is exposed there is an intermediate stage between the time of infection and when they become infectious, this maybe refereed  to as the latent  or incubation period of the infection.  The will system of equations will be;
 
-
-Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
-
-Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
-
-The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
-
-Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infection \citep{posen2016epidemiology}.
-
-The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
-
-\section{ Model Assumptions}
-
-
-
-The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
-
-All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
-
-All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
-
-To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
-
-\section{Compartmental Model}
-
-
-\section{Mathematical Model}
-
-The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
 \begin{align}
-\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
-\\ I'_h &= &\alpha_h E_h - \gamma I_h 
-\\ R'_h &=& \gamma I_h 
-\\ 
-S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
-\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
-\\ I'_v & = &\alpha_v E_v - \delta I_V
- \end{array}
+S'& = \mu -\beta S I  \mu S \\
+E' &= \beta S I - (\mu + \gamma) E  \\
+I' &= \gamma E - (\alpha + \mu I) \\
+R' &= \alpha I  - \mu R 
 \end{align}
-where :
+ where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which exposed people become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate. In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$.
+ 
+Since $R = 1- S + E + I$ it can be dropped from the system and our new system of equations would be, 
+\begin{equation} \label{eqn 4.2.28}
+\begin{array}{ccc}
+S'&=& \mu -\beta S I  \mu S \\
+E' &=& \beta S I - (\mu + \gamma) E  \\
+I' &=& \gamma E - (\alpha + \mu I)
+ \end{array} 
+\end{equation}
+We calculate equilibrium point by equating all the equations,in the the system  \ref{eqn 4.2.28} to 0 and solving them. 
 
-$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+The disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.Thus is there are infections there will be no epidemic. When $I^* \neq 0$ we find the disease pandemic equilibrium, which is given by
+\begin{equation*}
+S^*, E^*, I^*  = \left(\frac{(\alpha + \mu)(\gamma + \mu)}{\beta \gamma} , \frac{\alpha + \mu }{ \gamma} I^*, \frac{\mu}{\beta S*} \frac{\mu}{\beta} \right).
+\end{equation*}
 
-$\alpha_h$ -  Is the rate at which exposed people become infectious.
+The reproductive number $R_0$ is given by the spectral radius $FV^{-1}$.  Where  
+$ V = \left[\dfrac{\partial V_i(x*}{\partial j} \right],  F = \left[ \frac{\partial F_i (x^*)}{\partial j}\right]$,  $x^*$, $V_i (x)$  the disease equilibrium and transition rate from one component to the other respectively. $F_i(x^*)$ is the  number of infections in component $i$ and is a non singular matrix.
 
-$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+Therefore,
+\begin{equation}\label{4.2.29}
+FV^{-1} = \left(\begin{array}{cc} 
+0&0 \\ \beta&0
+\end{array} \right) \left(\begin{array}{cc}
+\frac{1}{(\gamma + \mu)}&  \frac{-\gamma}{(\alpha +\mu)+ (\gamma + \mu)}\\ 0& \frac{1}{\alpha + \mu}  
 
-$\delta$ -This is the birth rate of mosquitoes.
+\end{array} \right) = \left(\begin{array}{cc} 0&0 \\
+\frac{\beta}{(\gamma + \mu)} &\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)} 
+\end{array}\right)
+\end{equation}
 
-$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+The equation \ref{4.2.29} has eigenvalue values $\lambda_1$ , $lambdad$ as 0 and $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$ respectively.
+ \begin{equation}
+ R_0 = max {|\lambda_1| |\lambda_2|}
+ \end{equation}
+Thus the $R_0$ for the system will be $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$.
 
+It can be shown that the stationary point (1,0,0) is asymptotically stable which implying that $R_0 <1$ and the pandemic  equilibrium $R_1 >1$ meaning the disease will persist.
+
+\subsection{Other Compartmental Models.}
+
+There are several other types of compartmental model and epidemiologist tend to include additional components. Here are some of the models that can be used to model infectious diseases.
+
+\subsection{SI} The susceptible infected model assumes that once someone is infected there is no recovery. Hence it has only two components and it is used to model infectious like HIV and other incurable infectious diseases. The description of the short term and long term behaviour of the model can be calculated similar to the SIR model.
+ 
+
+%We examine the  behaviour of the stationary points by checking for their stability , we check the stability  of the system \ref{eqn 4.2.28}.
+%
+%
+%
+%Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
+%
+%Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
+%
+%The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
+%
+%Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infectio\section{ Model Assumptions}
+%
+%
+%
+%The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
+%
+%All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
+%
+%All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
+%
+%To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
+%
+%\section{Compartmental Model}
+%
+%
+%\section{Mathematical Model}%n \citep{posen2016epidemiology}.
+%
+%The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
+%
+
+%
+%The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
+%\begin{align}
+%\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
+%\\ I'_h &= &\alpha_h E_h - \gamma I_h 
+%\\ R'_h &=& \gamma I_h 
+%\\ 
+%S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
+%\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
+%\\ I'_v & = &\alpha_v E_v - \delta I_V
+% \end{array}
+%\end{align}
+%where :
+%
+%$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+%
+%$\alpha_h$ -  Is the rate at which exposed people become infectious.
+%
+%$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+%
+%$\delta$ -This is the birth rate of mosquitoes.
+%
+%$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+%
