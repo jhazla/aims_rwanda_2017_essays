@@ -1,8 +1,0 @@
-\chapter*{I.1.Literature review}
-For extracting entities in a report there are different algorithms which can be used:
-\subsection*{Natural language toolkit NLTK}
-When you are given PDF reports, how can you extract entities?
-To give an answer to this question, Let as us base on a simple analysis of a single report.
-Every report is composed by sentences and every sentence is composed by words.
-\subsection*{Embeddings}
-\subsection*{Natural language toolkit NLTK}
