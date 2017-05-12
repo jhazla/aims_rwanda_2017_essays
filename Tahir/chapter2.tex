@@ -170,6 +170,28 @@ Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This i
 \section*{Probability  and expectation value}
 Suppose that we are no longer dealing with unitary operators, we can used any hermitian operator with eigenvalue $1,-1$. How we can obtain the winning probability using the expectation value which is the product  of probability with  eigenvalue of operator.
 
+Statistically, for given a sample space, a probability distribution assigns as a non negative number  to each points of the sample space in such a way that these numbers sum to $1$.
+$$\sum_i \Pr(i)=1$$
+On the other hand, non deterministic  of quantum mechanics a plays  central for prediction of measurement outcomes, in fact the definition of  probability and means or average in quantum mechanics depends on whether the observable has a discrete or continuous set of eigenvalues, in our case we only dealing with discrete eigenvalues operators, we will introduce the operational definition for this purpose.
+If there is observable $A$ for a system with a discrete set of values $\{a_1 , a_2 ,\dots \}$, then this observable is represented by a Hermitian operator $\hat{A}$ , so that has these discrete values are it's eigenvalues, and associated eigenstates $\{\ket{a_n}, n = 1, \dots \}$ satisfying the eigenvalue equation.
+\begin{equation}
+\hat{A} \ket{a_n}=a_n \ket{a_n}
+\end{equation}
+These eigenstates form a complete, orthonormal set so that any state ,$\ket{\Psi}$,of the system can be 
+\begin{equation}
+\ket{\Psi}=\sum_n \ket{a_n} \bra{a_n} \ket{\Psi}
+\end{equation}
+Where $\bra{\Psi}\ket{\Psi}=1$, and ,$\left|\bra{a_n}\ket{\Psi}\right|^2$ is probability of obtaining $a_n$ by measuring $A$.
+
+Now, suppose we prepare  $N$ identical copies of this system so that all in exactly the same fashion of the  original system, and by  performing  measurement  of $\hat{A}$  for each these copies the result will be completely random,this gives the frequency of probability in quantum    which an outcome will  be occur in the limit of a very large number of repetitions of an experiment.
+
+Using repetition of  measurement  on identical copies of system, we can drive  an expression for  average or mean value of all these results. If the measurement $A$ is repeated $N$ times, the average will be.
+ \begin{equation}
+ \left\langle A \right\rangle=\sum_n \frac{N_n}{N}  a_n
+ \end{equation}
+ Where $a_n$  is eigenvalue associated with eigenvector $\ket{a_n}$, and $\frac{N_n}{N}=\left|\bra{a_n}\ket{\Psi}\right|^2$ is the probability of measuring the value $a_n$ from the observable $A$.Moreover, if we have composed state of two operators $A\text{ and} B$ then the eigenvalues of these operators  when both together are all possible the product of the individual eigenvalues , thus, associated  eigenvectors are  tensor product of the vector .
+
+
 We know that the total probability( winning pulse losing) for each situation is turn to one.
 $$\Pr[A,B \text{ win} \mid  x=i \wedge y=j]+\Pr[A,B \text{ lose}  \mid  x=i \wedge y=j]=1$$ for all $i,j \in \{0,1\}$
 
@@ -178,10 +200,8 @@ $$\Pr[A,B \text{ win} \mid  x=i \wedge y=j]+\Pr[A,B \text{ lose}  \mid  x=i \wed
 
 $A$ and $B$ are win when their output is same whenever  different values of $x  \text{and}  y$ received or same but $0$ , the only situation were win when their out put is different is $x  \text{and} y$ both are equal to $1$.This means the expectation values for  the first three  cases is   winning probability subtracted  the losing probability while in the last case vice versa.
 \begin{align*}
-E[A,B \text{ win}]-\Pr[A,B \text{ lose}  \mid  x=0 \wedge y=0]\\
-E[A,B \text{ win}]-\Pr[A,B \text{ lose}  \mid  x=0 \wedge y=1]\\
-E[A,B \text{ win} ]-\Pr[A,B \text{ lose}  \mid  x=1 \wedge y=0]\\
-E[A,B \text{ win} ]-\Pr[A,B \text{ win}  \mid  x=1 \wedge y=1]
+E[A,B \text{ out put same}]-\Pr[A,B \text{ out put diff} ]\\
+E[A,B \text{ out put diff} ]-\Pr[A,B \text{ out put same}  ]
 \end{align*}
 \Jnote{Above we have expectation of what?}
 Form the expression above we can easy write the winning probability in term of it's expectation values, using the fact that the sum of winning and losing probability  is one. In order to transform the expectation value to probability we introduce notation for that, the winning probability for same output say $\Pr[A,B \text{ sam output}]$ , losing probability for $\Pr[A,B \text{ diff output}]$ and $E$the expectation value of win.
