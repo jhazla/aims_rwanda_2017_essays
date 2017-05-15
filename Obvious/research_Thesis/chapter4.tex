@@ -1,132 +1,245 @@
-\chapter{The Second Squared Chapter}
-Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
+\chapter{Compartmental and Stochastic Models}
+\section{Deterministic Models}
 
-Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
+\section{SIR Model}
 
-The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
+In the model the population is partitioned into three compartments. Susceptible, Infected and Recovered this is the basis for most epidemiological models. \citep{m1925applications}. In building the model the number of individuals Susceptible, Infected and Recovered is assumed to be differentiable over time.
+The simple epidemic model is given by.
+\begin{center}
+\begin{equation} \label{eqn4.1}
+\left.\begin{array}{ccl}
+\frac{dS}{dt} &= &-\beta SI,\\
+ \frac{dI}{dt} &=& \beta S I - \gamma  I, \\
+ \frac{dR}{dt} &= &\gamma  I,
+\end{array} \right. 
+\end{equation}
+\end{center}
+\Jnote{I think it's better to use \textbackslash align instead
+  of \textbackslash equation with an array inside.
+  You can look it up in ``not so short introduction to latex''.}
+$N = S + I + R$
+The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and Infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population.
 
-Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infection \citep{posen2016epidemiology}.
 
-The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
-
-\section{ Model Assumptions}
-
-
-
-The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
-
-All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
-
-All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
-
-To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
-
-\section{Compartmental Model}
-
-\begin{tikzpicture}
-\newcommand{\sirboxes}{
-	\node(S)[bigcompartment]{S};
-	\node(SI)[right=of S]{};
-	\node(I)[bigcompartment, right=of SI]{I};
-	\node(IR)[right=of I]{};
-	\node(R)[bigcompartment, right=of IR]{R};
-}
- 
-\newcommand{\seirboxes}{
-	\node(S)[bigcompartment]{S};
-	\node(SE)[right=of S]{};
-	\node(E)[bigcompartment, right=of SE]{E};
-	\node(EI)[right=of E]{};
-	\node(I)[bigcompartment, right=of EI]{I};
-	\node(IR)[right=of I]{};
-	\node(R)[bigcompartment, right=of IR]{R};
-}
- 
-\newcommand{\seirdboxes}{
-	\node(S)[bigcompartment]{S};
-	\node(SE)[right=of S]{};
-	\node(E)[bigcompartment, right=of SE]{E};
-	\node(EI)[right=of E]{};
-	\node(I)[bigcompartment, right=of EI]{I};
-	\node(IR)[right=of I]{};
-	\node(R)[bigcompartment, above right=of IR]{R};
-	\node(D)[bigcompartment, below right=of IR]{D};
-}
- 
-\newcommand{\msirboxes}{
-	\node(S1)[bigcompartment]{$S_1$};
-	\node(SI1)[right=of S1]{};
-	\node(I1)[bigcompartment, right=of SI1]{$I_1$};
-	\node(IR1)[right=of I1]{};
-	\node(R1)[bigcompartment, right=of IR1]{$R_1$};
-}
-Vectors
-vectors.tex
-\newcommand{\sirvec}{ 
-	\draw[->, very thick] (S) to (I); 
-	\draw[->, very thick] (I) to (R); 
-}
- 
-\newcommand{\seirvec}{ 
-	\draw[->, very thick] (S) to (E); 
-	\draw[->, very thick] (E) to (I); 
-	\draw[->, very thick] (I) to (R); 
-}
- 
-\newcommand{\idvec}{ 
-	\draw[->, very thick] (I) to (D); 
-}
- 
-\newcommand{\sirbd}{ 
-	\node(b)[above=of S]{};
-	\node(mS)[below=of S]{};
-	\node(mI)[below=of I]{};
-	\node(mR)[below=of R]{};
- 
-	\draw[->, thick, dark green] (b) to (S); 
-	\draw[->, thick, dark green] (S) to (mS); 
-	\draw[->, thick, dark green] (I) to (mI); 
-	\draw[->, thick, dark green] (R) to (mR); 
-}
- 
-\newcommand{\sirs}{ 
-	\draw[->, very thick] (R) 
-		to [bend left=45] (S); 
-}
- 
-\newcommand{\isipoint}{
-	\draw[->, blue, dashed, very thick] (I)
-		to [bend left=45] (SI);
-}
- 
-\newcommand{\isepoint}{
-	\draw[->, blue, dashed, very thick] (I)
-		to [bend left=60] (SE);
-}
-\end{tikzpicture}
-
-\section{Mathematical Model}
-
-The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
+\subsection{Model Analysis}
+We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S +I+R$ knowing $S$ and $I$ implies that we can solve for  $R$. Hence our system of equations can be reduced to 
 \begin{align}
-\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
-\\ I'_h &= &\alpha_h E_h - \gamma I_h 
-\\ R'_h &=& \gamma I_h 
-\\ 
-S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
-\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
-\\ I'_v & = &\alpha_v E_v - \delta I_V
- \end{array}
+\frac{dS}{dt} &= &-\beta SI. \label{eqn4.11} \\
+ \frac{dI}{dt} &=& \beta S I - \gamma  I \label{eqn4.22}.
 \end{align}
-where :
+\Jnote{Fix alignment (align has only two columns, usually you separate them
+  after the equal sign).}
+ With $S(0) >0$, $I(0) > 0$ and $R(0) =0$ as the initial conditions for the model.
+ We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly.That is, we cannot obtain an exact analytical expression for the dynamics of S and I
+though time, instead the model has to be solved numerically.
 
-$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+The equation \ref{eqn4.11} gives two import insights in understanding the spread of disease and has since been used in infectious disease modelling for along time.
 
-$\alpha_h$ -  Is the rate at which exposed people become infectious.
+\subsection{Threshold Phenomenon} 
+Its is important to determine whether the infection will result into an epidemic or not and what factors could determine this. Consider the initial stage after $I(0)$ individuals have been infected in a population with $S(0)$ susceptible. Equation \ref{eqn4.22} can be rewritten as,
+\begin{equation} 
+\frac{dI}{dt} = I \left(\beta S -\gamma \right)\label{4.14}
+\end{equation}
+In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$. Then $\frac{dI}{dt} < 0.$ This implies that there will be no epidemic in this case.
+\Jnote{``This implies'' is not a good choice of words here. I think it gives
+  a good intuition why there will be no epidemic, but the proof
+  is more complicated than that, right?}
+This result was coined by \cite{m1925applications} and  is what is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur.In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
+ 
+ The reciprocal of the of relative removal rate is called the basic reproductive ratio and is one of the most important quantities in epidemiology . Basic reproduction ratio is defined as the average number of secondary cases arising from an average primary case in an entirely susceptible population. It measures measures the maximum reproductive potential for an infection. For the our SIR model in equation \ref{eqn4.1} it is given by:
 
-$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+\Jnote{Equation missing here.}
+ 
+For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0$ value and also depending on the population's contact pattern the $R_0$ value will differ.
+\begin{equation}
+R_0 = \frac{\beta}{\gamma}\label{eqn 4.15}
+\end{equation}
+ \subsection{Epidemic Burnout}
+ The threshold phenomena give a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state infection. From they system in equation \ref{eqn4.1} we take
+ 
+ \begin{align}
+ \frac{dS}{dt} &= -\beta S I \label{4.16}
+ \\ \frac{dR}{dt}& = \gamma I \label{4.17}
+\intertext{  dividing  equation \ref{4.14} by equation \ref{4.17} we get } \nonumber
+\\ \frac{dS}{dR}& = \frac{-\beta S}{\gamma}
+\\& = R_0 S \label{4.19}
+ \end{align}
+ \Jnote{Just put whole equation above on one line.}
+ Differentiating equation \ref{4.19} with respect to R  we get 
+\Jnote{Differentiating? You are integrating, no?}
+ 
+ \begin{align}
+ \int{\dfrac{dS}{S}} = \int{ R_o dR}
+ \\ e^{ln S} = e^{-R_0 R + k}
+ \\  S(t) = e^{-R_0 R(t)} e^{k}
+ \intertext {assuming R(0) = 0} \nonumber
+ \\ S(t) = S(0)e^{-R_0 R(t)} \label{eqn 4.1.13}
+ \end{align}
+ \Jnote{Add one more step between the first and second equation above.}
+ Hence as the epidemic develops the number of susceptible reduce, taking into consideration the infectious period there is a lag but eventually the number of recovered start to increase. There number of susceptible in the population will always be above zero as can be seen in equation \ref{eqn 4.1.13}.
+ 
+ The epidemic burnout gives the intuitive idea that the chain of transmission eventually breaks due to the decline in infectives not due to lack of susceptibles.
+ \Jnote{I don't see this intuition. Can you explain more and/or add citation?}
+ 
+ \subsection{Disease free equilibrium} Adding demographic parameters to \ref{eqn4.1} we get a new system of equations.
+ \Jnote{Explain what is the interpretation of ``demographic parameters''.}
+ 
+ \begin{align}
+ S' = \mu - \beta S I + \mu S \label{1}
+ \\ I' = \beta SI - \gamma I -\mu I  \label{2}
+ \\ R' = \gamma I - \mu R \label{3}
+ \end{align}
+ \Jnote{Be consistent with notation: S' or dS/dt? Don't you have a typo
+ in the first equation?}
+ Using the procedure we used to get equation \ref{4.15}
+it can be shown that the $R_0$ for this model is \begin{equation}
+R_0 = \frac{\beta}{\mu + \gamma}
+\end{equation}
+ 
+ Now e calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero.Then solving for I,S and R.
+ \begin{align}
+ \intertext{from equation \ref{2} we get,} \nonumber
+ \\ I (\beta S -(\gamma+ \mu)) = 0
+ \intertext {thus we get}
+ I = 0 \rightarrow S = \frac{\gamma+ \mu}{\beta}
+ \end{align}
+ Therefore the disease free equilibrium is $I^* = 0$ and $S^* = \frac{\gamma+ \mu}{\beta}$.
+ \Jnote{What are $I^*$ and $S^*$? It seems to me that disease-free equlibrium
+   is $S=\mu N$ and $I=0$, please double-check and make corrections.}
+ This implies that there will be no epidemic when the number there is no infection in the population.
+ \Jnote{Of course there is no epidemic with no infection, there is no need
+   to write that. The point of computing equilibria is different.}
+ 
+ To calculate the endemic equilibrium, we take $I \neq  0 $ and solve \eqref{3}. Since $S+R+I =1$
+ \begin{align}
+ \gamma I - \mu (1 -S -I) = 0
+ \\ \gamma I - \mu I -\mu (1-S) = 0
+ \\ I = \frac{\mu}{\beta} R_0 \left( 1- \frac{1}{R_0} \right)
+ \\ I = \dfrac{\mu}{\beta} (R_0 -1) 
+ \end{align}
+ \Jnote{I could not follow the computation above, please state clearly
+   what you are substituting for what.}
+ Thus the endemic equilibrium point $( S^*,I^*,R^*)$ is 
+ $\left( \frac{1}{R_0}, \frac{\mu}{\beta} (R_0 -1), 1 -  \frac{1}{R_0} \frac{\mu}{\beta} (R_0 -1) - \frac{1}{R_0} \right)$
+  \subsection{stability of the model}
+ Once an out break occurs its important to understand the long term behaviour of the out break and finding the stability of the model gives an insight on this. In other words calculating the stability of the model is establishing at which point the epedemic burn out will occur.
+ \subsection{SEIR Model}
+The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected they become infectious immediately. In this model an assumption is made that one a person is exposed there is an intermediate stage between the time of infection and when they become infectious, this maybe refereed  to as the latent  or incubation period of the infection.  The will system of equations will be;
 
-$\delta$ -This is the birth rate of mosquitoes.
+\begin{align}
+S'& = \mu -\beta S I  \mu S \\
+E' &= \beta S I - (\mu + \gamma) E  \\
+I' &= \gamma E - (\alpha + \mu I) \\
+R' &= \alpha I  - \mu R 
+\end{align}
+where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which exposed people become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
+In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$.
+ 
+Since $R = 1- S + E + I$
+\Jnote{Typo here}
+it can be dropped from the system and our new system of equations would be, 
+\begin{equation} \label{eqn 4.2.28}
+\begin{array}{ccc}
+S'&=& \mu -\beta S I  \mu S \\
+E' &=& \beta S I - (\mu + \gamma) E  \\
+I' &=& \gamma E - (\alpha + \mu I)
+\end{array}
+\end{equation}
+\Jnote{No need to write exactly the same equations right after the original
+  ones, just say you are dropping the last one. Also correct typo
+  in thefirst equation.}
+We calculate equilibrium point by equating all the equations,in the the system  \ref{eqn 4.2.28} to 0 and solving them. 
 
-$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+The disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
+\Jnote{No, I don't think that is correct disease-free equilibrium.}
+Thus is there are infections there will be no epidemic. When $I^* \neq 0$ we find the disease pandemic equilibrium, which is given by
+\begin{equation*}
+S^*, E^*, I^*  = \left(\frac{(\alpha + \mu)(\gamma + \mu)}{\beta \gamma} , \frac{\alpha + \mu }{ \gamma} I^*, \frac{\mu}{\beta S*} \frac{\mu}{\beta} \right).
+\end{equation*}
 
+The reproductive number $R_0$ is given by the spectral radius $FV^{-1}$.  Where  
+$ V = \left[\dfrac{\partial V_i(x*}{\partial j} \right],  F = \left[ \frac{\partial F_i (x^*)}{\partial j}\right]$,  $x^*$, $V_i (x)$  the disease equilibrium and transition rate from one component to the other respectively. $F_i(x^*)$ is the  number of infections in component $i$ and is a non singular matrix.
+\Jnote{Where does this come from? Give citation or explanation.}
+
+Therefore,
+\begin{equation}\label{4.2.29}
+FV^{-1} = \left(\begin{array}{cc} 
+0&0 \\ \beta&0
+\end{array} \right) \left(\begin{array}{cc}
+\frac{1}{(\gamma + \mu)}&  \frac{-\gamma}{(\alpha +\mu)+ (\gamma + \mu)}\\ 0& \frac{1}{\alpha + \mu}  
+
+\end{array} \right) = \left(\begin{array}{cc} 0&0 \\
+\frac{\beta}{(\gamma + \mu)} &\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)} 
+\end{array}\right)
+\end{equation}
+
+The equation \ref{4.2.29} has eigenvalue values $\lambda_1$ , $lambdad$ as 0 and $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$ respectively.
+ \begin{equation}
+ R_0 = max {|\lambda_1| |\lambda_2|}
+ \end{equation}
+Thus the $R_0$ for the system will be $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$.
+
+It can be shown that the stationary point (1,0,0) is asymptotically stable which implying that $R_0 <1$ and the pandemic  equilibrium $R_1 >1$ meaning the disease will persist.
+\Jnote{I don't understand your last sentence.}
+
+\subsection{Other Compartmental Models.}
+
+There are several other types of compartmental model and epidemiologist tend to include additional components. Here are some of the models that can be used to model infectious diseases.
+
+\subsection{SI} The susceptible infected model assumes that once someone is infected there is no recovery. Hence it has only two components and it is used to model infectious like HIV and other incurable infectious diseases. The description of the short term and long term behaviour of the model can be calculated similar to the SIR model.
+ 
+
+%We examine the  behaviour of the stationary points by checking for their stability , we check the stability  of the system \ref{eqn 4.2.28}.
+%
+%
+%
+%Epidemiology compartmental models have been used for to model Infectious Diseases. Zika Virus can also be modelled using these compartmental models. A system of differential equations is used to model the dynamics of disease transmission.
+%
+%Zika Virus can be modelled by Susceptible , Exposed, Infectious and Recovered SEIR Model. Zika is mainly transferred by a vector(Mosquitoes). Thu the SEIR model takes into account the dynamics of pathogen transmission through vector.
+%
+%The compartment in this model are ; Susceptible denoted by $S_h(t)$ which is the number of people not carrying the pathogen but are prone to. Exposed denoted $E_h(t)$ This a number of people that have been exposed or have the pathogen but are not infectious. These include people that have had sex with a Zika infected person or people bitten by an infected mosquito but are yet to to exhibit symptoms and become infectious. Infectious denoted by $I_h(t)$ this compartment  comprises, people who are infected and infectious.That is they can transmit the disease to other people and they may or may not exhibit symptoms of being infected. Recovered denoted as $R_h(t)$, this compartment comprises of people that recover from the infectious or those that die or removed from the population. When some an infectious person is no longer infectious then then they are considered as recovered.
+%
+%Zika various is modelled with an SEIR model because one a person recovers from the infectious, studies have shown that they cannot be any reinfections. This was tested on monkeys who were cured of the infectious and Humans who have recovered from infectio\section{ Model Assumptions}
+%
+%
+%
+%The demographic variation in the number of people are not considered  and we also assume that the population among mosquitoes remains constant. This means the model does not take into death and birth among human beings. For the vectors death is assumed to be equal to birth hence the constant population. 
+%
+%All mosquitoes are assumed to be old to be adult mosquitoes, thus birth implies that an adult mosquito is added to into the proportion of mosquitoes.
+%
+%All humans have the the same probability of being infected. Either by mosquito bite or other means of  transmission. The period an organism (human or mosquito) stays in the Exposed compartment is called latent period and will be referred to as the incubation period.
+%
+%To model Zika virus on a random network, We take every person in the population as a vertex and when ever there is contact expected to result in the transmission of the  infection an edge is drown between the vertices. Therefore as property of a random graph, we assume that there is an equal probability of transmission between any given vertices in the graph. That is between any people in the population there is equal chance of disease transmission. This probability is used as the disease transmission rate in the SEIR model for Zika.
+%
+%\section{Compartmental Model}
+%
+%
+%\section{Mathematical Model}%n \citep{posen2016epidemiology}.
+%
+%The vector ( Mosquitoes) also have a similar transmission of the pathogen. Though for the vector there are only three compartments. Susceptible denoted as $S_v$, this compartment comprises of a proportion of vectors that do not carry the pathogen hence can not infect anyone. The second compartment is the $E_V$ , which is a proportion of vectors that carry the pathogen but cannot infect or transmit to a human being. Lastly Infectious $I_v$ this is the proportion of vectors that can transmit the pathogens. It can be noted that since $S_v$,$E_v$ and $I_v$ are proportions, $ 0 \le S_v,E_v , I_v \le 1$ 
+%
+
+%
+%The dynamical system of the transmission of Zika virus, is represented mathematically by the equations below.
+%\begin{align}
+%\begin{array}{lcl}  S'_h & = -&\beta_h S_h I_v  \\ E'_h & = & \beta_h S_h I_v - \alpha_h E_h  
+%\\ I'_h &= &\alpha_h E_h - \gamma I_h 
+%\\ R'_h &=& \gamma I_h 
+%\\ 
+%S'_v &=& \delta -\beta_v S_v \frac{I_h}{N} - \delta S_v
+%\\ E'_v & = & \beta_v S_v \frac{I_h}{N} - (\delta + \alpha_v) E_v
+%\\ I'_v & = &\alpha_v E_v - \delta I_V
+% \end{array}
+%\end{align}
+%where :
+%
+%$\beta_h$  - Is the rate at which susceptible humans leave the susceptible compartment.
+%
+%$\alpha_h$ -  Is the rate at which exposed people become infectious.
+%
+%$\gamma$ - This is i the rate at which infectious individuals recover or get removed.
+%
+%$\delta$ -This is the birth rate of mosquitoes.
+%
+%$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
+%
