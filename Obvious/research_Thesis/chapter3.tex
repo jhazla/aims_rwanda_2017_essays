@@ -10,9 +10,17 @@ The dynamics of infectious disease propagation are modelled as a dynamical syste
 \mathbb{R}: \mathbb{X}  \times \mathbb{T} \longrightarrow \mathbb{X}.
 \end{equation*}
 
+\Jnote{What is $\mathbb{XT}$? Do you mean Cartesian product? If yes,
+  indicate it explicitly with \textbackslash times.
+Also, it would be good to add a citation for this.}
+
 The population can be characterized as $S(t)$, $E(t)$,$I(t)$ and $R(t)$ . Where $S(t)$ is the number of individuals susceptible but not infected at time $t$, $E(t)$ is the number of people exposed or infected but not infectious at time $t$, $I(t)$ is the number of infected and infectious people at time $t$ and $R(t)$ is the number of people whose  ability to be infected is removed, by either immunization, death or recovery from the disease. The epidemiological models can be classified as Susceptible,Infected and Recovered (SIR) , Susceptible Infected (SIS or SIS) , Susceptible -Exposed - Infectious and Removed (SEIR)  and by any other states the population my be partitioned into.
+\Jnote{It feels to me you are contradicting yourself. If you assume
+  continuous time, I don't think it is accurate to represent the disease
+  evolution as ``rule'' $\mathbb{R}$.}
 
 The SIS model assumes that there is no immunity after recovery> It is used to model infections where once a person recovers they become susceptible again.For example infections like flue. SIR model assumes that once a person recovers they become immune to the infection for example chicken pox. The SEIR assumes that once a person  becomes infected they do not  become infectious immediately hence the intermediate compartment for exposed. 
+\Jnote{s/intermediately/immediately}
 
 The independent variable in the compartmental model is the time $t$ .The rates of transfer between compartments are expressed mathematically as a result models are formulated initially as differential equations.Most epidemic models are built on the SIR model  \citep{m1925applications}. The system can be written as;
 
@@ -27,11 +35,22 @@ The independent variable in the compartmental model is the time $t$ .The rates o
 \end{equation}
 \end{center}
 
- With assumptions that there is homogeneous mixing in the population. That is, the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. Which is the main assumption on which deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. In formulating these models , in terms of derivatives of the sizes of the compartments and it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established  but not valid at the beginning of a disease outbreak. When they are a few infectives, the number of infections depends on random contacts of between small number of individuals.
- 
+\Jnote{Please use consistent notation. $S(t)$ or $S_{(t)}$.}
+
+with assumptions that there is homogeneous mixing in the population. That is the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. Which the main assumption deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. In formulating these models , in terms of derivatives of the sizes of the compartments and it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established  but not valid at the beginning of a disease outbreak, when they are few infectives. When they are a few infectives, the number of infectious depends on random contacts of between small number of individuals.
+\Jnote{Citation would be nice.} 
  On the other hand Stochastic models are obtained by setting by adding a random variable called noise to the transmission dynamics of deterministic models.These random fluctuations may impact the evolution of the infection. Unlike deterministic model which assume homogeneous mix , an assumption which only holds in small populations. It is quiet unlikely that all people in will be equally susceptible to the disease and effective in spreading it \citep{ball1985deterministic}. A stochastic model can be further be described as a model in which the distribution of the length of the infectious period as allowed to have any distribution that can be describe by its Laplace transform \citep{addy1991generalized}.
+\Jnote{This description is vague. Can you give a minimal example of a
+  stochastic model?}
  
- Lets takes an SIR compartmental model, for $t > 0$, $S(t),I(t),R(t)$ is the number of individuals in susceptible, infectious and removed. $N(t)$ the total number of particles at time $t$. The Poisson process, which is the underlying structure basic to the class of stochastic models and all Markov chain processes\citep{greenwood2009stochastic}. The individuals enter each compartment at random times and the initial fixed values , $S(0)$,$I(0)$ and $R(0)$ are fixed for some $\lambda > 0$. Letting $\beta$ to be the average number of  contacts an infectious person makes per unit of time that take leads to infection. The probability of a susceptible individual moving from compartment S to compartment I in the time interval $\left[ t,\triangle t \right]$ that is  S $\rightarrow S-1$ and I $\rightarrow I + 1 $ is $ \beta$ S I $ \triangle t + o (\triangle t)$. If it is assumed the an infected person recovers at the rate $\gamma$ hence the probability of an infected person moving from infected to recovered over an interval $\left[ t,\triangle t \right]$  given by $\gamma I_{t + \triangle t} -o (\triangle t)$ .It is known that,
+ Lets takes an SIR compartmental model, for $t > 0$, $S(t),I(t),R(t)$ is the number of individuals in susceptible, infectious and removed. $N(t)$ the total number of particles at time $t$. The Poisson process, which is the underlying structure basic to the class of stochastic models and all Markov chain processes\citep{greenwood2009stochastic}. 
+\Jnote{It is not clear to me what is the relation of Poisson process to the
+  rest. Explain better.}
+The individuals enter each compartment at random times 
+\Jnote{Why random times? I thought it is $t=0$?}
+and the initial fixed values , $S(0)$,$I(0)$ and $R(0)$ are fixed for some $\lambda > 0$. 
+\Jnote{What is $\lambda$?}
+Letting $\beta$ to be the average number of  contacts an infectious person makes per unit of time that take leads to infection. The probability of a susceptible individual moving from compartment S to compartment I in the time interval $\left[ t,\triangle t \right]$ that is  S $\rightarrow S-1$ and I $\rightarrow I + 1 $ is $ \beta$ S I $ \triangle t + o (\triangle t)$. If it is assumed the an infected person recovers at the rate $\gamma$ hence the probability of an infected person moving from infected to recovered over an interval $\left[ t,\triangle t \right]$  given by $\gamma I_{t + \triangle t} -o (\triangle t)$ .It is known that,
  \begin{align*}
  N_t = S_t + I_t + R_t
  \\ \Rightarrow  R_t = N_t - S_t - I_t
@@ -41,17 +60,27 @@ Which implies that knowing $S_t,I_t$ is knowing $R_t$. Hence the model becomes a
  P((S_{t + \triangle t}, I_{t + \triangle t} - (S_t ,I_t) = ( - 1,1)) =  \beta S I  \triangle t + o (\triangle t).
  \\ P (((S_{t + \triangle t}, I_{t + \triangle t} - (S_t ,I_t) = ( 0,-1)) = \gamma I_{t + \triangle t} -o (\triangle t).
  \end{align}
+ \Jnote{I think you are trying to give an example of a stochastic model,
+   but I realized that only at the end of the paragraph. You should rewrite it.
+   Also give more details about this model. Most important:
+   is time discrete or continuouos?}
 \subsection{Network}
 
 
  A graph also known as a network   can be  defined as triple $G = (V,E)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}. Nodes can be human beings, cities or houses while edges could be any connection such as friendship, physical connection or road.
- A network is said to be connected if there exist a path between any two nodes in the network.Distance between any two nodes in a network is defined as the length of the shortest path by each a node can be reached. This can be summed up as the average distance taken over all, pairs of individuals , which gives the idea of the typical distance between nodes in a network or the diameter of the graph which is the largest distance taken over all pairs.
- \subsection{Statistical Characterization}
+\Jnote{I don't get this definition. Since $E \subseteq V \times V$, what is
+  $f$ for?} 
+A network is said to be connected if there exist a path between any two nodes in the network.Distance between any two nodes in a network is defined as the length of the shortest path by each a node can be reached. This can be summed up as the average distance taken over all, pairs of individuals , which gives the idea of the typical distance between nodes in a network or the diameter of the graph which is the largest distance taken over all pairs.
+\Jnote{Please fix the preceding sentence.} 
+\subsection{Statistical Characterization}
  
  Networks can be characterized by the following statistical properties.
  \begin{itemize}
  \item[i] \textit{\textbf{Degree distribution}}
- The degree of a node is the number of connections a particular node has  and is denoted as $k$  and the average distribution of a network is denoted by $\langle k \rangle$. Looking at the entire space or network one can obtain a distribution for the degree. Let $n(k)$ be the number of nodes of degree $k$  in a network of size $n$, $p(k) = \dfrac{n(k)}{n}$. $p(k)$ represents the probability that a node selected uniformly at random  has degree $k$. the degree distribution is obtained by plotting $p(k)$ against $k$\citep{estrada2015first}. The common distribution found in network are normal distribution, exponential, power law distribution and poisson distribution.
+ The degree of a node is the number of connections a particular node has  and is denoted as $k$  and the average distribution of a network is denoted by $\langle k \rangle$. 
+\Jnote{In this context use \textbackslash langle and \textbackslash rangle instead of
+     $<$ and $>$.}
+Looking at the entire space or network one can obtain a distribution for the degree. Let $n(k)$ be the number of nodes of degree $k$  in a network of size $n$, $p(k) = \dfrac{n(k)}{n}$. $p(k)$ represents the probability that a node selected uniformly at random  has degree $k$. the degree distribution is obtained by plotting $p(k)$ against $k$\citep{estrada2015first}. The common distribution found in network are normal distribution, exponential, power law distribution and poisson distribution.
    \citep{chung2002average}.
    
  \item[ii] \textit{\textbf{Clustering }}
@@ -63,17 +92,27 @@ Which implies that knowing $S_t,I_t$ is knowing $R_t$. Hence the model becomes a
   \\ c_i = \dfrac{2t_i}{k_i(k_i-1)} \nonumber
   \end{align}
    where $t_i $ the  number of triangles attached to node $i$ of degree $k_i$. The Watts-Strogatz clustering coefficient of a node quantifies how close its neighbours are close to making a clique. In terms of friends it quantifies how ones friends are friends with each other. The clustering coefficient  lies between 0 and 1, if it zero then node of a nodes neighbours are connected and  if it is 1 then then all the neighbours of a node are connected to connected to each other.
- 
+\Jnote{Mixing formulas and text is bad style. So s/$t_i=$ e number
+   of/$t_i$ is a number of}
+  
+
  The Newman clustering coefficient is given by
  \begin{equation}
  c = \frac{3t}{p_2} =\dfrac{3|c_3|}{p_2}
  \end{equation}
  where $t = c_3$ number of triangle in the network and $|p_2|$ the number of closed paths of length 2. 
- \end{itemize}
+\end{itemize}
+\Jnote{Please give intuitions behind those coefficients as in Phil's lecture.}
+
  The Newman clustering coefficient or so know as the network clustering coefficient, gives the average clustering for the whole network. Node with less than two neighbours are given 0 as the clustering coefficient.
  A network is said to be small world or to exhibit small world properties if its Newman clustering coefficient is greater than the Watts- strogatz clustering coefficient. That is a network has small world properties it has high clustering coefficent and low average distance \citep{estrada2012structure}.
- \subsection{Random Graphs} 
- A random graph $G(n,p)$ can be defined as , given  $N$ number of vertices, edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$. Taking $z$ to be the average degree. The probability p of and edge being present between any two vertices is given by $p = \frac{z}{n-1}$, for large n can be approximated  $\frac{z}{n}$  \citep{newman2002random}. The number of nodes connected to any particular vertex, the degree $k$ of that vertex has a probability distribution $p_k$ given by;
+ 
+\subsection{Random Graphs} 
+ A random graph $G(n,p)$ can be defined as , given  $N$ number of vertices, edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$. 
+\Jnote{No, a random graph can be sampled from any probability distribution.
+   What you describe is usually called ``$G(n,p)$ random graph''.}
+
+Taking $z$ to be the average degree. The probability p of and edge being present between any two vertices is given by $p = \frac{z}{n-1}$, for large n can be approximated  $\frac{z}{n}$  \citep{newman2002random}. The number of nodes connected to any particular vertex, the degree $k$ of that vertex has a probability distribution $p_k$ given by;
  \begin{equation}
  p_k = \binom{n}{k} p^k (1-p)^{n-k} \approx \frac{z^k e^{-z}}{k!}.
  \end{equation}
@@ -142,8 +181,12 @@ The opposite of a random graph is a completely ordered lattice. An ordered latti
     \caption{Different types of regular lattices}\label{fig2222}
 \end{figure}
 
+\Jnote{Fix the figure: The upper labels are too small and the numbers
+  badly formatted. Also, the labels of vertices are too small to read,
+  just delete them.}
 
 Regular lattices and random graphs have a long history of use in network theory and to model population structures,  gives an example of classic lattice \citep{harris1974contact}.
+\Jnote{Define what a lattice is or at least draw an example.}
 
 The clustering coefficient for a lattice is given as  
 \begin{equation}
@@ -163,6 +206,8 @@ We have shown that lattices are characterised by high clustering coefficients bu
 
 
 Small world networks  were first introduced by Watts and Strogatz as an intermediate between the regular lattice and randomly rewiring certain proportions $p$ of the network links\citep{watts1998collective}. The small world networks allows for random contacts across the network. That is in addition to near neighbours as in a regular lattice, each node has a random distant neighbour connected to it \citep{watts1998collective}.
+\Jnote{Give more precise definition and/or add an example.}
+
 
 The Watts-Strogatz network is essentially a regular lattice with some degree of randomness in the connectivity of vertices. Take for example figure \ref{fig ring} above and we rewire some edges with a some probability $p$, that is one of its ends is moved into a randomly chosen position in the lattice. For a small $p$ this produces mostly a regular graph but with a few connections stretch along distances across the lattice and for $p 1$ it produced a complete graph. Figure \ref below shows Watts- Strogats networks with different probabilities.
 
