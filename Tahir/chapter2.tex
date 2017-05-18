@@ -173,16 +173,17 @@ Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This i
 
 
 \section{The upper bound for XOR game}
-In order to prove what we get is maximum winning  probability we will consider isomorphism between  the first group   which is $G=(\{0,1\},+) \mod(2)$, and it's isomorphic  $ G_1=(\{-1,1\},*)$. In the latter our unitary operators  become hermitian with eigenvalues ${-1,1}$ the property need to proof there is  no existence wining probability greater than this for any choices of Operators Tsirelson’s  upper bound inequality~\citep{Cirel'son1980}using  norm of operators  and along with other inequalities .%\footnote{reference3}
+In order to prove what we get is maximum winning  probability we will consider isomorphism between  the first group   which is $G=(\{0,1\},+ \pmod{2})$, and  $ G_1=(\{-1,1\},*)$. In the latter our unitary operators  become hermitian with eigenvalues $\{-1,1\}$ the property need to proof there is  no existence wining probability greater than this for any choices of Operators Tsirelson’s  upper bound inequality~\citep{Cirel'son1980}using  norm of operators  and along with other inequalities .%\footnote{reference3}
 
-First of all, let's drive the probability from the expectation value.Since, we are no longer dealing with Rotation operators, we can used any Hermitian  operator$H$ with eigenvalue $1,-1$. In the flowing we show How we can obtain the winning probability using the expectation value which is the product  of probability with  eigenvalue of operator.
+First of all, let's drive the probability from the expectation value. Since we are no longer dealing with rotation operators, we can use any Hermitian  operator $H$
+with eigenvalues $1,-1$. In the following we show how we can obtain the winning probability using the expectation values of $A_i$ and $B_i$.
 Let's first rewrite $A\text{ and} B$ using definition\ref{DIA} as.
 \begin{align}\label{NEED}
 A&=\sum_i^n a_i \ket{a}\bra{a}\nonumber\\
 B&=\sum_j^n  b_j \ket{b}\bra{b}\nonumber\\
 \text{then} A\otimes B&=\sum_{j,i}^n  a_i b_j \ket{a\otimes b}\bra{a \otimes b}.
 \end{align}
-That is,eigenvalues of $A\otimes B$ are $a_1 b_1 ,a_1b_2,\dots,a_2 b_1,a_1 b_2,\dots a_n b_n$.But,in our case $a_i,b_j$ are either $1,-1$. According to sign of $A\otimes B$ we have two cases.
+That is,eigenvalues of $A\otimes B$ are $a_1 b_1 ,a_1b_2,\ldots,a_2 b_1,a_1 b_2,\ldots, a_n b_n$.But,in our case $a_i,b_j$ are either $1,-1$. According to sign of $A\otimes B$ we have two cases.
 
 %$A$ and $B$  win when their output is same, whenever, the only situation were win when their out put is different is $x \text{ and} y$ both are equal to $1$.
 
@@ -193,7 +194,7 @@ $\|A\|$%
 Case 1 :
 $x=i,y=j$ for $i,j\in \{0,1\}$ and $(i,j)\neq (1,1)$
 \begin{align*}
-\langle A_i\otimes B_j \rangle=Pr[A,B \text{ out put same} \mid  x=i,y=j]-Pr[A,B \text{ out put diff}  \mid  x=i,y=j]
+\langle A_i\otimes B_j \rangle=\Pr[A,B \text{ output same} \mid  x=i,y=j]-Pr[A,B \text{ out put diff}  \mid  x=i,y=j]
 \end{align*}
 Case 2:
 $x=i,y=j$ for $i,j\in \{0,1\}$ and $(i,j)= (1,1)$
@@ -222,7 +223,7 @@ The  equation \ref{TTP} is contain  Tsirelson’s inequality expression in last 
 \begin{theorem}[Tsirelson’s inequality]
 
 
-Let $\ket{\Psi}$ be entangled state and $A_1,A_2, B_1,B_2$ any choice of Hermitian operators such that, it's eigenvalue $\left[-1,1\right]$,and any state $\ket{\Psi}$ then the flowing  inequality is valid.
+Let $\ket{\Psi}$ be entangled state and $A_1,A_2, B_1,B_2$ any choice of Hermitian operators such that, it's eigenvalue $\left[-1,1\right]$,and any state $\ket{\Psi}$ then the following  inequality is valid.
 
 \begin{align}
 \bra{\Psi}A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\leqslant 2\sqrt{2}\label{TE}
@@ -231,7 +232,7 @@ Let $\ket{\Psi}$ be entangled state and $A_1,A_2, B_1,B_2$ any choice of Hermiti
 \end{theorem}
 
 
-Before we star the formal prove of Tsirelson’s theorem above, we will first examine what happen for norm of Hermitian matrix under the assumption we made.
+Before we star the formal proof of Tsirelson’s theorem above, we will first examine what happen for norm of Hermitian matrix under the assumption we made.
 
 \begin{lemma}
 \label{lem:tensor-norm}
@@ -245,9 +246,7 @@ Also $B$ has eigenvalues $\iota_1,\iota_2,\iota_2,\dots \iota_n$ with eigenvecto
  A\otimes B&=\sum_{j,i}^n  a_i b_j \ket{a\otimes b}\bra{a \otimes b}.
 \end{align}
 
-that is, were the eigenvalues $a_1 b_1,a_1 b_2,\dots,a_1 b_n,a_2b_1,\dots ,a_n b_n$,as will as  the associated  eigenvector  (tensor product of the individual operator eigenvector).
-
-Since the norm of any matrix given by
+Since the norm of any matrix is given by
 \begin{equation}
 \| A \|=\max_{v: \| v\|=1}\| A v\|\label{fact}
 \end{equation}
@@ -255,14 +254,16 @@ using the fact in equation \ref {fact} along with tensor product of two Hermitia
 \end{proof}
 %\Jnote{You need to expand this proof. Maybe add more lemmas in preliminaries.}
 
-Returning back to the prove of  Tsirelson’s inequality the right hand side of equation \ref{TE}  can be substitute by $\| A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\|$ and  using   triangle equality as will as Lemma~\ref{lem:tensor-norm} we have.
+Returning back to the proof of  Tsirelson’s inequality the right hand side of equation \ref{TE}  can be substituted by
+$\left\| \left(A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2
+    \right)\ket{\Psi}\right\|$ and  using   triangle inequality as well as Lemma~\ref{lem:tensor-norm} we have
 \begin{align}
 \bra{\Psi}A_1\otimes B_1 &+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi} \\
 &\leqslant  \| A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\| \nonumber\\
 &\leqslant \| A_1\otimes (B_1+ B_2)\ket{\Psi}\| +\| A_2\otimes( B_1 - B_2)\ket{\Psi}\|\nonumber \\
 &\leqslant \| I\otimes (B_1+ B_2)\ket{\Psi}\| +\| I\otimes( B_1 - B_2)\ket{\Psi}\|\label{eq16}
 \end{align}
-Let's $\ket{\Phi_0}=I\otimes B_1\ket{\Psi} \text{and}\ket{\Phi}=I\otimes B_2\ket{\Psi}$, then we  use  Pythagorean theorem as will as result from lemma \ref{lem:tensor-norm} (the inner product $\bra{\Phi_0}\ket{\Phi_0} \text{ and}\bra{\Phi}\ket{\Phi}$  is at most 1) to  rewrite the right hand side in equation \ref{eq16} as.
+Let $\ket{\Phi_0}=I\otimes B_1\ket{\Psi} \text{and}\ket{\Phi}=I\otimes B_2\ket{\Psi}$, then we  use  Pythagorean theorem as will as result from lemma \ref{lem:tensor-norm} (the inner product $\bra{\Phi_0}\ket{\Phi_0} \text{ and}\bra{\Phi}\ket{\Phi}$  is at most 1) to  rewrite the right hand side in equation \ref{eq16} as.
 \begin{align}
 \| \ket{\Phi_0}+ \ket{\Phi}\| +\| \ket{\Phi_0}- \ket{\Phi}\| = &\sqrt{\bra{\Phi_0}\ket{\Phi_0}+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
 &+\sqrt{\bra{\Phi_0}\ket{\Phi_0}-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
