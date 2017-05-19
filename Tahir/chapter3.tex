@@ -1,18 +1,89 @@
 \chapter{Bell's Theorem via Steering theorem}
 
-Our  main goal in this chapter to drive Bell's non locality through quantum steering with a focus on two qubit bipartite  system and series of measurement using  different assemblies of bases.
-
-
+Our main goal in this chapter to drive Bell's Theory violation through quantum steering with a focus on two qubit maximally entangled system. We also use measurement of three different assembles of orthogonal basis.
 \section{Steering Theory}
 
-In 1935, as demonstration of EPR Schrödinger  introduced the concept of quantum steering in an attempt to formalise the EPR paradox \citep{schrodinger1935discussion},which in it Einstein, Podolsky and Rosen are doubt about the completeness and the reality of Quantum mechanics theory, and they suggested local hidden variable theory as completion of  quantum wave function description of  a physical reality \citep{EPR}. Quantum steering refers to the fact that, in a bipartite scenario,the local measurements  than done by one of the parties can change the state of the other distant party . In 2007,Wiseman, Jones and Doherty formalised steering in terms of the incompatibility of quantum mechanical predictions with a classical-quantum model where pre-determined states are sent to the parties. Furthermore, the observation of quantum steering can also be seen as the detection of entanglement as well as the ability of  accepting local hidden variable description\cite{Jevtic:2015:10.1364/JOSAB.32.000A50}.
+In 1935, as demonstration of EPR Schrödinger introduced the concept of quantum steering in an attempt to formalise the EPR paradox \citep{schrodinger1935discussion},which in it Einstein, Podolsky and Rosen are doubt about the completeness and the reality of Quantum mechanics theory, and they suggested local hidden variable theory as completion of quantum wave function description of a physical reality \citep{EPR}. Quantum steering refers to the fact that, in a bipartite scenario,the local measurements than done by one of the parties can change the state of the other distant party .
+
+Consider two parties space like separated, Alice and Bob, who share a bipartite quantum state $\ket{\Psi}$ with reduced states$\ket{\Psi_A}$ and$\ket{\Psi_B}$ for the two parties, respectively. Alice can perform a collection of local measurements form set of observables $\{M_A\}$ for her part, each local measurement by Alice steer Bob part to new state \citep{book:474706}.To illustrate more, consider Alice has two sets orthogonal basis of ensembles, namely $\{\ket{u_n}\}$ and $\{\ket{v_n}\}$, then Alice part of entangled state $\ket{\Psi}$ for this assembles of basis is given.
+\begin{equation}
+\ket{\Psi}=\sum_n c_n \ket{\phi} \ket{u_n}=\sum_n d_n \ket{\varphi}\ket{v_n}
+\end{equation}
+The fact that $\ket{\phi} \text{ and} \ket{\varphi}$ are different state for Bob part used by EPR in their argument for hidden variables theory, as will as in their claim about incompleteness of Quantum mechanics.
+
+ In 2007,Wiseman, Jones and Doherty formalised steering in terms of the incompatibility of quantum mechanical predictions with a classical-quantum model where pre-determined states are sent to the parties. Furthermore, the observation of quantum steering can also be seen as the detection of entanglement as well as the ability of accepting local hidden variable description\cite{Jevtic:2015:10.1364/JOSAB.32.000A50}.
 
 
-Consider two parties space like separated, Alice and Bob, who share a bipartite quantum state $\ket{\Psi}$ with reduced states$\ket{\Psi_A}$ and$\ket{\Psi_B}$ for the two parties, respectively.  Alice can perform a collection of local measurements form set of observables $\{M_A\}$ for her part, each local measurement by Alice  steer Bob part to  new state  \cite{book:474706}.
 
 
 
 \section{Local hidden variables}
 
+At the first time, hidden variables theory was proposed by Einstein and his co-Authors in EPR \citep{EPR} due to the statistical nature of Quantum mechanics (QM) and the association of different states to one part when local measurement is done on another part. For two remote parties each one have apart of entangled particles. The complete description of physical reality of QM as mentioned in \citep{EPR} must be one to one according to separation Hypothesis. But the appearance of two states for one system as a result of measurement on other system was a problem if one assumes local realism. It would be necessary to construct a new theory adopting different variables from those used in QM in order to get a precise description of the physical reality. This new theory is known as hidden variables theory. Anyway, according to the experimental results arising from the violation of Bell's theorem, which support QM non locality. For any interpretation of QM ( with hidden variables or not) to describe reality of Physical system must preserve non locality QM \cite{PhysRev.85.166}.
 
+In general, in any hidden variable theory, each Qubit has an assigned value for each observable, determined by a hidden variable (or a set of hidden variables) of real
+states $\lambda$. A statistical ensembles of particles has a certain distribution $x(\lambda)$ of the hidden variable and thus the average value of an observable $A$ is given by
+\begin{equation}
+v=\int d \lambda x(\lambda),
+\end{equation}
+where $x(\lambda)$ is the set all hidden variables assigned to the observable $A$.
+
+
+\section{Steering Three assembles }
+
+\begin{theorem}
+Given entanglement state $\ket{\Psi_{AB}}$ of two system $A$ and $B$ the measurement on system $A$ collapse the system $B$ to the ensemble of states$\{\ket{\Phi_i}\}$ with associated probability $p_i$.If and only if 
+\begin{equation}
+\rho_B=\sum_i p_i \ket{\Phi_i} \bra{\Phi_i},
+\end{equation}
+where $\rho_B$ is subsystem density matrix taking according to \ref{DMO}.
+\end{theorem}
+
+
+
+
+
+For the case of steering a reduced system $B$ by two different measurements on $A$ to two ensembles of orthogonal basis $\{\ket{x},\ket{X}\},\{\ket{y},\ket{Y}\}$.
+Where $\ket{x},\ket{X},\ket{y},\ket{Y}$ all different state for $B$.
+It is easy to find a way to presented corresponding quantum state to state over set of real local hidden variable distribution.
+\begin{equation}\label{STTS}
+\rho_B=\frac{1}{2}\ket{x}\bra{x}+\frac{1}{2}\ket{X}\bra{X}=\frac{1}{2}\ket{y}\bra{y}+\frac{1}{2}\ket{Y}\bra{Y}
+\end{equation}
+Let's $v(\lambda)$ donate ensemble of real state for $B$, then according to steering equation in\ref{STTS} ~$v(\lambda)$ must resolve in the flowing form.
+\begin{equation}
+v(\lambda)=\frac{1}{2}x(\lambda)+\frac{1}{2}X(\lambda)=\frac{1}{2}y(\lambda)+\frac{1}{2}x(\lambda)
+\end{equation}
+Hence,$\ket{x},\ket{X}$ and $\ket{y},\ket{Y}$ orthogonal, this means there must be disjoin distribution of real state for $x(\lambda), X(\lambda)$, as will as for $y(\lambda), Y(\lambda)$.
 \section{Steering Between Three Ensembles of Orthogonal State}
+Now we consider the case were $A$ has steered the state of $B$ to three ensembles of orthogonal basis,$\{\ket{x},\ket{X}\}$,$\{\ket{y},\ket{Y}\}$ and $\{\ket{z},\ket{Z}\}$, which all are different states for system $B$.Then the density matrix of system $B$ would be in the flowing form.
+\begin{equation}
+\rho_B=\frac{1}{2}\ket{x}\bra{x}+\frac{1}{2}\ket{X}\bra{X}=\frac{1}{2}\ket{y}\bra{y}+\frac{1}{2}\ket{Y}\bra{Y}=\frac{1}{2}\ket{z}\bra{z}+\frac{1}{2}\ket{Z}\bra{Z}
+\end{equation}
+In a realistic description,every quantum state corresponds to a probability distribution over set of real states $\lambda$.Let's say when entanglement preparation of system $\ket{\Psi}$ the system $B$ has distribution $v(\lambda)$ of real states, then it must be away to reformable $v(\lambda)$ into steering assemblies of $B$ as.
+\begin{equation}
+v(\lambda)=\frac{1}{2} x(\lambda)+\frac{1}{2} X(\lambda)=\frac{1}{2} y(\lambda)+\frac{1}{2}Y(\lambda)=\frac{1}{2}z(\lambda)+\frac{1}{2}x(\lambda).
+\end{equation}
+Where $\delta(\lambda)$,$\delta=x,X,y,Y,z \text{ and}Z$ are donate real state corresponding to quantum state$\ket{\delta}$.
+
+From quantum states orthogonality of $\ket{x} \ket{X}$,it must be possible to find a probability density over some space of real states that can be decomposed into probability densities of $x(\lambda)$ and $X(\lambda)$ which are disjoint.
+
+
+On the other hand,the union of $x(\lambda)$ and $X(\lambda)$ must also be equal to one from the normalization of quantum state.
+\begin{equation}
+S_v=S_X \cup S_X=S_y \cup S_Y=S_z \cup S_z
+\end{equation}
+We can define four disjoin region of real state $\lambda$ to let all consistency satisfiable of quantum state:
+\begin{align*}
+S_1:=&S_x\cap S_y\\
+S_2:=&S_x\cap S_y\\
+S_3:=&S_X\cap S_y\\
+S_4:=&S_X\cap S_Y\\
+\end{align*}
+We also use the notation 
+\begin{equation}
+\eta_j=\int_j d\lambda \eta(\lambda)
+\end{equation}
+Where $j=1,2,3,4$
+
+$x_1=\alpha$
+Similarly  here  we  analyse the restrictions that the incomplete description of reality must obey if measurements of the projectors onto the ensemble 
