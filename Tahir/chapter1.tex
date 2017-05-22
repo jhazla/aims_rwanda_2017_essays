@@ -1,6 +1,6 @@
 \chapter{Introduction}
 
-\section{ mathematical Preliminaries }
+\section{ Mathematical Preliminaries }
 
 
 
@@ -60,8 +60,8 @@ $$\|v_1+v_2+\dots+v_n\|^2=\| v_1\|^2+\| v_2\|^2+\dots +\| v_n\|^2$$
 
 \begin{defn}[Cauchy Schwartz Inequality]\label{CSC}
 
-$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,
-then $\|\bra{y}\ket{x}\|^2~\leq \| \braket{x}{x} \|^2+\|\bra{y} \ket{y} \|^2$
+$\ket{x} ~\ket{y} \in V $ ~ and $V$ is inner product space,
+then $|\bra{y}\ket{x}|^2~\leq |\ket{x} |^2|\ket{y}|^2$
 \end{defn}
 \Jnote{Don't use mid (use it only if it is in the middle). Use braket instead
 of separate bra and ket.} 
@@ -71,15 +71,17 @@ Note that the above notation called Dirac notation $\ket{x}$ vector and $\bra{x}
 \begin{defn}[Diagonalization of Hermitian operators]\label{DIA}
 
 The matrix $A$ said be hermitian matrix if and only if $$A=A^\dagger$$
- For such matrix there is always possibility to find a particular set of orthonormal basis $\{\ket{a_j}\}$ such that in this basis the matrix $A$ is diagonal $\bra{a_j}A\ket{a_k}=0$, that is,  whenever $j\neq k$. The diagonal elements $\bra{a_j}A\ket{a_j}=a_j$ must be real numbers.
-So that we can write $A$ as combination of the orthogonal basis
-$$A=\sum_j a_j \ket{a_j} \bra{a_j}$$s
 \end{defn}
+\begin{prop}\label{prop1}
+For any Hermitian matrix $A$, there is exist possibility to find a particular set of orthonormal basis $\{\ket{a_j}\}$ such that in this basis the matrix $A$ is diagonal $\bra{a_j}A\ket{a_k}=0$, that is,  whenever $j\neq k$. The diagonal elements $\bra{a_j}A\ket{a_j}=a_j$ must be real numbers.
+So that we can write $A$ as combination of the orthogonal basis
+$$A=\sum_j a_j \ket{a_j} \bra{a_j}$$
+\end{prop}
+
+
 
 \section{ Quantum Mechanics Preliminaries }
-\subsection{Quantum Postulates}
-
-
+\subsection{Quantum Postulates}\hfill \break
 We now consider the postulates of quantum mechanics, and their significance.The first postulate describes the mathematical structure we use to represent quantum mechanical systems.
 \begin{itemize}
 \item {Postulate 1}
@@ -105,10 +107,7 @@ The composited state of physical system is given by tensor product of the indivi
 $$\ket{\Psi_1}\otimes\dots \otimes\ket{\Psi_n}$$
 \end{itemize}
 Note that not all kind of composited system can be factorizes for it elementary elements,the composed states that not possible on it such such factorization is called entangled state.
-\subsection{Entanglement}
-
-%\Jnote{Do not insert quotes. Only famous people are allowed to do that.}
-
+\subsection{Entanglement}\hfill \break
 Entanglement is one of most especial and surprising phenomena, which is no analogue to it exists in classical theory of interaction between two particles or more\citep{PhysRevLett.78.5022}.The interacted particle influences by measurement of each another even if they separated, and no longer interacting . This phenomena called spooky action at distance by Einstein in his will known paper~\cite{EPR}.
 
 To demonstrate what the Entangled state, let consider quantum mechanical state that consisting two subsystem, each associated to Hilbert space ,$H_A$ to subsystem $A$ and $H_B$to the subsystem $B$ with complete orthogonal basis $\ket{i}_A \text{and} \ket{j}_B$ where $i,j:1,2,\dots$. 
@@ -122,10 +121,7 @@ Where $c_{ij}$ is complex coefficient and the normalization imply $\sum_{ij} c_{
 The actual demonstration of entanglement by an experiment testing Bell’s inequality, with results favouring quantum mechanics, carried out by Michael Horne ,Clauser and Freedman\citep{PhysRevLett.23.880}.The success of CHSH and its attendant experimental demonstrations received wide attention in the physics literature and open new kind of thinking, such that how one we can implement the quantum mechanics uniqueness.
 
 
-\subsection{Density operators}\label{DMO}
-
-
-
+\subsection{Density operators}\label{DMO}\hfill \break
 Density operator also called (density matrix), which encode all the accessible information about a quantum mechanical system. It turns out that the ideal description of pure states by state vectors $\ket{\Psi}$ on Hilbert Space might not be describe the statistical properties of mixture state, Indeed,this can be done via GNS (Gelfand Neumark-Segal) construction \citep{book:72351}which required some level of knowledge in function analysis to have vectors description for mixture state $\ket{\Psi}$ that preserve all statistical characteristic of quantum mechanical mixture state, which frequently occur in nature.
 
 For any pure state $\ket{\Psi}$ the Density operator $\rho$ given by
@@ -145,8 +141,7 @@ On the other hand, the entangled state is the state that satisfied all those pro
 \end{equation}
 Where $p_i$ is the probability to find the an ensemble system in individual state described by set of orthogonal basis $\ket{\Psi_i} $ ,and $\sum_{i}^n p_i=1$, meanwhile,$\rho_{mix }$ is the state of subsystem which given by taking partial trace over the other particle state.
 
-\subsection{Expectation value from Density Operator}
-
+\subsection{Expectation value from Density Operator}\hfill \break
 The expectation value for observable $A$ in pure a state, represented by density matrix $\rho$ is
 $$\left<A\right>_\rho=Tr(\rho A)$$
 However, we can also express the expectation value of the mixtures state as a convex sum of expectation values of its constituent pure states as, in other word by taking partial trace of density operator of the system to get reduced system. 
@@ -154,8 +149,7 @@ $$\left<A_l\right>= \Tr(\rho^l A)$$
 Where $\rho_l=\Tr_k(\rho^{k,l})$ , and $\rho^{k,l}$ density matrix of state entanglement state.
 
 
-\subsection{Quantum Bits}
-
+\subsection{Quantum Bits}\hfill \break
 In Boolean algebra the bit assumed to be two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the complex Hilbert space $C^2$ , whose basis vectors denoted.
 
 \begin{equation}
