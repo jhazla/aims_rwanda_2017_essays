@@ -6,29 +6,31 @@
 In the model the population is partitioned into three compartments. Susceptible, Infected and Recovered this is the basis for most epidemiological models. \citep{m1925applications}. In building the model the number of individuals Susceptible, Infected and Recovered is assumed to be differentiable over time.
 The simple epidemic model is given by.
 \begin{center}
-\begin{equation} \label{eqn4.1}
+\begin{align} \label{eqn4.1}
 \left.\begin{array}{ccl}
 \frac{dS}{dt} &= &-\beta SI,\\
  \frac{dI}{dt} &=& \beta S I - \gamma  I, \\
  \frac{dR}{dt} &= &\gamma  I,
 \end{array} \right. 
-\end{equation}
+\end{align}
 \end{center}
-\Jnote{I think it's better to use \textbackslash align instead
-  of \textbackslash equation with an array inside.
-  You can look it up in ``not so short introduction to latex''.}
+
 $N = S + I + R$
-The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and Infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population.
+The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and Infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
+\begin{figure}[h!]
+\caption{SIR compartmental diagram}]\label{fig 4.1}
+\centering
+\includegraphics[scale=0.5]{images/sir.jpg}
+\end{figure}
+
 
 
 \subsection{Model Analysis}
-We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S +I+R$ knowing $S$ and $I$ implies that we can solve for  $R$. Hence our system of equations can be reduced to 
+We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S + I + R$ knowing $S$ and $I$ implies that we can solve for  $R$. Hence our system of equations can be reduced to 
 \begin{align}
-\frac{dS}{dt} &= &-\beta SI. \label{eqn4.11} \\
- \frac{dI}{dt} &=& \beta S I - \gamma  I \label{eqn4.22}.
+\frac{dS}{dt} &=-\beta SI. \label{eqn4.11} \\
+ \frac{dI}{dt} &= \beta S I - \gamma  I \label{eqn4.22}.
 \end{align}
-\Jnote{Fix alignment (align has only two columns, usually you separate them
-  after the equal sign).}
  With $S(0) >0$, $I(0) > 0$ and $R(0) =0$ as the initial conditions for the model.
  We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly.That is, we cannot obtain an exact analytical expression for the dynamics of S and I
 though time, instead the model has to be solved numerically.
@@ -40,20 +42,18 @@ Its is important to determine whether the infection will result into an epidemic
 \begin{equation} 
 \frac{dI}{dt} = I \left(\beta S -\gamma \right)\label{4.14}
 \end{equation}
-In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$. Then $\frac{dI}{dt} < 0.$ This implies that there will be no epidemic in this case.
-\Jnote{``This implies'' is not a good choice of words here. I think it gives
-  a good intuition why there will be no epidemic, but the proof
-  is more complicated than that, right?}
+In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$. Then $\frac{dI}{dt} < 0.$ This means that there will be no epidemic in this case.
+
 This result was coined by \cite{m1925applications} and  is what is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur.In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
  
  The reciprocal of the of relative removal rate is called the basic reproductive ratio and is one of the most important quantities in epidemiology . Basic reproduction ratio is defined as the average number of secondary cases arising from an average primary case in an entirely susceptible population. It measures measures the maximum reproductive potential for an infection. For the our SIR model in equation \ref{eqn4.1} it is given by:
 
-\Jnote{Equation missing here.}
- 
-For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0$ value and also depending on the population's contact pattern the $R_0$ value will differ.
 \begin{equation}
 R_0 = \frac{\beta}{\gamma}\label{eqn 4.15}
 \end{equation}
+ 
+For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0$ value and also depending on the population's contact pattern the $R_0$ value will differ.
+
  \subsection{Epidemic Burnout}
  The threshold phenomena give a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state infection. From they system in equation \ref{eqn4.1} we take
  
@@ -62,104 +62,108 @@ R_0 = \frac{\beta}{\gamma}\label{eqn 4.15}
  \\ \frac{dR}{dt}& = \gamma I \label{4.17}
 \intertext{  dividing  equation \ref{4.14} by equation \ref{4.17} we get } \nonumber
 \\ \frac{dS}{dR}& = \frac{-\beta S}{\gamma}
-\\& = R_0 S \label{4.19}
+= R_0 S \label{4.19}
  \end{align}
- \Jnote{Just put whole equation above on one line.}
- Differentiating equation \ref{4.19} with respect to R  we get 
-\Jnote{Differentiating? You are integrating, no?}
+ Integrating equation \ref{4.19} with respect to R, we get; 
  
  \begin{align}
- \int{\dfrac{dS}{S}} = \int{ R_o dR}
- \\ e^{ln S} = e^{-R_0 R + k}
- \\  S(t) = e^{-R_0 R(t)} e^{k}
+ \int{\dfrac{dS}{S}} &= \int{ R_o dR}
+ \\ ln S &= -R_0 R + k
+ \\ e^{ln S} &= e^{-R_0 R + k}
+ \\  S(t) &= e^{-R_0 R(t)} e^{k}
  \intertext {assuming R(0) = 0} \nonumber
  \\ S(t) = S(0)e^{-R_0 R(t)} \label{eqn 4.1.13}
  \end{align}
- \Jnote{Add one more step between the first and second equation above.}
+ 
  Hence as the epidemic develops the number of susceptible reduce, taking into consideration the infectious period there is a lag but eventually the number of recovered start to increase. There number of susceptible in the population will always be above zero as can be seen in equation \ref{eqn 4.1.13}.
+
+From equation \ref{eqn 4.1.13}, $s(t) \geq e^{-R_o}$ since $R(t) <1$. Thus there will always be a proportion of susceptibles in the population.  The epidemic burnout gives the intuitive idea that the chain of transmission eventually breaks due to the decline in infectives not due to lack of susceptibles \citep{haran2009introduction}.
  
- The epidemic burnout gives the intuitive idea that the chain of transmission eventually breaks due to the decline in infectives not due to lack of susceptibles.
- \Jnote{I don't see this intuition. Can you explain more and/or add citation?}
- 
- \subsection{Disease free equilibrium} Adding demographic parameters to \ref{eqn4.1} we get a new system of equations.
- \Jnote{Explain what is the interpretation of ``demographic parameters''.}
+ \subsection{Disease free equilibrium} Adding demographic parameters to \ref{eqn4.1} we get a new system of equations. That is adding a parameter for birth rate and death rate, hence the population is no longer closed in this case.
  
  \begin{align}
- S' = \mu - \beta S I + \mu S \label{1}
- \\ I' = \beta SI - \gamma I -\mu I  \label{2}
- \\ R' = \gamma I - \mu R \label{3}
+ \dfrac{dS}{dt}& = \mu - \beta S I - \mu S \label{1}
+ \\ \dfrac{dI}{dt}&= \beta SI - \gamma I -\mu I  \label{2}
+ \\ \dfrac{dR}{dt} &= \gamma I - \mu R \label{3}
  \end{align}
- \Jnote{Be consistent with notation: S' or dS/dt? Don't you have a typo
- in the first equation?}
- Using the procedure we used to get equation \ref{4.15}
+ 
+ Using the procedure we used to get equation \ref{eqn 4.15}
 it can be shown that the $R_0$ for this model is \begin{equation}
-R_0 = \frac{\beta}{\mu + \gamma}
+R_0 = \frac{\beta}{\mu + \gamma} \label{eqn 4.2.17}
 \end{equation}
  
- Now e calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero.Then solving for I,S and R.
+ Now we calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero, that is $\dfrac{dS}{dt}= \dfrac{dI}{dt}= \dfrac{dR}{dt}= 0$ and denote by $S^*, I^* and R^*$  values of  I,S and R that satisfy the condition ,that this satisfy the condition. 
+ From equation \ref{1} we get
  \begin{align}
- \intertext{from equation \ref{2} we get,} \nonumber
- \\ I (\beta S -(\gamma+ \mu)) = 0
+  \mu -\beta SI - \mu S = 0 
+  \\ \mu - S (\beta I + \mu ) = 0
+  \\ S = \dfrac{\mu}{\beta I + \mu}
+  \end{align}
+ It can be seen that $S^* I^* R^* = (1,0,0)$ is the epidemic free equilibrium.
+ 
+  To establish the endemic equilibrium , we factorize $I$ in  equation \ref{2} and  we get,
+ \begin{align}
+I (\beta S -(\gamma+ \mu)) = 0
  \intertext {thus we get}
  I = 0 \rightarrow S = \frac{\gamma+ \mu}{\beta}
  \end{align}
- Therefore the disease free equilibrium is $I^* = 0$ and $S^* = \frac{\gamma+ \mu}{\beta}$.
- \Jnote{What are $I^*$ and $S^*$? It seems to me that disease-free equlibrium
-   is $S=\mu N$ and $I=0$, please double-check and make corrections.}
- This implies that there will be no epidemic when the number there is no infection in the population.
- \Jnote{Of course there is no epidemic with no infection, there is no need
-   to write that. The point of computing equilibria is different.}
+ Therefore, $I^* = 0$ and $S^* = \frac{\gamma+ \mu}{\beta}$, but since $I^* = 0$ is a disease free equilibrium. We concentrate on $S^* = \frac{\gamma + \mu}{ \beta} = \frac{1}{R_0} $ see \ref{eqn 4.2.17}
  
- To calculate the endemic equilibrium, we take $I \neq  0 $ and solve \eqref{3}. Since $S+R+I =1$
+ Now, we take $I \neq  0 $ and solve \eqref{3}. Since $S+R+I =1$
  \begin{align}
  \gamma I - \mu (1 -S -I) = 0
  \\ \gamma I - \mu I -\mu (1-S) = 0
  \\ I = \frac{\mu}{\beta} R_0 \left( 1- \frac{1}{R_0} \right)
  \\ I = \dfrac{\mu}{\beta} (R_0 -1) 
  \end{align}
- \Jnote{I could not follow the computation above, please state clearly
-   what you are substituting for what.}
+ 
  Thus the endemic equilibrium point $( S^*,I^*,R^*)$ is 
  $\left( \frac{1}{R_0}, \frac{\mu}{\beta} (R_0 -1), 1 -  \frac{1}{R_0} \frac{\mu}{\beta} (R_0 -1) - \frac{1}{R_0} \right)$
+ 
+ 
   \subsection{stability of the model}
  Once an out break occurs its important to understand the long term behaviour of the out break and finding the stability of the model gives an insight on this. In other words calculating the stability of the model is establishing at which point the epedemic burn out will occur.
- \subsection{SEIR Model}
+ \section{SEIR Model}
 The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected they become infectious immediately. In this model an assumption is made that one a person is exposed there is an intermediate stage between the time of infection and when they become infectious, this maybe refereed  to as the latent  or incubation period of the infection.  The will system of equations will be;
 
 \begin{align}
-S'& = \mu -\beta S I  \mu S \\
-E' &= \beta S I - (\mu + \gamma) E  \\
-I' &= \gamma E - (\alpha + \mu I) \\
-R' &= \alpha I  - \mu R 
+S'& = \mu -\beta S I - \mu S \label{5} \\
+E' &= \beta S I - (\mu + \gamma) E  \label{6}\\
+I' &= \gamma E - (\alpha + \mu I) \label{7}\\
+R' &= \alpha I  - \mu R \label{8}
 \end{align}
 where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which exposed people become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
-In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$.
+In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
+\begin{figure}[h1]
+ \caption{SEIR compartmental model}
+ \centering
+ \includegraphics[scale=0.5]{images/seir.png}\label{fig 4.2}
+ \end{figure}
+  
  
-Since $R = 1- S + E + I$
-\Jnote{Typo here}
-it can be dropped from the system and our new system of equations would be, 
-\begin{equation} \label{eqn 4.2.28}
-\begin{array}{ccc}
-S'&=& \mu -\beta S I  \mu S \\
-E' &=& \beta S I - (\mu + \gamma) E  \\
-I' &=& \gamma E - (\alpha + \mu I)
-\end{array}
-\end{equation}
-\Jnote{No need to write exactly the same equations right after the original
-  ones, just say you are dropping the last one. Also correct typo
-  in thefirst equation.}
-We calculate equilibrium point by equating all the equations,in the the system  \ref{eqn 4.2.28} to 0 and solving them. 
+Since $R = 1- S - E - I$
+we can be drop drop equation \ref{8} from the system and  calculate equilibrium point by equating equations \ref{5} to \ref{7} to zero and solving the system of equations.
 
-The disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
-\Jnote{No, I don't think that is correct disease-free equilibrium.}
-Thus is there are infections there will be no epidemic. When $I^* \neq 0$ we find the disease pandemic equilibrium, which is given by
+From equation \eqref{5} we get
+$S = \dfrac{\mu}{\beta I - \mu}$ and from equation \ref{7} we get $I = \frac{\gamma E}{ (\alpha + \mu)}$ and from equation \ref{7} we get $ E = \dfrac{ \beta S I}{(\mu + \gamma)}.$ Thus, for I = 0, E =0 and S = 1 hence, the disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
+
+ When $I^* \neq 0$ we find the disease pandemic equilibrium, which is given by
 \begin{equation*}
 S^*, E^*, I^*  = \left(\frac{(\alpha + \mu)(\gamma + \mu)}{\beta \gamma} , \frac{\alpha + \mu }{ \gamma} I^*, \frac{\mu}{\beta S*} \frac{\mu}{\beta} \right).
 \end{equation*}
 
-The reproductive number $R_0$ is given by the spectral radius $FV^{-1}$.  Where  
-$ V = \left[\dfrac{\partial V_i(x*}{\partial j} \right],  F = \left[ \frac{\partial F_i (x^*)}{\partial j}\right]$,  $x^*$, $V_i (x)$  the disease equilibrium and transition rate from one component to the other respectively. $F_i(x^*)$ is the  number of infections in component $i$ and is a non singular matrix.
-\Jnote{Where does this come from? Give citation or explanation.}
+The reproductive number $R_0$  will be calculated using the new generation matrix method. Let F and V be non negative matrices,
+\begin{equation}
+F = \left[ \frac{\partial F_i (x^*)}{\partial j}\right]
+\end{equation}  Where  $F_i (x^*)$ are the rates of new infections in compartment $i$ and 
+\begin{equation}
+ V = \left[\dfrac{\partial V_i(x*}{\partial j} \right]
+\end{equation}
+  Where $V_i (x^*)$ are the rates of transfer of infection from one compartment to another \citep{van2002reproduction}.
+  $F =\left(\begin{array}{cc} 
+0&0 \\ \beta&0
+\end{array} \right)$ and $V = \left(\begin{array}{cc} \gamma + \mu & \gamma \\ 0& \alpha + \mu \end{array} \right)$
+
 
 Therefore,
 \begin{equation}\label{4.2.29}
@@ -173,20 +177,19 @@ FV^{-1} = \left(\begin{array}{cc}
 \end{array}\right)
 \end{equation}
 
-The equation \ref{4.2.29} has eigenvalue values $\lambda_1$ , $lambdad$ as 0 and $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$ respectively.
+The equation \ref{4.2.29} has eigenvalue values $\lambda_1$ , $\lambda_2$ as 0 and $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$ respectively.
  \begin{equation}
  R_0 = max {|\lambda_1| |\lambda_2|}
  \end{equation}
-Thus the $R_0$ for the system will be $\frac{- \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$.
+Thus the $R_0$ for the system will be $\frac{ \beta\gamma}{(\alpha +\mu)+ (\gamma + \mu)}$.
 
-It can be shown that the stationary point (1,0,0) is asymptotically stable which implying that $R_0 <1$ and the pandemic  equilibrium $R_1 >1$ meaning the disease will persist.
-\Jnote{I don't understand your last sentence.}
+For the disease free equilibrium (1,0,0)is asymptotically stable if $R_0 < 1$ and unstable if $R_0 > 1$ \citep{van2002reproduction}. That is the solutions of the systems of equations \ref{5} \ref{7} move towards the disease free equilibrium when $R_0 < 1$.
 
 \subsection{Other Compartmental Models.}
 
 There are several other types of compartmental model and epidemiologist tend to include additional components. Here are some of the models that can be used to model infectious diseases.
 
-\subsection{SI} The susceptible infected model assumes that once someone is infected there is no recovery. Hence it has only two components and it is used to model infectious like HIV and other incurable infectious diseases. The description of the short term and long term behaviour of the model can be calculated similar to the SIR model.
+\subsection{SI} The susceptible infected model assumes that once someone is infected there is no recovery. Hence it has only two components and it is used to model infectious like HIV and other incurable infectious diseases. The description of the short term and long term behaviour of the model can be calculated similar to the SIR model. 
  
 
 %We examine the  behaviour of the stationary points by checking for their stability , we check the stability  of the system \ref{eqn 4.2.28}.

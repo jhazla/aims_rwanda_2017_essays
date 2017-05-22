@@ -1,59 +1,28 @@
-\chapter{Third Chapter}
+\chapter{Anti-$k_{t}$ Jet Algorithm}
 
-Theorems before the chapter's first section will be dot-zero, 
-and their numbering is completely wrong. You can avoid this
-by simply always starting a chapter with a section. Ta Da! 
-It will probably help you structure your essay anyway. 
+\section{Introduction}
+After the process of the splitting and branching, the quarks and gluons start to hadronize leading to a collimated spray of stable colourless hadrons called jets. 
 
-\begin{thm}[My Theorem2]
-This is my theorem2.
-\end{thm}
-\begin{proof}
-And it has no proof2.
-\end{proof}
+The QCD calculations provide a description of a final state in terms of the quark and gluons, however, in practical and due to confinement phenomenon those quarks and gluons can not be observed, the detectors can only observe those stable colourless hadrons. 
 
-\section{See?}
+The jet reconstruction is essential in understanding the link between the observed physics or the long distance physics and the underlying physics(short distance physics) in the parton level. Also, the accurate reconstruction is very important in comparing the theoretical predictions and the data. 
 
-Text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text.
+This mapping between the stable hadrons(observed physics) and the partons(unobserved) from the hard scattering is done by the means of the jet algorithms. 
 
-\begin{thm}[My Theorem2]
-This is my theorem2.
-\end{thm}
-\begin{proof}
-And it has no proof2.
-\end{proof}
+Jet algorithms basically rely on merging, means that they merge objects that are somehow nearby each other.  As for the accuracy of the algorithm we assume that the kinematics of the clustered jet provide a useful measure of the kinematics of the underlying short distance physics, in particular we assume the basic mismatch between the long observed hadrons and short distance unobserved partons does present any numerical limitations \citep{Ellis:2007ib}. 
 
-Text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text.
+    
+The definition of the jet is central in comparing the data and the theoretical predictions, the definition is provided in the form of the jet algorithm, this means the jet algorithm and its corresponding parameters and recombination scheme, we will talk more about this in the following. In this part of the essay we will talk a bout the general idea of the jet algorithms and some of their properties and we will focus on one of them, the $anti-k_{t}$ and it is implementation in python.  
 
-\begin{align} % do not use eqnarray. 
-\label{2ya}
-x & = y + y\\
-\label{2yb}
-& = 2y
-\end{align}
-see equations \eqref{2ya} and \ref{2yb}
+\section{Jet Algorithms}
 
-\section{More}
+There are two broad classes of jet algorithms, the \textbf{Cone} algorithms and the \textbf{Sequential} algorithms. Where both of them work on defining the jets by the idea of the nearness.
 
-Here's a conjecture
-\begin{conj}
-The washing operation has fixed points.
-\end{conj}
+It is important to recognize that jet algorithms involve two distinct steps. The first step is to identify the members of the jet, \textit{i.e}, the partons that make-up the final stable jets. The second step is to construct the kinematic properties that will characterize the jet \citep{Berger:2002jt}.
+  
+\subsection{The Cone Algorithms}
+The cone algorithms associate hadrons into jets by identifying those are nearby in angle, $i.e$, they follow the geometrical intuition in defining the jets, where the jet is composed of hadrons and partons, whose momenta lie within a cone defined by  a circle in $\eta-\phi$ plane. Where $\eta$ is the pseudo-rapidity and can be calculated by $\ln(\cot \frac{\phi}{2})$, and $\phi$ is the azimuthal angle \citep{Berger:2002jt}. 
 
-and here's an example
+As for the first step in the algorithm, \textit{i.e}, identifying the members of the jet, it is a simple sum over the all (short and long distances) within a cone centred at $\eta-\phi$ plane. Here one introduces the concept of \textit{stable} cones as a circle of fixed radius \textit{R} in the plane $\eta-\phi$. Such that the sum of all four momenta within the cone points to the same direction as the centre of the circle. The cone algorithms attempts to identify the stable cones. Thus, at least in principle one can think in terms of placing trial cones randomly in the plane $\eta-\phi$  and allowing them to follow until a stable cone or a jet is found \citep{Ellis:2007ib}.
 
-\begin{exa}
-100 FRW coin.
-\end{exa}
-
-\subsection{This is a subsection}
-
-\section{This is a section}
+     
