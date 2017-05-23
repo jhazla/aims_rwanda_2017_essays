@@ -194,7 +194,7 @@ $[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$.
 \end{theorem}
 
 \begin{proof}\hfill \break
-We will divided the proof for two part,In the first part we drive general solution for $z_i$ in terms of $[\alpha, \beta, \gamma]$ such that consistency conditions for LHV theory description gives a result same as quantum mechanics description, using simple assumption for the values of $\alpha,\beta $\footnote{similarly, a simple assumption for $\alpha,\gamma $ lead to general solution for $z_i$ in the form  $\beta$ value .}.
+We will divided the proof for two part,In the first part we drive general solution for $z_i$ in terms of $[\alpha, \beta, \gamma]$ such that consistency conditions for LHV theory description gives a result same as quantum mechanics description, using simple assumption for the values of $\alpha,\beta $.
 
 
 In the second part, we will use the same simple assumptions for Convex hull of the points $[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$  to show how it flow our result in part one.
@@ -208,7 +208,7 @@ Z_4=&\alpha-z_4\label{nik2}\\
 Z_3=&1-\alpha-z_3\label{nik3}\\
 Z_2=&1-\alpha-z_2\label{nik4}
 \end{align}
-By substituting the value of $Z_i$ in equations \ref{nik1}to \ref{nik4} into equations \ref{Zies5} to \ref{Zies8} we see that these equations repetition for equations \ref{Zies1} to \ref{Zies4}, this reduce our consistency condition to.
+By substituting the value of $Z_i$ in equations from \ref{nik1}to \ref{nik4} into equations \ref{Zies5} to \ref{Zies8} we see that these equations repetition for equations \ref{Zies1} to \ref{Zies4}, this reduce our consistency condition to.
 \begin{align}
 z_1+z_2&=\beta\label{z1}\\
 z_1+z_3&=\gamma\label{z2}\\
@@ -217,7 +217,7 @@ z_3+z_4&=1-\beta\label{z3}\\
 0\leq z_1,z_4& \leq \alpha\label{z5}\\
 0\leq z_2,z_3 &\leq 1- \alpha\label{z6},
 \end{align}
-but system of equations from \ref{z1} to \ref{z6} equivalent to,
+but solving the system of equations from \ref{z1} to \ref{z6} equivalent to solving the following system,
 \begin{align}
 z_1+z_2&=\beta\label{z1}\\
 z_2+z_4&=1-\gamma\label{z42}\\
@@ -226,38 +226,59 @@ z_3+z_4&=1-\beta\label{z32}\\
 0\leq z_2,z_3 &\leq 1- \alpha\label{z62},
 \end{align}
 To solve this system of linear equations we will use analytical approach, which in it we use quantum theory prediction $\beta, \alpha \text{ and } \gamma$ has to be have value in range $[0,1]$.
-Since the solution is trivial when $\beta=\alpha=\gamma$, as  we demonstrated in section \ref{Triv},then we have six possible cases.
+Since the solution is trivial when $\beta=\alpha=\gamma$, as  we demonstrated in section \ref{Triv}, then we have eight  possible cases.
 
 \begin{itemize}
 \item[• Case 1.] $1-\beta \leq 1-\alpha \leq \alpha \leq \beta$
 
 Under this possibility  solution of the system of equations form  \ref{z1} to\ref{z62} equivalent to the solution of the following system of equations.
 \begin{align*}
-0 \leq &z_2 \leq \beta\\
-\alpha- \beta \leq &z_4 \leq \alpha\\
+\beta -\alpha\leq &z_2 \leq 1-\alpha\\
+0 \leq &z_4 \leq 1-\beta\\
 z_2+z_4&=1-\gamma
 \end{align*}
-which has a general solution.
-\begin{equation}
-\alpha-\beta \leq1-\gamma \leq \beta+\alpha
+which has a general solution in terms of $\alpha,\beta \text{ and } \gamma$.
+\begin{equation}\label{zc1}
+ \beta -\alpha\leq1-\gamma \leq 2-\beta-\alpha
 \end{equation}
 for all $\alpha,\beta \in [0.5,1]$ and $, \gamma \in [0,1]$
 \item[• Case 2.] $1-\beta \leq \alpha \leq 1-\alpha \leq \beta$
 
 Under these assumption solving the system of equation form  \ref{z1} to\ref{z62} equivalent to 
 \begin{align*}
-\beta-\alpha \leq &z_2 \leq \beta\\
-0 \leq &z_4 \leq \alpha\\
+\beta-\alpha \leq &z_2 \leq 1-\alpha\\
+0 \leq &z_4 \leq 1-\beta\\
 z_2+z_4&=1-\gamma
 \end{align*}
 which has a solution in form.
-\begin{equation}
-\beta-\alpha \leq1-\gamma \leq \beta+\alpha
+\begin{equation}\label{zc2}
+\beta-\alpha \leq1-\gamma \leq 2-\alpha-\beta
 \end{equation}
 for $\alpha \in [0,0.5]$, $\beta\in [0.5,1]$ and $\gamma \in [0,1]$.
+\item[• Case 3.] $\beta \leq \alpha \leq 1-\alpha \leq 1-\beta$
 
-
-\item[• Case 3.] $\alpha\leq \beta \leq 1-\beta \leq 1-\alpha$.
+Under this condition solution for the system of equations take the following form
+\begin{align*}
+0&\leq z_2\leq \beta\\
+\alpha-\beta&\leq z_4\leq \alpha\\
+z_2&+z_4=1-\gamma.
+\end{align*}
+Which can be rewritten in the following form.
+\begin{equation}\label{zc3}
+\alpha-\beta \leq 1-\gamma \leq \alpha+\beta
+\end{equation}
+\item[• Case 4.] $\beta \leq 1-\alpha \leq \alpha \leq 1- \beta$
+the system of equation has solution in form
+\begin{align*}
+0&\leq z_2 \leq\beta\\
+\alpha-\beta&\leq z_4\leq \alpha\\
+z_2&+z_4=1-\gamma
+\end{align*}
+In this the general solution is
+\begin{equation}\label{zc4}
+\alpha-\beta \leq 1-\gamma \leq \alpha+\beta
+\end{equation}
+\item[• Case 5.] $\alpha\leq \beta \leq 1-\beta \leq 1-\alpha$.
 
 Under these assumption finding solution for system of equations from \ref{z1} to\ref{z62} equivalent to solving the following inequality.
 \begin{align*}
@@ -266,22 +287,44 @@ Under these assumption finding solution for system of equations from \ref{z1} to
 z_2+z_4&=1-\gamma
 \end{align*}
 which has solution in the following form
-\begin{equation}\label{case3 p1}
+\begin{equation}\label{zc5}
 \beta-\alpha \leq1-\gamma \leq \beta+\alpha
 \end{equation}
 for all $\alpha,\beta \in [0,0.5]$ and $\gamma \in [0,1]$.
+\item[• Case 6.]$\alpha\leq  1-\beta \leq \beta \leq 1-\alpha$
+In this case the system in has the flowing form
+\begin{align*}
+\beta - \alpha&\leq z_2 \leq \beta\\
+0 \leq z_4 &\leq \alpha\\
+z_2+z_4&=1-\gamma
+\end{align*}
+then the system solution take the following form
+\begin{equation}\label{zc6}
+\beta-\alpha \leq 1-\gamma \leq \alpha+\beta
+\end{equation}
+\item[• Case 7.] $1-\alpha\leq  \beta \leq 1-\beta \leq \alpha$:
 
-\item[• Case 4.] $1-\alpha\leq  \beta \leq 1-\beta \leq \alpha$:
+in this case our system solution flow this form
+\begin{align*}
+0\leq z_2&\leq 1-\alpha\\
+\alpha-\beta &\leq z_4\leq 1-\beta\\
+z_2+z_4&=1-\gamma
+\end{align*}
+then the system solution take the following form
+\begin{equation}\label{zc7}
+\alpha-\beta \leq 1-\gamma \leq 2-\alpha-\beta
+\end{equation}
+\item[• Case 8.] $1-\alpha\leq 1- \beta \leq \beta \leq \alpha$:
 
 Under this assumption solving the system equations from \ref{z1} to\ref{z62}, this equivalence to the following system of inequality.
 \begin{align*}
-0 \leq &z_2 \leq \beta\\
- \alpha-\beta \leq &z_4 \leq \alpha\\
+0 \leq &z_2 \leq 1-\alpha\\
+ \alpha-\beta& \leq z_4 \leq1 -\beta\\
 z_2+z_4&=1-\gamma
 \end{align*}
 which has solution in the following form
-\begin{equation}
-\alpha-\beta \leq1-\gamma \leq \beta+\alpha
+\begin{equation}\label{zc8}
+\alpha-\beta \leq1-\gamma \leq 2-\beta-\alpha
 \end{equation}
 for all $\alpha \in [0.5,1]$, $\beta \in [0,0.5]$ and  $\gamma \in [0,1]$.
 \end{itemize}
@@ -290,31 +333,43 @@ Part 2:
 
 Any points $[\alpha,\beta,\gamma]$ in convex hull of the points $[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$ can be satisfied the following set of linear equations.
 \begin{align}
-\alpha+\beta+\gamma \geq 1\label{con1}\\
-\alpha+\beta-\gamma \leq 1\label{con2}\\
-\alpha-\beta+\gamma \leq 1\label{con3}\\
--\alpha+\beta+\gamma \leq 1\label{con4},
+\alpha+\beta+\gamma &\geq 1\label{con1}\\
+\alpha+\beta-\gamma &\leq 1\label{con2}\\
+\alpha-\beta+\gamma &\leq 1\label{con3}\\
+-\alpha+\beta+\gamma &\leq 1\label{con4},
 \end{align}
 for all, $ \alpha, \beta \text{ and }\gamma \in [0,1]$.
 
-By applying same assumptions as in part 1 (case 1 to case 4), we will do analysis to the system of linear  inequality above case by case in an attempts to drive the general solution of $z_i$ in term of $ \alpha, \beta \text{ and }\gamma$.
+By applying same assumptions as in part 1 (case 1 to case 8), we will solve this system of linear  inequalities above in an attempts to drive the general solution of this system same as the one we have for $z_i$ in term of $ \alpha, \beta \text{ and }\gamma$.
 \begin{itemize}
-\item[• Case 1:] Under the same assumptions as in case 1 part 1 ($1-\beta \leq 1-\alpha \leq \alpha \leq \beta$), we have.
-\begin{equation}
-\alpha-\beta \leq1-\gamma \leq \beta+\alpha
-\end{equation}
-\item[• Case 2:]
+\item[• Case 1 and  2.] $1-\beta \leq 1-\alpha,\alpha ,1-\alpha \leq \beta$.
 
-\item[• Case 3:] By using the corresponding  assumption from part 1, which is $\alpha\leq \beta \leq 1-\beta \leq 1-\alpha$ the system of linear inequalities from \ref{con1} to \ref{con4} reduced to
-\begin{align}
-\alpha+\beta+\gamma \geq 1\\
--\alpha+\beta+\gamma \leq 1
-\end{align}
-which can be rewrite as
-\begin{equation}\label{case4}
-\beta -\alpha \leq 1-\gamma \leq \alpha+\beta.
+Equations \ref{con1} and \ref{con1} not necessary condition under those cases, so from equations \ref{con3} and \ref{con4} we have
+\begin{equation}
+\beta-\alpha \leq 1-\gamma \leq 2-\beta-\alpha, 
 \end{equation}
-But the equation  \ref{case4} same as equation \ref{case3 p1}.
-\item[• Case 4:]
+but this same as what get for case 1 and case 2 in equations \ref{zc1} and \ref{zc2}
+\item[• Case 3  and 4.] $\beta \leq \alpha,1-\alpha ,\alpha\leq 1-\beta$
+
+For both case 3 and 4 the equations \ref{con4} and \ref{con2} are not necessary condition, so we have the following result from \ref{con1} and \ref{con3} 
+\begin{equation}\label{chc3}
+\alpha-\beta \leq 1-\gamma \leq \alpha+\beta.
+\end{equation}
+The result in \ref{chc3} is same as in \ref{zc3} and \ref{zc4}
+
+\item[• Case 5 and 6.] $\alpha\leq \beta,\ 1-\beta ,\beta\leq 1-\alpha$.
+For those case equations \ref{con3} and \ref{con2} extra constraints, this implies the result below.
+\begin{equation}
+\beta -\alpha \leq 1-\gamma\leq \beta +\alpha
+\end{equation}
+since the equation above it same as equations \ref{zc5} and \ref{zc6}
+\item[• Case 7 and 8.] $1-\alpha \leq 1-\beta,\beta ,1-\beta \leq \alpha$.
+
+Equation \ref{con1} and \ref{con1} are not necessary condition under those cases, so from equations \ref{con3} and \ref{con4} we have
+\begin{equation}
+\beta-\alpha \leq 1-\gamma \leq 2-\beta-\alpha, 
+\end{equation}
+This result the exact result in equations \ref{zc7} and \ref{zc8}.
 \end{itemize}
+Hence, the general solution for the local hidden variables equations  and convex hull of the given points gives  same result for  all possible arrangement of $\alpha, \beta , \gamma \in [0,1]$.
 \end{proof}
