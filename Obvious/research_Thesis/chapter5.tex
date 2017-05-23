@@ -112,7 +112,7 @@ n_1 p_1 + \mu p_2 \approx \dfrac{R_0}{r_1}
 \\ n_1 p_1 + \mu p_2 \approx 0.2586
 \end{align}
 thus, 
-$p_1 =  1.034 - 0.25 \mu p_2$
+$p_1 \approx   0.0645- 0.25 \mu p_2$
 
 We can summarize the parameters of the models as;
 \begin{align}
@@ -120,7 +120,7 @@ n_1 &= 4 \\
 \mu &= 8 \\
 r_0 &= \dfrac{1}{11.2} \approx 0.089 \\
 r_1 &= \dfrac{1}{17.4} \approx 0.057 \\
-p_1 &= 1.034 - 2 p_2
+p_1 &= 0.0645 - 2 p_2 \label{eqn 5.1.7}
 \end{align}
 Now we have one free parameter. We can now estimate the number of new infections by;
 \begin{align}
@@ -130,3 +130,30 @@ Where k is the average number of near neighbours' links that support possible in
 \begin{align}
 E(- \bigtriangleup S) = (2 p_1 + 8 p_2 - 0.057) I  \label{5.1.9}
 \end{align}
+ For each infected vertex the number of secondary infections per day is $(n_1kp_1 + \mu p_2)$ the total will be;
+ \begin{align}
+ n_k r_1  + n_k(1-r_1)r_1 + n_k (1-r)^2 r_1 +...+ n_k(1-r_1)^n r_1 +... \label{eqn 5.1.10}
+ \end{align}
+ 
+ We let $(1-r) = X$ in equation \ref{eqn 5.1.10} such that $0 \leq X \leq 1$ and $n_k =n_1kp_1 + \mu p_2$, we can see that its  a geometric progression and the sum is give by,
+ \begin{align}
+ n_k r_1 (1 + X + X^2 +...+ X^n+...) &= n_k r_1 \left(\dfrac{1 + X^n}{1 - X} \right)
+ \\ \intertext{as, $n \longrightarrow \infty \nonumber$}
+ \\ n_k r_1 (1 + X + X^2 + X^3+ X^n+...) &= n_k r_1 \left(\dfrac{1}{1 - X} \right)
+ \\ n_k r_1 \dfrac{d}{dX}(1 + X + X^2 + X^3+ X^n+...) &= n_k r_1 \dfrac{d}{d X}\left(\dfrac{1}{1 - X} \right) 
+ \\n_k r_1 ( 1 + 2X +\dots+ n X^{n-1} + \dots )&= n_k r_1   \dfrac{1}{1- X^2}
+ \\ n_k r_1 ( 1 +2(1-r_1) + 3(1 -r_1) + \dots )&= \dfrac{n_k}{r_1}
+ \end{align}
+ The average number of new infections is 4.5 hence;
+ \begin{equation}
+ 2p_1 + 8 p_2 = 0.2565\label{eqn 5.16}
+ \end{equation}
+  
+ From equation \ref{eqn 5.1.7} and \ref{eqn 5.16} we can estimate the value of $p_2$ as;
+ \begin{align*}
+  2(0.0645 -2p_2) +8 p_2 = 0.2565
+  \\p_2 \approx 0.03187
+ \end{align*}
+ 
+
+ 
