@@ -41,8 +41,8 @@ with assumptions that there is homogeneous mixing in the population. That is the
 \Jnote{This description is vague. Can you give a minimal example of a
   stochastic model?}
  
- Lets takes an SIR compartmental model, for $t > 0$, $S(t),I(t),R(t)$ is the number of individuals in susceptible, infectious and removed. $N(t)$ the total number of particles at time $t$. The Poisson process, which is the underlying structure basic to the class of stochastic models and all Markov chain processes\citep{greenwood2009stochastic}. 
-\Jnote{It is not clear to me what is the relation of Poisson process to the
+ Lets takes an SIR compartmental model, for $t > 0$, $S(t),I(t),R(t)$ is the number of individuals in susceptible, infectious and removed. $N(t)$ the total number of particles at time $t$. The poisson process, which is the underlying structure basic to the class of stochastic models and all Markov chain processes\citep{greenwood2009stochastic}. 
+\Jnote{It is not clear to me what is the relation of poisson process to the
   rest. Explain better.}
 The individuals enter each compartment at random times 
 \Jnote{Why random times? I thought it is $t=0$?}
@@ -65,19 +65,17 @@ Which implies that knowing $S_t,I_t$ is knowing $R_t$. Hence the model becomes a
 \subsection{Network}
 
 
- A graph also known as a network   can be  defined as triple $G = (V,E)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}. Nodes can be human beings, cities or houses while edges could be any connection such as friendship, physical connection or road.
-\Jnote{I don't get this definition. Since $E \subseteq V \times V$, what is
-  $f$ for?} 
-A network is said to be connected if there exist a path between any two nodes in the network.Distance between any two nodes in a network is defined as the length of the shortest path by each a node can be reached. This can be summed up as the average distance taken over all, pairs of individuals , which gives the idea of the typical distance between nodes in a network or the diameter of the graph which is the largest distance taken over all pairs.
-\Jnote{Please fix the preceding sentence.} 
+ A graph also known as a network   can be  defined as couple $G = (V,E)$ where $V$ is a finite set of nodes $E \subset V \oplus V = \left\lbrace e_1,e_2,\dots ,e_m \right\rbrace$ is a set and f is a mapping which associates some elements of $E$ to a pair of elements of $V$ \citep{estrada2012structure}. Nodes can be human beings, cities or houses while edges could be any connection such as friendship, physical connection or road.
+
+A network is said to be connected if there exist a path between any two nodes in the network.Distance between any two nodes in a network is defined as the length of the shortest path by which each a node can be reached. This can be summed up as the average distance taken over all pairs of vertices , which give the idea of the typical distance between nodes in a network. The diameter of the graph  is the largest distance taken over all pairs.
+
 \subsection{Statistical Characterization}
  
  Networks can be characterized by the following statistical properties.
  \begin{itemize}
  \item[i] \textit{\textbf{Degree distribution}}
  The degree of a node is the number of connections a particular node has  and is denoted as $k$  and the average distribution of a network is denoted by $\langle k \rangle$. 
-\Jnote{In this context use \textbackslash langle and \textbackslash rangle instead of
-     $<$ and $>$.}
+
 Looking at the entire space or network one can obtain a distribution for the degree. Let $n(k)$ be the number of nodes of degree $k$  in a network of size $n$, $p(k) = \dfrac{n(k)}{n}$. $p(k)$ represents the probability that a node selected uniformly at random  has degree $k$. the degree distribution is obtained by plotting $p(k)$ against $k$\citep{estrada2015first}. The common distribution found in network are normal distribution, exponential, power law distribution and poisson distribution.
    \citep{chung2002average}.
    
@@ -90,8 +88,6 @@ Looking at the entire space or network one can obtain a distribution for the deg
   \\ c_i = \dfrac{2t_i}{k_i(k_i-1)} \nonumber
   \end{align}
    where $t_i $ the  number of triangles attached to node $i$ of degree $k_i$. The Watts-Strogatz clustering coefficient of a node quantifies how close its neighbours are close to making a clique. In terms of friends it quantifies how ones friends are friends with each other. The clustering coefficient  lies between 0 and 1, if it zero then node of a nodes neighbours are connected and  if it is 1 then then all the neighbours of a node are connected to connected to each other.
-\Jnote{Mixing formulas and text is bad style. So s/$t_i=$ e number
-   of/$t_i$ is a number of}
   
 
  The Newman clustering coefficient is given by
@@ -100,10 +96,15 @@ Looking at the entire space or network one can obtain a distribution for the deg
  \end{equation}
  where $t = c_3$ number of triangle in the network and $|p_2|$ the number of closed paths of length 2. 
 \end{itemize}
-\Jnote{Please give intuitions behind those coefficients as in Phil's lecture.}
 
- The Newman clustering coefficient or so know as the network clustering coefficient, gives the average clustering for the whole network. Node with less than two neighbours are given 0 as the clustering coefficient.
- A network is said to be small world or to exhibit small world properties if its Newman clustering coefficient is greater than the Watts- strogatz clustering coefficient. That is a network has small world properties it has high clustering coefficent and low average distance \citep{estrada2012structure}.
+ The Newman clustering coefficient or so know as the network clustering coefficient, gives the average clustering for the whole network. Node with less than two neighbours are given 0 as the clustering coefficient. It looks at the clustering over the whole network.
+ 
+ In a social network if a person A is friends with person B and B friends with C most likely A will be introduced to C and the two will know each other. This will result in the three forming a triangle. The clustering coefficient either global or local gives a proportion of how many such triangles are there and how many are likely to exist. The local will give this value in relation to a particular node while the global will give the value over the entire  network \citep{estrada2015first}.
+ 
+ A network is said to be small world or to exhibit small world properties if its Newman clustering coefficient is greater than the Watts- strogatz clustering coefficient. That is a small world network has a high clustering coefficient and low average distance \citep{estrada2012structure}. A small world property can be defined as let $D$ be the average distance between any pair of vertices in a network, if $D$ increase proportionally to the logarithm of the size of the network$N$ \citep{newman1999scaling}.That is,
+ \begin{equation}
+ D \propto \log N
+ \end{equation}
  
 \subsection{Random Graphs} 
  A random graph $G(n,p)$ can be defined as , given  $N$ number of vertices, edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$. 
@@ -198,7 +199,6 @@ We have shown that lattices are characterised by high clustering coefficients bu
 
 
 Small world networks  were first introduced by Watts and Strogatz as an intermediate between the regular lattice and randomly rewiring certain proportions $p$ of the network links\citep{watts1998collective}. The small world networks allows for random contacts across the network. That is in addition to near neighbours as in a regular lattice, each node has a random distant neighbour connected to it \citep{watts1998collective}.
-\Jnote{Give more precise definition and/or add an example.}
 
 
 The Watts-Strogatz network is essentially a regular lattice with some degree of randomness in the connectivity of vertices. Take for example figure \ref{fig ring} above and we rewire some edges with a some probability $p$, that is one of its ends is moved into a randomly chosen position in the lattice. For a small $p$ this produces mostly a regular graph but with a few connections stretch along distances across the lattice and for $p 1$ it produced a complete graph. Figure \ref below shows Watts- Strogats networks with different probabilities.
