@@ -31,7 +31,7 @@
 % 
 % For figures:
 \usepackage[below]{placeins} % use \FloatBarrier in the body
-% \usepackage{float}  %"H" placement spec, for **really here** (i.e. not float)
+\usepackage{float}  %"H" placement spec, for **really here** (i.e. not float)
 \usepackage{caption} %many figures in one figure (note subfigure and subfig are deprecated)
 \usepackage{subcaption} %many figures in one figure (note subfigure and subfig are deprecated)
 %
@@ -58,7 +58,8 @@
 \usepackage{physics}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma} % This package together with lineno.sty numbers every line. Makes it easy for edditing.
-
+\usepackage{footnote}
+\newtheorem{prop}{Proposition}
 % Numbers lines
 \linenumbers
 % 

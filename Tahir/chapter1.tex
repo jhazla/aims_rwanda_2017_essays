@@ -1,24 +1,29 @@
 \chapter{Introduction}
+In a macroscopic description of nature, the deterministic theory of physics offer well prediction for dynamics of the physical system.
+All measured quantities agree a common principle of locality, therefore, no theoretical prediction or experimental result violate that, the idea that distant objects cannot have direct influence on one another, so that an object is directly influenced only by its immediate surroundings environment.
 
-\section{ mathematical Preliminaries }
+On the other hand the remarkable features of the microscopic world prescribed by quantum theory is the idea of non-locality, what Albert Einstein rather dismissively called “spooky actions at a distance. This was first described in the “EPR papers”\citep{EPR}, which they concluded by either the physical reality that described by the theory of quantum mechanics  not true, this may be preserved by local hidden variables theory ,or theorem itself not complete because violation of locality, which base on experiment for macroscopic system can not be happen.
+The mystery of Quantum correlation, which has no classical counterpart our basic motivation in this work.
+
+\section{ Mathematical Preliminaries }
 
 
 
 \begin{defn}[Complex vector space]
 
- \Jnote{Never use textbf. You should use begin\{defn\} etc.}
+% \Jnote{Never use textbf. You should use begin\{defn\} etc.}
 
-A complex vector space, $V$, is a set that is closed under both vector addition
-($ +$) and scalar multiplication (.) and satisfying all this following properties:
+A complex vector space, $V$, is a set that  closed under both vector addition
+($ +$) and scalar multiplication (.) and satisfying all the following properties:
 \begin{itemize}
 \item $\forall~ \ket{x},~\ket{y} \in ~ V : ~\ket{x}+\ket{y} ~\in~ V $.
 \item $\forall \ket{x},~\ket{y} \in ~ V : \ket{x}+\ket{y}=\ket{y}+\ket{x}$
 \item $\forall~ \ket{x},~\ket{y}, ~\ket{z} \in ~ V:\left(\ket{x}+\ket{y}\right)+\ket{z}=\ket{x}+\left(\ket{y}+\ket{z}\right)$
-\item $\exists ~\ket{I} \in ~V~ \text{such that }~  \forall~ \ket{x} ~\in  V: \ket{x}+\ket{I}=\vec{x}$
-\item $\forall ~\ket{x} \in V,~ \exists \ket{b} ~ \text{such that }  ~\ket{x}+\ket{b}= \ket{I}$
+\item $\exists ~\ket{I} \in ~V~ \text{such that }~ \forall~ \ket{x} ~\in V: \ket{x}+\ket{I}=\vec{x}$
+\item $\forall ~\ket{x} \in V,~ \exists \ket{b} ~ \text{such that } ~\ket{x}+\ket{b}= \ket{I}$
 \end{itemize}
-Where $\ket{I}$ is the natural element of addition and $\ket{b}$ is the inverse of $\ket{x}$. ~
-In addition  of that, the scaler  multiplication has flowing properties in complex vector space $V$.
+Where $\ket{I}$ is the natural element of addition and $\ket{b}$ is the inverse of $\ket{x}$.
+In addition of that, the scaler multiplication has flowing properties in complex vector space $V$.
 \begin{itemize}
 \item $\forall a~\in ~C$, $\ket{x}~\in ~V~ :~ a\ket{x}~ \in V$.
 \item $\forall ~\ket{x} \in ~V,~ \exists~ k ~\in C :k\ket{x}=\vec{x}$
@@ -28,52 +33,54 @@ In addition  of that, the scaler  multiplication has flowing properties in compl
 \end{itemize}
 \end{defn}
 
-The main reason of representing quantum mechanics by complex  vector space framework is to remain consistent with the superposition principle.
+The main reason of representing quantum mechanics by complex vector space framework is to remain consistent with the superposition principle.
+\begin{defn}[inner product ]\label{Innerpro}
+
+Inner product of two vectors, $\ket{x} ,\ket{y }\in V$,where $V$ is complex vector space is defined similar to Euclidean inner product except there is additional factor which is hermitian conjugate of the vector $\ket{x}$.
+$$\left\langle x,y\right\rangle=\bra{x}\ket{y }$$
+The result from this operation is number but not necessary real for vector in complex vector space,this resulting number should be real if from inner product of vector with it self.
+\end{defn}
 \begin{defn}[Norm of vector]
 
 The norm of vector $\ket{x} \in V$ is given by $\| \ket{x}\|=\sqrt{\left(\bra{x}\ket{x}\right)}$.
 \end{defn}
-\Jnote{Scalar product is not defined yet.}
+%\Jnote{Scalar product is not defined yet.}
 
 \begin{defn}[orthogonal]
 
-The vectors $\ket{x},~ \ket{y} \in V$ said orthogonal if and  only if $\bra{x}\ket{y}=0$
+The vectors $\ket{x},~ \ket{y} \in V$ said orthogonal if and only if $\bra{x}\ket{y}=0$
 \end{defn}
 
 \begin{defn}[Hilbert Space]
 
-Hilbert space $H$ is complete complex vector space  each vector in it normalized to the one and completely  respect the inner product relation above\citep{book:4365}.
+Hilbert space $H$ is inner product space such that the induced Hilbertian norm is complete.\citep{book:4365}.
 \end{defn}
 
 \begin{defn}[Pythagoras]
 
-Let $v_1,\dots v_n$ mutually orthogonal vectors, then the fallowing propriety  is satisfactory.
+Let $v_1,\dots v_n$ mutually orthogonal vectors, then the fallowing propriety is satisfactory.
 $$\|v_1+v_2+\dots+v_n\|^2=\| v_1\|^2+\| v_2\|^2+\dots +\| v_n\|^2$$
 \end{defn}
 \Jnote{Better way to write norm: $\|v\|$ (look at the code).}
 
-\begin{defn}[Cauchy Schwartz Inequality]
+\begin{defn}[Cauchy Schwartz Inequality]\label{CSC}
 
-$\vec{x} ~\vec{y} \in V $ ~ and $V$ is inner product space,
-then $\|\bra{y}\ket{x}\|^2~\leq \| \braket{x}{x} \|^2+\|\bra{y} \ket{y} \|^2$
+$\ket{x} ~\ket{y} \in V $ ~ and $V$ is inner product space,
+then $|\bra{y}\ket{x}|^2~\leq |\ket{x} |^2|\ket{y}|^2$
 \end{defn}
 \Jnote{Don't use mid (use it only if it is in the middle). Use braket instead
 of separate bra and ket.} 
 
 Note that the above notation called Dirac notation $\ket{x}$ vector and $\bra{x}$ is dual vector, in this notation the inner product of vector$\ket{x}$ ~ given $\bra{x}\ket{x}$.
 
-\begin{defn}[Diagonalization of Hermitian operators]
+\begin{defn}[Hermitian operators]\label{DIA}
 
-The matrix  $A$ said be  hermitian  matrix if and only if  $$A=A^\dagger$$
- For such matrix there is always possibility to find a particular  set of orthonormal basis  $\{\ket{a_j}\}$ such that in this basis the matrix $A$ is diagonal $\bra{a_j}A\ket{a_k}=0$, that is,   whenever $j\neq k$. The diagonal elements $\bra{a_j}A\ket{a_j}=a_j$ must be real numbers.
-So that we can write $A$ as combination of the orthogonal basis
-$$A=\sum_j a_j \ket{a_j} \bra{a_j}$$s
+The  operator $A$ said hermitian matrix if and only if $$A=A^\dagger$$
 \end{defn}
 
+
 \section{ Quantum Mechanics Preliminaries }
-\subsection{Quantum Postulates}
-
-
+\subsection{Quantum Postulates}\hfill \break
 We now consider the postulates of quantum mechanics, and their significance.The first postulate describes the mathematical structure we use to represent quantum mechanical systems.
 \begin{itemize}
 \item {Postulate 1}
@@ -81,34 +88,40 @@ We now consider the postulates of quantum mechanics, and their significance.The 
 Any isolated physical system is a complex vector space with in a Hilbert space known to call the state space of the system. The system is completely described by its state vector, $\ket{\Psi}$ , which is a unit vector in the system’s state space~\cite{book:17312}.
 \item{Postulate 2}
 
-The evolution of a closed quantum system is described by a unitary transformation. That is, the state of the system at deferment time $t_0$ and $t_1$ is related  by a unitary operator, $U$, which depends only on the times period of time $t_0$ and $t_1$:
+The evolution of a closed quantum system is described by a unitary transformation. That is, the state of the system at deferment time $t_0$ and $t_1$ is related by a unitary operator, $U$, which depends only on the times period of time $t_0$ and $t_1$:
 $$\ket{\Psi}=U\ket{\Phi}$$
-Where $\ket{\Phi}$ is the state at the time $t_0$ and $\ket{\Psi}$ the state at time $t_1$.While the continuous time evolution  of the state is described by the Schrödinger equation ~\cite{book:17312}.
+Where $\ket{\Phi}$ is the state at the time $t_0$ and $\ket{\Psi}$ the state at time $t_1$.While the continuous time evolution of the state is described by the Schrödinger equation ~\cite{book:17312}.
 \item{postulate 3}
 
-The measurements of Quantum Mechanics system  is described by a collection ${M_r }$ of measurement operators~\citep{book:17312}~. These are operators acting on the state space of the system being
+The measurements of Quantum Mechanics system is described by a collection ${M_r }$ of measurement operators~\citep{book:17312}~. These are operators acting on the state space of the system being
 measured. The index $r $ refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is $\ket{\Psi}$ immediately before the measurement then the probability that result $r$ occurs is given as below.
-$$Pr[r]=\bra{\Psi}M^{\dagger}  M\ket{\Psi}$$ 
+$$Pr[r]=\bra{\Psi}M^{\dagger} M\ket{\Psi}$$ 
 The measurement observer ${M_r }$ must the satisfy the fallowing condition.
 $$\sum_r M_{r}^{\dagger} M_r=1$$.
 
 
 \item{postulate 4}
 
-The composited state of physical system is given by  tensor product of the individual state spaces of the component~\citep{book:889079} . Moreover, if we have systems prepared  in different  states $\ket{\Psi_1} \dots \ket{\Psi_n}$,then the joint state of the total system is
+The composited state of physical system is given by tensor product of the individual state spaces of the component~\citep{book:889079} . Moreover, if we have systems prepared in different states $\ket{\Psi_1} \dots \ket{\Psi_n}$,then the joint state of the total system is
 $$\ket{\Psi_1}\otimes\dots \otimes\ket{\Psi_n}$$
 \end{itemize}
-This kind of composited system can be factorizes for it elementary elements,but there are special mixed states the factorization is not possible  on it such state called entangled state.
-\subsection{Entanglement}
+Note that not all kind of composited system can be factorizes for it elementary elements,the composed states that not possible on it such such factorization is called entangled state.
+\subsection{Entanglement}\hfill \break
+Entanglement is one of most especial and surprising phenomena, which is no analogue to it exists in classical theory of interaction between two particles or more\citep{PhysRevLett.78.5022}.The interacted particle influences by measurement of each another even if they separated, and no longer interacting . This phenomena called spooky action at distance by Einstein in his will known paper~\cite{EPR}.
 
-\Jnote{Do not insert quotes. Only famous people are allowed to do that.}
+To demonstrate what the Entangled state, let consider quantum mechanical state that consisting two subsystem, each associated to Hilbert space ,$H_A$ to subsystem $A$ and $H_B$to the subsystem $B$ with complete orthogonal basis $\ket{i}_A \text{and} \ket{j}_B$ where $i,j:1,2,\dots$. 
+The composed system of those two subsystem would be held on Hilbert space $H_A\otimes H_B$, which snapped by$\ket{i}_A \otimes \ket{j}_B$, the state of any the system $\ket{\varphi}_{AB}$ can be whiten as linear combination of basis states $\ket{i}_A ,\ket{j}_B$
+\begin{equation}\label{enta}
+\ket{\varphi}_{AB}=\sum_{i,j} c_{ij} \ket{ij}_{AB}
+\end{equation}
 
-Entanglement is one of most especial and surprising phenomena, which is no analogue to it exists in classical theory of  interaction between two particles or more\citep{PhysRevLett.78.5022}.The interacted particle influences by measurement of each another even if they separated,  and no longer interacting . This phenomena  called spooky action at distance by Einstein in his will known paper~\cite{EPR}.
-
+Where $c_{ij}$ is complex coefficient and the normalization imply $\sum_{ij} c_{ij}=1$, if the state in \ref{enta} can not be written as tensor product of two normalized states ,each state corresponds  one of these subsystems, $A\text{ and} B$, then we called entangled state.
 
 The actual demonstration of entanglement by an experiment testing Bell’s inequality, with results favouring quantum mechanics, carried out by Michael Horne ,Clauser and Freedman\citep{PhysRevLett.23.880}.The success of CHSH and its attendant experimental demonstrations received wide attention in the physics literature and open new kind of thinking, such that how one we can implement the quantum mechanics uniqueness.
-\subsection{Density operators}
-Density operator also called (density matrix), which encode all the accessible information about a quantum mechanical system.  It turns out that the ideal description of pure states by state vectors $\ket{\Psi}$  on Hilbert Space might not be describe the statistical properties of mixture state, Indeed,this can be done via  GNS (Gelfand Neumark-Segal)  construction \citep{book:72351}which required some level of knowledge in function analysis  to have  vectors description  for  mixture state  $\ket{\Psi}$ that preserve all statistical characteristic of quantum mechanical mixture state, which frequently occur in nature.
+
+
+\subsection{Density operators}\label{DMO}\hfill \break
+Density operator also called (density matrix), which encode all the accessible information about a quantum mechanical system. It turns out that the ideal description of pure states by state vectors $\ket{\Psi}$ on Hilbert Space might not be describe the statistical properties of mixture state, Indeed,this can be done via GNS (Gelfand Neumark-Segal) construction \citep{book:72351}which required some level of knowledge in function analysis to have vectors description for mixture state $\ket{\Psi}$ that preserve all statistical characteristic of quantum mechanical mixture state, which frequently occur in nature.
 
 For any pure state $\ket{\Psi}$ the Density operator $\rho$ given by
 \begin{align}
@@ -121,27 +134,26 @@ with properties
 \item [3.]~$Tr(\rho)=1$ ~Normalization
 \item [4.]~$\rho \geqslant 0$ ~Positivity
 \end{itemize}
-On the other hand, the mixed state is the state that satisfied all those property except $\rho^2\neq\rho$, thus lead to the density matrix of mixed state to be in the flowing form.
+On the other hand, the entangled state is the state that satisfied all those property except $\rho^2\neq\rho$, thus, imply reduced  density matrix of of one particle in  mixture state to be in the flowing form.
 \begin{equation}
 \rho_{mix }= \sum_{i} p_i \ket{\Psi_i}\bra{\Psi_i}
 \end{equation}
-Where $p_i$ is the probability to find the an ensemble  system in individual state  described by $\ket{\Psi_i} $ ,and $\sum_{i}^n p_i=1$
+Where $p_i$ is the probability to find the an ensemble system in individual state described by set of orthogonal basis $\ket{\Psi_i} $ ,and $\sum_{i}^n p_i=1$, meanwhile,$\rho_{mix }$ is the state of subsystem which given by taking partial trace over the other particle state.
 
-\subsection{expectation value of density operator}
-
-The expectation value for observable $A$ in pure a state, represented  by density matrix $\rho$ is
+\subsection{Expectation value from Density Operator}\hfill \break
+The expectation value for observable $A$ in pure a state, represented by density matrix $\rho$ is
 $$\left<A\right>_\rho=Tr(\rho A)$$
-However, we can  also express the expectation value of the mixtures state as a convex sum of expectation values of its constituent pure states as.
-$$\left<A\right>=$$
+However, we can also express the expectation value of the mixtures state as a convex sum of expectation values of its constituent pure states as, in other word by taking partial trace of density operator of the system to get reduced system. 
+$$\left<A_l\right>= \Tr(\rho^l A)$$
+Where $\rho_l=\Tr_k(\rho^{k,l})$ , and $\rho^{k,l}$ density matrix of state entanglement state.
 
 
-\subsection{Quantum Bits}
-
-In Boolean algebra the bit assumed to be  two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the  complex Hilbert space $C^2$ , whose basis vectors denoted.
+\subsection{Quantum Bits}\hfill \break
+In Boolean algebra the bit assumed to be two distinct values either $0 $ or $1$,which constitute the building blocks of the classical information theory,Quantum information theory, on the other hand, is based on qubits.\citep{nielsen2002quantum}~A unit vector in the complex Hilbert space $C^2$ , whose basis vectors denoted.
 
 \begin{equation}
 \ket{0}\text{or}\ket{1}
 \end{equation}
 Instead of a simple two state system that can either be in state $0$ or $1$, a qubit is a quantum two level system, that in addition to the two eigenstate $\ket{0}$ and $\ket{1}$ it can be set in any superposition of the form
 $$\ket{\Psi}=c_1\ket{0}+c_2\ket{1}$$
-Where $c_i$ is complex number.Although a qubit can be prepared in an infinite number of different quantum states using $c_i$,But we can  not usess that to transmit more than one bit of classical information because the process of detecting can not reliably the different between non orthogonal states,moreover,a Quibit could also entangled with another.
+Where $c_i$ is complex number,Although a qubit can be prepared in an infinite number of different quantum states using $c_i$. But we can not use  that to transmit more than one bit of classical information because the process of detecting can not reliably the different between non orthogonal states,moreover,a Quibit could also entangled with another.
