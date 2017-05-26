@@ -1,63 +1,26 @@
-\chapter{Introduction}
+\chapter{Introduction of the Research}
 
 %\Jnote{Please read the text again and correct language mistakes. Also pay attention to punctuation.}
-\section*{1.1. Introduction}
-In every organization there is a way to communicate ,one of the most popular way to transmit the information  is  to produce a written report which explains how different activities of the organization are going. For the large organizations there a huge number of reports and it is so challenging to go through  each and every report manually.
+In every organization there is a way to communicate. One of the most popular way to transmit the information  is  to produce a written report which explains how different activities of the organization are going. For large organizations there are huge number of reports and it is so challenging to go through  each and every report manually.
 %\Jnote{``imagine the way...'' This is not good language for a research essay.}
 This research has an aim of providing an easy way of visualizing and extracting the important information locked in reports from NGO and large organisations.
 
-In 1919, The International Federation of Red Cross and Red Crescent societies (IFRC) has been founded, it has some millions of reports related to humanitarian support,How to  know automatically the number of people who suffered from a disease?  How to know the  fraction of fund spent on shelter ?  
+In 1919, the International Federation of Red Cross and Red Crescent societies (IFRC) has been founded, it has some millions of reports related to humanitarian support, How to  know automatically the number of people who suffered from a disease?  How to know the  fraction of fund spent on shelter?  
 
-In this research, there are some solutions to those questions by using combination of statistics and Natural Language Processing (NLP)techniques.
-Big data and Machine learning is for analysing the huge data by using statistical and computing algorithms. Document modelling by extracting entities is one of the way to deal with natural big data linguistic problems where entity is defined as a single unit of data like location , people, organization and so one. entities  can be classified based on their relationship.
+In this research, we tried to use a combination of statistics formulae  and techniques of Natural Language Processing (NLP) to find the solution for the extracting entities, 
+Big data and Machine learning for analysing the huge data by using statistical and computing algorithms. Entity can be defined as an instance of existence of something, for example what is the activity done on what place when and how ?  
+
+Document modelling by extracting entities is one of the way to deal with natural big data linguistic problems where entity can be considered as a single unit of data like location, people, organization and so on. Entities  can be classified based on their relationship.
 
 %\Jnote{Paragraph above has many topics (organizing information, Red Cross,
 %  NLP, document modelling) mixed together. Please separate them into
 %  paragraphs.}  
-For example, consider  MDRAF003 to  be IFRC report "Afghanistan MDRAF003 26May2016.pdf", it is composed by 12 pages of texts where the entities will be extracted from. 
-
-what are the key procedures to be done in order to perform entities extraction ?
-%\Jnote{s/Let MDRAF003.../For example, consider an IFRC report...}
-
+These are key procedures to be performed for extracting entities: 
+%\Jnote{s/Let .../For example, consider an IFRC report...}
 \begin{itemize}
 \item The sentences which compose a report  must be parsed.
-\item  Entities also must be identified in the report and classified.
+\item Entities must be identified in the report and classified.
 \item Relationship between entities must be modelled.
 \end{itemize}
-In this research, there is a clear discussion about powerful techniques to answer the previous questions.  Natural  Language Processing techniques used to sentence level and content based analysis,Natural Language ToolKit  (NLTK) for splitting the sentences into tokens and remove the common words and how to work with corpus.The used reports for the implementation of different language algorithms are from IFRC .
 
-\section*{1.2. Motivation}
-Big data and Machine learning have recently become one of the major and strong solution finder to most difficult problems in heath, statistical prediction, company development and linguistics.
-%\Jnote{``Big data is a future for everything.'' This sentence does not really say anything. I would avoid writing sentences like this.}
-within huge reports,journals or articles ,this work will return significant  classified entities which will help the user to not struggle opening the report and get like amount spent in a given activity, the sum of people who participated in an event etc.
-
-
-
-
-% =======================
-%
-%This is a textual citation \citet{shannon44}. And this is a parenthetical citation \citep{shannon44}. You probably want to use the latter more often.
-%\begin{figure}[!h]
-%% Use "\centering" in floats (figure, table), but if you need to center
-%% some text (why?) use "\begin{center}...\end{center}".
-%\centering 
-%% Figure environments same as 0.8 * \textwidth please
-%% That does not necessarily mean the actual picture size,
-%% it is a guideline for the environment which could contain
-%% 2 or more pictures! Be consistent and follow the guidelines
-%% provided in your sources.
-%\includegraphics[width=0.8\textwidth]{images/bandwidth-colour.png}
-%\caption{Planning community bandwidth sharing costs. 
-%  Note caption capitalization.}
-% 
-%\label{bandwidth} 
-%% if you move the label it breaks the reference numbering; 
-%% always have it *after* the caption.
-%\end{figure}
-%Remember how to include code with {\tt verbatim} 
-%and to fix the tabs in {\sf python} in a verbatim environment? 
-%It may be best to have an `include' command for code, 
-%not to have to re-edit it all the time.
-%\verbatimtabinput{code/mycode.py}
-%=======================
-
+A report is composed by  paragraphs, each paragraph is made by sentences. Natural  Language Processing techniques deal with sentences and content based analysis by splitting the sentences into tokens then remove the common words and work with corpus to get entities. The meaning of a word can depend on its surroundings as well as it can be independent. For extracting significant entities, the context of a word is one of the points to be considered carefully.
