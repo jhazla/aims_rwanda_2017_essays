@@ -20,7 +20,7 @@ The model is based on the assumption that susceptible individuals become infecte
 \begin{figure}[h!]
 \caption{SIR compartmental diagram}]\label{fig 4.1}
 \centering
-\includegraphics[scale=0.5]{images/sir.jpg}
+\includegraphics[scale=0.5]{images/sir.jpg} 
 \end{figure}
 
 
@@ -134,7 +134,7 @@ R' &= \alpha I  - \mu R \label{8}
 \end{align}
 where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which exposed people become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
 In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
-\begin{figure}[h1]
+\begin{figure}[h!]
  \caption{SEIR compartmental model}
  \centering
  \includegraphics[scale=0.5]{images/seir.png}\label{fig 4.2}
@@ -246,3 +246,37 @@ There are several other types of compartmental model and epidemiologist tend to 
 %
 %$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
 %
+\section{Stochastic Models}
+\subsection{SIR Model}
+We will consider an SIR model only for the stochastic models. The total population $N(t) = S(t)  + I(t) + R(t)$ just as in deterministic models. Where 
+\begin{align}
+S(t), I(t), R(t) \in \left\lbrace 0,1,2,\dots , N \right\rbrace 
+\end{align}
+and $t \in \left\lbrace 0,\bigtriangleup t ,2 \bigtriangleup t, \dots \right\rbrace$. There are two independent discrete random variables  S, E and I because $R(t) = N(t) -S(t) -I(t)$. Therefore the stochastic process for the SIR model is a bivariate process $\left\lbrace S(t), I(t) \right \rbrace^{\inf}_{t =0}$ ha has a joint probability 
+
+\begin{equation}
+p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= Prob \left\lbrace( \bigtriangleup S ,\bigtriangleup I) = (k,j)\mid (S(t), I(t)) = (s,i) \right\rbrace
+\end{equation}
+where $\bigtriangleup S = S(t + \bigtriangleup t) - S(t)$. Hence the transition probability of the SIR model is a follows;
+\begin{align}
+p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= \left\lbrace \begin{array}{ll}
+ \beta i s / N \bigtriangleup t & (k,j) = (-1,1)
+ \\ \gamma i \bigtriangleup t, & (k,j) = (0,-1)
+ \\ b (N- s -i)\bigtriangleup t & (k,j) = (1,-1)
+ \\ 1 - \beta i s/N \bigtriangleup t - \left[\gamma i +b(N-s) \right]n\bigtriangleup t ,& (k,j) =(0,0)
+ \\ 0, otherwise
+ \end{array} \right.
+\end{align}
+The time step $\bigtriangleup t$t must be chosen small enough such that each transition probabilities lie in the interval [0,1]. Applying the Markov property, the difference equation satisfied by the probability $p_{(s,i)} (t +\bigtriangleup t)$ can be expressed in terms of the transition probabilities.
+\begin{align*}
+p_{(s,i)} (t + \bigtriangleup t) &= p_{(s+1, i-1)}(t) (t) +\bigtriangleup t)rac{\beta}{N}(i -1)(s +1) \bigtriangleup t + p _{(s,i+1)} (t) \gamma (i +1) \bigtriangleup t \\ &+ p_{(s-1,i+1)}(t) b(i+1) \bigtriangleup t + p_{(s-1,i)}(t)b(N-s+1- i) \bigtriangleup t  \\&
++  {p_(s,i)}(t) \left(1 - \left[\dfrac{\beta}{N} is + \gamma i + b(N-s) \right] \bigtriangleup t\right)
+\end{align*}
+
+The difference equations can be written as in matrix form as 
+\begin{equation*}
+p_{(s,i)}(t + \bigtriangleup t) = P (\bigtriangleup t)p(t),
+\end{equation*}
+where $P(\bigtriangleup t)$ is the transition matrix and $p(t)$ is the probability distribution vector for the stochastic process.The state set is divided into two classes; the current and the transient.(N,0) is an adsorbing recurrent state while all other states are transient. The probability of an out break is given given as $1- \frac{1}{R_0}$ when $R_0 >1$ \citep{Brauer2017}.
+
+One the main aspects in which deterministic and stochastic models differ is extinction. In deterministic SIR model an epidemic never goes to extinction in a limited time frame  because the number of infectives declines exponentially and only reaches zero at infinity.  In a deterministic framework an epidemic is said to go into extinction if it has a negative growth rate. On the hand in the stochastic SIR model an epidemic is the  epidemic becomes extinct in a more direct sense, the number of infects can go to zero without waiting forever.

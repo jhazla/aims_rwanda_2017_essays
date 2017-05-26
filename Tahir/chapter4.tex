@@ -1,31 +1,330 @@
-%\chapter{The Second Squared Chapter}
-%
-%An average essay may contain five chapters, but I didn't plan my work properly
-%and then ran out of time. I spent too much time positioning my figures and worrying
-%about my preferred typographic style, rather than just using what was provided.
-%I wasted days bolding section headings and using double slash line endings, and 
-%had to remove them all again. I spent sleepless nights configuring manually numbered lists
-%to use the \LaTeX\ environments because I didn't use them from the start or understand
-%how to search and replace easily with texmaker.
-%
-%Everyone has to take some shortcuts
-%at some point to meet deadlines. Time did not allow to test model 
-%B as well. So I'll skip right ahead and put that under my Future Work section.
-%
-%
-%\section{This is a section} 
-%Text text text text text text text text text text text text text text
-%text text text text text text text text text text text text text text
-%text text text text text text text text text text text text text text
-%text text text text text text text text text text text text text text
-%text text text text text. 
-%
-%Some essays may have 3, 5 or 6 chapters. This is just an example. 
-%More importantly, do you have at most 35 pages?  
-%Luck has nothing to do with it. Use the techniques suggested for
-%writing your essay.
-%
-%Now you're demonstrating pure talent and newly acquired skills. 
-%Perhaps some persistence. Definitely some inspiration. What was that about perspiration? 
-%Some team work helps, so every now and then why not browse your friends' essays and provide
-%some constructive feedback?
+\chapter{Bell's Theorem Via Steering Theorem}
+Our motivation built on Jevtic and  Rudolph work in 2015 \citep*{Jevtic:2015:10.1364/JOSAB.32.000A50}. In it They used a simple approach to show the  quantum mechanics violates of local realism in the form of hidden variables theorem.The impossibility of local hidden variables interpretation for quantum mechanics was illustrated in 1964 by Bell in his celebrated theory \cite*{bell1964einstein}. Jevtic and  Rudolph, make a different argument that can be seen as consistency simpler.
+
+\section{Introduction}\hfill \break
+Consider two player space-like separated, Alice and Bob, who share a bipartite quantum state $\ket{\Psi}$ with reduced states$\ket{\Psi_A}$ and$\ket{\Psi_B}$ for the two parties, respectively. Alice can performs a collection of local measurements from set of observables $\{M_A\}$ for her part, each local measurement by Alice steer Bob part to new state \citep{book:474706}.To illustrate more, consider Alice has two sets of orthogonal bases , namely $\{\ket{u_n}\}$ and $\{\ket{v_n}\}$, then Alice part of entangled state $\ket{\Psi}$ for these assembles of bases is given.
+\begin{equation}
+\ket{\Psi}=\sum_n c_n  \ket{u_n}\ket{\phi_n}=\sum_n d_n\ket{v_n} \ket{\varphi_n}
+\end{equation}
+The fact that $\ket{\phi_n} \text{ and} \ket{\varphi_n}$ are different state for Bob part used by EPR in their argument for hidden variables theory, as will as in their claim about incompleteness of quantum mechanics.
+
+ In 2007,Wiseman, Jones and Doherty formalised steering in terms of the incompatibility of quantum mechanical predictions with a classical-quantum model where pre-determined states are sent to the parties. Furthermore\citep*{PhysRevA.76.052116}, the observation of quantum steering can also be seen as the detection of entanglement as well as the ability of not acceptance local hidden variables description\cite{Jevtic:2015:10.1364/JOSAB.32.000A50}.
+
+
+In general, in any hidden variable theory, each qubit has an assigned value for each observable, determined by a hidden variable (or a set of hidden variables) of real
+states $\lambda$. A statistical ensembles of particles has a certain distribution $x(\lambda)$ of the hidden variable and thus the average value of an observable $A$ is given by
+\begin{equation}
+v=\int d \lambda x(\lambda),
+\end{equation}
+where $x(\lambda)$ is the set all hidden variables assigned to the observable $A$.
+
+
+\section{Experiment}\hfill \break
+\subsection{The Set-up of Experiment}\hfill \break
+Consider maximally entangled state of two qubit given by the following Bell state
+\begin{align*}
+\ket{\Psi_{AB}}=\frac{1}{\sqrt{2}}(\ket{00}+\ket{11}.
+\end{align*}
+This state is shares by two parties Alice and Bob space-like separated, Alice has the first qubit and Bob the second qubit.
+We also consider  three sets of orthogonal bases $\bf{X}, \bf{Y} \text{ and } \bf{Z}$.
+\begin{align}
+ \bf{X}&=\{\ket{x},\ket{X}\}\\
+ \bf{Y}&=\{\ket{y},\ket{Y}\}\\
+  \bf{Z}&=\{\ket{z},\ket{Z}\}
+\end{align}
+Alice and Bob are perform a measurement an arbitrary for these sets of basis. If Alice  performs measurement on the basis $\ket{x}$, then Bob's state collapse to $\ket{x}$, similarly for all  those bases.Now, we will consider a scenario when a measurement on Alice part of the system  done before Bob part for two of these sets, namely, $\bf{X} \text{ and} \bf{Y} $, then the state of Bob be steered to these bases. If Bob performs measurement on his part for any of those three sets of bases after his state collapse to to the state, which on it Alice performed her measurement.
+let say the probability of Bob measurements on any bases after his state steered to other basis (on it Alice perform measurement) is given by.
+\begin{align*}
+\alpha &=|\bra{x}\ket{y}|^2\\
+\beta &=|\bra{x}\ket{z}|^2\\
+\gamma& =|\bra{y}\ket{z}|^2
+\end{align*}
+The table below shows all possible outcome according to quantum mechanics perdition  on Bob state, when Alice measures on  any of these bases $\bf{X} \text{ and} \bf{Y} $
+
+
+
+\begin {table}[H]
+\begin{center}\label{tabal1}
+\begin{tabular}{ |c | c| c| c|}    
+\hline
+A&B\\
+\hline
+$\ket{x}$&$\Pr[\text{ Bob  measure on }\ket{x}] = 1$&$\Pr[\text{ Bob  measure on }\ket{X}] = 0$\\
+\hline
+&$\Pr[\text{ Bob  measure on } \ket{y}] = \alpha$&$\Pr[\text{ Bob  measure on } \ket{Y}]= 1-\alpha$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{z}] = \beta$&$\Pr[\text{ Bob  measure on }\ket{Z}] =  1-\beta$\\
+\hline
+$\ket{X}$&$\Pr[\text{ Bob  measure on }\ket{x}] = 0$&$\Pr[\text{ Bob  measure on }\ket{X}]= 1$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{y}] =1-\alpha$&$\Pr[\text{ Bob  measure on }\ket{Y}] = \alpha$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{z}] = 1-\beta $&$\Pr[\text{ Bob  measure on }\ket{Z}] = \beta$\\
+\hline
+$\ket{y}$&$\Pr[\text{ Bob  measure on }\ket{y}] = 1$&$\Pr[\text{ Bob  measure on }\ket{Y}] = 0$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{x}] = \alpha$&$ \Pr[\text{ Bob  measure on }\ket{X}]= 1-\alpha$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{z}] = \gamma$&$\Pr[\text{ Bob  measure on }\ket{Z}]= 1-\gamma$\\
+\hline
+$\ket{Y}$&$\Pr[\text{ Bob  measure on }\ket{Y}] = 1$&$\Pr[\text{ Bob  measure on }\ket{y}]= 0$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{x}] = 1-\alpha$&$\Pr[\text{ Bob  measure on }\ket{X}] = \alpha$\\
+\hline
+&$\Pr[\text{ Bob  measure on }\ket{z}]  = 1-\gamma$&$\Pr[\text{ Bob  measure on }\ket{Z}] = \gamma$\\
+\hline
+\end{tabular}
+\caption {Quantum prediction for Bob measurement when Alice measured on arbitrary basis from $\bf{X} \text{ and } \bf{Y}$. }
+\label{table:3}
+\end{center}
+\end{table}
+Where $\alpha, \beta \text{ and } \gamma \in [0,1]$.
+
+
+
+
+
+\subsection{ Constriction of LHV Model for two ensembles of $B$}\label{Triv}\hfill \break
+Now we consider the case when system $B$ steered to two ensembles of orthogonal basis$\{\ket{x},\ket{X}\},\{\ket{y},\ket{Y}\}$, by two different measurements on system $A$.
+Where $\ket{x},\ket{X},\ket{y},\ket{Y}$ all different state for $B$,  from quantum mechanics of point view the density matrix for  the system $B$ on this ensembles
+\begin{equation}\label{STTS}
+\rho_B=\frac{1}{2}\ket{x}\bra{x}+\frac{1}{2}\ket{X}\bra{X}=\frac{1}{2}\ket{y}\bra{y}+\frac{1}{2}\ket{Y}\bra{Y}
+\end{equation}
+Let $v(\lambda)$ denote ensembles of real state for $B$, then there must a way to rearrange $v(\lambda)$ in the following form.
+\begin{equation}\label{Hidden}
+v(\lambda)=\frac{1}{2}x(\lambda)+\frac{1}{2}X(\lambda)=\frac{1}{2}y(\lambda)+\frac{1}{2}Y(\lambda)
+\end{equation}
+From quantum states orthogonality of $\ket{x} \ket{X}$ and  $\ket{y} \ket{Y}$, it must be possible to find a probability density over space of real state $\lambda$ such that we can be decomposed into probability densities of $x(\lambda)$ and $X(\lambda)$, which have disjoint supporter.
+\begin{align*}
+S_x\cap S_X=S_y\cap S_Y=\emptyset
+\end{align*}
+
+We can define four disjoin region of real state $\lambda$ for the state system $B$  such that the orthogonality condition of quantum state for each pair justified.
+\begin{align*}
+S_1:=&S_x\cap S_y\\
+S_2:=&S_x\cap S_Y\\
+S_3:=&S_X\cap S_y\\
+S_4:=&S_X\cap S_Y\\
+\end{align*}
+
+
+Now we consider measurements on state Bob for the basis $\{\ket{x},\ket{X}\}$,$\{\ket{y},\ket{Y}\}$. To justify the principles of completeness and local realism as in  \citep{EPR} or at least the local reality principle, we must have set of real state obey quantum result when a projector measurement on these basis done.
+
+For example if the measurement done on the basis $\{\ket{x},\ket{X}\}$ after the state steered to the assembles $\{\ket{y},\ket{Y}\}$ we suppose to get.
+\begin{equation}
+\int_{S_x} d\lambda y(\lambda)=|\bra{x}\ket{y}|^2:=\alpha
+\end{equation}
+Where $\alpha \in [0,1]$, using  the four disjoin regions, we can define the probability that obtaining a result of measurement in one ensembles after the state steered to other ensemble as.
+\begin{equation}
+\eta_j=\int_{S_j} d\lambda \eta(\lambda)
+\end{equation}
+Where $j=1,2,3,4$, and $\eta:= x,X,y \text{ and } Y$.
+
+For any local realistic theorem we must obtain the following result.
+\begin{align*}
+x_1=&\int_{S_1} d\lambda y(\lambda)=\int_{S_x\cap S_y} d\lambda y(\lambda)=\alpha\\
+x_2=&\int_{S_2} d\lambda x(\lambda)=\int_{S_x \cap S_Y} d\lambda x(\lambda)=1-\alpha\\
+X_3=&\int_{S_3} d\lambda y(\lambda)=\int_{S_X \cap S_y} d\lambda y(\lambda)=1-\alpha\\
+X_4=&\int_{S_4} d\lambda Y(\lambda)=\int_{S_X \cap S_Y} d\lambda Y(\lambda)=\alpha\\
+y_1=&\int_{S_1} d\lambda x(\lambda)=\int_{S_x\cap S_y} d\lambda x(\lambda)=\alpha\\
+Y_2=&\int_{S_2} d\lambda x(\lambda)=\int_{S_x \cap S_Y} d\lambda x(\lambda)=1-\alpha\\
+y_3=&\int_{S_3} d\lambda X(\lambda)=\int_{S_X \cap S_y} d\lambda X(\lambda)=1-\alpha\\
+Y_4=&\int_{S_4} d\lambda Y(\lambda)=\int_{S_X \cap S_Y} d\lambda Y(\lambda)=\alpha
+\end{align*}
+Where $0\leq \eta_i\leq 1, \text{ for} i=1,2,3,4 \text{ and } \eta= x,X,y,Y$, and zero or one for the reset of $\eta_i$.
+
+By substitution this result in local hidden variables equation in \ref{Hidden},the following result is obtain.
+\begin{align*}
+v_1=v_4=\frac{\alpha}{2}, v_3=v_2=\frac{1-\alpha}{2}
+\end{align*}
+
+
+
+
+
+
+\subsection{Contraction of LHV model for three ensembles}\label{ss3}\hfill \break
+Now suppose third measurement on $A$  steered the state of $B$ to third ensemble of orthogonal state$\{\ket{z}+\ket{Z}\}$, then the density matrix for system $B$ would be in the following form.
+\begin{equation}
+\rho_B=\frac{1}{2}\ket{x}\bra{x}+\frac{1}{2}\ket{X}\bra{X}=\frac{1}{2}\ket{y}\bra{y}+\frac{1}{2}\ket{Y}\bra{Y}=\frac{1}{2}\ket{z}\bra{z}+\frac{1}{2}\ket{Z}\bra{Z}
+\end{equation}
+In local hidden variable theorem the correspond probability distribution over set of real states $\lambda$ should has the following form.
+\begin{equation}
+v(\lambda)=\frac{1}{2} x(\lambda)+\frac{1}{2} X(\lambda)=\frac{1}{2} y(\lambda)+\frac{1}{2}Y(\lambda)=\frac{1}{2}z(\lambda)+\frac{1}{2}Z(\lambda).
+\end{equation}
+Where $\delta(\lambda)$,$\delta=x,X,y,Y,z \text{ and} Z$ donate real state corresponding to quantum state$\ket{\delta}$.
+
+When a measurement  done on basis of $\{\ket{x},\ket{X}\}$ and/or$\{\ket{y},\ket{Y}\}$  after the state of system has  been $B$ steered to assemblies $\{\ket{z},\ket{Z}\}$, quantum mechanics prediction in table  \ref{table:3}.
+\begin{align*}
+|\bra{x}\ket{z}|^2&=\beta\\
+|\bra{y}\ket{z}|^2&=\gamma\\
+|\bra{X}\ket{z}|^2&=|\bra{x}\ket{Z}|^2=1-\beta\\
+|\bra{y}\ket{Z}|^2&=|\bra{Y}\ket{z}|^2=1-\gamma
+\end{align*}
+
+In any local realism description of quantum reality, it must be away such that all the following condition satisfied, when projector a measurement done on the basis of first and second orthogonal ensembles of system $B$, after it state steered to assemblies $\{\ket{z},\ket{Z}\}$
+
+\begin{align}
+z_1+z_2&=\int_{S_1} d\lambda z(\lambda)+\int_{S_2} d\lambda z(\lambda)=\int_{S_x} d\lambda z(\lambda)=\beta\label{Zies1}\\
+z_1+z_3&=\int_{S_1} d\lambda z(\lambda)+\int_{S_3} d\lambda z(\lambda)=\int_{S_y} d\lambda z(\lambda)=\gamma\label{Zies2}\\
+z_3+z_4&=\int_{S_3} d\lambda z(\lambda)+\int_{S_4} d\lambda z(\lambda)=\int_{S_X} d\lambda z(\lambda)=1-\beta\label{Zies3}\\
+z_2+z_4&=\int_{S_2} d\lambda z(\lambda)+\int_{S_4} d\lambda z(\lambda)=\int_{S_Y} d\lambda z(\lambda)=1-\gamma\label{Zies4}\\
+Z_3+Z_4&=\int_{S_3} d\lambda Z(\lambda)+\int_{S_4} d\lambda Z(\lambda)=\int_{S_X} d\lambda Z(\lambda)=\beta\label{Zies5}\\
+Z_2+Z_4&=\int_{S_2} d\lambda Z(\lambda)+\int_{S_4} d\lambda Z(\lambda)=\int_{SY} d\lambda Z(\lambda)=\gamma\label{Zies6}\\
+Z_1+Z_2&=\int_{S_1} d\lambda Z(\lambda)+\int_{S_2} d\lambda Z(\lambda)=\int_{S_x} d\lambda Z(\lambda)=1-\beta\label{Zies7}\\
+Z_1+Z_3&=\int_{S_1} d\lambda Z(\lambda)+\int_{S_3} d\lambda Z(\lambda)=\int_{S_y} d\lambda Z(\lambda)=1-\gamma\label{Zies8}\\
+v_1&=\frac{1}{2}z_1+\frac{1}{2}Z_1=\frac{\alpha}{2}\label{vies1}\\
+v_4&=\frac{1}{2}z_4+\frac{1}{2}Z_4=\frac{\alpha}{2}\label{vies2}\\
+v_2&=\frac{1}{2}z_2+\frac{1}{2}Z_2=\frac{1-\alpha}{2}\label{vies3}\\
+ v_3&=\frac{1}{2}z_3+\frac{1}{2}Z_3=\frac{1-\alpha}{2}\label{vies4}
+\end{align}
+Since, $z_i\text{ and } Z_i$ for $i=1,2,3,4$  integral over a probability density of real space, it must be away to represent them as non negative quantises.
+
+For any local realism interpretation of quantum theory all these consistency condition above must be satisfy simultaneously for $\alpha, \beta \text{ and } \gamma \in [0,1]$.Which do not happen for all ensembles of state $B$, this obvious contradiction implies the violation of quantum theorem for local hidden variables realism.
+\subsection{Construction of LHV Model Gives QM  Result for Three Ensembles}\hfill \break
+In this section we consider a proof for a conjecture 1  in\citep*{Jevtic:2015:10.1364/JOSAB.32.000A50} by steering the state of the system $B$ for three assemblies of orthogonal basis.
+Jevtic and Rudolph  show that if third measurement  of orthogonal bases $\{\ket{z},\ket{Z}\}$, such that $\ket{z}$ bisect $\ket{x} \text{ and } \ket{y}$. Then there is no local hidden theorem justified the QM result.For general case of $\alpha, \beta \text{ and } \gamma $ they give conjecture 1, which we called here theorem.
+
+To be more precise the only change we made for  conjecture 1 is we rename it a theorem without any modification in the expression itself.
+
+
+
+\begin{theorem}
+The triple of overlaps $\alpha,\beta, \gamma$ demonstrate a violation of local realism if and only if the point $[\alpha,\beta, \gamma]$ does not lie in the convex hull of the four points
+$[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$.
+\end{theorem}
+
+\begin{proof}
+We will divided the proof for two part,In the first part we drive general solution for $z_i$ in terms of $[\alpha, \beta, \gamma]$ such that consistency conditions for LHV theory description gives a result same as quantum mechanics description, using all possible analytical cases for the values of $\alpha,\beta $.
+
+
+In the second part, we will do the same for Convex hull of the points $[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$  to show how it flow our result in part one.
+
+Part 1:
+
+From equations \ref{vies1},\ref{vies2},\ref{vies3} and \ref{vies4} we can write $Z_i$ in terms of $z_i$ and $\alpha$ as below.
+\begin{align}
+Z_1=&\alpha-z_1\label{nik1}\\
+Z_4=&\alpha-z_4\label{nik2}\\
+Z_3=&1-\alpha-z_3\label{nik3}\\
+Z_2=&1-\alpha-z_2\label{nik4}
+\end{align}
+By substituting the value of $Z_i$ in equations from \ref{nik1}to \ref{nik4} into equations \ref{Zies5} to \ref{Zies8} we see that these equations repetition for equations \ref{Zies1} to \ref{Zies4}, this reduce our consistency condition to.
+\begin{align}
+z_1+z_2&=\beta\label{z1}\\
+z_1+z_3&=\gamma\label{z2}\\
+z_2+z_4&=1-\gamma\label{z4}\\
+z_3+z_4&=1-\beta\label{z3}\\
+0\leq z_1,z_4& \leq \alpha\label{z5}\\
+0\leq z_2,z_3 &\leq 1- \alpha\label{z6},
+\end{align}
+but solving the system of equations from \ref{z1} to \ref{z6} equivalent to solving the following system,
+\begin{align}
+z_1+z_2&=\beta\label{z1}\\
+z_2+z_4&=1-\gamma\label{z42}\\
+z_3+z_4&=1-\beta\label{z32}\\
+0\leq z_1,z_4& \leq \alpha\label{z52}\\
+0\leq z_2,z_3 &\leq 1- \alpha\label{z62},
+\end{align}
+To solve this system of linear equations we will use analytical approach, which in it we use quantum theory prediction $\beta, \alpha \text{ and } \gamma$ has to be have value in range $[0,1]$.
+Since the solution is trivial when $\beta=\alpha=\gamma$, as  we demonstrated in section \ref{Triv}, then we have eight  possible cases.
+
+\begin{itemize}
+\item Case 1 and Case 2. $1-\beta \leq 1-\alpha , \alpha \leq \beta$
+
+Under this possibility finding solution for the system of equations form  \ref{z1} to\ref{z62} equivalent to.
+\begin{align*}
+\beta -\alpha\leq &z_2 \leq 1-\alpha\\
+0 \leq &z_4 \leq 1-\beta\\
+z_2+z_4&=1-\gamma
+\end{align*}
+which has a general solution in terms of $\alpha,\beta \text{ and } \gamma$.
+\begin{equation}\label{zc1}
+ \beta -\alpha\leq1-\gamma \leq 2-\beta-\alpha
+\end{equation}
+
+
+\item Case 3 and Case 4. $\beta \leq \alpha , 1-\alpha \leq 1-\beta$
+
+Under this condition solution for the system of equations take the following form
+\begin{align*}
+0&\leq z_2\leq \beta\\
+\alpha-\beta&\leq z_4\leq \alpha\\
+z_2&+z_4=1-\gamma.
+\end{align*}
+Which can be rewritten in the following form.
+\begin{equation}\label{zc3}
+\alpha-\beta \leq 1-\gamma \leq \alpha+\beta
+\end{equation}
+
+\item Case 5 and Case 6. $\alpha\leq \beta , 1-\beta \leq 1-\alpha$.
+
+Under these cases finding solution for system of equations from \ref{z1} to\ref{z62} equivalent to solving the following inequality.
+\begin{align*}
+\beta-\alpha \leq &z_2 \leq \beta\\
+0 \leq &z_4 \leq \alpha\\
+z_2+z_4&=1-\gamma
+\end{align*}
+which has  general solution in the following form
+\begin{equation}\label{zc5}
+\beta-\alpha \leq1-\gamma \leq \beta+\alpha
+\end{equation}
+\item Case 7 and Case 8. $1-\alpha\leq  \beta , 1-\beta \leq \alpha$:
+
+in this cases the solution of our system equivalent to solution of the system below.
+\begin{align*}
+0\leq z_2&\leq 1-\alpha\\
+\alpha-\beta &\leq z_4\leq 1-\beta\\
+z_2+z_4&=1-\gamma
+\end{align*}
+then the system solution take the following form
+\begin{equation}\label{zc7}
+\alpha-\beta \leq 1-\gamma \leq 2-\alpha-\beta
+\end{equation}
+\end{itemize}
+
+Part 2:
+
+Any points $[\alpha,\beta,\gamma]$ in convex hull of the points $[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]$ can be satisfied the following set of linear equations.
+\begin{align}
+\alpha+\beta+\gamma &\geq 1\label{con1}\\
+\alpha+\beta-\gamma &\leq 1\label{con2}\\
+\alpha-\beta+\gamma &\leq 1\label{con3}\\
+-\alpha+\beta+\gamma &\leq 1\label{con4},
+\end{align}
+for all, $ \alpha, \beta \text{ and }\gamma \in [0,1]$.
+
+By applying same analytical cases as in part 1, we will solve this system of linear  inequalities above in an attempts to drive the general solution of this system same as the one we have for $z_i$ in term of $ \alpha, \beta \text{ and }\gamma$.
+\begin{itemize}
+\item Case 1 and  2. $1-\beta \leq 1-\alpha,\alpha \leq \beta$.
+
+The inequities \ref{con1} and \ref{con2} are always satisfied condition under those cases, so from equations \ref{con3} and \ref{con4} we have
+\begin{equation}
+\beta-\alpha \leq 1-\gamma \leq 2-\beta-\alpha, 
+\end{equation}
+but this same as what get part 1  inequity \ref{zc1}.
+\item Case 3  and 4.$\beta \leq \alpha,1-\alpha \leq 1-\beta$
+
+For this case the inequalities \ref{con4} and \ref{con2} are always satisfied conditions, so we have the following result from \ref{con1} and \ref{con3} 
+\begin{equation}\label{chc3}
+\alpha-\beta \leq 1-\gamma \leq \alpha+\beta.
+\end{equation}
+The result in \ref{chc3} is same as in \ref{zc3}.
+
+\item  Case 5 and 6. $\alpha\leq \beta,\ 1-\beta ,\beta\leq 1-\alpha$.
+
+For this case  \ref{con3} and \ref{con2} extra constraints, this implies the result below.
+\begin{equation}
+\beta -\alpha \leq 1-\gamma\leq \beta +\alpha
+\end{equation}
+since, this what we have in \ref{zc5}.
+\item  Case 7 and 8  $1-\alpha \leq 1-\beta,\beta ,1-\beta \leq \alpha$.
+
+The condition in \ref{con1} and \ref{con2} are  always satisfied condition under those cases, so from \ref{con3} and \ref{con4} we have
+\begin{equation}
+\beta-\alpha \leq 1-\gamma \leq 2-\beta-\alpha, 
+\end{equation}
+This result the exact result in equations \ref{zc7} .
+\end{itemize}
+Hence, the general solution for the local hidden variables equations  and convex hull inequalities of given points are same for  all possible arrangement of $\alpha, \beta , \gamma \in [0,1]$. And any value for $\alpha, \beta , \gamma$ different from this implies minus for $z_i$ or the normalization condition fail, then any local hidden variables description not in the convex hull of the given points, when the state of Bob system measured on three orthogonal bases  violates by  quantum mechanics.
+\end{proof}
