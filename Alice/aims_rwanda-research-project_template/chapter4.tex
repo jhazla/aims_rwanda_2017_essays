@@ -1,2 +1,27 @@
+\chapter{Results and Discussion}
+\section{General Overview}
+To extract and classify entities, We used Stanford, NLTK and Polyglot. These entities extractor have common categories which are "Persons", "Location" and "Organization", Additionally NLTK and Stanford NER has another category which is called "others". This last category is not very clear. It combines numbers, percentage and unclassified entities. This can cause the confusion for to the organization. The core categories are those three first groups.
+
+Among these three entities extractor, Stanford requires time to run compared to others.
+
+The named entities must be setted by the organization based on its interest. Some reports are composed by many pages but some few point must be highlighted. Templates in reporting are important, They make life easy.
+
+Before extracting the entities, You must know what the document is  talking about. What the organization is struggling to know from the report.
 
 
+Named entities from NLTK, Polyglot and Stanford are useful. They tried to summarise the primary information such as locations, persons and organizations. 
+
+Sometimes, extracted named entities are not sufficient. You can  used Regular expressions to respond perfected the will of the organization.
+
+\section{Case Study Results}
+After analysing 1260 documents, Let us take one sample file and work on top section composed by 25 lines.
+
+Consider a document which is specific to African region. "Africa regional office MDR60002 03 Nov2015.txt".
+
+We are requested to extract name of Persons who participated in IFRC activities.
+
+\subsection{Stanford NER}
+
+We had a function to extract four categories of entities by Stanford NER. It is only to specify the category we are interested in.
+\subsection{Polyglot}
+\subsection{Stanford}
