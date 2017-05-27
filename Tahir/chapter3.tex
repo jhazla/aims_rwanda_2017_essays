@@ -6,7 +6,7 @@ Basically, any quantum system can be manipulated by at least one party and where
 
 \section{XOR game}
 \subsection{Best classical strategy}\hfill \break
-In this game there are  two players, Alice and Bob.They are far away from each other and not able to communicate through classical channel at all, but they allowed to prepare strategy  before starting the game. The referee sent to them    $(x,y)\in \{0,1\}$  from uniform distribution and independent\citep{PhysRevA.93.022333},They respond  to him by $(a,b)\in \{0,1\}$ .  The   winning  condition  satisfied when $x\wedge y= a\oplus b$.
+In this game there are  two players, Alice and Bob.They are far away from each other and not able to communicate through classical channel at all, but they allowed to prepare strategy  before starting the game. The referee sent to them    $(x,y)\in \{0,1\}$  from uniform distribution and independent\citep*{PhysRevA.93.022333},They respond  to him by $(a,b)\in \{0,1\}$ .  The   winning  condition  satisfied when $x\wedge y= a\oplus b$.
 
 Among all possible strategies, the best one is both reply either $0$ or $1$ all time, if they play the game with this strategy in a total win with probability $\frac{3}{4}$.In the table below an example to illustrates that.
 
@@ -178,7 +178,7 @@ Form   equation  \ref{10} we have $\xi=\frac{\pi}{8}$ or $\frac{-\pi}{8}$.This i
 \section{The upper bound for XOR game}\hfill \break
 In order to prove what we get is the maximum winning  probability for  non local $XOR$ game, we will consider isomorphism between  the first group $G=(\{0,1\},+) \mod(2)$, and $ G_1=(\{-1,1\},*)$. In the latter Alice and Bob's answer become ${1,-1}$ instate of $\{0,1\}$. We also switch off the unitary operator to any Hermitian $A_i,B_i$ with eigenvalue$[1,-1]$.
 
-The property we need to proof the impossibility of achieving better  winning probability, for any choices of operator and quantum state Tsirelson’s  upper bound inequality~\citep{Cirel'son1980}.
+The property we need to proof the impossibility of achieving better  winning probability, for any choices of operator and quantum state Tsirelson’s  upper bound inequality~\citep*{Cirel'son1980}.
 In our proof, we will use the norm of operator along with other basic inequalities.
 
 
@@ -224,7 +224,7 @@ The total probability equation in \ref{TTP} contain  Tsirelson’s inequality ex
 \Pr[A,B \text{ win}]=\frac{1}{2}+\frac{1}{8} 2\sqrt{2} \simeq 0.853
 \end{equation}
 \begin{theorem}[Tsirelson’s inequality]
-
+\label{thmTsireslonInequality}
 
 Let $\ket{\Psi}$ be quantum state and $A_1,A_2, B_1,B_2$ any choice of Hermitian operators such that, it's eigenvalue $\left[-1,1\right]$, then the flowing  inequality is valid.
 
@@ -286,14 +286,15 @@ Since, all  eigenvalues of the identity are $1$ and the $1$ is natural element o
 \end{proof}
 
 
-Returning back to the prove of  Tsirelson’s inequality the right hand side of equation \ref{TE}  can be substitute by $\| A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\|$ and  using   triangle equality as will as Lemma~\ref{lem:tensor-norm} we have.
+\begin{proof}[Proof of Theorem \ref{thmTsireslonInequality}]
+Returning back to the prove of  Tsirelson’s inequality the right hand side of equation \ref{TE}  can be substitute by $\| A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\|$ and  using   triangle equality as well as Lemma~\ref{lem:tensor-norm} we have.
 \begin{align}
 \bra{\Psi}A_1\otimes B_1 &+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi} \\
 &\leqslant  \| A_1\otimes B_1+ A_1\otimes B_2+A_2\otimes B_1 -A_2\otimes B_2\ket{\Psi}\| \nonumber\\
 &\leqslant \| A_1\otimes (B_1+ B_2)\ket{\Psi}\| +\| A_2\otimes( B_1 - B_2)\ket{\Psi}\|\nonumber \\
 &\leqslant \| I\otimes (B_1+ B_2)\ket{\Psi}\| +\| I\otimes( B_1 - B_2)\ket{\Psi}\|\label{eq16}
 \end{align}
-Let's $\ket{\Phi_0}=I\otimes B_1\ket{\Psi} \text{and}\ket{\Phi}=I\otimes B_2\ket{\Psi}$, then we  use  Pythagorean theorem as will as result from lemma \ref{lem:tensor-norm} (the inner product $\bra{\Phi_0}\ket{\Phi_0} \text{ and}\bra{\Phi}\ket{\Phi}$  is at most 1) to  rewrite the right hand side in equation \ref{eq16} as.
+Let's $\ket{\Phi_0}=I\otimes B_1\ket{\Psi} \text{and}\ket{\Phi}=I\otimes B_2\ket{\Psi}$, then we  use  Pythagorean theorem as well as result from lemma \ref{lem:tensor-norm} (the inner product $\bra{\Phi_0}\ket{\Phi_0} \text{ and}\bra{\Phi}\ket{\Phi}$  is at most 1) to  rewrite the right hand side in equation \ref{eq16} as.
 \begin{align}
 \| \ket{\Phi_0}+ \ket{\Phi}\| +\| \ket{\Phi_0}- \ket{\Phi}\| = &\sqrt{\bra{\Phi_0}\ket{\Phi_0}+\bra{\Phi_0}\ket{\Phi}+\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
 &+\sqrt{\bra{\Phi_0}\ket{\Phi_0}-\bra{\Phi_0}\ket{\Phi}-\bra{\Phi}\ket{\Phi_0}+\bra{\Phi}\ket{\Phi}}\nonumber\\
@@ -318,10 +319,12 @@ using this result we can write equation \ref{tahir1} as below.
 \end{equation} 
 Where $|y|\leq 1 \text{ and} y\in {\rm I\!R}$,~the function  in the right hand side of \ref{DEAm} has maximum value  when $y=0$ which is $2\sqrt{2}$.
 
+\end{proof}
+
 \section{Quantum NAND game}
 \subsection{Set up of the game} \hfill \break
 Consider the Game where two players Alice and Bob  do not allowed to  communicate
-at all during the game time,but they prepared  best winning strategy  before the game get started\citep{ANDJIGA1988189}. The judge choose  questions $x  \text{and} y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \text{and} y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a \text{and}  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \text{and}  y$ ,They must response independently by  $a \quad \text{and}  b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}\vee\bar{b}$.
+at all during the game time,but they prepared  best winning strategy  before the game get started\citep*{ANDJIGA1988189}. The judge choose  questions $x  \text{and} y$  from set of binary strings which is uniformly  distributed and not dependent.Each of Alice and Bob received single string question $x \text{and} y$ from  judge, $x$ for Alice and $y$ to Bob.The players also answer with binary string  $a \text{and}  b$ respectively, They win whenever their response satisfy specific conditions for each of the judge's questions $x \text{and}  y$ ,They must response independently by  $a \quad \text{and}  b$ the win possibility occur  if and only if $x \wedge y$=$\bar{a}\vee\bar{b}$.
 \Jnote{Why those large spaces for $x$ and $y$?}
 \subsection{Classical strategy}\hfill \break
 The best way for Alice and Bob play such game is by preparing good strategy in term of how they should answer the judge's questions after studding the game structure and the best way to maximize their profit the best  strategy proposed by them is whatever they received  from the  judge they reply by $a=b=0$.
@@ -345,14 +348,15 @@ The best way for Alice and Bob play such game is by preparing good strategy in t
 \end{center}
 \end{table}
 
-The table above shows the number of times Alice and Bob win or lose using the best possible  classical strategy available to apply,it clear from the table they win three times out of four and lose at fourth time when $x=y=1$ and the answer $a=b=0$, where $AND$ output for the question is $1$ and the $NAND$ outcome for their answer is $0$.Now the question is there any non-local  strategy  to improve the winning chances with respect the game constrain?
+The table above shows a number of times Alice and Bob win or lose using the best possible  classical strategy to apply. It clearly obvious from the table they win three times out of four and lose at fourth time when $x=y=1$ and the answer $a=b=0$. Where $AND$ output for the question is $1$ and the $NAND$ outcome for their answer is $0$.
+Now the question is there is any non-local  strategy  to improve the winning chances with respect the game constraints?
 
 \subsection{Quantum Strategy}\hfill \break
-In order to investigate whether is possible better strategy for Alice and Bob such that they could  win the game with better probability, let's assume  than both our player has a qubit from maximally  entangled state initialized in Bell's states which are  at same degree of correlation.
+In order to investigate whether is possible to get better strategy for Alice and Bob such that they could  win the game with better probability. Let assume  the player has shared a qubit from maximally  entangled state initialized in Bell's states.
 \begin{equation}
 \ket{\Psi }= \frac{1}{\sqrt{2}}\left( \ket{00} +\ket{11} \right)\label{EQ:1} .
 \end{equation}
-Alice has two operator $A_1$ and $A_2$,she apply $A_1$ whenever the judge sent to her the bit $0$ and $A_2$ when she receive the bit$1$.Bob also equipped with $B_1$ and $B_2$ he always apply $B_1$ for his Qubit when the question he asked $0$ and $B_2$ else.$A_i \text{and} B_j$ are in unitary operator form.
+Alice has two operator $A_1$ and $A_2$,she apply $A_1$ whenever the judge sent to her the bit $0$ and $A_2$ when she receive the bit$1$. Bob also equipped with $B_1$ and $B_2$ he always apply $B_1$ for his qubit when the question he asked $0$ and $B_2$ else. $A_i \text{and} B_j$ an unitary operator.
 
 \[
 A_1=

@@ -2,7 +2,11 @@
 This chapter presents detailed description  of the concepts underlying the techniques and tools that are employed to achieve the goal of the research. First of foremost we describe how the LDA algorithm works in gensim with respect to the how the results were obtained. All other concepts and prior tools adopted for data preprocessing are also explained.
 
 \section{Data}
+\begin{flushleft}
 The source of the data for this research is from the website of IFRC. Practically the data was obtained by algorithms implemented in the R studio, automatically downloaded the over one thousand pdf reports from the website. Each report is named a name of a country depicting that the reports describes disaster that occurred in a particular country. Each report has an appeal id, several documents might refer to the same appeal id. The appeal id is the unique code given a particular report. Reports describing the same event have the share the same appeal id.
+\end{flushleft}
+
+The total number of reports obtained from the IFRC website is $1259$ pdf files. The reports were converted to txt format before preprocessing and the model training were carried out. It is easy and convenient to perform  such tasks when files are in the txt format.
 
 \section{Packages and Modules}
 Before training the model on the data some modules that are important to enable smooth running of the algorithms were were imported. Apart from Gensim and NLTK that are deeply explained in subsequent sections of this chapter, the role of  the remaining are briefly highlighted below.
