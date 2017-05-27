@@ -7,30 +7,43 @@
 In a macroscopic description of nature
 , the deterministic theories of physics offer good prediction for dynamics of any physical system. All measured quantities a commonly agreed with principle of locality and there is no doubts about the reality associated with physical state. Therefore, no theoretical prediction or experimental result violate this. The idea that distant objects cannot have direct influence on one another.That is, an object is directly influenced only by its immediate surroundings environment.
 
-On the other hand, the remarkable features of the microscopic world prescribed by quantum theory is the statistical restriction of a result obtained from the state of system subject to measurement. Unlike classical statistical mechanics,the quantum mechanic result on the average is not deterministic.
-The process of measurement itself subject to philosophical debate, which lead to discovery of Quantum myths.
+On the other hand, the remarkable features of the microscopic world prescribed by quantum theory is the statistical restriction of a result obtained from the state of system subject to measurement. Unlike classical statistical mechanics, the superposition and interferences in quantum mechanics cause what known by measurement problem and  quantum non-locality.
+The process of the measurement itself subject to philosophical debate, which lead to discovery of quantum myths.
 \Jnote{Statistical mechanics is not deterministic, same as QM. The differences
 are in interference (which causes measurement problem) and nonlocality of QM.}
 
-In 1935,Einstein, Podolsky and Rosen in well known paper claim that quantum  mechanics is not complete theory \citep*{EPR}.
-A year later, Schrödinger introduced the concept of quantum steering in an attempt to formalize the EPR paradox \citep*{schrodinger1935discussion},which in it Einstein, Podolsky and Rosen doubts about the completeness and the reality of the quantum mechanics theory, and they suggested local hidden variable theorem as completion of quantum wave function description of a physical reality \citep*{EPR}.
+In 1935,Einstein, Podolsky and Rosen in well known paper \citep*{EPR}, they show for certain quantum state two non commute operators correspond to two physical quantities can be measured simultaneously.
+This is a contradiction of Heisenberg uncertainty principle, which said that a pair of non commute operators corresponding to two physical quantities  can not be measured simultaneously, in other word, no measurements on certain system can be made without affecting the system state.
+
+
+In 1936, Schrödinger introduced the concept of quantum steering in an attempt to formalize the EPR paradox \citep*{schrodinger1935discussion}, which in it Einstein, Podolsky and Rosen doubt about the completeness and the reality of the quantum mechanics theory, and they suggested local hidden variable theory as completion of quantum wave function description of a physical reality.
 \Jnote{One para on EPR, one para on Schroedinger.}
  
-The idea of non-locality, what Albert Einstein rather dismissively called “spooky actions at a distance.
-\Jnote{Don't copy sentences from Internet.}
-This was first described in the “EPR papers”\citep*{EPR}, which they concluded by either the physical reality that described by this theorem (quantum mechanics) not complete or theorem itself not complete, because of locality violation.This according to the experimental results from  macroscopic system can not be happening. 
+The idea of quantum non-locality,
+%\Jnote{Don't copy sentences from Internet.}
+first described in the “EPR papers”\citep*{EPR}, which they concluded by either the physical reality that described by this theory (quantum mechanics) not complete or theory itself not complete, because of locality violation.This according to the experimental results from  macroscopic system can not be happening. 
 
-In 1964,John S. Bell showed that, the principle of local causes is incompatible with quantum mechanics and there is no local hidden variables theory can preserve quantum locality \citep*{book:800289}. An experimental verification for Bell's theory provided by John Clauser, Michael Horne, Abner Shimony, and Richard Holt \cite*{PhysRevLett.23.880}.
-\Jnote{CHSH proposed an experiment. Try finding references for some experimental papers
-that implement the experiment.}
+In 1964,John S. Bell showed that, the principle of local causes is incompatible with quantum mechanics and there is no local hidden variables theory can preserve quantum locality \citep*{book:800289}. An experimentally testable form of Bell's theorem provided by John Clauser, Michael Horne, Abner Shimony, and Richard Holt \citep*{PhysRevLett.23.880}. The experimental result also support the quantum theory prediction  \cite*{rowe2001experimental}.
 
-\Jnote{Write that modern quantum information theory models violations
-  of Bell's theorem using two-prover games with entanglement.
-  Cite some examples, you can find them in Section 3 of
-  https://arxiv.org/pdf/quant-ph/0404076.pdf
-  and in Watrous's lecture (GHZ game).}
+Meanwhile, in the modern quantum information theory, the quantum  violation of Bell's theory provided in the form of two-prover games. Where an entangled states shared to coordinate the player answers \cite*{PhysRevLett.82.1052}, such as $GHZ$ game. This used to analyses the quantum advantages in information technology sectors such as quantum cryptography, communication and teleportation.
+%%%%\Jnote{CHSH proposed an experiment. Try finding references for some experimental papers
+%%%%that implement the experiment.}
+%%%%
+%%%%\Jnote{Write that modern quantum information theory models violations
+%%%%  of Bell's theorem using two-prover games with entanglement.
+%%%%  Cite some examples, you can find them in Section 3 of
+%%%%  https://arxiv.org/pdf/quant-ph/0404076.pdf
+%%%%  and in Watrous's lecture (GHZ game).}
 
-In this essay, we approached quantum non-locality from two points of views.In chapter two, we investigated the non locality  impact for binary games strategy. When two  players share entangled state of two qubits and performs different quantum operators. basically, We show quantum strategy for two binary games ($XOR$ and $NAND$). In the first game the non-local strategy has increased the winning probability  compare to the classical strategy, with upper bound given by Tsirelson inequality\citep*{Cirel'son1980}. In the second game no notable benefit  gained from quantum non-locality.
+In this essay, we approached quantum non-locality from two points of views. In the first section of chapter two, we investigate quantum  non-locality  impact for CHSH ($XOR$) game strategy. When two  players share entangled state of two qubits and perform different quantum operators. Basically, We show  in it the quantum strategy for this game improved the winning probability. In section two, we present the proof of T'sirelson's bound \citep*{Cirel'son1980} to show that quantum strategy in the first part is optimal. It is interesting to see that entanglement gives only limited advantage for this game compare to classical strategy.
+
+In the second part of this chapter, we also show that there is non-trivial game for which no advantage can be gain from quantum entanglement. 
+The $NAND$ game, which is also binary game like CHSH game with only different in winning condition. In it the player win if and if  $NAND$ of their answers equal the $AND$ of the asked equations. We show that for such game the classical optimal strategy is same as the non-local.
+Using similar approach to T'sirelson's upper bound, we also proof this is the optimal non-local winning value for this games.
+
+
+
+
 
 \Jnote{Separate paragraphs: first, say that in the first part of Chapter two
   you show quantum strategy for CHSH game.}
@@ -44,8 +57,15 @@ In this essay, we approached quantum non-locality from two points of views.In ch
   there is no quantum advantage and that you give an example of such
   game. Explain relation to XOR game.}
 
-In the second point, which covered in chapter three. We deal with quantum non-locality  in more fundamental aspect. The inconsistency of local hidden variables theory with the statistical predictions of quantum mechanics.
-This built on more basic way to reformulate Bell's theory given by  Jevtic and Rodulph \citep*{Jevtic:2015:10.1364/JOSAB.32.000A50}. Also, we  proof conjecture 1  from this paper. 
+In the second point of view, which covered in chapter three. We deal with quantum non-locality  in more fundamental aspect. The inconsistency of local hidden variables theory with the statistical predictions of quantum mechanics.
+This built on more basic way to reformulate Bell's theory given by  Jevtic and Rodulph \citep*{Jevtic:2015:10.1364/JOSAB.32.000A50}. 
+
+They used quantum steering  in an attempt to drive  quantum mechanics  violation of local realism in the form of hidden variables. 
+In particular, they show when  subsystem of two dimensional entangled state steered to three ensembles of orthogonal  bases and third  ensemble of those orthogonal bases bisect the first two, there is no local hidden variables theory could be provide quantum result.
+
+For the general case, when subsystem of maximally entangled state of two dimensional system steered to three ensemble of orthogonal bases, they gives a conjecture. In it they said quantum mechanics violate the local realism in the form hidden variables theory, if and if the angles between these bases not lie in convex hull of given points. 
+
+Using similar procedure, we investigate more about the violation two dimensions entangled state of local realism description in the form of local hidden variables. We also  provide a proof for the  conjecture in \citep*{Jevtic:2015:10.1364/JOSAB.32.000A50}. using analytical procedure for the values of angles between the bases of three orthogonal sets. 
 
 \Jnote{More paragraphs. Explain (high-level) what JR is about.
   Explain (high-level) what the conjecture states and how we solve it.

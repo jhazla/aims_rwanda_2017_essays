@@ -117,8 +117,8 @@ Thus, from the theorem \eqref{hka} we can deduce the value of the $n-$fold paral
  \begin{thm} Let $k\geq 3$, $n\geq 1$ and $S\subseteq [k]^n$ with density $\Delta_{k,n}$. We have: 	
  $\val (G_S^n) \geq \Delta_{k,n}.$  \label{hka1}
  	\end{thm} 
+For this  game $G_S$, according to the theorems \eqref{ver96} and \eqref{hka1}, we conclude that $\val (G^n)=\Delta_{k,n}.$
 
-\begin{proof}
 To prove  the theorem \eqref{hka}, we need to construct a game which  satisfies the conditions on theorem \eqref{hka}. So, let us construct a game $G_S$   as  defined by \cite{hkazla2016forbidden} based to the subset $S $ of the set $[k]^n$. 
 
 Let $k \geq 3$, $n \geq 1$ and $S \subseteq [k]^n$ with $\delta (S)= \frac{|S|}{k^n}$. The game $G_S$ with question set $Q_k$ which we will define must satisfy the  following requirements: 
@@ -132,58 +132,77 @@ The answer set of the game $G_S$ is the same for all provers: $A^t=2^{[n]} \time
 \item The sets $T^1, T^2,\ldots, T^k$ form a partition of $[n].$
 \item $z^1=z^2=\ldots=z^k=z.$
 \item $z \in T^t$
-\item Let $\bar{s} = (s_1, s_2, \ldots, s_n)$ be the string over $[k]^n$ such that  $s_i = t$ if and only if $i \in  T ^t$ for $1\leq i \leq n.$ Then, $\bar{s} \in S.$
+\item Let $\bar{s} = (s_1, s_2, \ldots, s_n)$ be the string over $[k]^n$ such that  $s_i = e$ if and only if $i \in  T ^e$ for $1\leq i \leq n.$ Then, $\bar{s} \in S.$
 \end{itemize}
 
-From the definition of the game $G_S$ we can deduce the following propositions given by \cite{hkazla2016forbidden}.
+From the definition of the game $G_S$ we can deduce the following propositions given and proved by \cite{hkazla2016forbidden}. So, the proofs of these propositions are adapted from this latter paper.  
 \begin{pro} If $S$ has a combinatorial line, then the game $G_S$ is trivial	. \label{pr1}	\end{pro}
 %\Jnote{You have to define $G_S$ before stating the proposition.}
 \begin{proof}
-Let $\bar{b}=(b_1,\ldots, b_n)$ an element of the combinatorial line 
+We assume that $S \subseteq [k]^n$ has a combinatorial line. 
+Let $\bar{b}=w(x)=(b_1,\ldots, b_n)$ an $x-$string for which the  combinatorial line is $L(\bar{b})=\{w(x;i): i \in [k]\} \subseteq S$ and let fix a position $z \in [n]$ with $b_z=x$. Note that $b_1,\ldots, b_n \in [k] \cup \{x\}$. For $p \in [k] \cup \{x\}$, let us define a set $B(p)$ as: $B(p)=\{j: b_j=p\}$. The set $B(p)$ is the set of coordinates $j$ in which $b_j$ equals  to $p.$ Now, let us define the  strategy for which prover $e$ will use to answer questions:
+$$ f^e(q^e)=\left\lbrace \begin{array}{ll} (B(e),z) & \text{if } q^e=0, \\ (B(e) \cup B(x), z) & \text{if } q^e=1.\end{array} \right. $$
+
+Thus, the verifier checks the four conditions. The verifier will always accept the first condition because the sets $B(1), \ldots, B(k), B(x)$ from a partition. All $z^e$ are equal, that is $z^1=\ldots=z^k$, then the second condition is satisfied. Because the prover $t$ responds with  $(B(t) \cup B(x), z)$ and $z \in B(x)$, then $z \in T^t$: the third condition is satisfied. The fourth condition is also satisfied because $\bar{s}=\bar{b}$ with $t$ in place of stars and $\bar{s}=\bar{b} =w(t) \in L(\bar{b}) \subseteq S.$
 \end{proof}
+
 \begin{pro} If the game $G_S$ is trivial, then $S$ has a combinatorial line.	 \label{pr2}	\end{pro}
 
+\begin{proof}
+We assume that the game $G_S$ is trivial. So, let $f^1, \ldots, f^k$ be a strategy for the provers that always wins. The form of the answer of the prover $e$ to the question $q \in \{0,1\}$ is defined as: $(T_q^e, z_q^e)=f^e(q)$ where $e \in [k]$.  Since whenever $e \neq t$, the verifier checks $z_0^e=z_1^a$. As the game is trivial we have $z_0^1=z_0^2= \ldots=z_0^k=z_1^1=z_1^2= \ldots=z_1^k=z$. 
+For any two $e\neq e'$, $T_0^e \cap T_0^{e'}= \emptyset$, that the two sets $T_0^e $ and $T_0^{e'}$ are pairwise disjoint. If $t \neq e$ and $a\neq e'$, the verifier will reject.
+$z \in T_0^1 \cup \ldots \cup T_0^k$, since if $z \in T_0^e$, the verifier rejects if $t \neq e$. Therefore, the word $\bar{b}=w(x)$ (combinatorial line)  is defined as: $$b_i=\left\lbrace \begin{array}{ll} e & \text{if } i \in T_0^e, \ \text{for }j \in [k], \\ x & \text{ otherwise}.\end{array} \right.$$
+For a fix $t \in [k]$, $w(t) \in S.$ We suppose that  the verifier picks $t$ as the special prover. Since the verifier checks that the sets $T^e$ form a partition, it must be that prover $t$ responds with $T_1^t=[n] \ \left(T_0^1 \cup \ldots \cup T_0^{t-1} \cup T_0^{t+1} \cup \ldots T_0^k	 \right) .$ The verifier checks that the resulting string is in $S$ and accepts, it must be that $w(t) \in S.$ This holds for every $t$, and thus $L(\bar{b}) \subseteq S.$
+\end{proof}
+
 \begin{pro}	 The value of $G_S^n$ is at least $\delta(S)$	  \label{pr3} \end{pro}
+
+\begin{proof}
+Let  $T^e=\{i \in [n]: q_i^e=1\}$. $T^e$ defines the set of coordinates in which prover $e$ is special. In coordinate $i$, prover $e$ responds with $(T^e,i).$ Let $a_1, \ldots, a_n$ be the sequence of special provers which the verifier picks. Let us assume that if $(a_1, \ldots, a_n) \in S$ then the verifier accepts in all coordinates with probability $\delta(S).$ 
+
+Let us show that $\bar{s}=(a_1, \ldots, a_n) $. Since in each coordinate there is exactly one special prover, then the sets $T^1, \ldots, T^k$ form a partition of $[n]$. $z_i^1=\ldots=z_i^k=i \in T^{t_i}$ by definition of $T^e$ and since prover $t_i$ is pecial in coordinate $i.$ Therefore, $\bar{s} \in S$, since for all $n$ coordinates $\bar{s}$ is exactly the string $(a_1, \ldots, a_n).$
 \end{proof}
 
 
 
-A short proof of the theorem \eqref{hka} has been given by \cite{hkazla2016forbidden} by using the proposition \eqref{prop} and theorem \eqref{hhm} which contain  the notion of \textit{homomorphism} of question sets. Let us introduce notions of homomorphism.
 
-Let $k\geq 2$ and $Q \subseteq X^1 \times \ldots \times X^k$ be a $k-$prover question set. Consider the $r-$regular, $r-$partite hypergraph\footnote{A hypergraph is pair $(X,E)$ where $X$ is a set of elements called \textit{nodes} or \textit{vertices}, and $E$ is a set of non-empty subsets of $X$ called hyperedges (set of nodes) or edges. For further reading, see https://en.wikipedia.org/wiki/Hypergraph} $G=(X^1 \times \ldots \times X^k, Q).$
 
- Given two hypergraphs $(X^1 \times \ldots \times X^k, Q)$ and $(Y^1 \times \ldots \times Y^k, P)$. The function $f=(f^1, \ldots, f^k)$ where $f^t: X^t \longrightarrow Y^t$ is a homomorphism from $Q$ to $P$ if $\bar{q}=(q^1, \ldots,q^k) \in Q$ implies $f(\bar{q})=(f^1(q^1), \ldots,f^k(q^k)) \in P.$
-
-Let $S\subseteq Q^n$ with $\delta(S)= |S|/|Q^n|$ the density of $S$, and $f=(f_1, \ldots, f_n)$ be a vector of $n$ homomorphisms of $Q$ (from $Q$ to $Q$). $f$ is \textit{good} for $S$ if:
-\begin{itemize}
-\item For every $\bar{q}=(q^1, \ldots,q^k) \in Q$, we have $f(\bar{q})=(f_1(\bar{q}), \ldots, f_n(\bar{q})) \in S.$
-\item There exists $i \in  [n]$ such that $f_i$ is identity.
-\end{itemize}
-
-\Jnote{Please summarize the direct proof, not the one with homomorphisms.}
-
-\begin{thm}[\cite{feige1996error}]	Let $Q$ be a connected, $k-$prover question set and $S \subseteq Q^n$. There exists an $k-$prover game $G_S$ with question set $Q$ such that:
-\begin{itemize}
-\item If $G^S$ is trivial, then there exists a homomorphism vector $f$ that is good for $S$.
-\item $\val (G_S^n) \geq \delta.$
-\end{itemize} \label{hhm}	\end{thm} 
-
-\begin{pro}	Let $r \geq 3$ and $S \subseteq Q_k^n \cong [r]^n$ such that there exists a homomorphism vector $f$ that is good for $S$. Then, $S$ contains a combinatorial line.	\label{prop}\end{pro}
- 
-Moreover, let us consider that $S$ is a subset of $[k]^n$ without a combinatorial line. Assume that $S$ is the maximum subset of $[k]^n$ without a combinatorial line, then from theorem \eqref{hka} we obtain the theorem \eqref{hkb} which is a  complementary inequality to theorem \eqref{ver96}.
- 
- \begin{thm}[\cite{hkazla2016forbidden}] For $k \geq 3$, $\Delta_{k,n}	\leq \val (G^n).$ \label{hkb}	\end{thm}
- 
- Considering that $\nu_{Q,n}=\max_G \val (G^n)$ where the maximum is over all non-trivial games $G$ with question set $Q$, we have $\Delta_{k,n}	\leq \nu_{Q,n}$ which remains true.
- 
- By combining the two theorems \eqref{ver96} and \eqref{hkb}, we have $\val (G^n)=\Delta_{k,n}.$. Likewise, the maximum  value of  all non-trivial games equals to the density of the maximum subset of $[k]^n$ without a combinatorial line, that is $\nu_{Q,n}=\Delta_{k,n}.$
- 
-From the best known lower bound of $\Delta_{k,n}$ established by \cite{polymath2010density}, we can apply it to bound $\val (G^n)$. This lower bound adapted by \cite{hkazla2016forbidden}, thereafter for this kind of multi-prover is formulated in \eqref{hkc}
- 
- \begin{thm}Let $\ell \geq 1$ and $k=2^{\ell-1}+1.$ There exists $C_{\ell} >0$ such that for every $n\geq 2$ there exists a set $S \subseteq [k]^n$ with $$ \delta(S) \geq \exp \left( -C_{\ell} (\log n)^{1/\ell} \right)$$	 such that $S$ does not contain a combinatorial line  \label{hkc}	\end{thm}
-
- As $\val (G_S^n) \geq  \delta(S)$, we deduce from \eqref{hkc} that  $\val (G_S^n) \geq  \exp \left( -C_{\ell} (\log n)^{1/\ell} \right)$ for $k=2^{\ell-1}+1.$
-
- \Jnote{The section with proofs seems disorganized. Please divide it clearly
-   into two parts (DHJ => PR) and (PR => DHJ) without mixing them up.}
- 
+%A short proof of the theorem \eqref{hka} has been given by \cite{hkazla2016forbidden} by using the proposition \eqref{prop} and theorem \eqref{hhm} which contain  the notion of \textit{homomorphism} of question sets. Let us introduce notions of homomorphism.
+%
+%Let $k\geq 2$ and $Q \subseteq X^1 \times \ldots \times X^k$ be a $k-$prover question set. Consider the $r-$regular, $r-$partite hypergraph\footnote{A hypergraph is pair $(X,E)$ where $X$ is a set of elements called \textit{nodes} or \textit{vertices}, and $E$ is a set of non-empty subsets of $X$ called hyperedges (set of nodes) or edges. For further reading, see https://en.wikipedia.org/wiki/Hypergraph} $G=(X^1 \times \ldots \times X^k, Q).$
+%
+% Given two hypergraphs $(X^1 \times \ldots \times X^k, Q)$ and $(Y^1 \times \ldots \times Y^k, P)$. The function $f=(f^1, \ldots, f^k)$ where $f^t: X^t \longrightarrow Y^t$ is a homomorphism from $Q$ to $P$ if $\bar{q}=(q^1, \ldots,q^k) \in Q$ implies $f(\bar{q})=(f^1(q^1), \ldots,f^k(q^k)) \in P.$
+%
+%Let $S\subseteq Q^n$ with $\delta(S)= |S|/|Q^n|$ the density of $S$, and $f=(f_1, \ldots, f_n)$ be a vector of $n$ homomorphisms of $Q$ (from $Q$ to $Q$). $f$ is \textit{good} for $S$ if:
+%\begin{itemize}
+%\item For every $\bar{q}=(q^1, \ldots,q^k) \in Q$, we have $f(\bar{q})=(f_1(\bar{q}), \ldots, f_n(\bar{q})) \in S.$
+%\item There exists $i \in  [n]$ such that $f_i$ is identity.
+%\end{itemize}
+%
+%\Jnote{Please summarize the direct proof, not the one with homomorphisms.}
+%
+%\begin{thm}[\cite{feige1996error}]	Let $Q$ be a connected, $k-$prover question set and $S \subseteq Q^n$. There exists an $k-$prover game $G_S$ with question set $Q$ such that:
+%\begin{itemize}
+%\item If $G^S$ is trivial, then there exists a homomorphism vector $f$ that is good for $S$.
+%\item $\val (G_S^n) \geq \delta.$
+%\end{itemize} \label{hhm}	\end{thm} 
+%
+%\begin{pro}	Let $r \geq 3$ and $S \subseteq Q_k^n \cong [r]^n$ such that there exists a homomorphism vector $f$ that is good for $S$. Then, $S$ contains a combinatorial line.	\label{prop}\end{pro}
+% 
+%Moreover, let us consider that $S$ is a subset of $[k]^n$ without a combinatorial line. Assume that $S$ is the maximum subset of $[k]^n$ without a combinatorial line, then from theorem \eqref{hka} we obtain the theorem \eqref{hkb} which is a  complementary inequality to theorem \eqref{ver96}.
+% 
+% \begin{thm}[\cite{hkazla2016forbidden}] For $k \geq 3$, $\Delta_{k,n}	\leq \val (G^n).$ \label{hkb}	\end{thm}
+% 
+% Considering that $\nu_{Q,n}=\max_G \val (G^n)$ where the maximum is over all non-trivial games $G$ with question set $Q$, we have $\Delta_{k,n}	\leq \nu_{Q,n}$ which remains true.
+% 
+% By combining the two theorems \eqref{ver96} and \eqref{hkb}, we have $\val (G^n)=\Delta_{k,n}.$. Likewise, the maximum  value of  all non-trivial games equals to the density of the maximum subset of $[k]^n$ without a combinatorial line, that is $\nu_{Q,n}=\Delta_{k,n}.$
+% 
+%From the best known lower bound of $\Delta_{k,n}$ established by \cite{polymath2010density}, we can apply it to bound $\val (G^n)$. This lower bound adapted by \cite{hkazla2016forbidden}, thereafter for this kind of multi-prover is formulated in \eqref{hkc}
+% 
+% \begin{thm}Let $\ell \geq 1$ and $k=2^{\ell-1}+1.$ There exists $C_{\ell} >0$ such that for every $n\geq 2$ there exists a set $S \subseteq [k]^n$ with $$ \delta(S) \geq \exp \left( -C_{\ell} (\log n)^{1/\ell} \right)$$	 such that $S$ does not contain a combinatorial line  \label{hkc}	\end{thm}
+%
+% As $\val (G_S^n) \geq  \delta(S)$, we deduce from \eqref{hkc} that  $\val (G_S^n) \geq  \exp \left( -C_{\ell} (\log n)^{1/\ell} \right)$ for $k=2^{\ell-1}+1.$
+%
+% \Jnote{The section with proofs seems disorganized. Please divide it clearly
+%   into two parts (DHJ => PR) and (PR => DHJ) without mixing them up.}
+% 
