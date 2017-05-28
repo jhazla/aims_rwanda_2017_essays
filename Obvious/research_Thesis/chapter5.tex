@@ -149,9 +149,9 @@ We ran simulations for 5 cases;
 \end{enumerate}
 
 \section{Results}
- Figure \ref{pics:res}, illustrates the typical spread of infection for each of the five scenarios listed above. One can observe from figure \ref{pics:res} in the first raw, that when $\mu p_2 =0$  is there are very few infections and they occur in clumps.
+From our simulated model for the transmission dynamics of Zika virus the following results were obtained. In case 1 where $p_2 =0$, the disease spread in isolated cases.In the first row of figure  \ref{fig:animals} it can be seen that at different time interval the number of infected is small and  the infections are in cramps.  The number of individuals infected at each time is stochastic and not too many people will be infected as the disease progresses.  When $p_2 = 0$, the populations is just a regular lattice. The disease does not spread rapidly when there are only local infections.
 
-For $p_1 =0$ we see only isolated infections with no spatial  correlation. As both $p_2$ increase the infection becomes explosive. In raw five we investigate how the infectious period affects the spread of the infection. Since the infectious period is given with large confidence interval we set it to be 50 days instead of 17.4 and investigate its effect. I can be seen that the number of infections in raw five on day 80 is the largest in all our cases. The longer the infectious period the faster the disease is spread.
+In case two when $p_2$ is no longer 0, thus we assume there are distant connection in the network. The disease progression is a steady increase and many people become infected over a short period of time figure. In the second row of figure \ref{pics:res}, a few cramps can be seen and some random infections.  Thus the disease will spread faster on the small world network than on a regular network in case 1.
 
 \begin{figure}[h]
     \centering
@@ -189,7 +189,10 @@ For $p_1 =0$ we see only isolated infections with no spatial  correlation. As bo
     \caption{Infections in each case}\label{fig:animals}
 \end{figure}
 
-\begin{figure}
+In case 3, $p_1 = 0$ the disease will not spread locally but just along the distant links. The disease spread still increase sharply but not as fast in case 2. In the third row of figure \ref{pics:res} it can be seen that there are spatially uncorrelated infections.
+
+ \ref{fig:animals}. 
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.28]{images/1t20.png} \quad
 \includegraphics[scale=0.28]{images/1t40.png} \quad
@@ -224,3 +227,7 @@ For $p_1 =0$ we see only isolated infections with no spatial  correlation. As bo
 \caption{Each row depicts the evolution at 20 days interval of infection. Infected nodes are shown in red, exposed nodes in blue and recovered nodes in green.}
 \label{pics:res}
 \end{figure}
+
+In case 4, There are both local and distant transmissions of the infection. The disease will infections increase exponentially in this case and the disease reaches its peak in a short time figure \ref{fig:animals}. Further in the fourth row of figure \ref{pics:res} it can be seen that compared to the case 1 to 3, it has the highest number of infected individual at each time step.
+
+In all the previous cases we kept $r_1 = 1/17.4$, were $17.4$ is the number of days for which an individual is infectious. Since the $r_1$a larger confidence interval \citep{lessler2016times}, we try  $r_1 = 1/50$. Case 5 is just case 4 with a lower $r_1$. In figure \ref{fig:animals} it can be seen that when the infectious period is longer the infection will burst in a short period of time.
