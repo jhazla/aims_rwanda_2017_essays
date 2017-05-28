@@ -121,31 +121,54 @@ The process of computing the posterior using the above steps is called Markov mo
 It is one of the most powerful statistical and machine learning (ML) techniques in modelling and high qualified in entities extraction. When the researcher is willing to train new data, HMM is very robust and efficient in computations.
 %\section{2.1.1.2. Disadvantages of Hidden Markov Model}
 One of the limitations of HMM is that the researcher must have the notion of model topology and statistical techniques on how to deal with large amount of training data.
-\section{Supporting Vector Machine based model(To be edited for non linear data)}
-This model has an aims of classifying the named entities by using the linear support vector machine which separate input train documents into two categories, a document must be categorized as either positive or negative and be represented in two dimensional graph.
-%\Jnote{You will have many dimensions, not just two}
-Hyperplane is for separating train documents based on their categories and "w" is a weight vector  which is perpendicular to hyperplane is represented by the following equation: 
-\begin{align}
-w.x- b = 0 \label{2.0.7}
-\end{align}
-\begin{figure}[hbtp]
-\caption{SVM in hyperplane representation}
-\centering
-\includegraphics[scale=.7]{images/svm.png}
+\section{Supporting Vector Machine (SVM) based model}
+This model has an aim of classifying the named entities by separating the documents into two categories.  The document must belong to one category, either positive or negative.  SVM can classify linear data as well as non linear with a purpose of maximizing the margin between negative and positive documents.The plane which separate those two categories is called "hyperplane".
+
+The main idea behind SVM modelling is to work with features and find the hyperplane. The hyperplane must separate all given samples regardless the dimensions.
+\subsection{Linear Supporting Vector Machine }
+\newpage
+\begin{figure}
+        \begin{subfigure}{.6\textwidth}
+         \includegraphics[scale=.3]    	          {images/linear.png} \label{linear}
+         \caption{Two dimensional SVM}
+        \end{subfigure}%
+        \begin{subfigure}{\textwidth}
+                \includegraphics[scale=.6]    	                 {images/multi.png}
+                \label{multi}
+                \caption{Multi dimensional  }
+        \end{subfigure}
+
 \end{figure}
+For linear sample data, it is simple to plot the hyperplane to handle the separation.  Data are spread separately between positive documents and negative documents. The way data are represented SVM decided  whether to use linear modelling or not. 
+
+\subsection{Non Linear data} 
+Sometimes the representation of data is quite mixed way so that you cant plot hyperplane easily. When the hyperplane can not be plotted as a straight line,  SVM has a function to linearise non linear data.  When the data are not linear, SVM has a way to linearise them by using a function. $ \phi$ maps data to the higher dimensional space. Straightforwardly, the classification became linear. Figure \ref{SVMNL} shows the way a function $ \phi$ linearised the data.
+
+IFRC reports are considered as multi dimensional documents.
+%\Jnote{You will have many dimensions, not just two}
+%Hyperplane is for separating train documents based on their categories and "w" is a weight vector  which is perpendicular to hyperplane is represented by the following equation: 
+%\begin{align}
+%w.x- b = 0 \label{2.0.7}
+%\end{align}
+%\begin{figure}[hbtp]
+%\caption{SVM in hyperplane representation}
+%\centering
+%\includegraphics[scale=.7]{images/svm.png}
+%\end{figure}
 
  
 
-From the \eqref{2.0.7}, the offset of the hyperplane is $ \frac{b}{\parallel  w \parallel} $
-
-The target is to maximize the the margin between the the points which represent two categories. Remember that the vectors which pass through each of the point representative is perpendicular to the w, suppose that there will be an imaginary line which join two borders points $ h_{-}$ and $ h_{+}$.
-%\Jnote{I didn't understand this explanation.}
-Supporting vectors which are demonstrated by the dashed lines on the figure above  are formed by :
-\begin{align}
-w.x- b & = 1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
-w.x- b & = -1 \label{2.0.9}
-\end{align}
-There are many algorithms with different approaches to optimization problems but all tends to the same solution says that minimize $\textbackslash\textbar{ w} \textbackslash$ automatically maximize the margin between $ h_{-}$ and $ h_{+}$ where the boundary is a half way.
+%From the \eqref{2.0.7}, the offset of the hyperplane is $ \frac{b}{\parallel  w \parallel} $
+%
+%The target is to maximize the the margin between the the points which represent two categories. Remember that the vectors which pass through each of the point representative is perpendicular to the w, suppose that there will be an imaginary line which join two borders points $ h_{-}$ and $ h_{+}$.
+%%\Jnote{I didn't understand this explanation.}
+%Supporting vectors which are demonstrated by the dashed lines on the figure above  are formed by :
+%\begin{align}
+%w.x- b & = 1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
+%w.x- b & = -1 \label{2.0.9}
+%\end{align}
+%There are many algorithms with different approaches to optimization problems but all tends to the same solution says that minimize $\textbackslash\textbar{ w} \textbackslash$ automatically maximize the margin between $ h_{-}$ and $ h_{+}$ where the boundary is a half way.
+%===============
 %\section{Big data and Machine learning}
 %The natural language processing is not enough to handle the sophistication and ubiquity of textual data reason why deep learning using machine learning techniques has been introduced.
 %Text analysis using machine learning follow these steps:
@@ -158,14 +181,24 @@ There are many algorithms with different approaches to optimization problems but
 
 %\end{itemize}
 %\Jnote{Don't use \textbackslash parallel for norm, instead use \textbackslash\textbar}
-Now,add another constraint for each document category from the equations \eqref{2.0.8} and \eqref{2.0.9}, in order to hit the target
-\begin{align}
-w.x- b & \geq     1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
-w.x- b & \leq -1 \label{2.0.9}
-\end{align}
+%===============
+%Now,add another constraint for each document category from the equations \eqref{2.0.8} and \eqref{2.0.9}, in order to hit the target
+%\begin{align}
+%w.x- b & \geq     1 \label{2.0.8} \quad \quad \quad  \text{and also } \\
+%w.x- b & \leq -1 \label{2.0.9}
+%\end{align}
 %\Jnote{Again, I didn't really understand this part.}
+<<<<<<< HEAD
 
 
+=======
+\begin{figure}[hbtp]
+\caption{Nonlinear SVM classification}
+\centering
+\includegraphics[scale=.7]{images/SVMNL.png}\label{SVMNL}
+\end{figure}
+ 
+>>>>>>> 3d6070f558dda163a5072df45914a9e18dfc3afe
 \section{Disadvantages of SVM} 
 The classification of particular documents is not easy to be performed by SVM without destroying the constructed weights  but with hand-written rule model. Machine learning uses decision tree procedure than SVM. In addition the decision tree has a detailed boolean-like  model which is more popular to user.
 
@@ -218,3 +251,5 @@ The natural language processing is not enough to handle the sophistication and u
 \item extraction done by learning algorithms and Natural language tools.
 \item No limitation of languages.
 \end{itemize}
+
+
