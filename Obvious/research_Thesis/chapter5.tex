@@ -149,7 +149,7 @@ We ran simulations for 5 cases;
 \end{enumerate}
 
 \section{Results}
-From our simulated model for the transmission dynamics of Zika virus the following results were obtained. In case 1 where $p_2 =0$, the disease spread in isolated cases.In the first row of figure  \ref{fig:animals} it can be seen that at different time interval the number of infected is small and  the infections are in cramps.  The number of individuals infected at each time is stochastic and not too many people will be infected as the disease progresses.  When $p_2 = 0$, the populations is just a regular lattice. The disease does not spread rapidly when there are only local infections.
+From our simulated model for the transmission dynamics of Zika virus the following results were obtained. In case 1 where $p_2 =0$, the disease spread in isolated cases. In the first row of figure  \ref{a} it can be seen that at different time interval the number of infected is small and  the infections are in cramps.  The number of individuals infected at each time is stochastic and not too many people will be infected as the disease progresses.  When $p_2 = 0$, the populations is just a regular lattice. The disease does not spread rapidly when there are only local infections.
 
 In case two when $p_2$ is no longer 0, thus we assume there are distant connection in the network. The disease progression is a steady increase and many people become infected over a short period of time figure. In the second row of figure \ref{pics:res}, a few cramps can be seen and some random infections.  Thus the disease will spread faster on the small world network than on a regular network in case 1.
 
@@ -158,7 +158,7 @@ In case two when $p_2$ is no longer 0, thus we assume there are distant connecti
     \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{images/1infections}
         \caption{ case1 }
-        \label{fig a}
+        \label{a}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
@@ -186,12 +186,10 @@ In case two when $p_2$ is no longer 0, thus we assume there are distant connecti
         \caption{case 5}
         \label{e}
     \end{subfigure}
-    \caption{Infections in each case}\label{fig:animals}
+    \caption{Infections in each case}\label{fig5.4}
 \end{figure}
 
-In case 3, $p_1 = 0$ the disease will not spread locally but just along the distant links. The disease spread still increase sharply but not as fast in case 2. In the third row of figure \ref{pics:res} it can be seen that there are spatially uncorrelated infections.
-
- \ref{fig:animals}. 
+In case 3, $p_1 = 0$ the disease will not spread locally but just along the distant links. The disease spread still increase sharply but not as fast in case 2. In the third row of figure \ref{pics:res} it can be seen that there are spatially uncorrelated infections . 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.28]{images/1t20.png} \quad
@@ -228,6 +226,6 @@ In case 3, $p_1 = 0$ the disease will not spread locally but just along the dist
 \label{pics:res}
 \end{figure}
 
-In case 4, There are both local and distant transmissions of the infection. The disease will infections increase exponentially in this case and the disease reaches its peak in a short time figure \ref{fig:animals}. Further in the fourth row of figure \ref{pics:res} it can be seen that compared to the case 1 to 3, it has the highest number of infected individual at each time step.
+In case 4, There are both local and distant transmissions of the infection. The disease will infections increase exponentially in this case and the disease reaches its peak in a short time figure \ref{d}. Further in the fourth row of figure \ref{pics:res} it can be seen that compared to the case 1 to 3, it has the highest number of infected individual at each time step.
 
-In all the previous cases we kept $r_1 = 1/17.4$, were $17.4$ is the number of days for which an individual is infectious. Since the $r_1$a larger confidence interval \citep{lessler2016times}, we try  $r_1 = 1/50$. Case 5 is just case 4 with a lower $r_1$. In figure \ref{fig:animals} it can be seen that when the infectious period is longer the infection will burst in a short period of time.
+In all the previous cases we kept $r_1 = 1/17.4$, were $17.4$ is the number of days for which an individual is infectious. Since the $r_1$a larger confidence interval \citep{lessler2016times}, we try  $r_1 = 1/50$. Case 5 is just case 4 with a lower $r_1$. In figure \ref{e} it can be seen that when the infectious period is longer the infection will burst in a short period of time.
