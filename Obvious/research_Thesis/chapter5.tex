@@ -137,38 +137,90 @@ From equation \ref{eqn 5.32}, it can be shown that $p_1$ and $p_2$ have natural 
 \section{Simulation}
 To investigate how disease propagation varies depending on $p_1, p_2, $ and $r_1$ we ran a couple of simulations on a small work network. 
 
-We initiate the model with one infected individual and an $r_1$ which is relatively small .As the  infection progresses  we increase $r_1$ to reflect changes in health care as a response to the Zika out break. We assume the other parameter are constant.
+We initiate the model with one infected individual and an $r_1$ which is relatively small .We simulated our models with various parameters and observe they dynamics  of the infection. 
+
+We ran simulations for 5 cases;
+\begin{enumerate}
+\item $p_1 = 0.12$ , $p =0$ and $r_1 = 1/17.4$
+\item $p_1 = p_2 = 0.022$ and $r_1 = 1/17.4$ 
+\item $p_1 =0 $,$p_2 = 0.0323$ and $r_1 = 1/17.4$
+\item $p_1 = 0.0645$ ,$p_2 = 0.0323$ and $r_1 = 1/17.4$
+\item $p_1 = 0.0645$ ,$p_2 = 0.0323$ and $r_1 = 1/50$
+\end{enumerate}
 
 \section{Results}
+ Figure \ref{pics:res}, illustrates the typical spread of infection for each of the five scenarios listed above. One can observe from figure \ref{pics:res} in the first raw, that when $\mu p_2 =0$  is there are very few infections and they occur in clumps.
+
+For $p_1 =0$ we see only isolated infections with no spatial  correlation. As both $p_2$ increase the infection becomes explosive. In raw five we investigate how the infectious period affects the spread of the infection. Since the infectious period is given with large confidence interval we set it to be 50 days instead of 17.4 and investigate its effect. I can be seen that the number of infections in raw five on day 80 is the largest in all our cases. The longer the infectious period the faster the disease is spread.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/1infections}
+        \caption{ case1 }
+        \label{fig a}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/3infections}
+        \caption{case 2}
+        \label{b}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/2infections.png} 
+        \caption{case 3}
+        \label{c}
+    \end{subfigure}
+       \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/4infections}
+        \caption{case 4}
+        \label{d}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/5infections.png} 
+        \caption{case 5}
+        \label{e}
+    \end{subfigure}
+    \caption{Infections in each case}\label{fig:animals}
+\end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.25]{images/1t20.png} \quad
-\includegraphics[scale=0.25]{images/1t40.png} \quad
-\includegraphics[scale=0.25]{images/1t60.png} \quad
-\includegraphics[scale=0.25]{images/1t80.png} 
+\includegraphics[scale=0.28]{images/1t20.png} \quad
+\includegraphics[scale=0.28]{images/1t40.png} \quad
+\includegraphics[scale=0.28]{images/1t60.png} \quad
+\includegraphics[scale=0.28]{images/1t80.png} 
 
 \medskip
-\includegraphics[scale=0.25]{images/2t20.png} \quad
-\includegraphics[scale=0.25]{images/2t40.png} \quad
-\includegraphics[scale=0.25]{images/2t60.png} \quad
-\includegraphics[scale=0.25]{images/2t80.png} 
+\includegraphics[scale=0.28]{images/3t20.png} \quad
+\includegraphics[scale=0.28]{images/3t40.png} \quad
+\includegraphics[scale=0.28]{images/3t60.png} \quad
+\includegraphics[scale=0.28]{images/3t80.png} 
 
 \medskip
-\includegraphics[scale=0.25]{images/3t20.png} \quad
-\includegraphics[scale=0.25]{images/3t40.png} \quad
-\includegraphics[scale=0.25]{images/3t60.png} \quad
-\includegraphics[scale=0.25]{images/3t80.png} 
+\includegraphics[scale=0.28]{images/2t20.png} \quad
+\includegraphics[scale=0.28]{images/2t40.png} \quad
+\includegraphics[scale=0.28]{images/2t60.png} \quad
+\includegraphics[scale=0.28]{images/2t80.png} 
+
 
 \medskip
-\includegraphics[scale=0.25]{images/4t20.png} \quad
-\includegraphics[scale=0.25]{images/4t40.png} \quad
-\includegraphics[scale=0.25]{images/4t60.png} \quad
-\includegraphics[scale=0.25]{images/4t80.png} 
+\includegraphics[scale=0.28]{images/4t20.png} \quad
+\includegraphics[scale=0.28]{images/4t40.png} \quad
+\includegraphics[scale=0.28]{images/4t60.png} \quad
+\includegraphics[scale=0.28]{images/4t80.png} 
 
 \medskip
-\includegraphics[scale=0.25]{images/5t20.png} \quad
-\includegraphics[scale=0.25]{images/5t40.png} \quad
-\includegraphics[scale=0.25]{images/5t60.png} \quad
-\includegraphics[scale=0.25]{images/5t80.png} 
+\includegraphics[scale=0.28]{images/5t20.png} \quad
+\includegraphics[scale=0.28]{images/5t40.png} \quad
+\includegraphics[scale=0.28]{images/5t60.png} \quad
+\includegraphics[scale=0.28]{images/5t80.png} 
+
+\caption{Each row depicts the evolution at 20 days interval of infection. Infected nodes are shown in red, exposed nodes in blue and recovered nodes in green.}
+\label{pics:res}
 \end{figure}
