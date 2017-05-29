@@ -134,6 +134,12 @@ E(- \bigtriangleup S) = (2 p_1 + 8 p_2 - 0.057) I  \label{5.1.9}
 \end{align}
  
 From equation \ref{eqn 5.32}, it can be shown that $p_1$ and $p_2$ have natural bounds. That is taking $p_2 = 0$, implies that $p_1 \leq 0.1293$ for $k =0. 5$. For $p_1 = 0$, we get $p_2 \leq 0.3232$.
+
+Further, the rate of spread of infection is given by ;
+\begin{equation}
+1- \dfrac{r_o + r_1}{2} + \sqrt{\dfrac{1}{4}(r_o + r_1)^2 + n_k r_o},
+\end{equation}
+where as before $n_k = n_1kp_1 + \mu p_2$ \citep{fu2013propagation}. From equations \ref{5.18}, it can be seen that the disease will be contained if $n_k < r_1$. If $n_k <r_1$ there will be the increase in the number of infected individuals will be negative thus, the disease will be contained. 
 \section{Simulation}
 To investigate how disease propagation varies depending on $p_1, p_2, $ and $r_1$ we ran a couple of simulations on a small work network. 
 
