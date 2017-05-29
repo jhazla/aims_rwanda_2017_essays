@@ -3,24 +3,22 @@
 
 \section{SIR Model}
 
-In the model the population is partitioned into three compartments. Susceptible, Infected and Recovered this is the basis for most epidemiological models. \citep{m1925applications}. In building the model the number of individuals Susceptible, Infected and Recovered is assumed to be differentiable over time.
+In the SIR model the population is partitioned into three compartments susceptible, infected and recovered. This is the basis for most epidemiological models \citep{m1925applications}. In building the model the number of individuals susceptible, infected and recovered is assumed to be differentiable over time.
 The simple epidemic model is given by.
 \begin{center}
 \begin{align} \label{eqn4.1}
-\left.\begin{array}{ccl}
-\frac{dS}{dt} &= &-\beta SI,\\
- \frac{dI}{dt} &=& \beta S I - \gamma  I, \\
- \frac{dR}{dt} &= &\gamma  I,
-\end{array} \right. 
+\frac{dS}{dt} &= -\beta SI,\\
+ \frac{dI}{dt} &=\beta S I - \gamma  I, \\
+ \frac{dR}{dt} &= \gamma  I,
 \end{align}
 \end{center}
 
 $N = S + I + R$
-The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and Infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
+The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
 \begin{figure}[h!]
 \caption{SIR compartmental diagram}]\label{fig 4.1}
 \centering
-\includegraphics[scale=0.5]{images/sir.jpg}
+\includegraphics[scale=0.5]{images/sir.jpg} 
 \end{figure}
 
 
@@ -35,27 +33,27 @@ We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S 
  We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly.That is, we cannot obtain an exact analytical expression for the dynamics of S and I
 though time, instead the model has to be solved numerically.
 
-The equation \ref{eqn4.11} gives two import insights in understanding the spread of disease and has since been used in infectious disease modelling for along time.
+The equation \ref{eqn4.11} gives two import insights in understanding the spread of disease and has since been used in infectious disease modelling for a long time.
 
 \subsection{Threshold Phenomenon} 
-Its is important to determine whether the infection will result into an epidemic or not and what factors could determine this. Consider the initial stage after $I(0)$ individuals have been infected in a population with $S(0)$ susceptible. Equation \ref{eqn4.22} can be rewritten as,
+It is important to determine whether the infection will result in an epidemic or not and what factors could determine this. Consider the initial stage after $I (0) $ individuals have been infected in a population with $S (0) $ susceptible. Equation \ref{eqn4.22} can be rewritten as,
 \begin{equation} 
 \frac{dI}{dt} = I \left(\beta S -\gamma \right)\label{4.14}
 \end{equation}
-In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$. Then $\frac{dI}{dt} < 0.$ This means that there will be no epidemic in this case.
+In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$, then $\frac{dI}{dt} < 0 $. This means that there will be no epidemic in this case.
 
-This result was coined by \cite{m1925applications} and  is what is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur.In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
+This result was coined by \cite{m1925applications} and  is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur.In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
  
- The reciprocal of the of relative removal rate is called the basic reproductive ratio and is one of the most important quantities in epidemiology . Basic reproduction ratio is defined as the average number of secondary cases arising from an average primary case in an entirely susceptible population. It measures measures the maximum reproductive potential for an infection. For the our SIR model in equation \ref{eqn4.1} it is given by:
+ The reciprocal of the of relative removal rate is called the basic reproductive ratio and is one of the most important quantities in epidemiology. The basic reproduction ratio is defined as the average number of secondary cases arising from an average primary case in an entirely susceptible population. It measures measures the maximum reproductive potential for an infection. For the our SIR model in equation \ref{eqn4.1} it is given by:
 
 \begin{equation}
 R_0 = \frac{\beta}{\gamma}\label{eqn 4.15}
 \end{equation}
  
-For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0$ value and also depending on the population's contact pattern the $R_0$ value will differ.
+For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak and if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0 $ value and also depending on the population's contact pattern the $R_0$ value will differ.
 
  \subsection{Epidemic Burnout}
- The threshold phenomena give a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state infection. From they system in equation \ref{eqn4.1} we take
+ The threshold phenomena gives a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state infection. From they system in equation \ref{eqn4.1} we take
  
  \begin{align}
  \frac{dS}{dt} &= -\beta S I \label{4.16}
@@ -75,11 +73,11 @@ For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak i
  \\ S(t) = S(0)e^{-R_0 R(t)} \label{eqn 4.1.13}
  \end{align}
  
- Hence as the epidemic develops the number of susceptible reduce, taking into consideration the infectious period there is a lag but eventually the number of recovered start to increase. There number of susceptible in the population will always be above zero as can be seen in equation \ref{eqn 4.1.13}.
-
-From equation \ref{eqn 4.1.13}, $s(t) \geq e^{-R_o}$ since $R(t) <1$. Thus there will always be a proportion of susceptibles in the population.  The epidemic burnout gives the intuitive idea that the chain of transmission eventually breaks due to the decline in infectives not due to lack of susceptibles \citep{haran2009introduction}.
+ Hence, as the epidemic develops, the number of susceptibles reduce. The numbered of recovered does not start increasing immediately because of infectious period, but eventually it does. Their number of susceptibility in the population will always be above zero as can be seen in equation \ref{eqn 4.1.13}.
  
- \subsection{Disease free equilibrium} Adding demographic parameters to \ref{eqn4.1} we get a new system of equations. That is adding a parameter for birth rate and death rate, hence the population is no longer closed in this case.
+From equation \ref{eqn 4.1.13}, $s(t) \geq e^{-R_o}$ since $R(t) <1$. Thus, there will always be a proportion of susceptibles in the population.  The epidemic burnout gives the intuitive idea that the chain of transmission eventually breaks due to the decline in infectives not due to lack of susceptibles \citep{haran2009introduction}.
+ 
+ \subsection{Disease free equilibrium}Adding demographic parameters to \ref{eqn4.1} we get a new system of equations. That is, adding a parameter for birth rate and death rate, hence the population is no longer closed in this case.
  
  \begin{align}
  \dfrac{dS}{dt}& = \mu - \beta S I - \mu S \label{1}
@@ -87,19 +85,18 @@ From equation \ref{eqn 4.1.13}, $s(t) \geq e^{-R_o}$ since $R(t) <1$. Thus there
  \\ \dfrac{dR}{dt} &= \gamma I - \mu R \label{3}
  \end{align}
  
- Using the procedure we used to get equation \ref{eqn 4.15}
-it can be shown that the $R_0$ for this model is \begin{equation}
+ Using the same procedure we used to get the equation \ref{eqn 4.15} it can be shown that the $R_0$ for this model is \begin{equation}
 R_0 = \frac{\beta}{\mu + \gamma} \label{eqn 4.2.17}
 \end{equation}
  
- Now we calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero, that is $\dfrac{dS}{dt}= \dfrac{dI}{dt}= \dfrac{dR}{dt}= 0$ and denote by $S^*, I^* and R^*$  values of  I,S and R that satisfy the condition ,that this satisfy the condition. 
+ Now we calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero, that is $\dfrac{dS}{dt}= \dfrac{dI}{dt}= \dfrac{dR}{dt}= 0$ and denote by $S^*, I^* and R^*$  values of  S, I and R that satisfy this condition. 
  From equation \ref{1} we get
  \begin{align}
   \mu -\beta SI - \mu S = 0 
   \\ \mu - S (\beta I + \mu ) = 0
   \\ S = \dfrac{\mu}{\beta I + \mu}
   \end{align}
- It can be seen that $S^* I^* R^* = (1,0,0)$ is the epidemic free equilibrium.
+ It can be shown that $S^* I^* R^* = (1,0,0)$ is the epidemic free equilibrium.
  
   To establish the endemic equilibrium , we factorize $I$ in  equation \ref{2} and  we get,
  \begin{align}
@@ -122,9 +119,9 @@ I (\beta S -(\gamma+ \mu)) = 0
  
  
   \subsection{stability of the model}
- Once an out break occurs its important to understand the long term behaviour of the out break and finding the stability of the model gives an insight on this. In other words calculating the stability of the model is establishing at which point the epedemic burn out will occur.
+ Once an outbreak occurs, its important to understand the long term behaviour of the outbreak and finding the stability of the model gives an insight on this. In other words, calculating the stability of the model is establishing at which point the epidemic burn out will occur.
  \section{SEIR Model}
-The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected they become infectious immediately. In this model an assumption is made that one a person is exposed there is an intermediate stage between the time of infection and when they become infectious, this maybe refereed  to as the latent  or incubation period of the infection.  The will system of equations will be;
+The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected, they become infectious immediately. In this model an assumption is made that once a person is infected there is an intermediate stage between the time of infection and when they become infectious, this may be refereed to as the latent or incubation period of the infection. The system of equations will be;
 
 \begin{align}
 S'& = \mu -\beta S I - \mu S \label{5} \\
@@ -132,9 +129,9 @@ E' &= \beta S I - (\mu + \gamma) E  \label{6}\\
 I' &= \gamma E - (\alpha + \mu I) \label{7}\\
 R' &= \alpha I  - \mu R \label{8}
 \end{align}
-where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which exposed people become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
-In this model the total infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
-\begin{figure}[h1]
+where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which infected individual become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
+In this model the total number of infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that the birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
+\begin{figure}[h!]
  \caption{SEIR compartmental model}
  \centering
  \includegraphics[scale=0.5]{images/seir.png}\label{fig 4.2}
@@ -142,7 +139,7 @@ In this model the total infected individuals is given by $E +I$ and  we assume t
   
  
 Since $R = 1- S - E - I$
-we can be drop drop equation \ref{8} from the system and  calculate equilibrium point by equating equations \ref{5} to \ref{7} to zero and solving the system of equations.
+we can be drop equation \ref{8} from the system and  calculate equilibrium point by equating equations \ref{5} to \ref{7} to zero and solving the system of equations.
 
 From equation \eqref{5} we get
 $S = \dfrac{\mu}{\beta I - \mu}$ and from equation \ref{7} we get $I = \frac{\gamma E}{ (\alpha + \mu)}$ and from equation \ref{7} we get $ E = \dfrac{ \beta S I}{(\mu + \gamma)}.$ Thus, for I = 0, E =0 and S = 1 hence, the disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
@@ -185,12 +182,6 @@ Thus the $R_0$ for the system will be $\frac{ \beta\gamma}{(\alpha +\mu)+ (\gamm
 
 For the disease free equilibrium (1,0,0)is asymptotically stable if $R_0 < 1$ and unstable if $R_0 > 1$ \citep{van2002reproduction}. That is the solutions of the systems of equations \ref{5} \ref{7} move towards the disease free equilibrium when $R_0 < 1$.
 
-\subsection{Other Compartmental Models.}
-
-There are several other types of compartmental model and epidemiologist tend to include additional components. Here are some of the models that can be used to model infectious diseases.
-
-\subsection{SI} The susceptible infected model assumes that once someone is infected there is no recovery. Hence it has only two components and it is used to model infectious like HIV and other incurable infectious diseases. The description of the short term and long term behaviour of the model can be calculated similar to the SIR model. 
- 
 
 %We examine the  behaviour of the stationary points by checking for their stability , we check the stability  of the system \ref{eqn 4.2.28}.
 %
@@ -246,3 +237,37 @@ There are several other types of compartmental model and epidemiologist tend to 
 %
 %$\alpha_v$ - This is the rate at which infected mosquitoes become infectious.
 %
+\section{Stochastic Models}
+\subsection{ Stochastic SIR Model}
+We will only consider an SIR model for the stochastic models. The total population $N(t) = S(t)  + I(t) + R(t)$ just as in deterministic models. Where 
+\begin{align}
+S(t), I(t), R(t) \in \left\lbrace 0,1,2,\dots , N \right\rbrace 
+\end{align}
+and $t \in \left\lbrace 0,\bigtriangleup t ,2 \bigtriangleup t, \dots \right\rbrace$. There are two independent discrete random variables  S, E and I because $R(t) = N(t) -S(t) -I(t)$. Therefore the stochastic process for the SIR model is a bivariate process $\left\lbrace S(t), I(t) \right \rbrace^{\inf}_{t =0}$ ha has a joint probability 
+
+\begin{equation}
+p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= \Pr \left\lbrace( \bigtriangleup S ,\bigtriangleup I) = (k,j)\mid (S(t), I(t)) = (s,i) \right\rbrace
+\end{equation}
+where $\bigtriangleup S = S(t + \bigtriangleup t) - S(t)$. Hence the transition probability of the SIR model is a follows;
+\begin{align}
+p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= \left\lbrace \begin{array}{ll}
+ \beta i s / N \bigtriangleup t & (k,j) = (-1,1)
+ \\ \gamma i \bigtriangleup t, & (k,j) = (0,-1)
+ \\ b (N- s -i)\bigtriangleup t & (k,j) = (1,-1)
+ \\ 1 - \beta i s/N \bigtriangleup t - \left[\gamma i +b(N-s) \right]n\bigtriangleup t ,& (k,j) =(0,0)
+ \\ 0, otherwise
+ \end{array} \right.
+\end{align}
+The time step $\bigtriangleup t$t must be chosen small enough such that each transition probabilities lie in the interval [0,1]. Applying the Markov property, the difference equation satisfied by the probability $p_{(s,i)} (t +\bigtriangleup t)$ can be expressed in terms of the transition probabilities.
+\begin{align*}
+p_{(s,i)} (t + \bigtriangleup t) &= p_{(s+1, i-1)}(t) (t) +\bigtriangleup t)rac{\beta}{N}(i -1)(s +1) \bigtriangleup t + p _{(s,i+1)} (t) \gamma (i +1) \bigtriangleup t \\ &+ p_{(s-1,i+1)}(t) b(i+1) \bigtriangleup t + p_{(s-1,i)}(t)b(N-s+1- i) \bigtriangleup t  \\&
++  {p_(s,i)}(t) \left(1 - \left[\dfrac{\beta}{N} is + \gamma i + b(N-s) \right] \bigtriangleup t\right)
+\end{align*}
+
+The difference equations can be written as in matrix form as 
+\begin{equation*}
+p_{(s,i)}(t + \bigtriangleup t) = P (\bigtriangleup t)p(t),
+\end{equation*}
+where $P(\bigtriangleup t)$ is the transition matrix and $p(t)$ is the probability distribution vector for the stochastic process.The state set is divided into two classes; the current and the transient.(N,0) is an adsorbing recurrent state while all other states are transient. The probability of an out break is given given as $1- \frac{1}{R_0}$ when $R_0 >1$ \citep{Brauer2017}.
+
+One the main aspects in which deterministic and stochastic models differ is extinction. In deterministic SIR model an epidemic never goes to extinction in a limited time frame  because the number of infectives declines exponentially and only reaches zero at infinity.  In a deterministic framework an epidemic is said to go into extinction if it has a negative growth rate. Where as in the stochastic SIR model an epidemic is the  epidemic becomes extinct in a more direct sense, the number of infects can go to zero without waiting forever.

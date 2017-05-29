@@ -1,31 +1,56 @@
 \chapter{Methodology}
-\section{Unsupervised Learning (SL)}
-This is a machine learning task of inferring a function to describe hidden structure from unlabelled data. This type of ML does not require any prior manual categorization of observations in the data. 
+This chapter presents detailed description  of the concepts underlying the techniques and tools that are employed to achieve the goal of the research. First of foremost we describe how the LDA algorithm works in gensim with respect to the how the results were obtained. All other concepts and prior tools adopted for data preprocessing are also explained.
 
-The distinction between supervised learning and unsupervised learning (UL) is that in unsupervised learning there is no evaluation of accuracy of the algorithm used, because data fed to the learner is unlabelled . Also one advantage of UL over SL is that time and cost is saved in labelling as required in SL. 
-\section{Natural Language Processing (NLP)}
-It is a multidisciplinary area that deals with the automatic processing of human language. 
-This automation allows communication between humans and computers. The computer accept input in the form of text or speech and then produces structured representations showing the meaning of those strings as their output.
 \section{Data}
+\begin{flushleft}
 The source of the data for this research is from the website of IFRC. Practically the data was obtained by algorithms implemented in the R studio, automatically downloaded the over one thousand pdf reports from the website. Each report is named a name of a country depicting that the reports describes disaster that occurred in a particular country. Each report has an appeal id, several documents might refer to the same appeal id. The appeal id is the unique code given a particular report. Reports describing the same event have the share the same appeal id.
-%\Jnote{Explain what is appeal and what is appeal id.}
-\section{Gensim}
-Gensim is an open source toolkit implemented in python to execute task involving vector space models and topic modelling \cite{rehurek2010software}. Some features of Gensim employed in this research are "term frequency inverse document frequency (TFIDF)" and "LDA", "LSA". Before executing the above features the "corpora" and "doc2bow" modules are used to represent large collection of texts and to convert the text collection into vectors respectively.
-\section{Natural  Language Toolkit (NLTK)}
-This is also an open library with set of modules that enhances the processing of human language. It is originally developed by Steven Bird and Edward Loper both in  the Department of Computer and Information Science at the University of Pennsylvania. This provided a landmark for researchers to contribute to making it more robust and an efficient library. The "corpus" and the "tokenize" are some modules relevant in topic modelling.
-\section{Word Embeddings}
-Word embeddings is a dense representation of words in a low dimensional vector space. Bigo et al(2003) introduced the  concept of word embedding and then train them in neural language jointly with model parameters. Mikolov et al (2013)came out with the popular word embedding model known as the Word2vec. 
-Pemigton et al (2014) released Glove. The Glove and the Wor2vec are both aimed at producing word embeddings that ecode the general semantic relationship.
-\section{Tokenization}
-This describes the process of splitting  a text or a collection of texts  into each single term constituting the text. Each term is known as the token. It can be a "word", "symbols", "punctuations", "numbers". For example given text "she won a prize worth 30 million dollars", after tokenizing we have "she", "won", "a", "prize", "worth", "30", "million", "dollars". Prior to creating a vector representation of terms in the document tokenizing is done. The Natural Language Toolkit (NLTK) library is employed to implement this process. 
-\section{Term Frequency Inverse Document Frequency (TFID)}
-This measures the extent to which words are important in a document. In topic modelling we want to find a group of words that describes a vocabulary. For example topic modelling a document that talks about a university, words such as "classrooms", "library", "lecturs", "Courses", "Grades" would tend to be the most important words that describe the topic. It is worth noting that important words are not necessarily the most frequent words, possible to be judged by our intuitive notions. 
+\end{flushleft}
 
-The TFIDF transforms a vector of integer values into a vector of real values, maintaining the dimension of the original vector.After transformation  features which are not frequent in the corpus will have their values increased. That does not mean that  all rare words important, some may not be significant at all in the description of the topic.
+The total number of reports obtained from the IFRC website is $1259$ pdf files. The reports were converted to txt format before preprocessing and the model training were carried out. It is easy and convenient to perform  such tasks when files are in the txt format.
+
+\section{Packages and Modules}
+Before training the model on the data some modules that are important to enable smooth running of the algorithms were were imported. Apart from Gensim and NLTK that are deeply explained in subsequent sections of this chapter, the role of  the remaining are briefly highlighted below.
+\begin{itemize}
+\item os: This module was used to locate path of the directory containing files needed to do the machine learning. And also to combine the various paths to these files
+\item codecs:Specifically codec.open from the codecs module opens  the encoded text files. It takes 5 positional arguments but 4 were necessary to obtain the required output. They are "filename", "mode=r", "encoding=utf-8" and "errors=ignore", the "bufffering' argument was ignored.
+\end{itemize} 
+
+\subsection{Gensim}
+\begin{flushleft}
+Gensim is an open source toolkit implemented in python to execute task involving vector space models and topic modelling \cite{rehurek2010software}. Some features of Gensim employed in this research are "term frequency inverse document frequency (TFIDF)" and "LDA", "LSA". Before executing the above features the "corpora" and "doc2bow" modules are used to represent large collection of texts and to convert the text collection into vectors respectively.
+\end{flushleft}
+\subsection{Natural  Language Toolkit (NLTK)}
+
+This is also an open library with set of modules that enhances the processing of human language. It is originally developed by Steven Bird and Edward Loper both in  the Department of Computer and Information Science at the University of Pennsylvania. This provided a landmark for researchers to contribute to making it more robust and an efficient library. The "corpus" and the "tokenize" are some modules relevant in topic modelling.
+\section{Data Preprocessing}
+\begin{flushleft}
+This section highlights the preliminary techniques applied on the data data sets before training model. Preprocessing helps to prepare the data to be compatible to the training algorithms, but also removes noise (irrelevant items) from the data, since their presence do not contribute towards obtaining desired results. This method is very important in topic modelling because it gives an idea to understanding the various terms in the corpus.
+\end{flushleft}
+\subsection{Tokenization}
+\begin{flushleft}
+This describes the process of splitting  a text or a collection of texts  into each single term constituting the text. Each term is known as the token. It can be a "word", "symbols", "punctuations", "numbers". For example given text "she won a prize worth 30 million dollars", after tokenizing we have "she", "won", "a", "prize", "worth", "30", "million", "dollars". Prior to creating a vector representation of terms in the document tokenizing is done. The Natural Language Toolkit (NLTK) library is employed to implement this process.
+\end{flushleft}
+\subsection{Stop Words, Punctuations  and Irrelevant Terms}
+\begin{flushleft}
+Prior to training the model on the data, words are commonly known as common words, such as "is", "at", "the", "or" are removed. This words are removed because mostly they do not represent the major significant terms to understanding a given article or document. Stop words are also removed to reduce the number number of unique tokens in the corpus. The nltk has a model that automatically removes stop words. Punctuations and numbers are removed, it is reasonable to mention that the former cannot contribute to uncovering the  thematic meaning of documents, they are just symbols. Because we are dealing with a number of documents and documents have pages, terms related to page numbers are removed. As well as terms with  length of one, for example "x", "y" and empty spaces are deleted. 
+
+\end{flushleft}
+\subsection{Dictionary and Corpus}
+\begin{flushleft}
+To be able to train a topic model, the data sets have to transformed to specific form to make sure the model is able to work with it. The dictionary is a list of unique words in all the documents. It is created with the "corpora.Dictionary" module from gensim tool kit. Having a dictionary created allows us to know the total number of unique terms and all words positions in all the documents collections.
+\end{flushleft}
+A corpus represents the converted words to bag of words, each word is in a tuple form , the first and second component stands for the  "word id" and its  "frequency" respectively in a particular document. For example $(1452,100)$ in document 1 means the $1452th$ word appears 100 times in document 1.
+\section{Term Frequency Inverse Document Frequency (TFID)}
+\begin{flushleft}
+This measures the extent to which words are important in a document. In topic modelling we want to find a group of words that describes a vocabulary. For example topic modelling a document that talks about a university, words such as "classrooms", "library", "lecturs", "Courses", "Grades" would tend to be the most important words that describe the topic. It is worth noting that important words are not necessarily the most frequent words, possible to be judged by our intuitive notions. 
+\end{flushleft}
+
+\begin{flushleft}
+The TFIDF transforms a vector of integer values into a vector of real values, maintaining the dimension of the original vector.After transformation  features which are not frequent in the corpus may have their values increased. That does not mean that  all rare words important, some may not be significant at all in the description of the topic.
 %\Jnote{Rare words all rare words?}
 For instance dealing with our "university" document, a word like "congregation" may rare but then it is significant towards describing the vocabulary. On the other hand a word such as "consequently" may appear very frequent which in this case does not really say anything about the topic. The most frequent words are
 most words such as “the” or “and,” which helps to construct a sentence, thereby making it readable and understandable.These words do not carry any importance to help topic model a document.They are stop words and they are removed before the modelling irrespective of their number.
-
+\end{flushleft}
  Given a collection of document with each document $d$ containing words, where each word in the document is denoted $i$. The frequency of occurrence of a word $i$ in document $d$ is denoted $f_{id}$. The term frequency $TF_{id}$ computed as:
  
 $$TF_{id}=\frac{f_{id}}{\text{max}_tf_{td}}$$.
@@ -36,6 +61,40 @@ it by the term with the highest frequency in the same document of occurrence wit
 Intuitively the word which occurs most frequently would have  would have a $TF$ of 1,
 %\Jnote{word which occurs what?}
 and other words get fractions as their term frequency for this document.
+The IDF for a word $i$ which occurs in $d$ of the $D$ documents is computed as:
+$$IDF_i=log_2\frac{D}{d_1}\text{.}$$
+The TFIDF for a term $i$ in document $d$ is will now be:
+$$\text{TFIDF}=TF_{id}\cdot IDF_i \text{.}$$
+\section{LDA Implementation}
+This model is a type of topic model that is based on the imaginary  assumption that 'words are used to generate documents' or simply "it is a document generative process".
+For example given $N$ words for a particular document. To generate the documents given the words,firstly choose words deemed to be abstracts topics of  the entire corpus, where each topic has a probability  value $ \theta_d $, known as the per document topic proportion. For each word  we choose a topic $ Z_{d,n} $, from the list of topics already chosen. And then choose a word $ W_{d,n} $ from that topic . Each word chosen is placed in the document and the process is repeated until all the $ N $ words are exhausted to fill the document. The only variable that is observed is the $ W_{d,n} $, the remaining are hidden variables.
+
+
+In practical terms the LDA model works in a reversed manner. What it actually does is that it finds the latent variables given the $ W_{d,n} $, using the posterior distribution. Because the posterior is difficult to compute the variational inference approximates the posterior. This approximation are embedded in the LDA algorithm. The LDA model in gensim takes several positional arguments but only seven is used, their functions in the model are briefly described below.
+\begin{itemize}
+\item Corpus: This is the vectorized form of all the documents. Each list of tuples represents a document. 
+\item Id2word: Instead of the model using the word numeric id's in the corpus, it is assigned a dictionary containing the words. This makes it easier to read the model output because words constituting a topic will be displayed. Without assigning the id2word the dictionary the words which are distribution over a topic will be shown as numeric id's. 
+\item Num\_topics: This takes the number of topics that the model should output. The number of topics chosen is subjective and could be subjected to the number of documents in the corpus. 
+\item Chunk\_size: Depending on the number of documents that the model  should process at a time is assigned to this parameter.The choice of documents to be processed is dependent on the total number of documents in the corpus. It our model the 1259 is processed at once.
+\item Update\_size: This tells the model how many times to update per the given chunk\_size. The default size in the model is 1 which was maintained.
+\item Passes: Is the number of times that the corpus should be passed over in the modelling process. High value of passes is recommended to obtain better results.
+\item Alpha: The alpha is a hyper parameter value responsible for controlling the per document topic distribution from the Dirichlet distribution. The "alpha"parameter can be assigned to any arbitrary value, but in our case it assigned to "auto" to allow the model to learn the data and properly assigned an alpha parameter value. Higher alpha values produce more topics, and thus makes documents looks more similar to each other, and for low alpha values, results in  documents having few topics. 
+
+\cite{griffiths2004finding} Suggested an alpha ($\alpha$) value of $\frac{50}{T}$, where $T$ is the number of topics and 0.1 for eta ($\eta$).
+\end{itemize}
+
+\section{Visualizing the Topic Model}
+Visualizing topic models is very important because it gives a
+a clear graphical representation of the topics and their associated  terms. One  tool that is used to visualize topic models is the LDAvis. After the LDA model is fitted, the LDAvis is used to interpret the model and understand it better. It takes the "corpus", "Dictionary" and the "LDA model" to produce a visual results. The following can be determined with the LDAvis tool.
+\begin{itemize}
+\item Proportions of each word in a topic and in the entire corpus.
+\item How often Topics that occur in the topic model.
+\item The relationship between topics in the topic model.
+\end{itemize}
+
+\section{Python and R}
+The research employs the Python and R programming languages to implement all the task necessary to achieve the desired goal associated with this research. Preliminary the R studio provided an environment to execute algorithms that scrapped the pdf reports from the IFRC website. Converting these reports from pdf to txt formats were also handled by the R studio. 
+All other algorithms pertaining to the machine learning process were done in python.
 %Theorems before the chapter's first section will be dot-zero, 
 %and their numbering is completely wrong. You can avoid this
 %by simply always starting a chapter with a section. Ta Da! 

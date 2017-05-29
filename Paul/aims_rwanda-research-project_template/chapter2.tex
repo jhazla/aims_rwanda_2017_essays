@@ -1,12 +1,26 @@
 \chapter{Literature Review}
-\section{Topic Model}  
-A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. \citep{blei2012surveying} described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their occurrence with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. from the analysis of the original document the topics are obtained. Given an very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
-\section{Topic Model methods}
+\section{Unsupervised learning (SL)}
+This is a machine learning task of inferring a function to describe hidden structure from unlabelled data. This type of ML does not require any prior manual categorization of observations in the data. 
+
+The distinction between supervised learning and unsupervised learning (UL) is that in unsupervised learning there is no evaluation of accuracy of the algorithm used, because data fed to the learner is unlabelled . Also one advantage of UL over SL is that time and cost is saved in labelling as required in SL. 
+\section{Natural language processing (NLP)}
+It is a multidisciplinary area that deals with the automatic processing of human language. 
+This automation allows communication between humans and computers. The computer accept input in the form of text or speech and then produces structured representations showing the meaning of those strings as their output.
+
+
+%\Jnote{Explain what is appeal and what is appeal id.}
+
+\section{Word embeddings}
+Word embeddings is a dense representation of words in a low dimensional vector space. Bigo et al(2003) introduced the  concept of word embedding and then train them in neural language jointly with model parameters. \citep{mikolov2013distributed} came out with the popular word embedding model known as the Word2vec. 
+\cite{faruqui2014retrofitting} released Glove. The Glove and the Wor2vec are both aimed at producing word embeddings that ecode the general semantic relationship.
+\section{Topic model}  
+A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. \citep{blei2012surveying} described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their occurrence with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. from the analysis of the original document the topics are obtained. Given a very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
+\section{Topic model methods}
 Topic modelling techniques have been developed to automatically summarize document or large text. These techniques are: latent semantic indexing/allocation  (LSI/LSA), the latent dirichlet allocation (LDA) and the probabilistic latent semantic analysis (PLSA) . This research will be restricted to LDA and LSA.
 %\Jnote{s/narrow between/be restricted to} 
-\section{Vector Space Model (VSM)}
-\Jnote{I thought what you describe here is called ``bag of words''. Can
-  you explain the difference?}
+\section{Vector space model (VSM)}
+%\Jnote{I thought what you describe here is called ``bag of words''. Can
+ % you explain the difference?}
 
 In Natural Language Processing (NLP) specially in semantics similarity documents can be represented as a vector of words in in a vector space model \cite{salton1975vector}. The frequency of the word in the document determines its importance. Given two documents with words  "desk" and "shirt". From the matrix table below "desk" appears 6 and 4 times in document 1 and document 2 respectively, and the word "shirt" appears 3 times in document 1 and 5 times in document 2. Geometrically this can be represented as shown in \eqref{figure 2.1}.
 %\Jnote{Put quotes around ``desk'' and ``shirt''.}
@@ -19,8 +33,8 @@ $$\begin{array}{cccc}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=1]{words_in_vs.png}
-\caption{Words represented in vector space}
+\includegraphics[scale=0.5]{words_in_vs_orig.png}
+\caption{Documents represented in vector space, the  cosine angle between the two vectors measures the similarity between the two vectors.}
 \end{figure}
 \label{figure 2.1}
 Computing the distance between them tells the extent to which their similarity. The dot product shows how close the two vectors are to each other. The dot product of two vectors is given as
@@ -47,7 +61,7 @@ The paper indicated that the existing model does not take syntatic structure int
 %  e.g., VSM, LSA and LDA, not so many as now. On the other hand, you should
 %have many more paragraphs. General rule: One thought, one paragraph.}
 
-\section{Latent Semantic Analysis (LSA)}
+\section{Latent semantic analysis (LSA)}
 \begin{flushleft}
 Also known as the latent semantic indexing (LSI) is a topic model method
 that transforms documents of high dimension to low dimension of words. One useful role played by LSI in topic modelling is its ability to deal with polysemy and synonyms \cite{deerwester1990indexing}.
@@ -70,7 +84,8 @@ $$\begin{array}{cccc}
   \end{array} $$
 %  \Jnote{What is this table about? Why is ``food'' listed twice? Please explain.}
 %$$\text{fig. 1}$$
-\section{ Latent Dirithchet Allocation (LDA)}
+%\section{Probabilistic Latent Semantic Analysis  (PLSA)}
+\section{ Latent dirithchet allocation (LDA)}
 \begin{flushleft}
 Blei(2012) referred to LDA as the simplest topic model . The ideas underlying this model is every document has several topics existing in it.He defined topic to be a distribution over a fixed a vocabulary.
 %\Jnote{Topic is a distribution over a topic?}
@@ -98,7 +113,7 @@ Figure\eqref{Figure 2.2}  gives a picture of the whole intuition of this generat
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{DLA.png}
-\caption{Generative intuition of LDA model}\label{Figure 2.1}
+\caption{Generating documents by reverse process of the LDA model}\label{Figure 2.2}
 \end{figure}
 In short description of Figure \eqref{Figure 2.2} the idea underlying LDA is that, first of all some number of topics that are distribution over words is assumed (far left). In generating for each document, firstly choose a distribution over topics (far right ie. histogram), then the circles of different colours are topic assignment for which words drawn from the document corresponds to.
 
@@ -107,10 +122,10 @@ The probability values for this article for a given set of topics may be differe
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{infered_topics.png}
-\caption{Infered topics from one article of the 17000 articles froom the journal of science.}
-\label{Figure 2.2}
+\caption{Four Inferred topics consisting of the 15 top words for each topic, the bar graph on the left is the topic probability distribution in the document.}
+\label{Figure 2.3}
  \end{figure} 
-\section{Graphical Model of LDA}
+\section{Graphical model of LDA}
 Figure \eqref{Figure 2.3}provides a graphical representation, showing the both the observed and latent variables involved in the generative process. Latent variables are variables that are not directly but inferred from the the observed.
 %\Jnote{What is latent variable? Please explain.}
 The only observed part is the shaded circle $W_{d,n}$ , $\alpha$ and $\eta$ are parameters from the Diritchlet distribution.
@@ -134,7 +149,7 @@ From \eqref{Figure 2.3} the joint  distribution or the total probability of both
 P(\beta,\theta,Z,W, \alpha, \beta )=\prod_{k=1}^{K}P(\beta_i)\prod_{d=1}^{D}P(\theta_d)
 \prod_{n=1}^{N}P(Z_{d,n}|\theta_d)P(W_{d,n}|\beta_k,Z_{d,n})
 \end{align}
-\section{Posterior Distribution}
+\section{Posterior distribution}
 This is a type of Bayesian statistic that describes how  latent variables are obtained given the observed data. From the LDA documents generative model a joint probability distribution of both the hidden structures and observed variables. To compute the conditional distribution given the observed variables (words), the posterior is used, given by:
 
 $$P(\theta_{1:D},\beta_{1:K},Z_{1:D}|W_d)=\frac{P(\theta_d,\beta_k,Z_d,W_{1:D})}{P(W_{1:D})}\text{.}$$
@@ -142,26 +157,36 @@ $P(\theta_d,\beta_k,Z_d,W_{1:D})$ can be computed easily for any setting of the 
 
 There exist a number of algorithms categorized as "sampling based algorithms" and "variational based algorithms". These algorithms approximate the posterior distribution based on the joint probability distribution between the latent variables and the observed in the posterior relation.
 
+\section{Variational bayes (VB)}
+This is a method for approximating the posterior distribution. Recalling from the difficulty encountered by the posterior in computing the marginal probability of the observed variable $P(W_{1:D})$. This form of approximation operates when we have both observed and hidden variables, but also latent parameters.
 
-\section{Diritchlet Distribution}
+The VB serves two purposes, of which are:
+\begin{itemize}
+\item VB gives an analytical approximation to the posterior probability given the observed and latent variables, so as to use the approximate values to make some inference.
+\item To determine from it a lower bound for a marginal probability of the observed data, also known as the evidence. That is, it is the marginal probability of the data given the model. 
+This idea is used to select a best model, on the premise that the model with the highest marginal likelihood shows a best of the data by the model. This also justifies that there is a high probability that the used was generated by the model.
+\end{itemize}
+\section{Diritchlet distribution}
 It is from the exponential family of continuous multivariate probability with the parameter $\alpha$ of positive real. It is denoted by $D(\alpha)$.
 
-Let $S=[S_1,S_2,...,S_d] $ as probability mass function (pmf), implies $S_i\geq 0$ for $i=0,1,2,,...,d$ and $\sum _{i=1}^{d}S_i=1$. Also suppose $\alpha=[\alpha_1,\alpha_2,...,\alpha_d]$ with $\alpha_i>0$ for each $i$, and let $\alpha_0=\sum _{i=1}^{d}\alpha_i$. Then $S$ is said to have a Dirithchlet distribution
-with parameter $\alpha$, which is denoted by $S \backsim $Dir($\alpha$), if$s$ is not a pmf  it has $f(s,\alpha)=0$. With $s$ being a  pmf then,
+Suppose $S=[S_1,S_2,...,S_d] $  represent the  probability mass function (pmf), for each $S_i\geq 0$, then $\sum _{i=1}^{d}S_i=1$. Also suppose $\alpha=[\alpha_1,\alpha_2,...,\alpha_d]$ with $\alpha_i>0$ for each $i$, and let $\alpha_0=\sum _{i=1}^{d}\alpha_i$. Then $S$ is said to have a Dirithchlet distribution with parameter $\alpha$, which is denoted by $S \backsim $Dir($\alpha$), if $s$ is a  pmf then,
 \begin{align}
-f(s,\alpha)=\frac{\Gamma(\alpha_0)}{\prod_{i=1}^{d}\Gamma(\alpha_i)}\prod_{i=1}^{d}s^{\alpha_i -1}
+f(s,\alpha)=\frac{\Gamma(\alpha_0)}{\prod_{i=1}^{d}\Gamma(\alpha_i)}\prod_{i=1}^{d}s^{\alpha_i -1}.
 \end{align}
-where $\Gamma()$ is the Gamma distribution.
+However if $s$ is not a pmf  it has $f(s,\alpha)=0\text{.}$
+
+Where $\Gamma()$ is the Gamma distribution.
 %\Jnote{Please, I didn't understand a single sentence in this section.}
-\section{Advantages of LDA} 
+\section{Advantages and disadvantages of LDA} 
 LDA can be used as a built in module in other models to perform more difficult tasks.
 The LDA model is used in other applications, not only in text.(Blei and Jordan,2002) carried out a  work that used pairs of LDA modules to
 model relationships between images and their corresponding descriptive captions .
 %\Jnote{Who is ``we''? Please don't copy sentences from papers.}
 But also include problems involving collections of data, including data from domains such as collaborative filtering,
 content-based image retrieval and bioinformatics.
-\section{Disadvantages of LDA}
+\begin{flushleft}
 The bag of words assumption (the order words in a document does not matter) of LDA makes it unrealistic, however it is reasonable if only our task is to uncover the course thematic structure of the texts (Blei,2012).
+\end{flushleft}
 \section{Extentions of LDA}
 \cite{wallach2006topic} developed a model that does not ignores the assumption that the order of words does not matter (bag of words). This means that the each word generated by the topic depends on the previous word. 
 %uses the combination of the n gram statistic and latent topic variable by extension of the uni-gram topic model to include properties of a hierarchical Dirichlet language model. n gram statistics is a close collection of sequence of items from a text or speech. Uni-gram is at type of  n gram model of size one.
