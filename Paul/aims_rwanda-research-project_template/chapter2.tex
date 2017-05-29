@@ -11,18 +11,18 @@ This automation allows communication between humans and computers. The computer 
 %\Jnote{Explain what is appeal and what is appeal id.}
 
 \section{Word embeddings}
-Word embeddings is a dense representation of words in a low dimensional vector space. Bigo et al(2003) introduced the  concept of word embedding and then train them in neural language jointly with model parameters. \citep{mikolov2013distributed} came out with the popular word embedding model known as the Word2vec. 
+Word embeddings is a dense representation of words in a low dimensional vector space. \cite{bengio2003neural} introduced the  concept of word embedding and then train them in neural language jointly with model parameters. \citep{mikolov2013distributed} came out with the popular word embedding model known as the Word2vec. 
 \cite{faruqui2014retrofitting} released Glove. The Glove and the Wor2vec are both aimed at producing word embeddings that ecode the general semantic relationship.
 \section{Topic model}  
-A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. \citep{blei2012surveying} described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their occurrence with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. from the analysis of the original document the topics are obtained. Given a very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
+A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. \citep{blei2012surveying} described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their occurrence with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. From the analysis of the original document the topics are obtained. Given a very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
 \section{Topic model methods}
-Topic modelling techniques have been developed to automatically summarize document or large text. These techniques are: latent semantic indexing/allocation  (LSI/LSA), the latent dirichlet allocation (LDA) and the probabilistic latent semantic analysis (PLSA) . This research will be restricted to LDA and LSA.
+Topic modelling techniques have been developed to automatically summarize document or large text. These techniques are: Latent Semantic Indexing/Allocation  (LSI/LSA), the Latent Dirichlet Allocation (LDA) and the Probabilistic Latent Semantic Analysis (PLSA) . This research will be restricted to LDA.
 %\Jnote{s/narrow between/be restricted to} 
 \section{Vector space model (VSM)}
 %\Jnote{I thought what you describe here is called ``bag of words''. Can
  % you explain the difference?}
 
-In Natural Language Processing (NLP) specially in semantics similarity documents can be represented as a vector of words in in a vector space model \cite{salton1975vector}. The frequency of the word in the document determines its importance. Given two documents with words  "desk" and "shirt". From the matrix table below "desk" appears 6 and 4 times in document 1 and document 2 respectively, and the word "shirt" appears 3 times in document 1 and 5 times in document 2. Geometrically this can be represented as shown in \eqref{figure 2.1}.
+In Natural Language Processing (NLP) especially in semantics similarity, documents can be represented as a vector of words in in a vector space model \cite{salton1975vector}. The frequency of the word in the document determines its importance. Given two documents with words  "desk" and "shirt". From the matrix table below "desk" appears 6 and 4 times in document 1 and document 2 respectively, and the word "shirt" appears 3 times in document 1 and 5 times in document 2. Geometrically this can be represented as shown in figure \ref{figure 2.1}.
 %\Jnote{Put quotes around ``desk'' and ``shirt''.}
 \captionof{table}{ Document of words}
 $$\begin{array}{cccc}
@@ -37,7 +37,7 @@ $$\begin{array}{cccc}
 \caption{Documents represented in vector space, the  cosine angle between the two vectors measures the similarity between the two vectors.}
 \end{figure}
 \label{figure 2.1}
-Computing the distance between them tells the extent to which their similarity. The dot product shows how close the two vectors are to each other. The dot product of two vectors is given as
+Computing the distance between them tells the extent of their similarity. The dot product shows how close the two vectors are to each other. The dot product of two vectors is given as
 $$X\cdot Y=|X||Y|\cos (\theta) \text{.}$$
 %\Jnote{Use straight font for functions like cos. This can be achieved
 %  by writing ``\textbackslash cos'' instead of ``cos''.}
@@ -46,7 +46,7 @@ $$X\cdot Y=|X||Y|\cos (\theta) \text{.}$$
 %as ``\textbackslash cos(\textbackslash theta) \textbackslash; .''}
 
 Although the VSM is a simple model to use, one main limitation is that, it cannot handle polysemy and synonyms issues. Polysemy is a term that describes words with multiple meaning and synonyms are words that have similar meaning.
-For example, a polysemy word such as "light" can be used in the context of weight of an object or to describe a type od electromagnetic radiation.
+For example, a polysemy word such as "light" can be used in the context of weight of an object or to describe a type of electromagnetic radiation.
 Words like "detect", "find", "uncover" and "reveal" are synonymous, they can be used to describe a particular event.
 
 %\Jnote{Give clearer explanations of what is polysemy and what are synonyms.
@@ -68,13 +68,13 @@ that transforms documents of high dimension to low dimension of words. One usefu
 \end{flushleft} 
 Preliminarily it constructs a matrix $M\in \mathbb{R}^{n*k}$, from the documents $d_1, d_2,..., d_k$ of words $w_1, w_2, ... w_n$. The rows represents the different words and the columns can be viewed as different documents.
 %\Jnote{Are you sure? It feels to me you switched rows and columns.}
-For example from \eqref{Table 2.1}, $m_{ij}$ shows the position and the frequency of the word $w_i$ in document $d_j$.
+For example from table \ref{Table 2.2}, $m_{ij}$ shows the position and the frequency of the word $w_i$ in document $d_j$.
 To achieve reduction in the dimension of the matrix $M$ the truncated Singular Value Decomposition is applied, given as:
 $$M\approx A_t \sum B^{T}_t.$$
 $A_t$ and $B^T$ are orthogonal matrices, whilst $ \sum$ is a diagonal matrix.
 Reducing the dimension leads to reduction of noise \cite{deerwester1990indexing}.
 %To find similarity of words, compute the cosine values of their vectors. \Jnote{I don't understand last sentence, please explain better.}
-\captionof{table}{Corpus of documents}
+\captionof{table}{Corpus of documents}\label{Table 2.2}
 $$\begin{array}{cccc}
  &d_1 & d_2 &d_3 \\ 
  \text{food} & 0 & 0 & 2 \\ 
@@ -87,7 +87,7 @@ $$\begin{array}{cccc}
 %\section{Probabilistic Latent Semantic Analysis  (PLSA)}
 \section{ Latent dirithchet allocation (LDA)}
 \begin{flushleft}
-Blei(2012) referred to LDA as the simplest topic model . The ideas underlying this model is every document has several topics existing in it.He defined topic to be a distribution over a fixed a vocabulary.
+\cite{blei2012surveying} referred to LDA as the simplest topic model . The ideas underlying this model is every document has several topics existing in it. He defined topic to be a distribution over a fixed a vocabulary.
 %\Jnote{Topic is a distribution over a topic?}
 Each topic is made up of words that are very related to the topic. Considering an article with a title "Seeking Life’s Bare (Genetic) Necessities,” for which data analysis was used to determine the number of genes an organism needs to survive. By hand, words pertaining to three different vocabularies were highlighted with different colours. Words such as "computer", "prediction" linked to the topic "data analysis" highlighted blue, "life" and "evolve" about "evolutionary biology" highlighted pink and words like "gene", "DNA" describing the topic "genetics" is highlighted yellow.
 %\Jnote{Put respective words in quotes.}
@@ -102,23 +102,23 @@ The idea describing the process of generating documents using words is:
 \item[2.] for each word in the documents:
 		\item[2a.]Randomly choose a topic from
 the selected topics in step 1.
-		\item[2b.]Randomly choose a word from the selected topic. The topic ha s a collection of words of which randomly one is chosen at a time. 
+		\item[2b.]Randomly choose a word from the selected topic. The topic has a collection of words of which randomly one is chosen at a time. 
 \end{itemize}
 %\Jnote{I don't understand how the process above works, please explain
 %  better.}
 The LDA model reflects the idea of multiple topics exhibited by documents.
 
-Figure\eqref{Figure 2.2}  gives a picture of the whole intuition of this generative probabilistic process:
+Figure\ref{Figure 2.2}  gives a picture of the whole intuition of this generative probabilistic process:
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{DLA.png}
 \caption{Generating documents by reverse process of the LDA model}\label{Figure 2.2}
 \end{figure}
-In short description of Figure \eqref{Figure 2.2} the idea underlying LDA is that, first of all some number of topics that are distribution over words is assumed (far left). In generating for each document, firstly choose a distribution over topics (far right ie. histogram), then the circles of different colours are topic assignment for which words drawn from the document corresponds to.
+In short description of Figure \ref{Figure 2.2} the idea underlying LDA is that, first of all some number of topics that are distribution over words is assumed (far left). In generating for each document, firstly choose a distribution over topics (far right ie. histogram), then the circles of different colours are topic assignment for which words drawn from the document corresponds to.
 
-Figure \eqref{Figure 2.3} shows real inference with LDA, using 17000 articles from the journal of science. "Genetics", "Evolution", "Disease" and "Computers" represents the topics  from one article and the words below each are top 15 most frequent words. The graph on the left shows the probability values for each topic.
-The probability values for this article for a given set of topics may be different from another article. in effect, even though some documents or articles may share the same topics, each article exhibits the topics in different proportions.
+Figure \ref{Figure 2.3} shows real inference with LDA, using 17000 articles from the journal of science. "Genetics", "Evolution", "Disease" and "Computers" represents the topics  from one article and the words below each are top 15 most frequent words. The graph on the left shows the probability values for each topic.
+The probability values for this article for a given set of topics may be different from another article. In effect, even though some documents or articles may share the same topics, each article exhibits the topics in different proportions.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{infered_topics.png}
@@ -126,9 +126,9 @@ The probability values for this article for a given set of topics may be differe
 \label{Figure 2.3}
  \end{figure} 
 \section{Graphical model of LDA}
-Figure \eqref{Figure 2.3}provides a graphical representation, showing the both the observed and latent variables involved in the generative process. Latent variables are variables that are not directly but inferred from the the observed.
+Figure \ref{Figure 2.3}provides a graphical representation, showing both the observed and latent variables involved in the generative process. Latent variables are variables that are not directly but inferred from the the observed.
 %\Jnote{What is latent variable? Please explain.}
-The only observed part is the shaded circle $W_{d,n}$ , $\alpha$ and $\eta$ are parameters from the Diritchlet distribution.
+The only observed part is the shaded circle $W_{d,n}$ , $\alpha$ and $\eta$ are parameters from the Dirichlet distribution.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.5]{Graphical.png}
@@ -141,13 +141,13 @@ What the notations stands for:
 \item$K$: number of topics
 \item$\theta_d$: the topic proportion for each document $d$.
 \item $Z_{d,n}$: is the topic assignment for word $n$ in document $d$.
-\item $W_{d,n}$: is the observed worn $n$ in document $d$,
+\item $W_{d,n}$: is the observed worD $n$ in document $d$,
 \item $\beta_K$:topics
 \end{itemize}
-From \eqref{Figure 2.3} the joint  distribution or the total probability of both latent and observed variables is given by:
+From \ref{Figure 2.3} the joint  distribution or the total probability of both latent and observed variables is given by:
 \begin{align}
 P(\beta,\theta,Z,W, \alpha, \beta )=\prod_{k=1}^{K}P(\beta_i)\prod_{d=1}^{D}P(\theta_d)
-\prod_{n=1}^{N}P(Z_{d,n}|\theta_d)P(W_{d,n}|\beta_k,Z_{d,n})
+\prod_{n=1}^{N}P(Z_{d,n}|\theta_d)P(W_{d,n}|\beta_k,Z_{d,n}).
 \end{align}
 \section{Posterior distribution}
 This is a type of Bayesian statistic that describes how  latent variables are obtained given the observed data. From the LDA documents generative model a joint probability distribution of both the hidden structures and observed variables. To compute the conditional distribution given the observed variables (words), the posterior is used, given by:
@@ -164,7 +164,7 @@ The VB serves two purposes, of which are:
 \begin{itemize}
 \item VB gives an analytical approximation to the posterior probability given the observed and latent variables, so as to use the approximate values to make some inference.
 \item To determine from it a lower bound for a marginal probability of the observed data, also known as the evidence. That is, it is the marginal probability of the data given the model. 
-This idea is used to select a best model, on the premise that the model with the highest marginal likelihood shows a best of the data by the model. This also justifies that there is a high probability that the used was generated by the model.
+This idea is used to select a best model, on the premise that the model with the highest marginal likelihood shows how best is the data used to fit the model. This also justifies that there is a high probability that the data used was generated by the model.
 \end{itemize}
 \section{Diritchlet distribution}
 It is from the exponential family of continuous multivariate probability with the parameter $\alpha$ of positive real. It is denoted by $D(\alpha)$.
@@ -179,20 +179,20 @@ Where $\Gamma()$ is the Gamma distribution.
 %\Jnote{Please, I didn't understand a single sentence in this section.}
 \section{Advantages and disadvantages of LDA} 
 LDA can be used as a built in module in other models to perform more difficult tasks.
-The LDA model is used in other applications, not only in text.(Blei and Jordan,2002) carried out a  work that used pairs of LDA modules to
+The LDA model is used in other applications, not only in text. \cite{blei2003modeling} carried out a  work that used pairs of LDA modules to
 model relationships between images and their corresponding descriptive captions .
 %\Jnote{Who is ``we''? Please don't copy sentences from papers.}
 But also include problems involving collections of data, including data from domains such as collaborative filtering,
 content-based image retrieval and bioinformatics.
 \begin{flushleft}
-The bag of words assumption (the order words in a document does not matter) of LDA makes it unrealistic, however it is reasonable if only our task is to uncover the course thematic structure of the texts (Blei,2012).
+The bag of words assumption (the order words in a document does not matter) of LDA makes it unrealistic, however it is reasonable if only our task is to uncover the course thematic structure of the texts \cite{blei2012surveying}.
 \end{flushleft}
 \section{Extentions of LDA}
 \cite{wallach2006topic} developed a model that does not ignores the assumption that the order of words does not matter (bag of words). This means that the each word generated by the topic depends on the previous word. 
 %uses the combination of the n gram statistic and latent topic variable by extension of the uni-gram topic model to include properties of a hierarchical Dirichlet language model. n gram statistics is a close collection of sequence of items from a text or speech. Uni-gram is at type of  n gram model of size one.
 %\Jnote{Please don't copy sentences from papers. I hope you can explain to me:
 %  What is n-gram statistic? What is latent topic variable? What is uni-gram topic model? What is a hierarchical Dirichlet model?}
-\cite{griffiths2007topics} combined the idea of syntactic and semantics to produce a generative model. This model  is capable of simultaneously finding syntactic classes and semantic topics despite having no knowledge of syntax or semantics beyond statistical dependency
+\cite{griffiths2007topics} combined the idea of syntactic and semantics to produce a generative model. This model  is capable of simultaneously finding syntactic classes and semantic topics despite having no knowledge of syntax or semantics beyond statistical dependency.
 %Text text text text text text text text text text text text text text
 %text text text text text text text text text text text text text text.
 %
