@@ -1,15 +1,42 @@
 \chapter{Introduction}
- Mathematical models have been used to decribe the course of infectious disease for a long time. The most common use models are the compartmental models, which are identified by acronyms that indicate the compartments in the model, such as SIR (susceptible, infectious and recovered), SIS (susceptible, infected and susceptible ), SEIR  (susceptible, exposed, infected and recovered) and variants of thee. These models can be described using a system of differential equations with the number of equations equal to to the number of compartments in the in the model. When studying infectious disease propagation using these model an assumption of uniform mixing is made; that is any individual in the population has the same probability of contacting any other individual.
+Mathematical models have been used to describe the course of infectious disease for a long time. The most common use
+\Jnote{s/common use/commonly used}
+models are the compartmental models, which are identified by acronyms that indicate the compartments in the model, such as SIR (susceptible, infectious and recovered), SIS (susceptible, infected and susceptible ),
+\Jnote{Dont' put space before closing parenthesis.}
+SEIR  (susceptible, exposed, infected and recovered) and variants of them. These models can be described using a system of differential equations with the number of equations equal to the number of compartments in the models.
+\Jnote{s/models/model}
+\Jnote{Maybe a reference somewhere here?}
+When studying infectious disease propagation using these models an assumption of uniform mixing is made; that is any individual in the population has the same probability of contacting any other individual.
  
- However the uniform mixing approach has been found to be unrealistic for a long time and spatial effect and heterogeneity have shown to have an impact o the spread of infections.  Instead of relying on this kind of models and due to recent advances in the research of complex networks , there has been increased interest in trying to capture the effects of contact patterns between individuals. These patterns can be described by contact networks , where the vertices correspond to individuals and the edges to contacts between them  \citep{wallinga1999perspective}. One of the main motivations for studying complex networks has been to better understand the structure of social networks , which without doubt has to be reflected in contact networks. Thus there is a natural link between epidemic modelling and research of complex networks \citep{kaski2005modeling}
+However the uniform mixing approach has been found to be unrealistic for a long time
+\Jnote{Too strong. Say it is unrealistic in some cases.}
+and spatial effect and heterogeneity have shown to have an impact on the spread of infections. Instead of relying on this kind of models and due to recent advances in the research of complex networks, there has been increased interest in trying to capture the effects of contact patterns between individuals. These patterns can be described by contact networks, where the vertices correspond to individuals and the edges to contacts between them  \citep{wallinga1999perspective}. One of the main motivations for studying complex networks has been to better understand the structure of social networks, which without a doubt has to be reflected in contact networks. Thus, there is a natural link between epidemic modelling and research on complex networks \citep{kaski2005modeling}
  
- Small world network work model have been realist in capturing the spread patterns of some infections disease. The small world models have been built on the assumption that infected individuals will spread the infection among their close contacts with a higher probability compared to compared to their random acquaintances \citep{newman2002random}.
+Small world network  model have been realist
+\Jnote{s/realist/more realistic}
+in capturing the spread patterns of some infectious diseases. The small world models have been built on the assumption that infected individuals will spread the infection among their close contacts with a higher probability compared to their random acquaintances \citep{newman2002random}.
+\Jnote{Mention they were first introduced by Strogatz and Watts and cite them.}
  
-Since the emergence of Zika virus epidemic, there have several studies to model the spread of the virus. Most research on Zika has been modelling the propagation of the infectious using compartmental models as can be seen in the work of \cite{1}, \cite{2} and \cite{3}, where they used the SEIR compartmental model with vector to model the propagation of Zika. 
+Since the emergence of Zika virus epidemic, there has been several studies to model the spread of the virus. Most research on Zika has been modelling the propagation of the infectious
+\Jnote{s/infectious/infection}
+using compartmental models as can be seen in the work of \cite{1}, \cite{2} and \cite{3}, where they used the SEIR compartmental model with vector to model the propagation of Zika. 
 
-In this research we model the spread of Zika virus on a small world network and investigate the effects small work parameters on the spread o f the infection. We assume contact is the is no perfect mixing in the population but the contact patterns can be describe using a small world network. This is a much more realistic assumption as it captures the contact patterns of individual in the community or network. Zika virus is mainly transmitted through a vector (Mosquito) contact and transmission is in reference to mosquito bite. 
+In this research, we model the spread of Zika virus on a small world network and investigate the effects of small work parameters on the spread of the infection. We assume there is no perfect mixing in the population, but the contact patterns can be described using a small world network. This is a much more realistic assumption as it captures the contact patterns of individual
+\Jnote{s/individual/individuals}
+in the community or network.
+\Jnote{Mention that your network is supposed to model a city or such.}
+Zika virus is mainly transmitted through a vector (Mosquito)
+\Jnote{Don't capitalize ``mosquito''}
+contact and transmission is in reference to mosquito bite. The dynamics of transmission through a mosquito are represented in a small world network.
 
-The aim of the study is to broaden the understanding of the spread of Zika virus. Which might lead to new disease control measure and research topics in the field.
+The aim of the study is to broaden the understanding of the spread of Zika virus. Which might
+\Jnote{s/Which/This}
+lead to new disease control measures and research topics in the field.
 
-This paper is arranged in as follow; first it talks about other related works, secondly it gives some background knowledge on networks and compartmental models, thirdly it gives a description of deterministic and stochastic compartmental models, Lastly it give the Zika model and results from simulations based on a small world network.
-
+This paper is arranged in as follow;
+\Jnote{in as follow;/as follows: (note the colon, not semicolon)}
+first it talks about other related works, secondly it gives some background knowledge of networks and compartmental models, thirdly it gives a description of deterministic and stochastic compartmental models, Lastly
+\Jnote{Capitalization.}
+it gives the Zika model and results from simulations based on a small world network.
+\Jnote{Consider splitting it into sentences: ``In Chapter 2 we give some background
+  knowledge...'' etc.}

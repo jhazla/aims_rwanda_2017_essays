@@ -3,16 +3,30 @@
 The deterministic models discussed in the chapters above assume that all individuals have an equally small probability of being infected. In this section we build a model for the propagation of Zika virus based on a small world network.
 
 Traditional models of infectious disease dynamics have a long, successful history of describing and modelling infectious disease spread of many diseases. They are quiet simple and tractable \citep{fu2013propagation}.
+\Jnote{s/quiet/quite}
 
-There are certain specific and common situations when the structure of social connectivity is at least as important as the inactivity of the underlying infectious agents for the study of transmission of infection and control. This is one among the major reasons that has motivated the modelling of infectious diseases on social networks \cite{fu2013propagation}.
+There are certain specific and common situations when the structure of social connectivity is at least as important as the inactivity
+\Jnote{s/inactivity/activity}
+of the underlying infectious agents for the study of transmission of infection and control. This is one among the major reasons that has motivated the modelling of infectious diseases on social networks \cite{fu2013propagation}.
 
 
 
 \section{ Vector Bone Disease Propagation on a Small World Network}
-Assuming that there is a lattice with two layers. One for mosquitoes, another for human beings. We assume mosquitoes are stationary and that people have close and remote links. That is mosquitoes do not cover long distances, but just hover around a specific location. Where as people can travel to distant locations. Close links refer to individual's close acquaintances.
+\Jnote{Summarize what you are doing in this section:
+  You give a heuristic argument why we consider only people in our model
+  instead of both people and vectors.}
+
+\Jnote{s/Bone/Borne}
+Assuming that there is a lattice with two layers.
+\Jnote{s/Assuming/We assume}
+One for mosquitoes, another for human beings. We assume mosquitoes are stationary and that people have close and remote links. That is mosquitoes do not cover long distances, but just hover around a specific location.
+\Jnote{Where as/On the other hand,}
+Where as people can travel to distant locations. Close links refer to individual's close acquaintances.
+\Jnote{Add ``... while distant links...''}
  
 A mosquito $M_1$ bites a Zika infected person $h_1$ with probability $\alpha_1$. Then transmits the virus to person $h_2$, with a probability of $\alpha_2$. Thus, person $h_1$ is connected to  person $h_2$ through $M_1$. It can then be said that $h_2$ can be infected by $h_1$ with probability $p_1$. Assuming that $\alpha_1 $ and $\alpha_2$ are independent  $p_1 =  \alpha_1 \alpha_2$. 
 that $\alpha_1$ and $\alpha_2$.
+\Jnote{that $\alpha_1$? What does that mean?}
 
  If person $h_3$ travels to the place where $h_1$ lives or gets close enough that he gets bitten by mosquito $M_1$ can be infected probability $\alpha_3$. Thus, $\alpha_3$ is the probability that person $h_3$ travels and get bitten by mosquito $M_1$. It can be said that $h_1$ infects $h_3$ with probability $p_2$, because $h_1$ is connected to $h_3$ through $M_1$. Assuming $\alpha_1$ and $\alpha_3$ are independent, $p_2 = \alpha_1 \alpha_3$.
 \begin{figure}[h!]
@@ -32,7 +46,14 @@ The phenomenon of infecting a close like  or distant link can be expressed in 4 
 
 In all the cases we assume $\alpha_3$ is the same. Hence the probability of affecting a remote any distant neighbour is the same. We assume a single mosquito transmits an infection only once. Thus, $M_1$ is a scourge of mosquitoes.
 
+\Jnote{Please re-read this explanation and correct language mistakes
+  and make clarifications. Say that probabilities of cases ii) and iii)
+  might be different but we assume that we can average them out and
+  use single value for $p_2$. Say that we neglect probability in
+  case iv) since we consider it to be small compared to ii) so iii).}
+
 The existence of near and distant neighbours in the disease infection dynamics of Zika virus on a lattice with two layers in \ref{fig5} makes it possible to represent the dynamics of disease spread on a small world network in figure \ref{fig 5.2}.Thus, in modelling the spread of Zika virus on a small world network, the dynamics of transmission through mosquitoes are represented by the edges of the graph. An edge is drawn between two vertices, whenever there is a likelihood of transmission from one to another a via mosquito bite as can be seen in figure \ref{fig 5.2}.
+\Jnote{Figure ref is wrong. I like this figure much better, thank you!}
 \begin{figure}[h!]
 \begin{minipage}[c]{1\textwidth}
  \centering
@@ -68,6 +89,7 @@ preaction={->,thick,draw =red!}
 \caption{Smallworld network structure} \label{fig 5.1}
 \end{figure}
 \section{Small world methodology}
+\Jnote{Keep title capitalization consistent.}
 
 We  can now suppose that the population is arranged on a regular
 2-dimensional square grid.  Where each vertex can infect its 4 nearest neighbours and a number of distant neighbours. Near neighbours in this case refers to individuals that one spends most of their time with, could be colleagues at work or school, people in the same house and distant neighbours refers to random individuals that one is likely to transmit the infection to. 
@@ -77,20 +99,35 @@ We  can now suppose that the population is arranged on a regular
  \includegraphics[scale=0.3]{images/swseir.png}
  \caption{State transition diagram} \label{fig 5.2}
 \end{figure}
- 
- 
-Figure \ref{fig 5.1} shows the arrangement of nodes in a small world network and figure \ref{fig 5.2} shows the transmission state diagram: S to E  with infection probabilities $p_ {1,2} $ based on the small world network structure and: E to I with probability $r_0$ and I to R with probability $r_1$. In figure \ref{fig 5.1}, the infected green node may infect its four near neighbours, with probability $p_1$ and its three remote neighbours with probability $p_2$. By infection we mean transition from susceptible to exposed state. 
+\Jnote{Probabilities in this diagram have too small font size.}
 
-Infected individuals can cause susceptible individuals, whom they are liked, to becomes exposed with with probability $p_1$ or $p_2$. Infected individuals can  infect their close neighbours with  probability $p_1$ and infect their distant neighbours with probability $p_2$. $p_1 $ and $p_2$ are probabilities of infection per day. Exposed individuals become infected with probability $r_0$ and infected individuals become recover with probability $r_1$.
+ 
+Figure \ref{fig 5.1} shows the arrangement of nodes in a small world network and figure \ref{fig 5.2} shows the transmission state diagram:
+\Jnote{Say upfront that all the probabilities are per day and that each day
+  we assume that given transition occurs independently.}
+S to E  with infection probabilities $p_ {1,2} $ based on the small world network structure and: E to I with probability $r_0$ and I to R with probability $r_1$. In figure \ref{fig 5.1}, the infected green node may infect its four near neighbours, with probability $p_1$ and its three remote neighbours with probability $p_2$. By infection we mean transition from susceptible to exposed state. 
+
+Infected individuals can cause susceptible individuals, whom they are liked,
+\Jnote{``Whom they are liked''?}
+to becomes exposed with with probability $p_1$ or $p_2$. Infected individuals can  infect their close neighbours with  probability $p_1$ and infect their distant neighbours with probability $p_2$. $p_1 $ and $p_2$ are probabilities of infection per day. Exposed individuals become infected with probability $r_0$ and infected individuals become recover with probability $r_1$.
 
 The number of near neighbours $n_1 = 4$ or less, taking into account the boundary cases.
 The number of distant neighbours $n_2$  for each node is independent and  identically distributed. That is for each node $u$ there are $n_2^ {(u)} $ distant neighbours. $n_2^ {(u)} $ is chosen to follow a discrete exponentially decaying distribution 
 \begin{equation} 
  \Pr[n_2^{(u)} = k] = c \cdot e^{-\mu x  } \label{5.2.1}
  \end{equation}
-where $c = \dfrac{1}{1- e^{\frac{-1}{\mu}}}$ \citep{fu2013propagation}. The degree distribution in most social networks is exponential because of the celebrity effect \citep{estrada2015first}. In social networks, there are few people who have a high number of connections and many others with a few number of connections. In modelling infectious diseases these individuals are referred to as supper spreaders.
+ where $c = \dfrac{1}{1- e^{\frac{-1}{\mu}}}$ \citep{fu2013propagation}.
+ \Jnote{Correct typos. There should be $k$ in the equation, not $x$.
+   In the formula for $c$ I think there should be $e^{-\mu}$, not inverse
+   of $\mu$. Also formula for $c$ is only approximately equal because we
+   cut off the distribution for $k$ larger than graph size.}
+\Jnote{Say that $\mu$ is positive parameter.}
+ The degree distribution in most social networks is exponential because of the celebrity effect \citep{estrada2015first}. In social networks, there are few people who have a high number of connections and many others with a few number of connections. In modelling infectious diseases these individuals are referred to as super spreaders.
+ \Jnote{Would be good to include formula for expectation of $n_2$ as function
+   of $\mu$.}
 
-The transition probability $r_0$, the number of days an individual is in the exposed state is as a result a series of Bernoulli trials with mean $\frac{1}{r_0}$, follows a geometric distribution $f_X (x) = (1-p) ^ {x-1} p$. Similarly the infectious period follows a geometric distribution with mean $\dfrac{1}{r_o}$ \citep{fu2013propagation}.
+ The transition probability $r_0$, the number of days an individual is in the exposed state is as a result a series of Bernoulli trials with mean $\frac{1}{r_0}$, follows a geometric distribution $f_X (x) = (1-p) ^ {x-1} p$. Similarly the infectious period follows a geometric distribution with mean $\dfrac{1}{r_o}$ \citep{fu2013propagation}.
+ \Jnote{s/$r_o$/$r_1$}
 
 \section{Model}
 The model has 6 parameters, they are $N, p_1, p_2, n_2, r_0$ and $r_1$. We let $N$ be the population size of a city or country and is arranged in a regular grid of side length $l $ such that $l^2 = N$. The rest of the parameters have been described above.
@@ -102,7 +139,9 @@ A thorough review of literature in \cite{lessler2016times} indicates that the in
 
   $95\%$ of the of Zika patients will still have detectable virus infectiousness 18.9 days after infection with a confidence interval of 13.6 -79.4 \citep{lessler2016times}.The infectiousness in Zika infection ends 1.5 - 2 days before the virus becomes undetectable \citep{funk2016comparative}. Thus the chosen value of the infectious period is $18.9 - 1.5 = 17.4$ days. Therefore $r_1$ is estimated to be $\dfrac{1}{17.4}$.
 
-Hence, we have $\mu$, $p_1$ and $p_2$  as free parameters. Without active control, the average number of secondary infections resulting from a primary  Zika  virus infectious is between 3 and 6. Therefore, we choose 4.5 as the $R_0$. Since the number of remote neighbours is random and fixed for each, we estimate $E (n^ {(u)} _2) = \mu$.
+  Hence, we have $\mu$, $p_1$ and $p_2$  as free parameters. Without active control, the average number of secondary infections resulting from a primary  Zika  virus infectious is between 3 and 6. Therefore, we choose 4.5 as the $R_0$. Since the number of remote neighbours is random and fixed for each, we estimate $E (n^ {(u)} _2) = \mu$.
+  \Jnote{No, $\mu$ (parameter of distribution) is not same as expected value.
+    Fix this.}
 
 In this state each infectious individual will infect on average $n_1p_1 + E[n^{(u)}_2]p_2 $ new individuals everyday. The average number  of individuals infected each day can be estimated by the number of secondary infections each day of an individuals infectious period. Thus ;
 \begin{align}
@@ -115,6 +154,7 @@ $p_1 \approx   0.0645- 0.25 \mu p_2$ , in terms of small world parameters $\mu$ 
 Now $n_1$ and $n_2$ represent the number of interactions an individual has each day. Hence the  $n_1 + n_2$ is the lower bound is a lower bound of the number of active acquaintances because it is a number of links that are sufficiently intimate to support transmission of the virus. In reality some links would be closer than others and more likely to lead to transmission. We assume that all $n_1$ links are infected with probability $p_1$ and $n_2$ with probability $p_2$ each day. The probability $p_1$ and $p_2$ are not the same.
 
 Note that the choice of $n_1$ and $n_2$ is not critical; what is more important is the infection probability $n_1p_1 + n_2p_1$ .
+\Jnote{Some typos in last two paragraphs.}
 
 We can summarize the parameters of the models as;
 \begin{align}
@@ -128,10 +168,15 @@ Now we have one free parameter $p_2$. We can now estimate the number of new infe
 \begin{align}
 E(- \bigtriangleup S) = (n_1 k p_1 + \mu p_2 - r_1) I \label{5.18}
 \end{align}
-Where k is the average number of near neighbours' links that support possible infection and near neighbours are arranged in clusters, therefore $0.5 < k <1$.  In our computations, we will take $k = 0.5$. From equation \ref{5.18} we can estimate the number of new infections as;
+Where k is the average number of near neighbours' links that support possible infection and near neighbours are arranged in clusters, therefore $0.5 < k <1$.
+\Jnote{You should take $k$ into account before, when you are computing
+  $p_2$ as function of $p_1$, no?}
+In our computations, we will take $k = 0.5$. From equation \ref{5.18} we can estimate the number of new infections as;
 \begin{align}
 E(- \bigtriangleup S) = (2 p_1 + 8 p_2 - 0.057) I  \label{5.1.9}
 \end{align}
+\Jnote{Don't use \textbackslash bigtriangleup, spaces look weird.
+  Use \textbackslash Delta instead.}
  
 From equation \ref{eqn 5.32}, it can be shown that $p_1$ and $p_2$ have natural bounds. That is taking $p_2 = 0$, implies that $p_1 \leq 0.1293$ for $k = 0. 5$. For $p_1 = 0$, we get $p_2 \leq 0.03232$.
 
@@ -139,7 +184,10 @@ Further, the rate of spread of infection is given by ;
 \begin{equation}
 1- \dfrac{r_o + r_1}{2} + \sqrt{\dfrac{1}{4}(r_o - r_1)^2 + n_k r_o},
 \end{equation}
-where as before $n_k = n_1kp_1 + \mu p_2$ \citep{fu2013propagation}. From equations \ref{5.18}, it can be seen that the disease will be contained if $n_k < r_1$. If $n_k <r_1$ there will be a negative the increase in the number of infected individuals thus, the disease will be contained. 
+where as before $n_k = n_1kp_1 + \mu p_2$ \citep{fu2013propagation}.
+From equations \ref{5.18}, it can be seen that the disease will be contained if $n_k < r_1$. If $n_k <r_1$ there will be a negative the increase in the number of infected individuals thus, the disease will be contained.
+\Jnote{Why is this equation applicable? Can you justify it?}
+
 \section{Simulation}
 To investigate how disease propagation varies depending on $p_1, p_2, $ and $r_1$ we ran a couple of simulations on a small work network. The code for the simulation is attached in the appendix. 
 
@@ -154,10 +202,26 @@ We ran simulations for 5 cases;
 \item $p_1 = 0.0645$ ,$p_2 = 0.0323$ and $r_1 = 1/50$
 \end{enumerate}
 
-\section{Results}
-From our simulated model for the transmission dynamics of Zika virus the following results were obtained. 
+\Jnote{Adjust formulas for $p_1$ and $p_2$ after changing $r_1$.}
 
-In case 1 where $p_2 =0$, the disease spreads in isolated cases. In the first row of figure  \ref{pics:res} it can be seen that at different time interval the number of infected is small and  the infections are in cramps.  The number of individuals infected at each time is stochastic and not too many people will be infected as the disease progresses see figure \ref{a}.  When $p_2 = 0$, the populations is just a regular lattice and has no small world property. The disease does not spread rapidly when there are only local infections. The growth rate of infections in this case is $1.035$.
+\Jnote{Good. Please correct typos and justify why we chose those cases
+  to simulate.}
+
+\section{Results}
+From our simulated model for the transmission dynamics of Zika virus the following results were obtained.
+
+\Jnote{Explain what both figures show before going into cases. Make figures larger.
+  Make more detailed legends and captions (it should give parameteres instead
+  of saying ``case 1'' etc.}
+
+\Jnote{In the infected case the scales for $y$ axis are different. Change
+  that to give better idea of how infection spreads.}
+
+\Jnote{Explain how you computed ``infection rate''.}
+
+In case 1 where $p_2 =0$, the disease spreads in isolated cases. In the first row of figure  \ref{pics:res} it can be seen that at different time interval the number of infected is small and  the infections are in cramps.
+\Jnote{``Cramps''? I guess you mean ``clumps''.}
+The number of individuals infected at each time is stochastic and not too many people will be infected as the disease progresses see figure \ref{a}.  When $p_2 = 0$, the populations is just a regular lattice and has no small world property. The disease does not spread rapidly when there are only local infections. The growth rate of infections in this case is $1.035$.
 
 In case 2 when $p_2$ is no longer 0, thus  there are distant connections in the network. The disease progression is a steady increase and many people become infected over a short period of time figure \ref{a}. In the second row of figure \ref{pics:res}, a few cramps can be seen and some random infections.  Thus the disease will spread faster on the small world network than on a regular network in case 1. The growth rate increase to $1.079$
 
@@ -199,7 +263,7 @@ In case 2 when $p_2$ is no longer 0, thus  there are distant connections in the 
 \end{figure}
 \newpage
 
-In case 3, $p_1 = 0$ the disease will not spread locally but just along the distant links. The disease spread still increase sharply but not as fast in case 2. In the third row of figure \ref{pics:res} it can be seen that there are spatially uncorrelated infections. The growth rate in this case is $1.079$. 
+In case 3, $p_1 = 0$ the disease will not spread locally but just along the distant links. The disease spread still increase sharply but not as fast as in case 2. In the third row of figure \ref{pics:res} it can be seen that there are spatially uncorrelated infections. The growth rate in this case is $1.079$. 
 
 
 \begin{minipage}{\linewidth}
@@ -243,12 +307,27 @@ In case 4, There are both local and distant transmissions of the infection. The 
 
 In all the previous cases we kept $r_1 = 1/17.4$, were $17.4$ is the number of days for which an individual is infectious. Since the $r_1$a larger confidence interval \citep{lessler2016times}, we try  $r_1 = 1/50$. Case 5 is just case 4 with a lower $r_1$. In figure \ref{e} it can be seen that when the infectious period is longer the infection will burst in a short period of time. A longer infectious period will result in a higher rate of infection, of 1.134.
 
-There are two major drivers of the spread of Zika virus. The spread across distant neighbour, the small world effect and the infectious period. Local infections only a lower growth rate of the spread of the infections.  
+There are two major drivers of the spread of Zika virus. The spread across distant neighbour, the small world effect and the infectious period. Local infections only a lower growth rate of the spread of the infections.
+
+\Jnote{Re-read the discussion, making it clearer and correcting typos.}
 
 \section{Conclusion}
 
-In conclusion from our our model it can be said that the small world phenomenon, has contributed to greatly to the spread of Zika virus across the world. Small world networks can be used to understand why infectious disease that start a particular place or area is able to spread all over the world in a short period of time. With increase in peoples mobility, there is need to raise awareness on transmission of various infectious disease so to reduce the probability of of disease transmission across distance neighbours as well as preventing local infections.
+In conclusion from our our model it can be said that the small world phenomenon, has contributed to greatly to the spread of Zika virus across the world.
+\Jnote{Do not be so definitive. Say ``it could have contributed''.
+  s/contributed to/contributed}
+Small world networks can be used to understand why infectious disease that start
+\Jnote{s/start/start at}
+a particular place or area is able to spread all over the world in a short period of time. With increase in peoples
+\Jnote{s/peoples/people's}
+mobility, there is need to raise awareness on transmission of various infectious disease
+\Jnote{s/disease so to/diseases in order to}
+so to reduce the probability of disease transmission across distance
+neighbours
+\Jnote{s/distance neigbours/long distances}
+as well as preventing local infections.
 
 The major limitation of this research is the unavailability of time series data on Zika infections, on which the model can be fit and the parameters of the model tested.
 
 Further research to consider, investigating how the dynamic of the infection when then number of near neighbours is increase, that is breaking the square network structure. Comparing the spread of Zika virus on a random network model with the small world model. Further fitting this model to real world data on Zika epidemics.
+\Jnote{Make sentences out of the above (each sentence should have a verb).}
