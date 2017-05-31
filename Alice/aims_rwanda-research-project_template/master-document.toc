@@ -1,16 +1,30 @@
-\contentsline {chapter}{Declaration}{i}{chapter*.1}
-\contentsline {chapter}{Acknowledgements}{ii}{chapter*.2}
-\contentsline {chapter}{Dedication}{iii}{chapter*.3}
-\contentsline {chapter}{Abstract}{iv}{chapter*.4}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Moving On}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}The Second Chapter}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Third Chapter}{4}{chapter.3}
-\contentsline {section}{\numberline {3.1}See?}{4}{section.3.1}
-\contentsline {section}{\numberline {3.2}More}{4}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.3}\unskip \nobreakspace {}This is a subsection.\nobreakspace {}}{4}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}This is a section}{5}{section.3.3}
-\contentsline {chapter}{\numberline {4}The Second Squared Chapter}{6}{chapter.4}
-\contentsline {section}{\numberline {4.1}This is a section}{6}{section.4.1}
-\contentsline {chapter}{\numberline {5}Testing}{7}{chapter.5}
-\contentsline {chapter}{References}{8}{chapter*.8}
+\contentsline {chapter}{\numberline {1}Introduction of the Research}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Literature review }{2}{chapter.2}
+\contentsline {section}{\numberline {2.1} Parse Tree}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2} Named Entity Recognation and Classification NERC}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Hidden Markov Model}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Supporting Vector Machine (SVM) based model}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\unskip \nobreakspace {}Linear Supporting Vector Machine .\nobreakspace {}}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\unskip \nobreakspace {}Non Linear data.\nobreakspace {}}{7}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Disadvantages of SVM}{8}{section.2.5}
+\contentsline {section}{\numberline {2.6}Some Terminologies}{8}{section.2.6}
+\contentsline {section}{\numberline {2.7}Text classification and Naive Bayes}{8}{section.2.7}
+\contentsline {section}{\numberline {2.8}Machine learning for Named Entities}{10}{section.2.8}
+\contentsline {chapter}{\numberline {3}Research Methodology}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Data and tools}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Data Analysis and Filtering}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Supervised vs Unsupervised Machine Learning}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}NLP Corpus}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Modules and packages}{13}{section.3.5}
+\contentsline {section}{\numberline {3.6}Extraction of Entities }{15}{section.3.6}
+\contentsline {section}{\numberline {3.7}Top Section Dataset }{16}{section.3.7}
+\contentsline {section}{\numberline {3.8}Stanford Named Entities Recognition}{16}{section.3.8}
+\contentsline {section}{\numberline {3.9}Natural Language ToolKit (NLTK)}{17}{section.3.9}
+\contentsline {section}{\numberline {3.10}Polyglot Named classifier}{18}{section.3.10}
+\contentsline {section}{\numberline {3.11}Sample Files}{19}{section.3.11}
+\contentsline {chapter}{\numberline {4}Results Discussion and Testing}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}General Overview}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Case Study Results}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Testing}{21}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion and Future work}{23}{chapter.5}
+\contentsline {chapter}{References}{24}{chapter*.17}

@@ -2,51 +2,86 @@
 %\chapter{Research methodology}
 \section{Data and tools}
 World wide non governmental organizations publish some of their reports on their official websites.  Web scrapping is one of the ways to extract data from website to the local machines. We downloaded the reports about appeals in pdf format from IFRC website. 
- We used R-scripts for web scraping form our co-supervisor professor Xavier. 
- 
+We used R-scripts for web scraping form our co-supervisor professor Xavier.
+\Jnote{Is Xavier formally co-supervisor? If yes, you should put him on the
+  front page. Is he a professor? Please clarify this. Also use his full name.}
  
 We downloaded 1262 reports which have been submitted between $ 1^{st}$ January 2015 and $31^{st}$ December 2016. To differentiate the reports, each report has  a report Id but different reports can refer to the same appeal Id.
-As an international organization which insights on the largest humanitarian  activities in the world, IFRC reports we have talk about disasters and cash transfer program.
+\Jnote{What is appeal id? Please explain.}
+As an international organization which insights
+\Jnote{``Which insights''? I don't understand what you mean here.}
+on the largest humanitarian  activities in the world,
+IFRC reports we have talk about disasters and cash transfer program.
 Cash Transfer Program (CTP) describes the money used by IFRC to buy food, shelter, etc.
+\Jnote{Try describing better what CTP is.}
 \section{Data Analysis and Filtering}
-Portable document format (PDF) has content which can not be extracted and manipulated  easily. The data we have has to be changed into another format in order to pull the information we need. We managed to transform 1260 reports.  Our folder has the 1260 $ txt $ files which is considered as dataset. For analysing the data, we used  python programming language.
+\Jnote{The section title is not relevant to the contents.}
 
-Our data reported on different areas of the World such as continents, countries and cities. For example "Europe IB23102015 23Oct2015.txt" covers European continent , "Afghanistan MDRAF003 05Nov2015.txt" and  "Japan 0 16Apr2016.txt" reported  on specific countries and  "Port au Prince country cluster 0 04Oct2016.txt" reported on the most popular city of Haiti.
--
+Portable document format (PDF) has content which can not be extracted and manipulated  easily. The data we have has to be changed into another format in order to pull the information we need. We managed to transform 1260 reports.  Our folder has the 1260
+$ txt $
+\Jnote{Don't use math mode for this. You can use verbatim:
+\textbackslash verb+txt+}
+files which is considered as dataset. For analysing the data, we used  python programming language.
+\Jnote{Capitalize Python.}
+
+Our data reported on different areas of the World such as continents, countries and cities. For example "Europe IB23102015 23Oct2015.txt" covers European continent , "Afghanistan MDRAF003 05Nov2015.txt" and  "Japan 0 16Apr2016.txt" reported  on specific countries and  "Port au Prince country cluster 0 04Oct2016.txt" reported on the most popular
+\Jnote{s/popular/populous}
+city of Haiti.
+
 \section{Supervised vs Unsupervised  Machine Learning}
 \begin{itemize}
-\item \textbf{Supervised} is a machine learning part which deals with "labelled data",  data are categorized and classified. We have a csv document which summarize the appeals what we have. The shape of this document is 25 columns and 3997 rows. The "CTP" feature indicate if the appeal is classified as a Cash
-Transfer Program document  or not. Among 3997 appeals, 404 are CTP. 
+\item \textbf{Supervised} is a machine learning part which deals with "labelled data",  data are categorized and classified. We have a csv document which summarize
+  \Jnote{s/summarize/summarizes}
+  the appeals what we have. The shape of this document is 25 columns and 3997 rows. The "CTP" feature indicate if the appeal is classified as a Cash
+  Transfer Program document  or not. Among 3997 appeals, 404 are CTP.
+  \Jnote{Please explain how the CSV file relates to your data.}
+  \Jnote{Make two paragrahps: one with definition of SL and one introducing
+    your example.}
 
 \item \textbf{Unsupervised} can be defined as a way machine learning processes ”unlabelled data”.
 the data are unstructured, uncategorised and unclassified. The reports we have are good example of unlabelled data.
 \begin{itemize}
 \item clustering is a technique for analysing data by identifying hidden groups in a data set. The hidden groups helps the machine to  classify them data into small groups called "cluster" based on similarities or relationship found in data \citep{dy2004feature}.
+  \Jnote{Some typos here, please correct (also capital letter in the beginning).}
 \end{itemize}
 Unsupervised Machine Learning is very important, the analysis of data require the machine to use its brain Supervised learning.
+\Jnote{I don't understand this sentence.}
 \section{NLP Corpus}\label{re}
 %Corpus is a set of large data which are structured and                                                                                                                                                                                                                   
 %\section{CORPUS}
-Corpus is a set of large data which are semi-structured.  To extract entities from corpus is simple than to deal with unstructured data. To get the corpus we filtered the data by using unicode of utf-8.
+Corpus is a set of large data which are semi-structured.  To extract entities from corpus is simple
+\Jnote{s/simple/simpler}
+than to deal with unstructured data. To get the corpus we filtered the data by using unicode of utf-8.
+\Jnote{This is not accurate. You deleted non-printable characters
+  from the converted files.}
 
 To get compatible data, we have to filter using the Unicode provides canonical and compatible equivalence.
 
 
-\textbf{Regular Expressions}: in Python, regular expression has operations and modules like "re.py" aND so on. they are used to manipulate characters in strings. regular expressions use a backslash $(" \backslash  ")$  to indicate a special form without invoking the meaning of the special form. There are many regular expressions functions but some of what we used the most are :
+\textbf{Regular Expressions}:
+\Jnote{Start with saying what REs are for (to search for patterns
+  in strings)}.
+in Python, regular expression has operations and modules like "re.py" aND so on. they are used to manipulate characters in strings. regular expressions use a backslash $(" \backslash  ")$  to indicate a special form without invoking the meaning of the special form. There are many regular expressions functions but some of what we used the most are :
 \begin{itemize}
 \item re.split(): this function split par pattern and return the list of string.
 \item re.search(): it returns match objects.
+  \Jnote{Some typos above.}
 \item the match object ".end()": in a search string, it returns the end position of the match.
 \item the match object: in a search string, it returns the start position of the match.
 \end{itemize}
 
-\textbf{ASCII} stands for American Standard Code for Information Interchange. it is uses numbers to represent text by using 128 characters. Computer uses ASCII exist within unicode for storing texts easily. All  ASCII uses unicode. ASCII characters are used to send and receive the e-mails, for text files and data conversions. 
+\textbf{ASCII} stands for American Standard Code for Information Interchange. it is uses numbers to represent text by using 128 characters. Computer uses ASCII exist within unicode for storing texts easily. All  ASCII uses unicode.
+\Jnote{ASCII and Unicode (note capitalization) are different things
+  and you are confusing them here.}
+ASCII characters are used to send and receive the e-mails, for text files and data conversions. 
 
 
 \begin{itemize}
 \item  ASCII-encoder: transform text to numbers.
 \item  ASCII-decoder: transform numbers to text.
 \end{itemize}
+\Jnote{What are those points for? What is their relation to the rest
+  of the paragraph?}
 \newpage
 \begin{figure}[hbtp]
 \caption{ASCII TABLE}
@@ -56,41 +91,66 @@ To get compatible data, we have to filter using the Unicode provides canonical a
 \end{itemize}
 %\end{itemize}
 
-Figure \ref{ASCII} demonstrates Unicode  standard. It provides  a unique number to each character composing a text regardless the language, program  or platform.
+Figure \ref{ASCII} demonstrates Unicode  standard.
+\Jnote{Acknowledge the source of the figure.}
+It provides  a unique number to each character composing a text regardless the language, program  or platform.
 UTF stands for Unicode Transformation Format. Unicode characters are set into binary values 0 and 1. UTF-8 for encoding  8 bytes, UTF-16 for encoding 16 bytes and UTF-32 which is a standard for encoding 32-bytes are three current standards.
 For our corpus we used UTF-8.
 
-After getting semi-structured documents, we removed the StopWords which are defined as unnecessary words for extraction of entities from corpus.
+After getting semi-structured documents, we removed the StopWords
+\Jnote{s/StopWords/stopwords}
+which are defined as unnecessary words for extraction of entities from corpus.
 
 Normally the StopWords return vast amount of unwanted information. Some example of English Stop Words: almost, are, or,  details, during, upon and so on.
 
 Now we can check how for all of 1260 documents and count the Stop Words to be removed from vocabularies of corpus. We trained corpus by nltk package called FreqDist which uses  frequency distribution of each word occurs in corpus, then the module of nltk technique called "nltk.corpus.PlaintextCorpusReader" helped us to get total 58104 stop words over the whole  7796263  vocabularies.
+\Jnote{Please fix grammar above.}
 
 \section{Modules and packages}
-The procedure of extracting entities requires many linguistic packages. Machine learning algorithms check grammar rules, punctuation marks and syntaxes. For some    research eras ,  documents can have special characters such as emoticons for emotions. To install these package, you must understand clearly how they work and the content type of your documents. This is a list of packages we used for extracting IFRC entities.
+The procedure of extracting entities requires many linguistic packages. Machine learning algorithms check grammar rules, punctuation marks and syntaxes. For some    research
+eras ,
+\Jnote{Delete this beginning and just write ``Some documents can have...''}
+documents can have special characters such as emoticons for emotions. To install these package, you must understand clearly how they work and the content type of your documents.
+\Jnote{Do not use ``you'', write in passive voice. Also, what do you
+  mean ``to install you must understand how they work and the content type''?
+  This is just not true.}
+This is a list of packages we used for extracting IFRC entities.
 \begin{itemize}
 \item \textbf{os} : This module is  known as miscellaneous operating system interfaces. os represents the functionality of operating system with independent functions such as os.path.isfile(), os.path.exist, os.path.isdir, etc.  
 
-Its functions are important for building andependant platform. The programmes written  using os module  can execute in Windows and Linux regardless the machine operating system. 
+  Its functions are important for building andependant platform.
+  \Jnote{s/andependant platform/platform-indpendent programs}
+  The programmes
+  \Jnote{s/programmes/programs}
+  written  using os module  can execute in Windows and Linux regardless the machine operating system. 
 
 \item \textbf{nltk}: Natural Language Toolkit is one of core packages for linguistic modelling . With various important  built-in functions nltk is able to manipulate documents.  The main idea behind nltk is to use $nltk_{-}corpus$ to collect all documents as one dataset, then split the documents into sentences using $ne_{-}chunk$ and  remove the stopwords by  importing $stopword$ from $ntk.corpus$, lastly apply machine learning algorithms to extract entities.
 
 \item \textbf{PyPDF2} is able to extract specific information from a pdf document based on the section they belong to. This package locates top section, title, author, etc. It has many functions such as splitting documents pages, merge document pages, encrypt and decrypt documents and so on. It can be compared to pdftk
 \item \textbf{pandas} is an open source with high performance structure within various build in functions.
-Dataframe design for presenting many data in organized way. Pandas is powerfull in data analysis, flexible, fast and manipulation took for any language. In our research, We used pandas for making the frames of our data.
+  Dataframe design for presenting many data in organized way. Pandas is powerfull in data analysis, flexible, fast and manipulation took for any language. In our research, We used pandas for making the frames of our data.
+  \Jnote{I could not understand this description.}
 \item \textbf{codecs} module  offers unicode string for encoding and decoding. codecs is used for handling errors and gives freedom to access internal registry. Codecs are not limited to text but mostly are for text encodings which is for encoding text to bytes. Additionally, there exits codecs for encoding text to text, some codecs can encode and decode at the same time.
 \item  \textbf{defaultdictionary} has basic content of difference between verbs, nouns, adjectives, adverbs etc. It uses tagger to assign each word composes the sentence a corresponding POS as explained in Chapter \ref{tree} classes of words are inverted by NLP, it refers to categories of words in dictionary.
-\item \textbf{Python String} module which returns a string with trailing text removed.  It has two methods to strip text on both sides, right strip() and left strip(). Trailling text can be  unwanted space, extension, punctuation marks, etc.
+  \Jnote{What do you mean? Defaultdict in Python is just a dictionary
+    with default value for missing key instead of key error.
+    It has nothing to do with parsing.}
+\item \textbf{Python String} module which returns a string with trailing text removed.
+  \Jnote{The module does not return anything, its methods do. Their
+  names are ``rstrip'' and ``lstrip''.}
+  It has two methods to strip text on both sides, right strip() and left strip(). Trailling text can be  unwanted space, extension, punctuation marks, etc.
 
 To indicate the position of the character to be stripped we use left(l.strip()) which removes the character at the beginning of a string or right(r.strip()) to remove the character at the end of the string.
 \item \textbf{regular expressions } regex is a module which finds out the patterns between strings by setting rules for text. bytecodes compile those pattern rules and execute using matching rules.  example methods for re are explained into Chapter \ref{re}
 \item \textbf{polyglot} is used to extract entities from many languages.  It is multilanguage application supporter built as natular language pepeline.
 \item \textbf{Stanford} is one of most brilliant algorithms to extract entities from  documents corpus. it has classifier models, jar files which are free downloads. Stanford has many packages to handle linguistic problems. 
 \end{itemize}
+\Jnote{In my opinion the whole section above needs rewriting.}
 
 \section{Extraction of Entities }
 
-To extract entities we used default dictionary built in collection package of nltk. Our dataset now is a folder containing 1260 corpus files, we  used nltk chruncker to get sets of sentences of corpus. let have a look for our sample document the way sentences are split. 
+To extract entities we used default dictionary built in collection package of nltk. Our dataset now is a folder containing 1260 corpus files, we  used nltk chruncker to get sets of sentences of corpus. let have a look for our sample document the way sentences are split.
+\Jnote{From the figure it looks these are not sentences, just lines.}
 \begin{figure}[hbtp]
 \caption{Set of sentences}
 \centering
@@ -98,7 +158,7 @@ To extract entities we used default dictionary built in collection package of nl
 \end{figure}
 
 
-Figure \ref{Set of sentences} shows the 45 first lines of the sample document. each each line is ended by  $'\backslash n'$. 
+Figure \ref{Set of sentences} shows the 45 first lines of the sample document. each each line is ended by  $'\backslash n'$.
 
 \section{Top Section Dataset \label{top}}
 
@@ -107,6 +167,7 @@ From the analysis of IFRC pdf reports, most of them have a small table on the to
 While we were transforming the pdf data into txt format, this table occupied almost 25 first lines. Due to the limited time of the research, We decided to split those twenty five first lines of each document. the collection of those first twenty five documents has been considered as our new corpus.
 
 Now  we can use  one of the algorithms to extract entities and for classification.
+\Jnote{...from this table.}
 
 \section{Stanford Named Entities Recognition}
 
@@ -136,9 +197,12 @@ From Figure \ref{stanford},  Consider the for the report "-Global MAA00029 21Jun
 The extraction of entities separates clearly the categories.
 \section{Natural Language ToolKit (NLTK)}
 Natural language toolkit is one of the algorithm to extract named  entities. It has different modules which are used to process the data alongside the extraction.
+\Jnote{Make capitalization consistent across the thesis:
+  NLTK, Natural Language ToolKit.}
 NLTK chunkparser is a one of nltk module  which uses Regular expressions. NLTK tokenize which splits the sentences into small units called tokens. This module helps the NLTK tagger to identify words independently. 
 
-Generally NLTK classify the entities into four categories which are known as Location, Organization, Persons and Others. 
+Generally NLTK classify the entities into four categories which are known as Location, Organization, Persons and Others.
+\Jnote{Singular or plural? Be consistent.}
 \newpage
 
 \begin{figure}[hbtp]
@@ -146,12 +210,15 @@ Generally NLTK classify the entities into four categories which are known as Loc
 \centering
 \includegraphics[scale=.45]{images/nltkalgo.png}\label{nltkalgo}
 \end{figure}
+\Jnote{Are you sure this figure is correct? It seems there are lots
+  of obvious locations classified as ``other''.}
 
 From Figure \ref{nltkalgo}, Consider organizations extracted from the report "-Global-MAA00021 02 Jun 2015.txt", NLTK entities classifier was able to extract DRR, HFAR, WCDRR, HFAR2, UNISDR, etc. The classifier uses nltk tagger and default dictionary which help it to identify the names, verbs and adjectives.
 
 \section{Polyglot Named classifier}
 
 Compared to previous entities extractor, Polyglot has only three categories which are "Persons", "Locations" and "Organizations". For nltk, any entity which is classified into those three categories is not considered as named.
+\Jnote{I don't understand last sentence.}
 \newpage
 
 \begin{figure}[hbtp]
@@ -172,7 +239,9 @@ Non CTP reports are focused on other activities which didnt require IFRC to inve
 The next step is to take example report document for CTP and Non-CTP to have a comparison on the extracted entities.  
 
 
-
+\Jnote{Please work more on this chapter. There are many language
+  mistakes (I did not point out all of them). Also please stop
+  using newpage, Latex will put the tables reasonably on its own.}
 
 
 

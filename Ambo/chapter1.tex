@@ -1,33 +1,62 @@
 \chapter{Introduction}
 
-Games are inherent to  human nature and are present in all cultures.  In a game there are: goals, rules, challenges, interactions, conflicts, skill, strategies and chance \citep{mcgonigal2011reality, crawford1984art}. History retains that scientific study of the chance to win a game or of making decisions under uncertainty and risks has given birth to what we call nowadays probability theory which has a large application \citep{freund2012introduction}. The mathematical study of rules of a game allows to compute the winning probability according to strategies used, and to determine the optimal strategy and the existence of a solution.
+Games are inherent to  human nature and are present in all cultures.  In a game there are: goals, rules, challenges, interactions, conflicts, skill, strategies and chance \citep{mcgonigal2011reality, crawford1984art}.
+History shows
+%\Jnote{s/retains/shows}
+that the scientific study of the chance to win a game or of making decisions under uncertainty and risks has given birth to what we call nowadays probability theory which has many applications
+%\Jnote{s/a large application/many applications}
+\citep{freund2012introduction}. The mathematical study of rules of a game allows to compute the winning probability according to strategies used and to determine the optimal strategy and the existence of a solution.
 
-The game called \emph{prover}, introduced by \cite*{ben1988multi} is a part of the games whose rules, strategies and outcomes  have been mathematized. A prover game is a game which is played between at least two players called provers against a referee called also a verifier. A prover game is a concept originating from theoretical computer science.  
+The multi-prover games, 
+%\Jnote{s/the game called prover/the multi-prover games}
+introduced by \cite*{ben1988multi} are the kind 
+%\Jnote{s/part/kind}
+of  games whose rules, strategies and outcomes  have been mathematized. For this reason, a prover game is a mathematical game. A prover game is a game which is played between at least two players called provers against a referee called also a verifier. It is a concept originating from theoretical computer science.  
 
-Let us talk about what a prover game is. A prover game $G$ is played between two provers $1$ and $2$ against the verifier $\phi$. That is, the prover game is restricted to  two players.  Let $X$ and $Y$ be respectively the set of questions addressed to players $1$ and $2.$ We denote by $S$ and $T$ respectively  sets of answers to question set $X$ and $Y$. The verifier samples a couple of questions $(x,y) \in_{\mu} Q \subseteq X \times Y$ according to the  probability distribution $\mu$ on $Q$ and sends the question $x$ to the prover $1$ and $y$ to the prover $2.$ Their answers can be accepted or rejected by the verifier $\phi$, that is the verifier is a predicate defined from $X \times Y \times S \times T$ to $\{0,1\}.$ Both  provers win the game if the verifier accepts both answers, that is if $\phi (x,y,f(x),g(y))=1$ where $f$ and $g$ are  strategies used respectively by the prover $1$ and the prover $2.$ On the other hand, they lose.
-% Note that each prover does not know the question addressed to other and the communication during the games is not allowed. Nevertheless, before the game starts, they are allowed to agree on a strategy that can help them to increase the probability to win  the game.
+Let us talk about what a prover game is by restricting it to only two players as an illustration.  In effect, we consider that a two-prover game $G$ is played between two provers $1$ and $2$ against the verifier $\phi$.   Let $X$ and $Y$ be respectively the set of questions addressed to players $1$ and $2.$ We denote by $S$ and $T$ respectively  sets of answers to question set $X$ and $Y$. The verifier samples a couple of questions $(x,y) \in_{\mu} Q \subseteq X \times Y$ according to the  probability distribution $\mu$ on $Q$ and sends the question $x$ to the prover $1$ and $y$ to the prover $2.$ Their answers can be accepted or rejected by the verifier $\phi$, that is the verifier is a predicate defined from $X \times Y \times S \times T$ to $\{0,1\}.$ Both  provers win the game if the verifier accepts both answers, that is if $\phi (x,y,f(x),g(y))=1$ where $f$ and $g$ are  strategies used respectively by the prover $1$ and the prover $2.$ Otherwise, they lose.
+%\Jnote{s/On the other hand/Otherwise}.
+%\Jnote{Make clear that this is example for two provers.}
+Note that each prover does not know the question addressed to the other and communication during the games is not allowed. Nevertheless, before the game starts, they are allowed to agree on a strategy that can help them to increase the probability to win  the game.
+%  \Jnote{I would include what you commented out here.}
 
-Thus, the probability to win  the game is the probability of the verifier to accept both answers.  Therefore, the value of the game $G$ denoted by $\val (G)$ is the winning probability of provers $1$ and $2$ when they use the optimal couple $(f,g)$ of strategies, namely: $\val (G)= \max_{f,g} \mathrm{Pr}[\phi (x,y,f(x),g(y))=1].$ 
+Thus, the probability to win  this two-prover game is the probability of the verifier to accept both answers.  Therefore, the value of the game $G$ denoted by $\val (G)$ is the winning probability of provers $1$ and $2$ when they use the optimal couple $(f,g)$ of strategies, namely: $\val (G)= \max_{f,g} \mathrm{Pr}[\phi (x,y,f(x),g(y))=1].$ 
 
-Similarly, given such game $G$ played between two provers $1$ and $2$ against a verifier. Let $n$ be a natural number greater than $1.$ Based to the game $G$, we can construct another game $G^n$ called $n-$\textit{fold parallel repetition of $G$} or \textit{product game $G^n$}. In this game, the verifier samples independently $n$ questions for each of the prover $1$ and $2.$ He sends them all at once and receives $n$ answers. The two provers win if the verifier accepts on all $n$ instances, that is approximately speaking when $n$ copies of the game $G$ is tried to be won simultaneously. Thus, the value of the $n-$\textit{fold parallel repetition of $G$} denoted by $\val (G^n)$ is the maximum success probability over all possible couple of strategies. Given $\val (G)$ for some non-trivial, the determination of $\val (G^n)$ seems to be not simple. \cite{raz1998parallel} gave an upper bound of $\val (G^n)$. This upper bound  continues to be performed \citep{holenstein2007parallel, raz2012strong, dinur2014analytical, dinur2016multiplayer}.
+ \cite*{ben1990efficient} presented a concrete application in real life of what can mean  two provers and the verifier. He considered that the verifier is the Bank, which interacts with two untrusted provers, for instance two bank identification cards. The two provers can jointly agree on a strategy to convince the verifier of their identity. However, to believe the validity of their identity proving procedure, the verifier must make sure that the two provers can not communicate with each other during the course of the proof process.
 
-The definition of two-prover games can be expanded similarly to multi-prover games, that is to a prover game with more than two players. However, a general result like \cite{raz1998parallel} is not known for multi-prover games. 
+Similarly, given such two-prover game $G$ played between two provers $1$ and $2$ against a verifier. Let $n$ be a natural number greater than $1.$ Based on the two-prover game $G$,
+%\Jnote{Based to/Based on}
+we can construct another game $G^n$ called $n-$\textit{fold parallel repetition of $G$} or \textit{product game $G^n$}. In this game, the verifier samples independently $n$ questions for each of the prover $1$ and $2.$ He sends them all at once and receives $n$ answers. The two provers win if the verifier accepts on all $n$ instances, that is  when $n$ copies of the game $G$ are won simultaneously.
+%\Jnote{Why ``approximately speaking''? s/is tried to be won/are won}
+Thus, the value of the $n-$\textit{fold parallel repetition of $G$} denoted by $\val (G^n)$ is the maximum success probability over all possible couple of strategies. Given $\val (G)$ for some non-trivial game, the determination of $\val (G^n)$ seems not to be  simple. \cite{raz1998parallel} gave an upper bound of $\val (G^n)$.
+This upper bound  continues to be improved 
+%\Jnote{s/performed/improved}
+\citep*{holenstein2007parallel, raz2012strong, dinur2014analytical, dinur2016multiplayer}.
+The definition of two-prover games can be expanded similarly to multi-prover games. However, a general result like \cite{raz1998parallel} is not known for multi-prover games.
+%\Jnote{When you just say ``prover game'' it is not clear if it means two or   multiple provers. I would say ``two-prover'' or ``multi-prover'' everywhere.}
 
-Furthermore, mathematical games, namely games for which rules, strategies and outcomes have been mathematized are among applications of number theory, especially of arithmetic combinatorics. \cite{verbitsky1996towards} gave a general  upper bound of the parallel repetition of  two prover games by applying the density version of the Hales-Jewett theorem from the field called additive combinatorics. \cite*{taoadditive} define additive combinatorics  as  \say{\textit{ a marriage of number theory, harmonic analysis, combinatorics, and ideas from ergodic theory, which aims to understand very simple systems:  the operations of addition and multiplication and how they interact}}.
+Parallel repetition of prover games finds its application in many areas: hardness of approximation, cryptography, quantum mechanics, interactive proof systems, probabilistically checkable proofs  \cite*{tamaki2015parallel, dinur2016multiplayer}. 
+ That is, a main application of prover games is in proving that certain computational problems are difficult not only to solve exactly but also to approximate.
+
+Furthermore, mathematical games, namely games for which rules, strategies and outcomes have been mathematized are related to the number theory,
+%\Jnote{s/among applications of/related to}
+which in turn is related to  arithmetic combinatorics.
+%\Jnote{s/especially of/which in turn is related to}
+\cite{verbitsky1996towards} gave a general  upper bound of the parallel repetition of  two prover games by applying the density version of the Hales-Jewett theorem from the field called additive combinatorics. \cite*{taoadditive} describe
+%\Jnote{s/define/describe}
+additive combinatorics  as  \say{\textit{ a marriage of number theory, harmonic analysis, combinatorics, and ideas from ergodic theory, which aims to understand very simple systems:  the operations of addition and multiplication and how they interact}}. Additive combinatorics is also known for its famous theorems like: Van der Waerden's theorem, Szeméredi's theorem and Green-Tao theorem on the sequence of prime numbers.
+
+%\Jnote{Please mention more about additive combinatorics, at least   VdW and Szemeredi's theorems.}
 
 The density version of the Hales-Jewett theorem states that given natural number $k,r$, there exists a natural number $DHJ(k,r)$ such that every $n\geq DHJ(k,r)$ and every subset $A$ of the set $\{1,2,\ldots,k\}^n$ with density at least $\delta$  contains a  combinatorial line  \citep{polymath2012new}.
 
 Thus, the aim of this research is to analyse the relationship between the Hales-Jewett theorem and the parallel repetition of multi-prover games. Specifically, first  this study explores what  the Hales-Jewett theorem is and what  parallel repetition of multi-prover games is. Then, the study  generalizes some notions defined for two-prover games to multi-prover games.  Finally, this study shows that Hales-Jewett theorem implies parallel repetition and also parallel repetition implies the Hales-Jewett theorem.
 
-Parallel repetition of prover games finds its application in many areas: hardness of approximation, cryptography, quantum mechanics, interactive proof systems, probabilistically checkable proofs  \cite{tamaki2015parallel, dinur2016multiplayer}. 
- That is, a main application of prover games is in proving that certain computational problems are difficult not only to solve exactly but also to approximate.
 
-\citep{ben1990efficient} presented a concrete application in real life of what can mean  two provers and the verifier. He considered that the verifier is the Bank, which interacts with two untrusted provers, for instance two bank identification cards. The two provers can jointly agree on a strategy to convince the verifier of their identity. However, to believe the validity of their identity proving procedure, the verifier must make sure that the two provers can not communicate with each other during the course of the proof process. 
+% \Jnote{The last two paragraphs should be put earlier (when you describe games).}
 
 By establishing the connection between parallel repetition of multi-prover games and the density version of the Hales-Jewett theorem, we want to show that we can always find a result that connects disparate fields of mathematics.
 
-This research is composed of four chapters where the introduction is the first chapter. In chapter 2, an exploration on the Hales-Jewett theorem is presented. These implications are shown:  Hales-Jewett theorem implies Van der Waerden's theorem, Hales-Jewett theorem implies Szemerédi's theorem and Szemerédi's theorem implies Van der Waerden's theorem. Chapter 3 deals with the parallel repetition of  multi-prover games. Also, a generalisation of  known notions on two-prover games is presented. Chapter 4 analyses the relationship between parallel repetition of multi-prover games and the Hales-Jewett theorem.  
-
+This research is composed of four chapters where the introduction is the first chapter. In Chapter 2, an exploration on the Hales-Jewett theorem is presented. These implications are shown:  Hales-Jewett theorem implies Van der Waerden's theorem, Hales-Jewett theorem implies Szemerédi's theorem and Szemerédi's theorem implies Van der Waerden's theorem. Chapter 3 deals with the parallel repetition of  multi-prover games. Also, a generalisation of  known notions on two-prover games is presented. Chapter 4 analyses the relationship between parallel repetition of multi-prover games and the Hales-Jewett theorem.  We prove these two implications between  parallel repetition of multi-prover games and the density version of Hales-Jewett theorem. 
 
 
 
@@ -40,5 +69,3 @@ This research is composed of four chapters where the introduction is the first c
 
 
 
-
-. 
