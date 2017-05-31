@@ -38,17 +38,17 @@ Here, we will focus on the second class the sequential algorithms.
 
 These algorithms work by defining a distance between pairs of objects, performing a successive recombination of the pair of closest objects. And stopping when all objects are further apart. 
 
-One starts by first defining these distances, $d_{ij}$ \ref{dij} and $d_{iB}$ \ref{dib}, where $d_{ij}$ is the distance between objects (pseudo-jets) \footnote{Pseudo-jet since it is neither a particle, nor yet a full particle. It can be a single particle or a composition of particles.} $i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances and if it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and removing it from the list of objects. The distances are recalculated and the procedure repeated until no objects left \citep{Cacciari:2008gp}. 
+One starts by first defining these distances, $d_{ij}$ \eqref{dij} and $d_{iB}$ \eqref{dib}, where $d_{ij}$ is the distance between objects (pseudo-jets) \footnote{Pseudo-jet since it is neither a particle, nor yet a full particle. It can be a single particle or a composition of particles.} $i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances and if it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and removing it from the list of objects. The distances are recalculated and the procedure repeated until no objects left \citep{Cacciari:2008gp}. 
 
 
 
 The difference between the sequential algorithms lies in the definition of the distances it measures:
 \begin{equation}
 d_{ij} = min(k_{ti}^{2p}, k_{tj}^{2p}) \frac{\Delta_{ij}}{R^{2}},
-\end{equation}\label{dij}         
+\label{dij}\end{equation}         
 \begin{equation}
 d_{iB} = k_{ti}^{2p} ,
-\end{equation}\label{dib}
+\label{dib}\end{equation}
 where $\Delta_{ij}^{2} = (y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2$ and $k_{ti}$, $\eta_{i}$ and $\phi_{i}$ are the transverse momentum, rapidity and  the azimuth of the particle $i$ \citep{Cacciari:2008gp}. The exact formula for the transverse momentum depends on the beam axis, which is $z$ hence, $k_{t} = \sqrt{p_x^2 + p_y^2}$. The rapidity describes the angle relative to the beam axis.
 %It is defined as $- \ln \left[\tan\left(\frac{\theta}{2}\right)\right]$ where $\theta$ is the polar angle  \citep{Salam:2009jx}. 
 The rapidity is defined as $\frac{1}{2} \ln \frac{E_i + p_{zi}}{E_i - p_{zi}}$, where  $E_i$ and $p_{zi}$ are the energy and component of the momentum along the beam axis of the particle $i$ \citep{Cacciari:2011ma}. The parameter $R$ describes the jet radius. 
