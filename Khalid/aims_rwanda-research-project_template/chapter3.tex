@@ -2,7 +2,8 @@
 
 After the process of the splitting and branching, the quarks and gluons start to hadronize leading to a collimated spray of stable colourless hadrons. Hence in practical the only outcome of this process is hadrons \ref{Lhc}. In order to study the quarks and the gluons, it is plausible to think of reversing this process. This process is called jet reconstruction, and the final outcome is called jets (quarks or gluons).     
 
-The jet reconstruction is essential in understanding the link between the observed physics or the long distance physics and the underlying physics (short distance physics) in the parton level. Also, the accurate reconstruction is very important in comparing the theoretical predictions and the data. 
+The jet reconstruction is essential in understanding the link between the observed physics or the long distance physics and the underlying physics (short distance physics) in the parton level.
+ %Also, the accurate reconstruction is very important in comparing the theoretical predictions and the data. 
 
 The definition of the jet is central in comparing the data and the theoretical predictions. The definition is provided in the form of the jet algorithm, this means the jet algorithm and its corresponding parameters and recombination scheme.
 % The paragraphs below gives a detailed description of the algorithm. 
@@ -22,9 +23,9 @@ The definition of the jet is central in comparing the data and the theoretical p
 
 \section{Jet Algorithms}
 
-There are two broad classes of jet algorithms, the Cone algorithms and the Sequential algorithms. Both algorithm works on defining the jets by the idea of nearness.
+There are two broad classes of jet algorithms, the Cone algorithms and the Sequential algorithms. Both algorithms work on defining the jets by the idea of nearness.
 
-It is important to recognize that jet algorithms involve two distinct steps. The first step is to identify the members of the jet, \textit{i.e}, the partons that make-up the final stable jets. The second step is to construct the kinematic properties that will characterize the jet \citep{Berger:2002jt}. For merging and combining the objects, we use the 4 -vector recombination scheme, whereby to combine two particles we add their four momenta \citep{Blazey:2000qt}. 
+It is important to recognize that jet algorithms involve two distinct steps. The first step is to identify the members of the jet, i.e., the partons that make-up the final stable jets. The second step is to construct the kinematic properties that will characterize the jet \citep{Berger:2002jt}. For merging and combining the objects, we use the 4 -vector recombination scheme, whereby to combine two particles we add their four momenta \citep{Blazey:2000qt}. 
 
 Here, we will focus on the second class the sequential algorithms.  
 
@@ -36,26 +37,26 @@ Here, we will focus on the second class the sequential algorithms.
 %Cone algorithms differ in the way they deal with the fact that the stable cones may overlap. There are two famous cone algorithms. They are, the midpoint cone algorithm and SISCone (seedless infra-red safe cone) \citep{Ellis:2007ib}.  
 \section{Sequential Algorithms}
 
-These algorithms work by defining a distance between pairs of objects, performing a successive recombination of the pair of closest objects. And stopping when all objects are further apart. 
+These algorithms work by defining a distance between pairs of objects, performing a successive recombination of the pair of closest objects, and stopping when all objects are further apart. 
 
-One starts by first defining these distances, $d_{ij}$ \ref{dij} and $d_{iB}$ \ref{dib}, where $d_{ij}$ is the distance between objects (pseudo-jets) \footnote{Pseudo-jet since it is neither a particle, nor yet a full particle. It can be a single particle or a composition of particles.} $i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances and if it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and removing it from the list of objects. The distances are recalculated and the procedure repeated until no objects left \citep{Cacciari:2008gp}. 
+One starts by first defining these distances, $d_{ij}$ \ref{dij} and $d_{iB}$ \ref{dib}, where $d_{ij}$ is the distance between objects (pseudo-jets) \footnote{Pseudo-jet since it is neither a particle, nor yet a full particle. It can be a single particle or a composition of particles.} $i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances and if it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and removing it from the list of objects. The distances are recalculated and the procedure repeated until no objects are left \citep{Cacciari:2008gp}. 
 
 
 
-The difference between the sequential algorithms lies in the definition of the distances it measures:
+The difference between the sequential algorithms lies in the definition of the distances measures:
 \begin{equation}
 d_{ij} = min(k_{ti}^{2p}, k_{tj}^{2p}) \frac{\Delta_{ij}}{R^{2}},
-\end{equation}\label{dij}         
+\label{dij}\end{equation}         
 \begin{equation}
 d_{iB} = k_{ti}^{2p} ,
-\end{equation}\label{dib}
-where $\Delta_{ij}^{2} = (y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2$ and $k_{ti}$, $\eta_{i}$ and $\phi_{i}$ are the transverse momentum, rapidity and  the azimuth of the particle $i$ \citep{Cacciari:2008gp}. The exact formula for the transverse momentum depends on the beam axis, which is $z$ hence, $k_{t} = \sqrt{p_x^2 + p_y^2}$. The rapidity describes the angle relative to the beam axis.
+\label{dib}\end{equation}
+Where $\Delta_{ij}^{2} = (y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2$ and $k_{ti}$, $\eta_{i}$ and $\phi_{i}$ are the transverse momentum, rapidity and  the azimuth of the particle $i$ \citep{Cacciari:2008gp}. The exact formula for the transverse momentum depends on the beam axis, which is $z$ hence, $k_{t} = \sqrt{p_x^2 + p_y^2}$. The rapidity describes the angle relative to the beam axis.
 %It is defined as $- \ln \left[\tan\left(\frac{\theta}{2}\right)\right]$ where $\theta$ is the polar angle  \citep{Salam:2009jx}. 
 The rapidity is defined as $\frac{1}{2} \ln \frac{E_i + p_{zi}}{E_i - p_{zi}}$, where  $E_i$ and $p_{zi}$ are the energy and component of the momentum along the beam axis of the particle $i$ \citep{Cacciari:2011ma}. The parameter $R$ describes the jet radius. 
 %, it is a parameter of the algorithm that determines its angular reach \citep{Cacciari:2011ma}.
 %The parameter $p$ govern the relative of the energy versus geometrical ($\Delta_{ij}$ scales \citep{Cacciari:2008gp}. 
 
-For the parameter $p = 1$, one defines the inclusive $k_t$ algorithm. The case where $p = 0$  corresponds to the inclusive Cambridge/Aachen algorithm. $p = -1$ refers to anti-$k_t$ jet clustering algorithm \citep{Cacciari:2008gp}.
+The inclusive $k_t$ algorithm is defined with choice of $p = 1$, the case where $p = 0$  corresponds to the inclusive Cambridge/Aachen algorithm, where $p = -1$ refers to anti-$k_t$ jet clustering algorithm \citep{Cacciari:2008gp}.
 
 %The behaviours of different jet algorithms are illustrated in figure \ref{fig:jets} where a parton level event has been taken together with random soft (radiated) particles and then clustered with 4 different jet algorithms. The figure shows the region which within the random soft particles are clustered. For the $k_t$ and Cambridge/Aachen algorithms, that region depends somewhat on the specific set of soft particles and the irregular borders of the jet are consequence of the randomness of the soft particles.
 % For SISCone it can be seen that single-particle jets are regular (though with a radius $R/2$), while composite jets have varied shapes. 
