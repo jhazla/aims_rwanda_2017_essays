@@ -13,7 +13,7 @@ This part of the essay  discusses two methods which are widely used.
 \Jnote{...for that purpose.}
 
 
-\section{The Inverse-transform method}
+\section{The Inverse Transform Method}
 
 The inverse transform method is used for generating random numbers that are distributed according to a specific distribution. 
 
@@ -30,30 +30,20 @@ x = P^{-1} (u)
    
 The following pseudo-code shows the inverse-transform method algorithm 
 \begin{algorithmic}
-\State Generate a uniform $[0,1]$ random $u$
+\State Generate a uniform  random $u$ in $[0,1]$
 \State \Return $x = P^{-1}(u)$
 \end{algorithmic}
 \Jnote{$u$ uniform in $[0, 1]$}
 
-The inversion method is exact when an explicit form of the CDF is known. The CDF is a continuous and a strictly increasing function. It can be obtained either analytically through the integration of the PDF or numerically. For example, when the pdf = $\frac{1}{x^2}$, the CDF is not well defined, because as $x$ increases the cdf decreases. In such cases the evaluation of the CDF can be done numerically, which can be an infinite time.
-\Jnote{Last two sentences are wrong, please correct.}
-This causes the inverse transform method to become less efficient \citep{Devroye:1986:SNR:318242.318443}.
+The inversion method is exact when an explicit form of the CDF is known. The CDF is a continuous and a strictly increasing function. It can be obtained either analytically through the integration of the PDF or numerically. Sometimes finding the CDF if computationally difficult, this causes the inverse transform method to become less efficient \citep{Devroye:1986:SNR:318242.318443}.
 
-\Jnote{How about adding an example, e.g., normal distribution?}
+\section{The Accept Reject Method}
+As the inverse transform method, the accept reject method also is used for generating numbers according to a specific distribution.
 
-\section{The Accept-reject method}
-\Jnote{Be consistent capitalizing section titles.}
-As the inverse transform method, the accept-reject method also is used for generating numbers according to a specific distribution.
-
-Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is the variable of interest. A different distribution of $x$ is required, let $p(x)$ denotes the pdf of the required distribution.
-\Jnote{Make clear what you want to sample and what you assume you can sample.}
-Another  random uniformly distributed variable is generated, this will serve as the accept-reject tool. First we calculate the maximum of $p(x)$, hence the $y$ is generated in the interval $[0,p(x)_{max}]$.
-\Jnote{Make clear you assume $x$ has bounded range. Define $p_{max}$ correctly
-  and keep the notation consistent.}
-Now we check if $y$ $\leq$ $pdf(x)$. If this is the case, accept $x$, otherwise reject and start again. 
+Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is the variable of interest. A different distribution of $x$ is required, let $p(x)$ denotes the pdf of the required distribution. Another  random uniformly distributed variable $y$ is generated, this will serve as the accept reject tool. First we calculate the maximum of $p(x)$, hence the $y$ is generated in the interval $[0,p(x)_{max}]$. Now we check if $y$ $\leq$ $p(x)$. If this is the case, accept $x$, otherwise reject and start again. 
 \begin{algorithmic} 
 \State $x \gets$ uniform in $[0, 1]$
-\State $y \gets$ uniform in $[0, p_{max(x)}]$
+\State $y \gets$ uniform in $[0, p_{max}(x)]$
 \If {$y \leq p(x)$}
     \State accept $x$
 \Else 
@@ -72,15 +62,8 @@ Now we check if $y$ $\leq$ $pdf(x)$. If this is the case, accept $x$, otherwise 
 
 %If this the case then accept $x$, if not reject $x$ and start again,
  
-For example, if we have a number $x$
-\Jnote{In what range?}
-that falls under uniform distribution and we want to reshape this so that we get a number  that has the distribution $\frac{1}{x}$, then we find the maximum value of probability density function ($p(x)$) for $x$. Here, we add small number to $x$
-\Jnote{Make this more explicit in a formula.}
-so that we avoid the singular point when $x = 0$. After that we generate another sample $y$ that is also uniformly distributed in the interval $[0,pdf_{max}]$. 
-Now we check if $y $ is less than $p(x)$. If so, we add $x$ to our distribution,
-\Jnote{s/add $x$ to our distribution/return $x$ as a sample from our
-  distribution}
-if not we start again \citep{Weinzierl}. 
+For example, if we have a number $x$ that falls under uniform distribution and we want to reshape this so that we get a number  that has the distribution $\frac{1}{x}$, then we find the maximum value of probability density function ($p(x)$) for $x$. Here, we add small number to $x$ so that we avoid the singular point when $x = 0$. After that we generate another sample $y$ that is also uniformly distributed in the interval $[0,p_{max}]$. 
+Now we check if $y $ is less than $p(x)$. If so, we add $x$ to our distribution, if not we start again \citep{Weinzierl}. 
 %\begin{lstlisting}
 %eps = 0.01 #this value to avoid the singular point at x=0 
 %while True:
