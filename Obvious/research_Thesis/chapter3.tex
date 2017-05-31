@@ -11,28 +11,25 @@ The dynamics of infectious disease propagation are modelled as a dynamical syste
 \mathbb{R}: \mathbb{X}  \times \mathbb{T} \longrightarrow \mathbb{X}.
 \end{equation*}
 
-This means that $\mathbb{R}$ takes two arguments $ (\textbf{x},t)$ where $\textbf{x} \in \mathbb{X}$ is the initial state and $t \in \mathbb{T}$. That is $\mathbb{R} (\textbf{x},t)$ gives the state of the system at time $t$ given the initial state of the system was $\textbf{x}$ \citep{DQ}.
+This means that $\mathbb{R}$ takes two arguments $ (\textbf{x},t)$ where $\textbf{x} \in \mathbb{X}$ is the initial state and $t \in \mathbb{T}$ the future time. That is $\mathbb{R} (\textbf{x},t)$ gives the state of the system at time $t$ given the initial state of the system was $\textbf{x}$ \citep{DQ}.
 
-\Jnote{It feels to me you are contradicting yourself. If you assume
-  continuous time, I don't think it is accurate to represent the disease
-  evolution as ``rule'' $\mathbb{R}$. may need your help in this}
 The population can be partitioned into different disease states and the movement of individuals from one state to another is tracked over time. Compartmental models are built to tract the flow of individuals in each state at time $t$.
 
 
-The SIS model, are built to model disease transmission in the case were the population has only two compartments susceptible and infected.The number of people susceptible  at time $t$ is denoted by $S(t)$ and that of infected people is denoted by $I(t)$. The SIS model assumes that there is no immunity after recovery. It is used to model infections were once a person recovers from the infection, they become susceptible again. An example of such an infections disease is flu.
+The SIS model, are built to model disease transmission in the case were the population has only two compartments susceptible and infected. The number of people susceptible  at time $t$ is denoted by $S(t)$ and that of infected people is denoted by $I(t)$. The SIS model assumes that there is no immunity after recovery. It is used to model infections were once a person recovers from the infection, they become susceptible again. An example of such an infections disease is flu.
 
-If people have immunity after an infection another compartment $R(t)$, for the number revered people people who recover is added to the SI model. This leads to Susceptible, Infected and Recovered SIR models.For example a person who recovers from Chickenpox develops immunity against it. 
+If people have immunity after an infection another compartment $R(t)$, for the number revered people people who recover is added to the SI model. This leads to Susceptible, Infected and Recovered SIR models. For example a person who recovers from Chickenpox develops immunity against it. 
 
-In the case where there is a latent period between when one gets infected and when they become infectious. An intermediate compartment for the number of people who are exposed $E(t)$ is added to the SIR model to make a susceptible, exposed infected and recovered (SEIR) model. An example 
+In the case where there is a latent period between when one gets infected and when they become infectious. An intermediate compartment for the number of people who are exposed $E(t)$ is added to the SIR model to make a susceptible, exposed infected and recovered (SEIR) model. 
 
-The independent variable in the compartmental models is the time $t$.The rates of transfer between compartments are expressed mathematically as a result models are formulated initially as differential equations. Most epidemic models are built on the SIR model \citep{m1925applications}. The system can be written as;
+The independent variable in the compartmental models is the time $t$. The rates of transfer between compartments are expressed mathematically as a result models are formulated initially as differential equations. Most epidemic models are built on the SIR model \citep{m1925applications}. The system can be written as;
 
 \begin{align}\label{eqn1_1}
 \frac{dS}{dt} &= -\alpha S(t) I(t), \nonumber  \\
 \frac{dI}{dt} &= \alpha S(t) I(t) - \gamma  I(t), \\
 \frac{dR}{dt} &= \gamma  I(t), \nonumber  
 \end{align}
-where , $\alpha$ and $\gamma$ are parameters of the model and with assumptions that there is homogeneous mixing in the population. That is the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. This is the main assumption deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. 
+where, $\alpha$ and $\gamma$ are parameters of the model and with assumptions that there is homogeneous mixing in the population. That is the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. This is the main assumption deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. 
 
 In formulating these models, in terms of derivatives of the sizes of the compartments it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established, but not valid at the beginning of a disease outbreak, when they are few infectives. When they are a few infectives, the number of infectious depends on random contacts of between a small number of individuals \citep{brauer2012mathematical}.
  
@@ -43,7 +40,7 @@ for stochastic models. Stochastic models take into account random variations ass
  
   For example, let us take an SIR compartmental model. S, I and R represent compartments as well as the number of individuals in each compartment and we assume that $S (t) + I (t) + R (t) = N $ is constant. Time $t>0$ is continuous for each state $S (t) $, $I (t) $ and $R (t) $.
   Let $\beta$ to be the average number of contacts an infectious person makes per unit of time that take leads to infection. The probability of a susceptible individual moving from compartment S to compartment I in the time interval $\left[ t,\triangle t \right]$ that is S $\rightarrow S-1$ and I $\rightarrow I + 1 $ is $ \beta$ S I $ \triangle t + o (\triangle t) $.
-  \Jnote{I think you should normalize by $N$ here.}
+  
   Assuming that an infected person recovers at the rate $\gamma$ hence the probability of an infected person moving from infected to recovered over an interval $\left[ t,\triangle t \right]$  is given by $\gamma I_ {t + \triangle t} -o (\triangle t) $. Since,
  \begin{align*}
   R(t) = N(t) - S(t) - I(t),
@@ -103,7 +100,6 @@ it is most likely that A will be introduced to C and the two will know each othe
  
 A network is said to be small world or to exhibit small world properties if its Newman clustering coefficient is greater than the Watts-Strogatz clustering coefficient.
 That is a small world network has a high clustering coefficient and a low average distance \citep{estrada2012structure}. A small world property can be defined as let $D$ be the average distance between any pair of vertices in a network, if $D$ increase proportionally to the logarithm of the size of the network$N$ \citep{newman1999scaling}.
-  there are multiple definition
 That is,
  \begin{equation}
  D \propto \log N
@@ -113,7 +109,7 @@ A high clustering coefficients represents local connectivity and results in near
 
  
 \subsection{Random Graphs} 
-A random graph $G(N,p)$ can be defined as , given  $N$ number of vertices, edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$. 
+A random graph $G(N,p)$ can be defined as, given  $N$ number of vertices, edges between them are drown such that between any pair $i,j$ there is an edge with uncorrelated probability $p$. 
 
  Let $z$  be the average degree. The probability $p$ of an edge being present between any two vertices is given by $p = \frac{z}{N-1}$, for large N it can be approximated by $\frac{z}{N}$ \citep{newman2002random}. The degree $k$ of a vertex has a probability distribution $p_k$ given by;
  \begin{equation}
@@ -189,7 +185,7 @@ The opposite of a random graph is a completely ordered lattice. An ordered latti
 \end{figure}
 
 
-Regular lattices and random graphs have a long history of use in network theory and modelling of population structures, \cite{harris1974contact} gives an example of a classic lattice .
+Regular lattices and random graphs have a long history of use in network theory and modelling of population structures, \cite{harris1974contact} gives an example of a classic lattice.
 
 The clustering coefficient of a lattice is given as  
 \begin{equation}
