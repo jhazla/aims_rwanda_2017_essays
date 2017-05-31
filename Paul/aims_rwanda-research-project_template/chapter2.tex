@@ -16,7 +16,7 @@ Word embeddings is a dense representation of words in a low dimensional vector s
 \section{Topic model}  
 A topic model is a statistical tool that produce a short description of an original document. Topic models can be applied on a single document or a collection of documents. \citep{blei2012surveying} described topic models as algorithms that discovers the main themes existing in a large text or document and otherwise the combination of two or more documents. He further reveal that the development of probabilistic topic modelling by ML  researchers as a set of algorithms that is geared towards revealing and describing large archives of documents with thematic information. Topic models analyses words in the large text document to discover the themes that pervades them, the connection that exist between the words and their occurrence with time. In topic modelling the stress of having to label the documents prior to annotations is saved as it is been done in supervised learning. From the analysis of the original document the topics are obtained. Given a very large volume of electronic archives that is impossible for human annotations, topic modelling can help to summarize and organize it.
 \section{Topic model methods}
-Topic modelling techniques have been developed to automatically summarize document or large text. These techniques are: Latent Semantic Indexing/Allocation  (LSI/LSA), the Latent Dirichlet Allocation (LDA) and the Probabilistic Latent Semantic Analysis (PLSA) . This research will be restricted to LDA.
+Topic modelling techniques have been developed to automatically summarize document or large text. Some popular models are, Latent Semantic Indexing/Allocation  (LSI/LSA), the Latent Dirichlet Allocation (LDA) and the Probabilistic Latent Semantic Analysis (PLSA) . This research will be restricted to LDA.
 %\Jnote{s/narrow between/be restricted to} 
 \section{Vector space model (VSM)}
 %\Jnote{I thought what you describe here is called ``bag of words''. Can
@@ -112,8 +112,8 @@ Figure\ref{Figure 2.2}  gives a picture of the whole intuition of this generativ
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.5]{DLA.png}
-\caption{Generating documents by reverse process of the LDA model}\label{Figure 2.2}
+\includegraphics[scale=0.3]{DLA_ORIG.png}
+\caption{Generating documents by reverse process of the LDA model, By hand, words pertaining to three different vocabularies were highlighted with different colours. Words such as "computer", "prediction" linked to the topic "data analysis" highlighted blue, "life" and "evolve" about "evolutionary biology" highlighted pink and words like "gene", "DNA" describing the topic "genetics" is highlighted yellow.}\label{Figure 2.2}
 \end{figure}
 In short description of Figure \ref{Figure 2.2} the idea underlying LDA is that, first of all some number of topics that are distribution over words is assumed (far left). In generating for each document, firstly choose a distribution over topics (far right ie. histogram), then the circles of different colours are topic assignment for which words drawn from the document corresponds to.
 
