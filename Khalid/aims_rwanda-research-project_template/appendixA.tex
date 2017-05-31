@@ -1,31 +1,49 @@
-\chapter{The Second Squared Chapter}
+\chapter*{Appendix}
 
-An average essay may contain five chapters, but I didn't plan my work properly
-and then ran out of time. I spent too much time positioning my figures and worrying
-about my preferred typographic style, rather than just using what was provided.
-I wasted days bolding section headings and using double slash line endings, and 
-had to remove them all again. I spent sleepless nights configuring manually numbered lists
-to use the \LaTeX\ environments because I didn't use them from the start or understand
-how to search and replace easily with texmaker.
+The codes that are used in this essay are available on https://github.com/KhalidOmer/MonteCarloTutorial. 
 
-Everyone has to take some shortcuts
-at some point to meet deadlines. Time did not allow to test model 
-B as well. So I'll skip right ahead and put that under my Future Work section.
+The file \verb+README.md+ contains a brief description of the codes and what they do as well as how to run them.
 
+Note that all codes are written in \verb+python+, except for chapter six the codes are in \verb!c++!.
 
-\section{This is a section} 
-Text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text text text text text text text text text text
-text text text text text. 
+The codes are:
 
-Some essays may have 3, 5 or 6 chapters. This is just an example. 
-More importantly, do you have at most 35 pages?  
-Luck has nothing to do with it. Use the techniques suggested for
-writing your essay.
+Chapter two:
+\begin{itemize}
+\item[•] Obtaining a sample with $p(x) = \frac{1}{x+\epsilon}$, the file name is \verb+accept-reject.py+.
+\item[•] For the calculation of $\pi$ and the error calculation see \verb+Calculation_of_pi.y+ 
 
-Now you're demonstrating pure talent and newly acquired skills. 
-Perhaps some persistence. Definitely some inspiration. What was that about perspiration? 
-Some team work helps, so every now and then why not browse your friends' essays and provide
-some constructive feedback?
+and \verb+uncertainty_in_pi_calculation.py+.
+\end{itemize}  
+Chapter three:
+\begin{itemize}
+\item[•]The two dimensions parton shower: \verb+two_D_partonshower.py+. 
+\item[•]The three dimensions parton shower: \verb+partonshower3d.py+ 
+\end{itemize}
+Chapter four:
+\begin{itemize}
+\item[•] Anti-$k_t$ algorithm: \verb+antikT_algorithm.py+.
+\end{itemize}
+Chapter five:
+
+In this chapter the codes are divided into two files,  one file for running the code and the other is for producing the histogram.   
+\begin{itemize}
+\item[•] The Pseudo-mass observable:
+
+\verb+Pseudomass_observable.py+ 
+
+and \verb+hist_pseudomass.py+.
+\item[•] The number of constituents in the jet with highest energy observable: 
+
+\verb+number_of_constituents_observable.py+ 
+
+and \verb+hist_of_n_of_constituents.py+.
+\item[•] The number of jets observable:
+
+\verb+number_of_Jets_observable.py+
+
+\verb+hist_n_of_Jets.py+.
+\end{itemize}
+Chapter six:
+
+The codes are available in the folder named PythiaSimulatorAnalysis. A file called \verb+README.md+ inside this folder contains the instruction on how to run these codes.  

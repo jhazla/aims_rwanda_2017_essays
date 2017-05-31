@@ -1,8 +1,35 @@
-\chapter{Conclusion}
-\begin{flushleft}
-The era of topic modelling gave rise to some number of topic modelling approaches, the vector space model (VSM), latent semantic analysis (LSA), latent dirichlet allocaton (LDA) etc. This research employed the LDA to summarise reports from the international federation of red cross and crescent society. The LDA model takes a number of parameters, notably the number of topics. The model outputs the exact number of topic number inputs. The quality of the topics that the LDA generates also depends on the other parameters. Our work assigned the model to generate 30 topics. We observed that the model is random in generating the topics. In the sense that when the input parameters are maintained and the model command is executed several times, different but similar set of topics are obtained. The observed difference is that, some number of new topics replaces some topics that occurred in previous results. This means that the model can generate  many topics, depending on the "topic number" parameter value assigned in the model. Hence there exist more than 30 topics in the corpus.
-\end{flushleft}
-\begin{flushleft}
-In spite of the fact the LDA gave some good results, the results could have been better if some techniques had been applied during the data preprocessing stage. Techniques such as lematization and stemming aimed at grouping words together from one root and assigning base word to them. For example, topic 18 has the words "donors" and "donations". With lematization the two words can reduced to their base form as "donor", so that wherever in the corpus these words are replaced by "donor".  
+<<<<<<< HEAD
+\chapter{Conclusion and way forward}
+
+The era of topic modelling gave rise to some number of topic modelling approaches, the Vector Space Model (VSM), Latent Semantic Analysis (LSA), Latent Dirichlet Allocaton (LDA) etc. This research employed the LDA to summarise reports from the International Federation of Red Cross and Crescent Societies. The LDA model takes a number of parameters, notably the number of topics to be generated The quality of the topics that the LDA generates also depends on the other parameters. Our work assigned the model to generate 30 topics. We observed that the model exhibits some randomness in generating the topics. In the sense that when the input parameters are maintained and the model command is executed several times, different but similar set of topics are obtained. The observed difference is that, some number of new topics replaces some topics that occurred in previous results. This means that the model can generate  many topics, depending on the "topic number" parameter value assigned in the model. Hence there exist more than 30 topics in the corpus.
+
+In spite of the fact the LDA gave some good results, the results could have been better if some techniques had been applied during the data preprocessing stage. Techniques such as lemmatization and stemming aim at grouping words together that come from one root and assigning base word to them. For example, topic 18 has the words "donors" and "donations". With lematization the two words can reduced to their base form as "donor", so that everywhere in the corpus these words are replaced by "donor".  
 Future work will incorporate these techniques to improve the quality of results.
+=======
+\chapter{Conclusion}
+\Jnote{Do not use flushleft, here or elsewhere!}
+
+\begin{flushleft}
+  The era of topic modelling gave rise to some number of topic modelling approaches, the vector space model (VSM), latent semantic analysis (LSA), latent dirichlet allocaton (LDA) etc. This research employed the LDA to summarise reports from the international federation of red cross and crescent society.
+  \Jnote{Capitalization for algorithm names and IFRC.}
+  The LDA model takes a number of parameters, notably the number of topics. The model outputs the exact number of topic number inputs.
+  \Jnote{Merge those sentences into one:
+    ``The LDA model takes a number of parameters, notably the number of topics
+    to be generated.''}
+  The quality of the topics that the LDA generates also depends on the other parameters. Our work assigned the model to generate 30 topics. We observed that the model is random in generating the topics.
+  \Jnote{s/is random/exhibits some randomness}
+  In the sense that when the input parameters are maintained and the model command is executed several times, different but similar set of topics are obtained. The observed difference is that, some number of new topics replaces some topics that occurred in previous results. This means that the model can generate  many topics, depending on the "topic number" parameter value assigned in the model. Hence there exist more than 30 topics in the corpus.
 \end{flushleft}
+\begin{flushleft}
+  In spite of the fact the LDA gave some good results, the results could have been better if some techniques had been applied during the data preprocessing stage. Techniques such as lematization and stemming aimed
+  \Jnote{s/aimed/aim}
+  at grouping words
+  \Jnote{s/together/that come}
+  together from one root and assigning base word to them. For example, topic 18 has the words "donors" and "donations". With lematization
+  \Jnote{s/lematization/lemmatization}
+  the two words can reduced to their base form as "donor", so that wherever
+  \Jnote{s/wherever/everywhere}
+  in the corpus these words are replaced by "donor".  
+  Future work will incorporate these techniques to improve the quality of results.
+\end{flushleft}
+>>>>>>> 3e4e6217f7743e21f214deeef2ba0e72e632ebcc
