@@ -9,15 +9,14 @@ In this chapter we discuss about the parallel repetition of multi-prover games. 
 
 \subsection{Definitions} \label{tpg}
 
-Consider a game $G$  of incomplete information played between two persons cooperative (Player 1 and Player 2)
-\citep{verbitsky1996towards, raz2010parallel}.
-\Jnote{Change to: Consider a cooperative game...}
+Consider a cooperative game $G$  of incomplete information played between two persons  (Player 1 and Player 2) 
+\citep{ben1988multi, verbitsky1996towards, raz2010parallel}.
+%\Jnote{Change to: Consider a cooperative game...}
 A \textit{two-prover one round  game} or simply \textit{two-prover game} (often called \textit{game} in this work for short) is a game played between two players called \textit{prover} and an additional player called \textit{verifier} or \textit{referee.}
-We denote it by $MIP(2,1)$.
-\Jnote{No, MIP is something else (it is a class of languages). Please delete this sentence.}
+%\Jnote{No, MIP is something else (it is a class of languages). Please delete this sentence.}
 Notice that a two-prover game is a concept originating from theoretical computer science. Let us introduce some basic idea of this game.
 
-Let $X, Y, S, T$ be  finite sets. Let $Q$ be a subset of $X\times Y$ ($Q \subseteq X \times Y$ can represent a set of pair of questions: $X$ represent the set of possible questions for the first prover and $Y$ a set of possible questions for the second prover).    $S$ and $T$ can be interpreted respectively as set of possible answers associated respectively to $X$ and $Y$.
+Let $X, Y, S, T$ be  finite sets. Let $Q$ be a subset of $X\times Y$ ( that is $Q \subseteq X \times Y$ can represent a set of pair of questions: $X$ represent the set of possible questions for the first prover and $Y$ a set of possible questions for the second prover).    $S$ and $T$ can be interpreted respectively as set of possible answers associated respectively to $X$ and $Y$.
 
 A pair $(x,y) \in_{\mu} Q \subseteq X\times Y$ of questions is chosen randomly  by the verifier, that is with a probability distribution measure $\mu: Q \longmapsto \mathbb{R}^+.$
 %\Jnote{Is it chosen uniformly or according to $\mu$?}
@@ -38,10 +37,11 @@ by $\phi$ and defined as: $\phi: (X,Y,S,T) \longrightarrow \{0,1\}: (x,y,f(x),h(
 
 If $\phi(x,y,f(x),h(y))=1$, then the two players win. They lose if $\phi(x,y,f(x),h(y))=0.$ 
 
-In sum, in this case $G=(\phi, Q\subseteq X \times Y, S,T, \mu)$ represents  a game if $X,Y,S,T$ are finite subset,
-\Jnote{s/subset/sets}
-the function $\phi: Q\times S \times T  \longmapsto \{0,1\}$ is a predicate, and $\mu$ is a probability distribution measure. That is, a prover game is a tuple.
-\Jnote{Delete last sentence. Formally it is a tuple, but it is not important.}
+In sum, in this case $G=(\phi, Q\subseteq X \times Y, S,T, \mu)$ represents  a game if $X,Y,S,T$ are finite set,
+%\Jnote{s/subset/sets}
+the function $\phi: Q\times S \times T  \longmapsto \{0,1\}$ is a predicate, and $\mu$ is a probability distribution measure. 
+%That is, a prover game is a tuple.
+%\Jnote{Delete last sentence. Formally it is a tuple, but it is not important.}
 
 Prover games become interesting when we want to estimate the probability of winning the game according to the strategies used, and mainly when several questions are addressed simultaneously  to each prover.
 
@@ -54,107 +54,69 @@ As in all games, the aim of the two players is to maximize the winning probabili
 %\Jnote{Indicate over what the probability is taken.}
 where $\underset{(x,y) \sim Q}\Pr$ means that the probability is taken over the couple $(x,y) \in_{\mu} Q$ and $\max\limits_{f,h}$ means that the maximum winning probability  is taken over all possible couples of strategies $(f,g).$
 
-When $\val (G)=1$, the game $G$ is called \textit{trivial}. In mostly of cases, we will consider a \textit{non-trivial} game ,
-\Jnote{Space before comma.}
+When $\val (G)=1$, the game $G$ is called \textit{trivial}. In mostly of cases, we will consider a \textit{non-trivial} game, 
+%\Jnote{Space before comma.}
 that is a prover game with $\val (G) \neq 1.$
-The two-prover game $G$ is called a \textit{free game} if $Q=X \times Y$, that is, questions to players are  independent. Another definition of a free game according to \cite*{barak2009strong}
-\Jnote{Don't cite here, this is a common definition.}
+The two-prover game $G$ is called a \textit{free game} if $Q=X \times Y$, that is, questions to players are  independent. Another definition of a free game using the probability distribution 
+% \cite*{barak2009strong}\Jnote{Don't cite here, this is a common definition.}
 is when  the probability  distribution of the questions is a product probability  distribution, that is $\mu_{XY}=\mu_X \mu_Y.$
 The probability distribution $\mu_{XY}$ is  the joint distribution according to which the verifier chooses a pair of questions to the provers. $\mu_X$ (respectively  $\mu_Y$) the probability distribution for the verifier to choose a question in the set $X$ (respectively $Y$).
-
-\cite{raz2010parallel} gave three nice definitions of kinds of prover games: projection game, unique game and XOR game.
-\Jnote{Change this: There are more special kinds of games
-  considered in the literature (cite Raz).}
 
 A two-prover game $G$ is called \textit{projection game} if for every pair of questions $(x,y) \in X \times Y$ there is a function $f_{x,y}: T \longmapsto S$, such that, for every $a\in S, \ b\in T$, we have: $\phi(x,y,a,b)=1$ if and only if $f_{x,y}(b)=a.$ 
 
 The game $G$ is \textit{unique} if for every $(x,y) \in X \times Y$ the function $f_{x,y}$ is a bijection. Hence, a unique game is a particular case of a projection game. 
 
-When sets $T, S = \{0, 1\}$, then the unique game is called a \textit{XOR} game. That is, when sets of question are composed only by $0$ and $1.$
-\Jnote{s/only by/only of}
+When sets $T, S = \{0, 1\}$, then the unique game is called a \textit{XOR} game. That is, when sets of question are composed only of $0$ and $1.$
+%\Jnote{s/only by/only of}
+
+There are more special kinds of prover games considered in the literature \citep*{verbitsky1996towards, cleve2007perfect, raz2010parallel, rao2011parallel, moshkovitz2014parallel, tamaki2015parallel, bavarian2015anchoring, dinur2016multiplayer, hkazla2016forbidden}.
+%\cite{raz2010parallel} gave three nice definitions of kinds of prover games: projection game, unique game and XOR game.
+%\Jnote{Change this: There are more special kinds of games
+%  considered in the literature (cite Raz).}
 
 \subsection{Relationship between graphs and two-prover games} \label{expander}
 
-The relationship between graphs and two-prover games is broad. Thus, in this part we present an elementary  relationship by introducing a two-prover game through basic notions of graphs. Some advanced connections are been studied by
-\Jnote{s/are/have}
+The relationship between graphs and two-prover games is broad. Thus, in this part we present an elementary  relationship by introducing a two-prover game through basic notions of graphs. Some advanced connections have been studied by
+%\Jnote{s/are/have}
 \cite*{laekhanukit2014parameters,tamaki2015parallel,dinur2016multiplayer}.
 
-Let $X$, $Y$ be two vertex sets of a bipartite graph. $E\subseteq X \times Y$ an edge set, $L$ a label set which can for instance contain some colours. By $c_e$ we denote a set of constraints associated to edge $e \in E$, for example  this constraint can be colouring vertices of edge $e$ with different colours chosen in $L$.
-\Jnote{Say that $c_e \subseteq L \times L$}
+Let $X$, $Y$ be two vertex sets of a bipartite graph. $E\subseteq X \times Y$ an edge set, $L$ a label set which can for instance contain some colours. By $c_e$ we denote a set of constraints associated to edge $e \in E$, for example  this constraint can be colouring vertices of edge $e$ with different colours chosen in $L$. Thus, $c_e \subseteq L \times L$.
+%\Jnote{Say that $c_e \subseteq L \times L$}
 
 In this case for graphs, a two-prover game $G$ is the game $G=(X,Y,E,L,C)$ where $C=\{c_e\}_{e\in E}$ is the set of (sets of) constraints associated to edges $e \in E$.
 In others words, a two-prover game G consists of a bipartite graph with vertex
-sets $X$, $Y$, an edge set $ E \subseteq X \times Y$, a label set $L$ and a set of constraints associated to edges.
+sets $X$, $Y$, an edge set $ E \subseteq X \times Y$, a label set $L$ and a set of constraints associated to edges. Note that this definition is not equivalent to the first one.
 
-\Jnote{You are giving a definition that is not equivalent to your previous definition. You should not call two different things with the same name.   At the very least you should make clear that this definition is not equivalent   to the first one.}
+%\Jnote{You are giving a definition that is not equivalent to your previous definition. You should not call two different things with the same name.   At the very least you should make clear that this definition is not equivalent   to the first one.}
 
 Let us define two functions $f$ and $g$ which assign colours to each vertices  $x \in X$ and $y \in Y$ by $f: X\longmapsto L$ and $g: Y\longmapsto L$. We say that $f$ and $g$ satisfy the constraint $c_{(x,y)}$ if $(f(x),g(y)) \in c_{(x,y)}$, that is if $f(x)$ and $g(y)$ satisfy the constraints in $c_{(x,y)}$. So, the value of the game is the success probability to find a couple of functions $(f,g)$ that assigns the maximum of colours.
-\Jnote{Maximum of colors?}
-\cite{tamaki2015parallel} expresses this value as follows:
- 
+%\Jnote{Maximum of colors?}
+\cite{tamaki2015parallel} expresses this value as follows: 
  $$\val (G)=\max_{f,g}\underset{(x,y)\sim E}\Pr  \{(f(x),g(y)) \in c_{(x,y)} \}$$
 where the probability is taken over the edge $(x,y) \in E$ and the maximum of probability is taken over all optimal couple of strategies $(f,g).$
 
 \subsection{Expander graphs}
 
- Let us discuss about some elementary notions of \textit{expander graph}  which will be useful in the following. These notions are derived mainly from the work of  \cite{raz2012strong}. Before giving a definition of what is an expander graph, let us give a short definition of what are a bipartite graph, an unbalanced bipartite graph and a regular graph.
- 
-\begin{itemize}
-\item  The graph $G=(U;E)=(X,Y;E)$ is \emph{bipartite}, where the vertex set $U=X \cup Y$ is partionned
-  \Jnote{s/partionned/partitioned}
-  into two parts $X$ and $Y$ with $ E\subseteq X\times Y$.
-\item The bipartite graph $G=(U;E)=(X,Y;E)$ is \emph{unbalanced} when $|X| \neq |Y|$. Otherwise
-  it is \emph{balanced.}
-\item A graph is regular when each vertex has the same degree, that is each has the same number of neighbours.
-\end{itemize}
- 
-Let $U=X \cup Y$ and $E\subseteq X\times Y$ be respectively the set of vertices and the set of edges of a graph $G.$ Let $d_X$ and $d_Y$  be respectively the degree of each vertex $x\in X$ and the degree of each vertex $y \in Y.$
+Prover games used to be associated to the expander graph. Expander graph has some interesting properties. 
+\cite{nielsen2005introduction} defines an expander graph as \say{\emph{ a graph $G = (V, E)$ in which every subset $S$ of vertices expands quickly, in the sense that it is connected to many vertices in the set $S$ of complementary vertices.}} Expander graph is characterized by some expansion parameters: vertex expansion, edge expansion and spectral expansion. The spectral gap denoted by $\lambda$, namely the difference between the largest and second-largest eigenvalues is used to measure the spectral expansion. 
 
-We denote by $(d_X,d_Y)-$bipartite graph an \textit{unbalanced bipartite regular graph} on vertices $X \cup Y.$ 
+The connectedness  property is one of the fundamental properties of expander graph. Thus, every connected graph is an expander. Hence, a cycle graph and a complete graph are expander graph.
 
-Let $G_{XY}=(X,Y,E)$ a bipartite graph. The expander graph $G_{XY}$ is based on the notions of  singular values (absolute values of the eigenvalues) of the normalized adjacency matrix $M=M(G_{XY})$ of $G_{XY}$, that is where each entry of $M$ is divided by $\sqrt{d_X.d_Y}.$ The singular-value decomposition theorem states that for an $|X|$-by-$|Y|$
- %\Jnote{Proper way to write this in Latex: $|X|$-by-$|Y|$   (the dashes outside math mode).}
- matrix $M$ , there exists a factorisation of the matrix $M$ to the form $M=UDV^*$ where $U$ is an $|X|$-by-$|X|$ unitary matrix ($U^*=U^{-1}$), $D$ is an $|X|$-by-$|Y|$ diagonal matrix with non-negative real numbers on the diagonal and $V^*$ is the conjugate transpose of a $|Y|$-by-$|Y|$ unitary matrix $V$. The columns of $U$ are  eigenvectors of $MM^*$. The columns of $V$ are  eigenvectors of $M^*M$. The diagonal value in the matrix $D$ are square roots of the eigenvalues of $MM^*$ and $M^*M$ that correspond with the same columns in $U$ and $V.$
-
- So, a non-negative real number $\sigma$ is a singular value for the matrix $M$ if and only if there exists two unit-length vectors $u$ and $v$ such that $Mv=\sigma u$ and $M^*u=\sigma v.$ The vector $u$ is called left-singular and $v$ right-singular for $\sigma.$
- 
-In $M=UDV^*$, the diagonal entries of $D$ are equal to the singular values of $M.$
- Let us denote by $\sigma_0$ the singular value whose absolute value is the largest. The columns of $U$ and $V$ are, respectively, left- and right-singular vectors for the corresponding singular values.
- 
-   As the matrix $M$ is a normalized matrix, then all singular values are between 0 and 1 , therefore the singular value $\sigma_0=1$, that is $u=v.$ 
- %\Jnote{Why is $\sigma_0=1$? For which vector is it realized?}
-We denote by $1-\lambda$ the singular value whose value is the closest to 1 and that is not $\sigma_0$. $\lambda$ is called the \textit{spectral gap} of the graph $G_{XY}$ and $1-\lambda$ is called the \textit{second singular value}.
-
-Thus, a $(X,Y,d_X,d_Y,1-\lambda)-$expander graph is a
-$(d_X,d_Y)-$bipartite graph
-%\Jnote{Define first what is $(d_X, d_Y)$-bipartite graph.}
-with the second singular value $1-\lambda$ \citep{raz2012strong}. That is the expander graph is based on the notions of an unbalanced bipartite regular graph, the set of  degrees of his vertices, and  on  singular value  associated to the normalized adjacency matrix  of the graph.
-
- %\Jnote{Can you give citation for this section?}
-
- \Jnote{This is a good exposition of algebraic expander graphs. Since you
-   already wrote about them, it would be useful to explain their
-   graph-theoretic properties (look up Cheeger inequality
-   or expander mixing lemma). Also consider some examples:
-   Is cycle an expander? Is complete graph? Random graph?}
-
- \Jnote{Consider separate subsection for expander graphs.}
+An expander graph is based on regular graph. A good expander graph is an expander which has high expansion parameters and a low degree.  For instance, a random graph is a good expander graph. However a complete graph is not a good expander graph because it has the largest degree although it has the best expansion properties.
 
 
-
-
- \subsection{Multi-prover games.} The rules of the multi-prover games are similar to two-prover games. But, as indicated by the term "multi", this game is playing
- \Jnote{s/playing/played}
+ \subsection{Multi-prover games.} The rules of the multi-prover games are similar to two-prover games. But, as indicated by the term "multi", this game is played
+% \Jnote{s/playing/played}
  with several provers (more than two players). That is, we are dealing with the general case.
 
-Let us consider that there are $k-$provers, with $k \geq 2$. A $k-$ prover  game is the game $G(\phi, Q \subseteq X^1  \times \cdots \times X^k , A^1 , \cdots,  A^k, \mu) $. So, $k-$tuple of questions $(x^1, \cdots , x^k) \in_{\mu} Q \subseteq X^1  \times \cdots \times X^k $ (with $X^t$ set of questions)
+Let us consider that there are $k$-prover, with $k \geq 2$. A $k$-prover  game is the game $G(\phi, Q \subseteq X^1  \times \cdots \times X^k , A^1 , \cdots,  A^k, \mu) $. So, $k$-tuple of questions $(x^1, \cdots , x^k) \in_{\mu} Q \subseteq X^1  \times \cdots \times X^k $ (with $X^t$ set of questions)
 %\Jnote{What are $i$ and $t$?}
 is chosen with probability distribution measure $\mu $ from a set of question,
-and the answer is a $k-$tuple vector $(a^1, \cdots , a^k)  \in A^1 \times \cdots \times A^k$ (with $A^t$ set of answers) according to question $(x^1, \cdots , x^k).$ The distribution measure $\mu $ associates an element of $ Q \subseteq  X^1  \times \cdots \times X^k $ to an element of $\mathbb{R}^+ \cap [0,1]= (0, 1].$
+and the answer is a $k$-tuple vector $(a^1, \cdots , a^k)  \in A^1 \times \cdots \times A^k$ (with $A^t$ set of answers) according to question $(x^1, \cdots , x^k).$ The distribution measure $\mu $ associates an element of $ Q \subseteq  X^1  \times \cdots \times X^k $ to an element of $\mathbb{R}^+ \cap [0,1]= (0, 1].$
 %\Jnote{$\mathbb{R}^+ \cap [0,1] = (0, 1].$}
-A verifier chooses $k-$tuple of questions $(x^1, \cdots , x^k)$ and sends a question $x^t$ to the prover $t$. The answer $a^t$ of the prover $t$ depends only on the question $x^t.$ As for two-prover games, the players cannot communicate during the game, but they are allowed to agree on a strategy. 
+A verifier chooses $k$-tuple of questions $(x^1, \cdots , x^k)$ and sends a question $x^t$ to the prover $t$. The answer $a^t$ of the prover $t$ depends only on the question $x^t.$ As for two-prover games, the players cannot communicate during the game, but they are allowed to agree on a strategy. 
 
-In this case, the strategy used to answer is a $k-$tuple of functions $(f^1, \cdots , f^k)$ defined as:
+In this case, the strategy used to answer is a $k$-tuple of functions $(f^1, \cdots , f^k)$ defined as:
 $f^t: X^t \longrightarrow A^t: x^t \longmapsto f^t(x^t)=a^t$, for $1\leq t \leq k.$
 
 The predicate (verifier) on $( X^1 \times \cdots \times X^k, A^1 \times \cdots \times A^k)$ is defined as a function $\phi$:
@@ -169,44 +131,20 @@ Thus, the value of the multi-prover game $G$ denoted by $\val (G)$ is  the optim
 $$\val (G)= \max_{f^1, \cdots , f^k} \Pr[\phi (x^1, \cdots , x^k, f^1(x^1), \cdots , f^k(x^k))=1].$$
 
 
-Some notions on multi-prover games presented above  mainly treat on one round. We can extend this concept from one round to several rounds. Thus, the $k-$provers $r-$round game is similar to the multi-prover with $k$ players, but in this case the verifier executes a computation at most $r$ rounds following a game.
-\Jnote{NO, this is wrong! For $r$ rounds provers and verifier exchange
-  $r$ messages. Please delete this.}
-
-
-\subsection{Some types of prover games.}
-
-In the table \eqref{kpg}, we present some kinds of the prover game known. We give some references for further reading.
-
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{lll}
-\hline 
-\textbf{Prover game} &  \textbf{References} \\ 
-\hline 
-Free & \cite{verbitsky1996towards} \\ Projection & \cite{rao2011parallel} \\ Unique &\cite{tamaki2015parallel}  \\ Expander & \cite{dinur2016multiplayer} \\ Anchored & \cite{bavarian2015anchoring} \\ GHZ & \cite{dinur2016multiplayer} \\ Fortified & \cite{moshkovitz2014parallel} \\ XOR & \cite{cleve2007perfect} \\ Question set & \cite{hkazla2016forbidden}\\
-\hline 
-\end{tabular} 
-\end{center}
-\caption{Some kinds of prover games.} \label{kpg}
-\end{table}
-
-\Jnote{Remove et al. from citations.}
-
 
 \section{Parallel repetition.}
 
-\subsection{Parallel repetition for  two-prover games}
+\subsection{Parallel repetition for  two-prover games} \label{prtp}
 
-Let $G$ be a two-prover game and $n$ a positive integer. Knowing the value of the game $G$, we are interesting
-\Jnote{s/interesting/interested}
-to establish the relationship between $\val (G)$ and $\val (G^n).$  By executing  $n$ independent copies of $G$ in parallel, we obtain what we call an $n-$\textit{product game G} or a \textit{product game} $G^n$ or an \textit{n-fold parallel repetition} $G^n.$ Hence, a parallel repetition of a two-prover game $G$ is a product game $G^n$, that is approximatively
-\Jnote{s/approximatively/approximately}
+Let $G$ be a two-prover game and $n$ a positive integer. Knowing the value of the game $G$, we are interested 
+%\Jnote{s/interesting/interested}
+to establish the relationship between $\val (G)$ and $\val (G^n).$  By executing  $n$ independent copies of $G$ in parallel, we obtain what we call an $n-$\textit{product game G} or a \textit{product game} $G^n$ or an \textit{n-fold parallel repetition} $G^n.$ Hence, a parallel repetition of a two-prover game $G$ is a product game $G^n$, that is approximately
+%\Jnote{s/approximatively/approximately}
 speaking when $n$ copies of the game $G$ is tried to be won simultaneously by the two players. The game $G$ is called  the \textit{base game} of the parallel repeated game $G^n.$
 
 According to the definition of a prover $G$, let $G(\phi, Q \subseteq X \times Y, S, T, \mu)$ be a game. The product game $G^n$ is the game $G^n(\phi^n, Q^n\subseteq X^n \times Y^n, S^n, T^n, \mu^n)$, where $\phi^n$ represents a predicate (referee or verifier), $Q^n$ a product set of questions, $S^n$ and $T^n$ represent sets of answers, and $\mu^n$ represents the probability distribution measure. Let us express explicitly the sets $Q^n$ and the functions $\mu^n$ and $\phi^n.$
 
- Elements of $Q^n$ take the form $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n))$ where $x_1, x_2, \ldots, x_n \in X$ and $y_1, y_2, \ldots, y_n \in Y$, that is a collection of $n-$tuple of couples  $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n))$ is chosen randomly and uniformly from the set $Q^n$ in accordance with the probability distribution measure $\mu^n $. The element  $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n)) \in Q^n$ is identifying to the pair $((x_1,\ldots, x_n), (y_1, \ldots, y_n)) \in Q^n \subseteq X^n \times Y^n.$
+ Elements of $Q^n$ take the form $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n))$ where $x_1, x_2, \ldots, x_n \in X$ and $y_1, y_2, \ldots, y_n \in Y$, that is a collection of $n$-tuple of couples  $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n))$ is chosen randomly and uniformly from the set $Q^n$ in accordance with the probability distribution measure $\mu^n $. The element  $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n)) \in Q^n$ is  identified to the pair $((x_1,\ldots, x_n), (y_1, \ldots, y_n)) \in Q^n \subseteq X^n \times Y^n.$
  
 Thus, the probability measure $\mu^n$ can be expressed as a function using $\mu$: 
  \begin{align*}
@@ -214,7 +152,7 @@ Thus, the probability measure $\mu^n$ can be expressed as a function using $\mu$
   & ((x_1,\ldots, x_n), (y_1,\ldots, y_n)) \longmapsto \mu^n((x_1,\ldots, x_n), (y_1,\ldots, y_n))=\prod_{i=1}^n  \mu (x_i, y_i). 
  \end{align*}
  
-We denote by  $\bar{x}$ the $n-$tuple $(x_1,\ldots, x_n)$, that is $\bar{x}=(x_1,\ldots, x_n)$. 
+We denote by  $\bar{x}$ the $n$-tuple $(x_1,\ldots, x_n)$, that is $\bar{x}=(x_1,\ldots, x_n)$. 
 
 The function $\phi^n$ is defined similarly to the function $ \phi$ as:
 \begin{align*}
@@ -265,45 +203,36 @@ We know that the value of the game $G$ is the optimal winning probability of pro
 As far as, let us denote by $(F,H)$ a couple of strategies  used  to win the game $G^n$. $F$ and $G$ are $n-$tuple defined as: $F=(f_1, \ldots, f_n)$ and  $H=(h_1, \ldots, h_n)$. Strategies $F$ and $H$ are  defined as $F: X^n\longrightarrow S^n$ and  $H: Y^n\longrightarrow T^n.$ Here, notice that the couple $(F,H)$ of strategies are not necessary the optimal.
 Then, the winning probability according to this couple of strategies is: $\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right].$
 
-Since, each couple $(x_i,y_i)$, for $ 1\leq i \leq n$ is chosen randomly  according to the  probability distribution measure $\mu$. Without loss of generality, for instance, let us assume that the couple $(x_i,y_i)$ is chosen independently. Then, the winning probability becomes: 
-
-$$\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right]= \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right].$$
-\Jnote{No, this is wrong. $x_i, y_i$ is always chosen independently, you
-  don't have to ``assume'' this. But this does not imply
-  your equation. The equation is wrong.}
+%Since, each couple $(x_i,y_i)$, for $ 1\leq i \leq n$ is chosen randomly  according to the  probability distribution measure $\mu$. Without loss of generality, for instance, let us assume that the couple $(x_i,y_i)$ is chosen independently. Then, the winning probability becomes: 
+%
+%$$\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right]= \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right].$$
+%\Jnote{No, this is wrong. $x_i, y_i$ is always chosen independently, you
+%  don't have to ``assume'' this. But this does not imply
+%  your equation. The equation is wrong.}
 
 
 Let us chose the optimal strategies $f$ and $h$ of $G$ to play each parallel copy of $G$, that is $f_i (\bar{x})=f(x_i)$ and $h_i (\bar{y})=h (y_i)$ for $ 1\leq i \leq n$. Then, the success probability becomes:
-
 \begin{align*}
-\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] = &   \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f(\bar{x}), h(\bar{y}))=1 \right] \\
-= & \prod\limits_{i=1}^n \val (G) \\
+\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] = &   \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f(\bar{x}), h(\bar{y}))=1 \right] =  \prod\limits_{i=1}^n \val (G) \\
 = & \val (G)^n.
 \end{align*}
-\Jnote{Here the equation becomes true, but the reason for that is
-  that $f_i, h_i$ depend only on $x_i, y_i$. Otherwise it is false.} 
+%\Jnote{Here the equation becomes true, but the reason for that is   that $f_i, h_i$ depend only on $x_i, y_i$. Otherwise it is false.} 
 
 $(f,h)$ is the optimal couple of strategies for the game $G$, this does not means that the couple $(F,H)$  is the optimal couple of the strategies for the parallel repetition $G^n$. Then, the winning probability for $G^n$ over the optimal couple of strategies is:
-
 \begin{align*}
-\val (G^n)= & \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \\
- \geq & \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \\
- = & \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f(\bar{x}), h(\bar{y}))=1 \right]\\
- = & \prod\limits_{i=1}^n \val (G) \\
- = & \val (G)^n .
+\val (G^n)= & \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] 
+ \geq  \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \\
+ = & \prod\limits_{i=1}^n \Pr \left[ \phi (x_i,y_i, f(\bar{x}), h(\bar{y}))=1 \right]  =  \prod\limits_{i=1}^n \val (G)  =  \val (G)^n .
 \end{align*}
 
 Hence, $\val (G^n) \geq \val (G)^n.$
 \end{proof}
 
 \item The second inequality: $\val (G^n) \leq \val (G).$
-
 \begin{proof}
  \begin{align*}
- \val (G^n) & = \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \\
- & \leq Pr \left[ \phi (x_1,y_1, f_1(\bar{x}), h_1(\bar{y}))=1 \right] \\
- &  \leq \max\limits_{f,g} \Pr[\phi(x_1,y_1,f(x),h(y))=1] \\
- & = \val (G).
+ \val (G^n) & = \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \leq Pr \left[ \phi (x_1,y_1, f_1(\bar{x}), h_1(\bar{y}))=1 \right] \\
+ &  \leq \max\limits_{f,g} \Pr[\phi(x_1,y_1,f(x),h(y))=1]  = \val (G).
  \end{align*}
  %\Jnote{\text{The second equation above is not true.}}
 %\Jnote{In the equations above, indicate over what the probability is taken.}
@@ -311,13 +240,13 @@ Hence, $\val (G^n) \leq \val (G).$
 \end{proof}
 \end{itemize}
 
-To support the relation $\val (G)^n \leq \val (G^n) \leq \val (G)$, let us give an example for which we define a strategy.
-\Jnote{Make a section for this example.}
+\subsection{Example}
+As illustration for a two-prover game $G$, the following example supports the relation  $\val (G)^n \leq \val (G^n) \leq \val (G)$.
 
 Let $G$ be a two-prover game and  $X=Y=\{0,1\}$ be sets of questions addressed respectively to prover $A$ and $B$. The rule of the game $G$ is announced as this. The verifier $\phi$ chooses randomly and uniformly a couple of questions $(x,y) \in Q=X \times Y=\{(0,0);(0,1);(1,0);(1,1)\}$ and sends $x$ to the prover $A$ and $y$ to the prover $B$. The sets of answers of the  two provers are  respectively  $S=\{(a,K_A)\}$ and $T=\{(b,K_B)\}$ where $a,b \in \{0,1\}$,  $K_A,K_B \in \{A,B\}$. Note that $|S|=|T|=4.$ To win, the verifier checks this: \begin{itemize}
 \item $K_A=K_B=K$ and $a=b$.
-\item  If $K=A$, then $x=a$, that is,  if both provers answer $A$ then the  first component of he couple of  answers of the provers is $x=a=b$.
-\item If $K=B$, then $y=b$, that is,  if both provers answer $B$ then the  first component of he couple of  answers of the provers is $y=a=b$.
+\item  If $K=A$, then $x=a$, that is,  if both provers answer $A$ then the  first component of the couple of  answers of the provers is $x=a=b$.
+\item If $K=B$, then $y=b$, that is,  if both provers answer $B$ then the  first component of the couple of  answers of the provers is $y=a=b$.
 \end{itemize}
 This means that the winning cases are: $\phi[x,y, (x,A), (x,A)]$ and $\phi[x,y, (y,B), (y,B)]$.
 
@@ -330,20 +259,17 @@ For all possible couple of strategies, the maximum value of the winning probabil
  
 Now, let us compute $\val (G^2).$ Firstly, let us define the game $G^2.$
 
-The sets of questions are respectively $X^2=Y^2=\{(0,0);(0,1);(1,0);(1,1)\}.$ The verifier chooses randomly and uniformly the couple $(\bar{x}, \bar{y}) \in Q=X^2 \times Y^2=\{(\bar{x}, \bar{y}): \bar{x} \in X^2, \bar{y} \in Y^2 \}=\{((0,0),(0,0)), \ldots,  ((1,1),(1,1))\}$ where $\bar{x}=(x_1,x_2)$ and $ \bar{y}=(y_1,y_2)$ are couples with $x_1, x_2, y_1, y_2 \in \{0,1\}$. Note that $|Q|=16.$ The sets of answers are :$S^2=\{(\bar{s}_1, \bar{s}_2): \bar{s}_1, \bar{s}_2 \in S\}=   \{((a,K_A), (a,K_A)): a \in \{0,1\}, K_A \in \{A,B\} \}$ and $T^2=\{(\bar{t}_1, \bar{t}_2): \bar{t}_1, \bar{t}_2 \in T\}= \{((b,K_B), (b,K_B)): b \in \{0,1\}, K_B \in \{A,B\} \}$. The verifier sends $\bar{x}$ to prover $A$ and $\bar{y}$ to prover $B$. Answers of $\bar{x}$ is in $S^2$ and answers of $\bar{y}$ is in $T^2$. The verifier checks these rules:
-\begin{itemize}
-\item If $x_1=y_2$ then both provers $A$ and $B$ win.
-\item If $x_1 \neq y_2$ then they lose.
-\end{itemize}
-\Jnote{No, the verifier checks rules for $G$ as before. These conditions
-  are just for the strategy below.}
+The sets of questions are respectively $X^2=Y^2=\{(0,0);(0,1);(1,0);(1,1)\}.$ The verifier chooses randomly and uniformly the couple $(\bar{x}, \bar{y}) \in Q=X^2 \times Y^2=\{(\bar{x}, \bar{y}): \bar{x} \in X^2, \bar{y} \in Y^2 \}=\{((0,0),(0,0)), \ldots,  ((1,1),(1,1))\}$ where $\bar{x}=(x_1,x_2)$ and $ \bar{y}=(y_1,y_2)$ are couples with $x_1, x_2, y_1, y_2 \in \{0,1\}$. Note that $|Q|=16.$ The sets of answers are :$S^2=\{(\bar{s}_1, \bar{s}_2): \bar{s}_1, \bar{s}_2 \in S\}=   \{((a,K_A), (a,K_A)): a \in \{0,1\}, K_A \in \{A,B\} \}$ and $T^2=\{(\bar{t}_1, \bar{t}_2): \bar{t}_1, \bar{t}_2 \in T\}= \{((b,K_B), (b,K_B)): b \in \{0,1\}, K_B \in \{A,B\} \}$. The verifier sends $\bar{x}$ to prover $A$ and $\bar{y}$ to prover $B$. Answers of $\bar{x}$ is in $S^2$ and answers of $\bar{y}$ is in $T^2$. 
 
-For that, let us define a couple of strategies $(h,k)$ such that $h(\bar{x})=h(x_1,x_2)=((x_1,A),(x_1,B))$ and $k(\bar{y})=k(y_1,y_2)=((y_1,A),(y_2,B))$.
-\Jnote{There is a typo here.}
+%\Jnote{No, the verifier checks rules for $G$ as before. These conditions   are just for the strategy below.}
 
-According to this couple of strategies, both provers $A$ and $B$ win in these cases:
-\Jnote{You have to explain why according to rules of the game.}
+For that, let us define a couple of strategies $(h,k)$ such that $h(\bar{x})=h(x_1,x_2)=((x_1,A),(x_1,B))$ and $k(\bar{y})=k(y_1,y_2)=((y_2,A),(y_2,B))$.
+%\Jnote{There is a typo here.}
 
+According to this couple of strategies and to the game $G$, both provers $A$ and $B$ win if $x_1=y_2$. Otherwise they lose. Namely, firstly we have shown in \eqref{prtp} that the element  $((x_1, y_1),(x_2,y_2 ), \ldots, (x_n, y_n)) \in Q^n$ can be identified to the pair $((x_1,\ldots, x_n), (y_1, \ldots, y_n)).$ Then, when $x_1=y_2$, for the first couple of questions $(x_1,y_1)$, the verifier will accept because in the second component of the answer $K_A=K_B=A$, and  in the first component of the answer $x_1=y_2$. Equally, the verifier will accept the answer of the second couple of questions $(x_2,y_2)$ because $K_A=K_B=B$ and $x_1=y_2.$
+
+Hence, both provers $A$ and $B$ win in each column of the table \eqref{wc}.
+%\Jnote{You have to explain why according to rules of the game.}
 \begin{table}[h]
 \centering
 \begin{tabular}{c|cccccccc} 
@@ -351,10 +277,10 @@ A & (0,0) & (0,0) &( 0,1) & (0,1) & (1,0) & (1,0) & (1,1) & (1,1) \\
 \hline 
 B & (0,0) & (1,0) & (0,0) & (1,0) & (0,1) & (1,1) & (1,1) & (0,1) 
 \end{tabular} 
+\caption{Winning cases for provers $A$ and $B.$} \label{wc}
 \end{table}
 
-And they lose in these cases:
-
+And both provers $A$ and $B$ lose in each column of the table \eqref{lc}.
 \begin{table}[h]
 \centering
 \begin{tabular}{c|cccccccc} 
@@ -362,6 +288,7 @@ A & (0,0) & (0,0) &( 0,1) & (0,1) & (1,0) & (1,0) & (1,1) & (1,1) \\
 \hline 
 B & (0,1) & (1,1) & (0,1) & (1,1) & (0,0) & (1,0) & (0,0) & (1,0) 
 \end{tabular}
+\caption{Losing cases for provers $A$ and $B.$} \label{lc}
 \end{table} 
 
 Then, the winning probability of the game $G^2$ according to the couple of strategies $(h,k)$ is $\frac{8}{16}=\frac{1}{2}.$
@@ -375,9 +302,9 @@ Therefore, $\val (G)^2\leq \val (G^2) \leq \val (G).$
 %\Jnote{I think it is very important that you give some examples  illustrating the problem. Try finding a simple game $G$  such that $\val(G^2) > \val(G)^2$.}
 
 
-\subsection{Parallel repetition theorem of two-prover games.}
+\subsection{Parallel repetition theorem of two-prover games}
 
-The parallel repetition theorem of  two-prover games present an  approximation upper bound of the value of $n$ independent copies of the game $G$.
+The parallel repetition theorem of  two-prover games presents an  approximation upper bound of the value of $n$ independent copies of the game $G$.
 Many main topics on the parallel repetition of prover game started to be treated from the early 1990s. 
 
 \cite{feige1992two} conjectured that  for any two-prover game $G$ with value smaller than 1 ($\val (G)<1$), the value of the game $G^n$ ($\val (G^n$) decreases exponentially fast to 0.
@@ -394,28 +321,24 @@ for $x$ closer to zero:  $e^x = 1+x+O(x^2)$ or simply  $1+x \approx e^x$,
 %\Jnote{Write it differently: you can say that for $x$ close to $0$:  $1+x\approx e^x$, or, more precisely,   $e^x = 1+x+O(x^2)$.}
 the bound of $\val (G^n)$ as expressed in \eqref{prt} can be rewritten as follows:
 
-\begin{align*}
-\val (G^n) \leq & (1-\epsilon^c)^{\Omega(n/s)} \\ \leq &  \left(e^{-\epsilon^c}\right)^{\Omega(n/s)} \\ = & \exp (-\epsilon^c \Omega(n/s)).
-\end{align*}
+$\val (G^n) \leq  (1-\epsilon^c)^{\Omega(n/s)}  \leq  \left(e^{-\epsilon^c}\right)^{\Omega(n/s)}  =  \exp (-\epsilon^c \Omega(n/s)).$
  Then, $\val (G^n) \leq \exp (-\epsilon^c \Omega(n/s)).$
-Or 
-\begin{align*}
-\val (G^n) \leq & \exp (-\epsilon^c \Omega(n/s))  \\ = & \exp (-\epsilon \epsilon^{c-1} \Omega(n/s)) \\= & \exp (-\epsilon)^{\epsilon^{c-1} \Omega(n/s)} \\ \approx &  (1-\epsilon)^{\epsilon^{c-1} \Omega(n/s)}.
-\end{align*} 
-Then, $\val (G^n) \leq (1-\epsilon)^{\epsilon^{c} \Omega(n/s)}.$
-\Jnote{Typo in the last line.}
+Or $
+\val (G^n) \leq  \exp (-\epsilon^c \Omega(n/s))   =  \exp (-\epsilon \epsilon^{c-1} \Omega(n/s)) = \exp (-\epsilon)^{\epsilon^{c-1} \Omega(n/s)}  \approx   (1-\epsilon)^{\epsilon^{c-1} \Omega(n/s)}.$ 
+Then, $\val (G^n) \leq (1-\epsilon)^{\epsilon^{c-1} \Omega(n/s)}.$
+%\Jnote{Typo in the last line.}
 
-In some papers, the authors, for instance \cite{rao2011parallel} expresses the upper bound of $\val (G^n)$ by using this expression: $\val (G^n) \leq (1-{\epsilon}/{2})^{  \epsilon^{c} \Omega(n/s)}.$
+In some papers, the authors, for instance \cite{rao2011parallel}, express the upper bound of $\val (G^n)$ by using this expression: $\val (G^n) \leq (1-{\epsilon}/{2})^{  \epsilon^{c} \Omega(n/s)}.$
 %\Jnote{Something is confused here. Why $\epsilon^{c-1}$?   You should use $\exp(-\epsilon/2) \le (1-\epsilon)$ (for what $\epsilon$?),   where is it?}
 
 \cite{feige1992two} conjectured the parallel repetition theorem and gave some proofs for some special cases. The proof of the theorem \eqref{prt}  has been given by \cite{raz1998parallel} and found an implicit constant   $c=32$.  \cite{holenstein2007parallel} simplified Raz's proof, proved the parallel repetition theorem in case of no-signaling strategies (strategies which do
 not imply communication) and gave an explicit bound on the maximal success probability of the product game $G^n.$ This explicit bound is expressed as:
-$$\val (G^n) \leq \left(1-\frac{(1-\val (G))^3}{6000} \right)^{\frac{n}{\log (|A||B|)}}$$.
-\Jnote{Dot after math mode.}
+$$\val (G^n) \leq \left(1-\frac{(1-\val (G))^3}{6000} \right)^{\frac{n}{\log (|A||B|)}}.$$
+%\Jnote{Dot after math mode.}
 This means that the constant $c=3$ in Thomas Holenstein's bound which is better than Ran Raz's expression. However, for the special case of the projection games. 
 \cite{rao2011parallel} improved the bound of this game by finding $c=2$ and by expressing the function $\Omega$ without $s.$ This bound is: $$\val (G^n) \leq (1-\epsilon^2)^{\Omega(n)}.$$ According to \cite{raz2010parallel}, this bound was also known for the special case of XOR games.
 
-To improve this bound from \eqref{prt} to $(1-\epsilon)^{\Omega(n/s)}$ for the $n-$product game of two-prover games or for some special cases  is one of the questions for which several researchers are looking for answers \citep{raz2010parallel}.  This question is called the \textit{strong parallel repetition problem}.
+To improve this bound from \eqref{prt} to $(1-\epsilon)^{\Omega(n/s)}$ for the $n$-product game of two-prover games or for some special cases  is one of the questions for which several researchers are looking for answers \citep{raz2010parallel}.  This question is called the \textit{strong parallel repetition problem}.
 
 In case if the probability distribution on $X \times Y$ is a product distribution  for games , \cite{barak2009strong}  showed that the value of free game is bounded  as follows:
  $$\val (G^n) \leq (1-\epsilon^2)^{\Omega(n/s)}$$
@@ -423,7 +346,7 @@ In case if the probability distribution on $X \times Y$ is a product distributio
 Hence, the strong parallel repetition for the free projection game that is with product distribution is known. Note that the function $\Omega$ is not depending on $s.$
 
 Similarly, \cite{raz2012strong} studied the case where the probability distribution is uniform over the edges of an expander graph. The value of the repeated game is:
-$$\val (G^n) \leq (1-\epsilon^2)^{c(\lambda). \Omega(n/s)}$$ where $\lambda$ is the normalized spectral gap of the expander  graph. 
+$$\val (G^n) \leq (1-\epsilon^2)^{c(\lambda). \Omega(n/s)}$$ where $\lambda$ is the normalized spectral gap of the expander  graph and $c(\lambda)=\poly (\lambda).$ 
 
 If in addition the game is a projection game, then the value of the repeated game is: $$\val (G^n) \leq (1-\epsilon)^{c(\lambda). \Omega(n)}$$ which is  a strong parallel repetition for a projection games on expander graph.
 
@@ -436,12 +359,12 @@ That is, the lower bound value of parallel repetition of two-prover games is at 
 Since the odd cycle game is a projection game, a unique game, and a XOR game, this answers negatively most
 variants of the strong parallel repetition problem \citep{raz2011counterexample, raz2012strong}. That is there exists a two-prover game (odd cycle game) which does not have a strong parallel repetition theorem. 
 
-Moreover, \cite{dinur2014analytical} used projection games to study parallel repetition by using analytical approach based on a matrix analysis argument. His
-\Jnote{s/His/Their}
-result states that for every projection game $G$ with $\val (G) \leq \rho$, we have:  \begin{align}
+Moreover, \cite{dinur2014analytical} used projection games to study parallel repetition by using analytical approach based on a matrix analysis argument. Their
+%\Jnote{s/His/Their}
+result state that for every projection game $G$ with $\val (G) \leq \rho$, we have:  \begin{align}
 \val (G^n) \leq \left(\frac{2\sqrt{\rho}}{1+\rho} \right)^{n/2}. \label{st}
 \end{align}
-\cite{dinur2014analytical} establishes that this upper value  bound \eqref{st} of an $n-$ fold parallel repetition of projection games $G$ and  $(1-\epsilon^2)^{O(n)}$  
+\cite{dinur2014analytical} establishes that this upper value  bound \eqref{st} of an $n$- fold parallel repetition of projection games $G$ and  $(1-\epsilon^2)^{O(n)}$  
 %\Jnote{Which bound by Rao? Give equation number.}
 with improved bounds from  \cite{rao2011parallel} match when the value of the game $G$ is closed to 1.
 
@@ -450,55 +373,57 @@ Notice that the good things of those approximations of the upper value of the pa
 In this work, we are mainly interested by the upper bound of the value of the parallel repetition.  However, 
 there exists some works which approximate the lower bound \citep{feige2007understanding,steurer2010improved, raz2011counterexample}. The table \eqref{bkp} adapted from \cite{tamaki2015parallel} presents a summary of lower and upper bounds known of parallel repetition of some two-prover games.
 
-\Jnote{Typo in the first row of first table. What is
-``Projection on expander games''?}
+%\Jnote{Typo in the first row of first table. What is ``Projection on expander games''?}
 
 \begin{table}[h]
-\begin{tabular}{lll}
+
+\resizebox{\textwidth}{!}{\begin{tabular}{lll}
 \hline 
-\textbf{Upper bounds of the value of $G^n$} &\textbf{ Kind of game $G$} & \textbf{References} \\ 
+\textbf{Upper bounds} &\textbf{ Kind of game $G$} & \textbf{References} \\ 
 \hline 
-$(1-\epsilon^33)^{\Omega(n/s) }$& All provers &  \cite{raz1998parallel} \\ 
+$(1-\epsilon^{32})^{\Omega(n/s) }$& All provers &  \cite{raz1998parallel} \\ 
 $(1-\epsilon^3)^{\Omega(n/s) }$&  All provers &  \cite{holenstein2007parallel} \\ 
 $(1-\epsilon^2)^{\Omega(n) }$&  Projection, xor & \cite{rao2011parallel,raz2010parallel}\\
 $\left(\frac{2\sqrt{\rho}}{1+\rho} \right)^{n/2}$ & Projection & \cite{dinur2014analytical} \\
-$(1-\epsilon^2)^{\Omega(n/s) }$& Free & \cite{barak2009strong}\\
-$(1-\epsilon)^{\Omega(n) }$ & Free projection & \cite{barak2009strong}\\
+$(1-\epsilon^2)^{\Omega(n/s) }$& Free & \cite*{barak2009strong}\\
+$(1-\epsilon)^{\Omega(n) }$ & Free projection & \cite*{barak2009strong}\\
 $(1-\epsilon^2)^{c(\lambda). \Omega(n/s) }$& Expander with spectral gap $\lambda$ & \cite{raz2012strong}\\
 $(1-\epsilon)^{c(\lambda). \Omega(n) }$& Projection on Expander games & \cite{raz2012strong}\\
 \hline \\
 \hline
-\textbf{Lower bounds of the value of $G^n$} & \textbf{Kind of game $G$} & \textbf{Reference} \\ 
+\textbf{Lower bounds} & \textbf{Kind of game $G$} & \textbf{Reference} \\ 
 \hline 
-$1-(1/m).{O(\sqrt{n})}$& Odd cycle, value $1-1/m$ & \cite{feige2007understanding}\\
+$1-(1/m).{O(\sqrt{n})}$& Odd cycle, value $1-1/m$ & \cite*{feige2007understanding}\\
 $(1-1/4m^2)^{O(n)}$& Odd cycle, $n\geq \Omega(m^2)$ & \cite{raz2011counterexample}\\
 $1-O(\sqrt{\epsilon ns})$ & Unique & \cite{steurer2010improved} \\
 \hline 
-\end{tabular} 
+\end{tabular} }
 \caption{Summary of known bounds} \label{bkp}
 \end{table}
 
 
 
-\subsection{Parallel repetition of mutli-prover games}
-\Jnote{s/mutli/multi}
+\subsection{Parallel repetition of multi-prover games}
+%\Jnote{s/mutli/multi}
 
-Let $G(\phi, Q \subset X^1 \times \ldots \times X^k, A^1, \ldots, A^k, \mu)$ be a $k-$prover game, that is a prover game played with $k$ players. For $1 \leq t \leq k$, the sets $X^t$ and $A^t$ represent respectively the set of questions and the set of their answers. The verifier $\phi$ is a predicate  defined on $\left( \prod\limits_{t=1}^k X^t, \prod\limits_{t=1}^k A^t \right)$, that is $\phi [(x^1, \cdots , x^k),(a^1, \cdots , a^k)]=1$ for a winning case and  the other for the losing case. The distribution measure $\mu$ is a function defines from $Q$ to $(0,1].$
+Let $G(\phi, Q \subset X^1 \times \ldots \times X^k, A^1, \ldots, A^k, \mu)$ be a $k$-prover game, that is a prover game played with $k$ players. For $1 \leq t \leq k$, the sets $X^t$ and $A^t$ represent respectively the set of questions and the set of their answers. The verifier $\phi$ is a predicate  defined on $\left( \prod\limits_{t=1}^k X^t, \prod\limits_{t=1}^k A^t \right)$, that is $\phi [(x^1, \cdots , x^k),(a^1, \cdots , a^k)]=1$ for a winning case and  the other for the losing case. The distribution measure $\mu$ is a function defines from $Q$ to $(0,1].$
 %\Jnote{What happened to $Q$?}
 
-The $n-$fold parallel repetition of the game $G$ is the $k-$prover game $G^n(\phi^n, Q^n \subseteq (X^1)^n \times \ldots \times (X^k)^n, (A^1)^n, \ldots,( A^k)^n, \mu^n)$, where  $(X^1)^n , \ldots, (X^k)^n$ are sets of $n-$tuple of questions, $(A^k)^n , \ldots, (A^k)^n$ are sets of $n-$tuple of answers. 
+The $n$-fold parallel repetition of the game $G$ is the $k$-prover game $G^n(\phi^n, Q^n \subseteq (X^1)^n \times \ldots \times (X^k)^n, (A^1)^n, \ldots,( A^k)^n, \mu^n)$, where  $(X^1)^n , \ldots, (X^k)^n$ are sets of $n$-tuple of questions, $(A^k)^n , \ldots, (A^k)^n$ are sets of $n$-tuple of answers. 
 
-Let us denote by $x_i^t$ a element of the set $X^t$ where superscripts $1\leq t \leq k$   denote the players and subscripts $1 \leq i \leq n$  denote  coordinates in parallel repetition.
+Let us denote by $x_i^t$ an element of the set $X^t$ where superscripts $1\leq t \leq k$   denote the players and subscripts $1 \leq i \leq n$  denote  coordinates in parallel repetition.
 
-Elements of $Q^n$ are $n$-tuple of $k-$tuple (of questions). $((x_1^1, \cdots , x_1^k), (x_2^1, \cdots , x_2^k),\ldots, (x_n^1, \cdots , x_n^k))$ $ \in_{\mu^n} Q^n$ which is identifying to the $k-$tuple $((x_1^1, \cdots , x_n^1), (x_1^2, \cdots , x_n^2),\ldots, (x_1^k, \cdots , x_n^k))$. Elements of $Q^n$ are chosen randomly  in accordance with the probability distribution $\mu^n$. Let $\bar{x}^t$ represent a $n-$tuple $(x_1^t, \cdots , x_n^t)$ belongs to $(X^t)^n$.
+Elements of $Q^n$ are $n$-tuple of $k$-tuple (of questions). 
+
+The element $((x_1^1, \cdots , x_1^k), (x_2^1, \cdots , x_2^k),\ldots, (x_n^1, \cdots , x_n^k))$ $ \in_{\mu^n} Q^n$ can be identified to the $k$-tuple $((x_1^1, \cdots , x_n^1), (x_1^2, \cdots , x_n^2),\ldots, (x_1^k, \cdots , x_n^k))$. Elements of $Q^n$ are chosen randomly  in accordance with the probability distribution $\mu^n$. Let $\bar{x}^t$ represent a $n$-tuple $(x_1^t, \cdots , x_n^t)$ belongs to $(X^t)^n$.
 %\Jnote{Belongs to $Q^n$? I think it is $(X^t)^n$.}
 So, the distribution measure $\mu^n$ is a function defined as:
 \begin{align*}
-\mu^n:  & Q^n \subseteq (X^1)^n \times \ldots \times (X^k)^n \times  \longrightarrow (0,1] \\
+\mu^n:  & Q^n \subseteq (X^1)^n \times \ldots \times (X^k)^n   \longrightarrow (0,1] \\
   & (\bar{x}^1,\ldots, \bar{x}^k) \longmapsto \mu^n(\bar{x}^1,\ldots, \bar{x}^k)=\prod_{i=1}^n  \mu (x_i^1, \cdots , x_i^k). 
  \end{align*}
 
-And  the verifier is a predicative defines as follows:
+And  the verifier is a predicative defined as follows:
 \begin{align*}
 \phi^n: &(X^1)^n \times \ldots \times (X^k)^n \times (A^1)^n \times \ldots \times ( A^k)^n)  \longrightarrow  \{0,1\}\\ 
 & (\bar{x}^1,\ldots, \bar{x}^k,\bar{a}^1, \ldots, \bar{a}^k)  \longmapsto  \phi^n (\bar{x}^1,\ldots, \bar{x}^k,\bar{a}^1, \ldots, \bar{a}^k) = \bigwedge\limits_{i=1}^n \phi [x_i^1, \cdots , x_i^k, f_i^1(\bar{x}^1), \cdots ,  f_i^k(\bar{x}^k)]
@@ -507,7 +432,7 @@ where $\bigwedge$ represents the logical connective "AND" (conjunction) and $f_i
 
 There are two results: win or lose. All $k$ provers win when $ \bigwedge\limits_{i=1}^n \phi [x_i^1, \cdots , x_i^k, f_i^1(\bar{x}^1), \cdots ,  f_i^k(\bar{x}^k)]=1$, that is when all provers win simultaneously in all $n$ coordinates. The verifier treats independently each of the $n$ copies. 
 
-As  all provers are allowed to agree on a strategy but not to communicate each other during the game, the strategy in this case is a $k-$tuple of functions $(F^1,F^2, \ldots, F^k)$ where for $1\leq t \leq k$, every $F^t$ is a $n-$tuple function $(f_1^t, f_2^t, \ldots, f_n^t)$. $f_i^t$ is strategy used by the prover $t$ to give the answer $a_i^t$ of the question $x_i^t$ for $1\leq i \leq n$. This function $f_i^t$ is defined as:
+As  all provers are allowed to agree on a strategy but not to communicate each other during the game, the strategy in this case is a $k$-tuple of functions $(F^1,F^2, \ldots, F^k)$ where for $1\leq t \leq k$, every $F^t$ is an $n$-tuple function $(f_1^t, f_2^t, \ldots, f_n^t)$. $f_i^t$ is strategy used by the prover $t$ to give the answer $a_i^t$ of the question $x_i^t$ for $1\leq i \leq n$. This function $f_i^t$ is defined as:
 \begin{align*}
 f_i^t: & (X^t)^n \longrightarrow A^t \\ & \bar{x}^t \longmapsto f_i^t(\bar{x}^t)=a_i^t
 \end{align*}
@@ -535,15 +460,12 @@ An expander game is  merely the extension of free and anchored games. All kind o
 
 As $0 < \epsilon \leq 1$, $\epsilon^5$ is very smaller than $\epsilon$. The upper bound value \eqref{exp} of the parallel repetition of the expander game can be expressed as:
 \begin{align*}
-\val (G^n) & \leq \exp \left(-\frac{c \epsilon^5 \lambda^2 n }{\log |A|}\right) \\
-& =\exp \left(-\epsilon^5\right)^{\frac{c  \lambda^2 n }{\log |A|}} \\
-& =(1-\epsilon^5)^{ \frac{c  \lambda^2 n }{\log |A|}} \\
-& =(1-\epsilon^5)^{ \Omega(n/s)}
+\val (G^n) & \leq \exp \left(-\frac{c \epsilon^5 \lambda^2 n }{\log |A|}\right) =\exp \left(-\epsilon^5\right)^{\frac{c  \lambda^2 n }{\log |A|}} =(1-\epsilon^5)^{ \frac{c  \lambda^2 n }{\log |A|}} =(1-\epsilon^5)^{ \Omega(n/s)}
 \end{align*}
 where $s=\log |A|$ and $\Omega(n/s)=\frac{c  \lambda^2 n }{\log |A|}$ with  $\lambda$ a constant.
 
-A general bound of the value of parallel repetition of a multi-prover game is  given by  \cite{verbitsky1996towards} by using the Hales-Jewett theorem. Despite the fact that the rate of  convergence of this general bound value of Oleg Verbitsky is slow, this boundary  remains the only best result that gives a general parallel repetition bound for all multiplayer games \citep{hkazla2016forbidden,dinur2016multiplayer}. In the next chapter, we present the connection between Hales-Jewett theorem and the parallel repetition of  multi-prover games. 
-\Jnote{Don't use et al. for citing.}
+A general bound of the value of parallel repetition of a multi-prover game is  given by  \cite{verbitsky1996towards} by using the Hales-Jewett theorem. Despite the fact that the rate of  convergence of this general bound value of Oleg Verbitsky is slow, this boundary  remains the only best result that gives a general parallel repetition bound for all multiplayer games \citep*{hkazla2016forbidden,dinur2016multiplayer}. In the following chapter, we present the connection between Hales-Jewett theorem and the parallel repetition of  multi-prover games. 
+%\Jnote{Don't use et al. for citing.}
 
  
  
