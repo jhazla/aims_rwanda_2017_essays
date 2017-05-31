@@ -1,110 +1,81 @@
-\chapter{Literature review }
+\chapter{Literature Review }
+%\Jnote{Capitalize ``review'' in the chapter title.}
 
-\Jnote{Capitalize ``review'' in the chapter title.}
+In today's life, many organizations are generating unstructured data while they are communicating. There are plenty of entities to be extracted. In this research,  all reports we considered are written in English. 
 
-In today's life, many organizations are generating unstructured data while they are communicating. There are plenty of entities to be extracted. In this research,  all reports we considered are written in English.
+To identify boundaries of sentences is one of the important prerequisite steps in Natural Language Processing. The punctuation marks cause some ambiguity  \citep{baluja2000applying} in texts processing.  For example, it is challenging to differentiate the point in abbreviations and a full stop. 
 
-To label the boundaries of sentences is one of the important prerequisite steps in Natural Language Processing. The punctuation marks cause some ambiguity  \citep{baluja2000applying} for example it is challenging to differentiate the point in abbreviations and a full stop. 
-To handle this ambiguity some systems use the special purpose-regular expression grammar, exception rule method etc.
+There are different approaches to extract entity from documents. Some information extractor (IE) systems are based on regular expressions rules and patterns between words. Other algorithms are based on machine learning concepts.
 
-David Palmer and Marti A. Hearst worked on the problem of punctuation marks. \citep{palmer1994adaptive}. They developed an efficient system with high accuracy in automatic labelling the boundaries of the sentence  by using the feed forwarding neural-networks where the input was the POS probabilities of all tokens which are surrounding the punctuation  and output was found as the label to be assigned to the token.This work was able to correct up to $98.5\%$ for punctuation of  sentence-boundaries. A proposed  new approach was how to represent the context of punctuation marks without ambiguities.
+Named Entity Recognition  and Classification (NERC) is one or machine learning algorithms which uses  Markov Hidden Model to classify a document.
 
-This research will also look at how neural networks can be used to label different tokens.
+Due to various forms of contexts and forms various forms of documents, it is not preferable  to extract entities manually. Machine learning algorithms  give nice and robust results.
 
-Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc. Considering the English language text, if we are given a  particular token it is not by chance  to  determine whether it is a name or not. Some of the approaches to indicate a name are to  use capitalization, detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
+Parse tree is a graphical ordered representation of words compose sentences. It bases on rules of phase structure grammar. 
 
-\Jnote{The text above should be general introduction to this chapter, but you
-  write about very specific problems (punctuation, capitalization) which
-  are not general. You should put it into an appropriate section.}
 
 \section{ Parse  Tree} \label{tree}
-One of the sentences that compose our sample report says: 
-"Assessment reports indicated 117 deaths, 544 people injured, 12,794 homes damaged and 7,384 houses destroyed", Suppose that this sentence is called "S"
-\Jnote{Full stop after last sentence.}
 
-There are two mains steps which can
-\Jnote{s/can/are}
-be performed to get the entities from  this sentence:
+One of the sentences that compose our sample report says: 
+"Assessment reports indicated 117 deaths, 544 people injured, 12,794 homes damaged and 7,384 houses destroyed", Suppose that this sentence is called "S".
+
+There are two mains steps which are performed to get the entities from   this sentence:
 \begin{itemize}
-\item \textbf{Tokenizing}: This is a procedure of taking a sentence and extract
-\Jnote{s/extract/extracting}
-the composing atomic linguistic elements e.i.
-\Jnote{s/e.i./i.e.}
-words, verbs, punctuations, adjectives etc .
+\item \textbf{Tokenizing}: This is a procedure of taking a sentence and extracting the composing atomic linguistic elements i.e. words, verbs, punctuations, adjectives etc .
 S has the following tokens: ['Assessment', 'reports', 'indicated', '117', 'deaths', ',', '544', 'people', 'injured', ',', '12,794', 'homes', 'damaged', 'and', '7,384', 'houses', 'destroyed']
-\item \textbf{POS}: part-of-speech is a process of attaching to every linguistic element of the sentence a corresponding tagg
-\Jnote{s/tagg/tag}
+\item \textbf{POS}: part-of-speech is a process of attaching to every linguistic element of the sentence a corresponding tag
 based on grammar rules.
 The POS of S  are: 
 [('Assessment', 'JJ'), ('reports', 'NNS'), ('indicated', 'VBD'), ('117', 'CD'), ('deaths', 'NNS'), (',', ','), ('544', 'CD'), ('people', 'NNS'), ('injured', 'VBN'), (',', ','), ('12,794', 'CD'), ('homes', 'NNS'), ('damaged', 'VBN'), ('and', 'CC'), ('7,384', 'CD'), ('houses', 'NNS'), ('destroyed', 'VBD')]
-
-The meanings of the used tags for S:
 \end{itemize}
-\Jnote{Last sentence should be after itemize (and in a new paragraph).}
+The meanings of the used tags for S:
 \begin{itemize}
-\item JJ: \textbf{Adjective}: 'Assessment'   
-\item NNS: \textbf{Noun, plural}: 'reports', 'deaths', 'people','houses'
-\item VBD: \textbf{Verbs, past tense}: 'indicated',             'injured', 'damaged', 'destroyed'
-\item CD: \textbf{Cardinal Number}: '117', '544' '12,794','7,384',
+\item JJ: \textbf{Adjective}: 'Assessment'.
+\item NNS: \textbf{Noun, plural}: 'reports', 'deaths', 'people','houses'.
+\item VBD: \textbf{Verbs, past tense}: 'indicated',             'injured', 'damaged', 'destroyed'.
+\item CD: \textbf{Cardinal Number}: '117', '544' '12,794','7,384'.
 \item CC: \textbf{Coordinate Conjugation}: 'and'
 \end{itemize}
-The parse tree is formed based on the POS, the classification of word and the way words are arranged in a sentence show a kind of relationship between words.
-\Jnote{Split this sentence into two. Pay attention to grammar.}
+The parse tree is formed based on the POS. Classification and arrangement of words in a sentence determine the relationship between words. 
 \begin{figure}[hbtp]
-\caption{General Extraction Process }
+\caption{General Extraction Process \citep{bird2009natural} }
 \centering
-\includegraphics[scale=0.7]{images/pos.png}
+\includegraphics[scale=0.7]{images/pos.png}\label{tree}
 \end{figure}
-\Jnote{Where is the figure taken from? Please cite properly.}
-\Jnote{Please provide citation for this section.}
-\section{ Named Entity Recognation and Classification  NERC}
-\Jnote{Put ``NERC'' in parentheses in section name.}
+\section{ Named Entity Recognation and Classification   (NERC)}
 
-The term "Named entity" has been coined in 1996 in "sixth  Message understanding Conference"(MUC-6  R. Grishman and  Sundheim 1996).
-\Jnote{No manual citations, use \textbackslash cite in LaTeX. Also it is not usual to write the conference name, just ``has been coined in 1996 by \textbackslash cite''.}
-Entity can be referred as a task, the entity is "named" when it is restricted to one or many rigid designators \citep{sharnagat2014named}, example: persons, location, product are the named entities.
+The term "Named entity" has been coined in 1996 by  \citep{grishman1996design}.
+Entity can be referred as a task, the entity is "named" when it is restricted to one or many rigid designators \citep{sharnagat2014named} such as persons, locations, product etc.
 
 Based on the classification of Standard Generalizes Markup Language (SGML) a task can be divided into three subtasks:
 \begin{enumerate}
-\item ENAMEX: location,product,country ,organization
-\item NUMEX : percentage,quantity 
+\item ENAMEX: locations, products, organizations
+\item NUMEX : percentage, quantity
 \item TIMEX : time, date
 \end{enumerate}
-\Jnote{Spaces after commas above.}
+During a process of classification, Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc. Considering the English language text, if we are given a  particular token it is not by chance  to  determine whether it is a name or not. Some of the approaches to indicate a name are to  use capitalization  detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
 
+To handle this ambiguity, some systems use the special purpose-regular expression grammar, exception rule method, and so on.  David Palmer and Marti Hearst in  \citep{palmer1994adaptive} worked on punctuation marks and capitalization of words. They developed an efficient system with high accuracy in automatic sentences boundaries labelling   by using the feed forwarding neural-networks where the input was the Part-of-speech (POS) probabilities of all tokens which are surrounding the punctuation. Their output was found as the label of tokens.  David Palmer and Marti Hearst 's work was able to find correctly $98.5\%$ for punctuation of  sentence-boundaries. A proposed  new approach was how to represent the context of punctuation marks without ambiguities.
 
-The entities from different reports.
-\Jnote{This is not a sentence (no verb).}
-For extracting entities in a report there are different models which can be used like Hidden Markov model, Supporting Vector Machine (SVM) ,
-\Jnote{No space before comma.}
-etc.
+%\section{Mathematics  behind extraction}
+%\Jnote{by me: do introduction to this part}
+For extracting entities in a report there are different models which can be used like Hidden Markov model, Supporting Vector Machine (SVM), etc.
 
-\section{Hidden Markov Model}
-\Jnote{Please say in the beginning what is this model used for
-  (in the entity extraction context).}
-This model is based on Bayesian probability inference which has been initiated in 18th century. HMM is the earliest applied model for Natural Entities Recognition for English language.The way to perform these tasks is to find the most likely sequence of tagged names(TN) given a sequence of words(SW).
-\Jnote{In prose there is always space before parenthesis. So, above
-  it should be ``words (SW)''. Only for mathematical functions, like f(x)
-  it is the opposite.}
+\section{Hidden Markov Model (HMM)}
+It is a statistical Markov model which trains randomly systems and assumes that future states depend on current trained states.
+HMM is specifically used for extraction of patterns in texts and speeches.
+This model is based on Bayesian probability inference which has been initiated in 18th century. HMM is the earliest applied model for Natural Entities Recognition for English language.The way to perform these tasks is to find the most likely sequence of tagged names TN given a sequence of words "SW".
+
 \begin{align}
 P(TN|SW) & = \frac{P(SW|TN)P(TN)}{P(SW)}\label{eq2.0.1}
 \end{align}
-The equation  \eqref{eq2.0.1} is conditional probability, $P(TN|SW)$ can be  called posterior and it is  the probability of an event Sequence of word occurring given Tagged names has observed.
-\Jnote{Formula and explanation above are inconsistent.}
-\Jnote{Do not capitalize ``sequence'' or ``tagged''.}
-$P(SW|TN)$ is also called likelihood e.i.  it is the probability of observing the sequence of words(SW) when the given hypothesis tagged name (TN) is true. On another hand
-\Jnote{s/on another hand/on the other hand}
-P(TN) doesn’t depend on the evidences, P(TN) is called prior e.i.  that it is true even if there is no given evidence at all(masters thesis).
-\Jnote{What do you mean by ``masters thesis''?}
-We can be ignored P(SW)
-\Jnote{We can be ignored/We can ignore}
-and the remaining objective is to maximise the probability of getting the sequence of tagged names when sequence of words is given.
+The equation  \eqref{eq2.0.1} is conditional probability, $P(TN|SW)$ can be  called posterior and it is  the probability of an event   tagged names occurring given sequence of word has observed.
+%\Jnote{Formula and explanation above are inconsistent.}
+$P(SW|TN)$ is also called likelihood e.i.  it is the probability of observing the sequence of words SW when the given hypothesis tagged name  TN is true. On the other handP(TN) doesn’t depend on the evidences, P(TN) is called prior e.i.  that it is true even if there is no given evidence at all. 
+We can be ignore P(SW) and the remaining objective is to maximise the probability of getting the sequence of tagged names when sequence of words is given.
 \begin{align}
 Max\left[P(TN|SW)\right] \label{eq2.0.2}
-\end{align}
-From the equation \eqref{eq2.0.2} of the maximization, the following estimation can be made.
-\Jnote{Please say that this estimation is due to assumption that the
-  probabilities of tags are independent from each other.}
+\end{align} Due to assumption that the probabilities of tags are independent from each other,  from maximization equation \eqref{eq2.0.2},  we can  can get 
 \begin{align}
 P(TN){\approx} \prod_{i=1}^{n} P({TN}_{i}|{TN}_{i-1})\label{2.0.3}
 \end{align}
@@ -122,13 +93,9 @@ Therefore the estimation can be performed as follow:
 \begin{align}
 P(C_{i}|T_{i}) =  \frac{K(T_{i},C_{i})}{K(T_{i})} \label{2.0.6}
 \end{align}
-From the equation \eqref{2.0.6}, the term $K(T_{i},C_{i})$  is referred as the sum of the times that a word "$C_{i}$" has a tag $T_{i}$in the training corpus.
+From the equation \eqref{2.0.6}, the term $K(T_{i},C_{i})$  is referred as the sum of the times that a word "$C_{i}$" has a tag $T_{i}$ in the training corpus.
 The process of computing the posterior using the above steps is called Markov model.
 
-%\Jnote{This is a beginning of a good explanation, but you need to rewrite to correct language mistakes and clarify some points.}
-
-%\section*{2.1.1.1. Advantages of Hidden Markov Model}
-%\Jnote{There is no need for a separate section, just put it in another   paragraph.}
 It is one of the most powerful statistical and machine learning (ML) techniques in modelling and high qualified in entities extraction. When the researcher is willing to train new data, HMM is very robust and efficient in computations.
 %\section{2.1.1.2. Disadvantages of Hidden Markov Model}
 One of the limitations of HMM is that the researcher must have the notion of model topology and statistical techniques on how to deal with large amount of training data.
@@ -137,21 +104,17 @@ This model has an aim of classifying the named entities by separating the docume
 
 The main idea behind SVM modelling is to work with features and find the hyperplane. The hyperplane must separate all given samples regardless the dimensions.
 \subsection{Linear Supporting Vector Machine }
-\Jnote{Why do you enforce new page here? Please don't do that.}
-\newpage
+%\Jnote{Why do you enforce new page here? Please don't do that.}
 \begin{figure}
-        \begin{subfigure}{.6\textwidth}
-         \includegraphics[scale=.3]    	          {images/linear.png} \label{linear}
-         \caption{Two dimensional SVM}
-        \end{subfigure}%
-        \begin{subfigure}{\textwidth}
-                \includegraphics[scale=.5]    	                 {images/multi.png}
+\caption{Two dimensional SVM}
+ \includegraphics[scale=.5]    	          {images/linear.png} \label{linear}
+\end{figure}  
+\begin{figure}
+\caption{Multi dimensional}
+    \includegraphics[scale=.7]    	              {images/multi.png}
                 \label{multi}
-   \caption{Multi dimensional}\end{subfigure}
-
-
 \end{figure}
-\Jnote{Fix this figure. You can put two parts on top of each other.}
+%\Jnote{Fix this figure. You can put two parts on top of each other.}
 For linear sample data, it is simple to plot the hyperplane to handle the separation.  Data are spread separately between positive documents and negative documents. The way data are represented SVM decided  whether to use linear modelling or not. IFRC reports are considered as multi dimensional documents.
 
 \subsection{Non Linear data} 
@@ -162,37 +125,21 @@ Sometimes the representation of data is quite mixed way so that you cant plot hy
 \centering
 \includegraphics[scale=.7]{images/SVMNL.png}\label{SVMNL}
 \end{figure}
- 
-\section{Disadvantages of SVM}
-\Jnote{Merge this section with the previous one.}
-The classification of particular documents is not easy to be performed by SVM without destroying the constructed weights  but with hand-written rule model. Machine learning uses decision tree procedure than SVM.
-\Jnote{s/than/rather than}
-In addition the decision tree has a detailed boolean-like  model which is more popular to user.
-\Jnote{Replace ``popular'' with another word (I'm not sure what you mean.
-  ``Accessible''?)}
 
-\section{Some Terminologies}
-\Jnote{This is not a good title. ``Some Definitions'' would be better.
-  Even better if it said what the definitions are related to
-  (for example, ``NLP Definitions''}.
+However, SVM has some disadvantages in classification. Some particular documents can not be  easily performed without destroying the constructed weights  but this can not happen for  hand-written rule model. Machine learning uses decision tree procedure rather than  SVM.
+%In addition the decision tree has a detailed boolean-like  model which is  mostly used. 
 
-\Jnote{I did not understand much from this section. What is IE?
-  Definition of hand-written rule does not mention what it is.
-  Also other definitions are not clear.
-  What is the purpose of this section?}
+\section{Extraction before Machine learning}
+Before the evolution of machine learning algorithms, NLP was using some  techniques to extract needed information in documents like:
 
 \textit{Hand-written rule}
 
-It is one of the standard approaches of NER and IE, it has been used for extracting the patterns from automated pages such as amazon, NLP is so useful for unstructured humman-written text by delivering  part-of-speech (POS), syntactic parsing and categories of semantic words.
+It is one of the standard approaches of NER and IE, it has been used for extracting the patterns from automated pages such as amazon, NLP was using hand- written regular expressions for unstructured humman-written text by delivering  part-of-speech (POS), syntactic parsing and categories of semantic words.
 
 \textit{Rule /pattern based extraction}
 
 Many IE systems uses rule/pattern to extract words and also phrases by looking to the context of those words or based on the their surroundings.\citep{califf2003bottom}. Some system decided if the procedure of extracting the words should rely on the meaning of each word independently or on the context of their surroundings in a phrase.
 The limitation of this method is that some words do not have a closer mining to their surroundings that is why Patwardhan Siddharth with help of Ellen Rilo  in workshop called "ACL 2006" presented another approach which  was  generating an automated IE system to learn patterns from a large fixed data set  within a specific domain \citep{patwardhan2007effective} 
-
-\textit{Bag of Words} 
-
-It is referred to the multi-set of words represented by Natural Language Processing and Information Retrieval(IR). They are used  for classifying the documents.
 
 Our research deals with reports generated through a template, compared to the work of  \citep{patwardhan2007effective} templates usages is a limitation.
 
@@ -201,8 +148,9 @@ Our research deals with reports generated through a template, compared to the wo
 
 It is one of the most important algorithm in text classification by using base rule and bag of words to classify the entities \citep{manning2012information}.The user instead of going through the report and start posing many queries, text classification algorithm transient the need information.
 Its aims is to build a function $\theta$ which takes the bag of words and returns the class of sentiment $C$ either positive or negative.
-\Jnote{Please don't use newpage, here or elsewhere.}
-\newpage
+%\Jnote{Please don't use newpage, here or elsewhere.}
+%\newpage
+
 {\centering{$\theta$}
 
 \centering{$\Updownarrow$}   
@@ -219,17 +167,16 @@ Its aims is to build a function $\theta$ which takes the bag of words and return
 
 The procedure is to look for all words and retrieve those which form the subsets.  Bag of words are formed after throwing away  all words except the subsets.The use of the function $\theta$  is for  attributing  to each item of the bag of words a sentiment.}
 
-\Jnote{I did not understand what this algorithm is for and how it
-  works. I don't see how the picture is relevant to the algorithm.
-  Please provide the source for the picture.}
+The function $\theta$  assigns every word a class based on high probability.
+
+%\Jnote{I did not understand what this algorithm is for and how it works. I don't see how the picture is relevant to the algorithm.Please provide the source for the picture.}
 
 \section{Machine learning for Named Entities\label{Chapter2}}
 The natural language processing is not enough to handle the sophistication and ubiquity of textual data. Deep learning using machine learning techniques has been introduced to solve this problems. The advantages of machine learning for Named Entities:
 \begin{itemize}
 \item Manual extraction of entities is too expensive.
 \item Fast processes of extraction.
-\item extraction done by learning algorithms and Natural language tools.
-  \Jnote{Correct capitalization above.}
-\item No limitation of languages.
+\item Extraction is done by learning algorithms and natural language tools.
+\item No limitation of languages due to polyglot package .
 \end{itemize}
 
