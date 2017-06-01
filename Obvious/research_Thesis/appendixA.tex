@@ -1,0 +1,115 @@
+\chapter{Appendix}
+
+\begin{verbatim}
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import networkx as nx
+import random
+#import SimPy.Simulation as Sim
+%matplotlib inline
+
+#==========================================================================
+# descrete negative exponential distribution
+mu = 0.12
+# Pr[X = k] proportional to exp(-mu*K)
+weights = np.exp(-mu*np.arange(62500))
+# Normalize probabilities to one
+weights = weights / np.sum(weights)
+#print(weights)
+# Expected number of neighbors = 0*Pr[X=0] + 1*Pr[X=1] + 2*Pr[X=2] + ...
+E = np.sum(np.arange(62500)*weights)
+
+#========================================================================
+# Making an l*l lattice and rewiring the edges randomly 
+G =nx.navigable_small_world_graph(250, p=1, q=0, r=2, dim=2, seed=None)
+#nx.draw_spectral(G, node_size =20)
+for node in G.nodes():
+    for i in range (np.random.choice(range(62500), p=weights)):
+        G.add_edge (node, random.choice(G.nodes()))
+nx.draw_spectral(G,node_size = 20, edge_color ='b')
+plt.show()
+
+#===========================================================================
+#defining a function for near neigbours 
+def near_neighbours(node, N):
+    res = []
+    x, y = node
+    if x !=0: res.append((x-1, y))
+    if x !=N: res.append((x+1,y))
+    if y !=0: res.append((x,y-1))
+    if y !=N: res.append((x,y+1))
+    
+    return res
+    
+#============================================================================= 
+
+status = {}
+for node in G.nodes(): status[node] = 'S'
+# Infecting a random node
+status[random.choice(G.nodes())] ='I'
+
+
+#N the size of the lattice 
+N =250
+#===============================================================================
+p2 = 0.0
+p1 = 0.1293     #the value for p1 and p2 can  be varied as described in chapter5
+#================================================================================
+r0 = 1/11.2
+r1 = 1/17.4
+S = N *N-1
+E = 0
+I = 1
+R = 0
+s = []
+e = []
+i = []
+r = []
+t = 0
+time=[]
+graphs_in_time =[]
+while I > 0:
+    #print(t)
+    t+=1
+    newI=0
+    newR=0
+    newE=0
+    for node  in G.nodes():
+        if status[node] == 'I':
+            for nei in G.neighbors(node):
+                if status[nei] == 'S':
+                    if nei in near_neighbours(node,N):
+                        if random.random() < p1:
+                            newE+=1
+                            status[nei] = 'E'
+                    else:
+                        if random.random() < p2:
+                            newE+=1
+                            status[nei] = 'E' 
+            if random.random() <r1:
+                newR+=1
+                status[node] ='R'
+        elif status[node] == 'E': 
+                if random.random() <r0:
+                    newI+=1
+                    status[node] = 'I'
+            
+
+        
+    S  -= newE 
+    E  += (newE  - newI)
+    I  += (newI - newR)
+    R  += newR
+ 
+    if t% 20 == 0:
+        print('t =', t, 'S, E, I, R, N =', S, E, I, R, S+E+I+R)
+        graphs_in_time.append({k: v for k, v in status.items()})
+ 
+
+    s.append(S)
+    i.append(I)
+    r.append(R)
+    e.append(E)
+    time.append(t)
+\end{verbatim}

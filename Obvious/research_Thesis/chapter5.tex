@@ -10,7 +10,7 @@ There are certain specific and common situations when the structure of social co
 
 \section{ Vector Borne Disease Propagation on a Small World Network}
 
-In this section we transform a vector borne transmission dynamics of Zika virus to a small world network. As a way of simplifying our model we move from a human-vector-human propagation to a human-human disease propagation.The interaction between mosquitoes and humans become the edges that connect human to human.
+In this section we transform a vector borne transmission dynamics of Zika virus to a small world network. As a way of simplifying our model we move from a human-vector-human propagation to a human-human disease propagation. The interaction between mosquitoes and humans become the edges that connect human to human. We give a heuristic argument that our simplification is valid.
 
 We assume that there is a lattice with two layers. One for mosquitoes and the other for human beings. We assume that mosquitoes are stationary and that people have close and remote links. That is mosquitoes do not cover long distances, but just hover around a specific location.
 On the other hand, people can travel to distant locations. Close links refer to individual's close acquaintances while distant links refer to and individuals random acquaintances.
@@ -85,7 +85,7 @@ We  can now suppose that the population is arranged on a regular
 \end{figure}
 
  
-Figure \ref{fig 5.1} shows the arrangement of nodes in a small world network and figure \ref{fig 5.2} shows the transmission state diagram. The probabilities of transition from one compartment to another are per day and each day we assume that the given transition occur independently. Transition from :S to E
+Figure \ref{fig 5.1} shows the arrangement of nodes in a small world network and figure \ref{fig 5.2} shows the transmission state diagram. The probabilities of transition from one compartment to another are per day and each day we assume that the given transition occur independently. Transition from: S to E
 occurs
 with infection probabilities $p_ {1,2} $ based on the small world network structure and: E to I with probability $r_0$ and I to R with probability $r_1$. In figure \ref{fig 5.1}, the infected green node may infect its four near neighbours, with probability $p_1$ and its three remote neighbours with probability $p_2$. By infection we mean transition from susceptible to exposed state. 
 
@@ -105,9 +105,7 @@ The number of near neighbours $n_1 = 4$ or less, taking into account the boundar
 \section{Model}
 The model has 6 parameters, they are $N, p_1, p_2, n_2, r_0$ and $r_1$. We let $N$ be the population size of a city or country and is arranged in a regular grid of side length $l $ such that $l^2 = N$. The rest of the parameters have been described above.
 
-A thorough review of literature in \cite{lessler2016times} indicates that the incubation or latent period for Zika virus infection is $11.2$ days after infection, with a $95 \%$ confidence interval of $7.6 -18$. Further the center for disease control and prevention (CDC)
-\Jnote{Capitalize CDC name properly.}
-indicate that the incubation period for the Zika virus ranges from 3 days to 14 days from infection \citep{krow2017estimated}. Therefore we estimate $r_o$ with $\frac{1}{11.2}$
+A thorough review of literature in \cite{lessler2016times} indicates that the incubation or latent period for Zika virus infection is $11.2$ days after infection, with a $95 \%$ confidence interval of $7.6 -18$. Further the Center for Disease Control and Prevention (CDC) indicate that the incubation period for the Zika virus ranges from 3 days to 14 days from infection \citep{krow2017estimated}. Therefore we estimate $r_o$ with $\frac{1}{11.2}$
   
     $95\%$ of the of Zika patients will still have detectable virus infectiousness 18.9 days after infection with a confidence interval of 13.6 -79.4 \citep{lessler2016times}.The infectiousness in Zika infection ends 1.5 - 2 days before the virus becomes undetectable \citep{funk2016comparative}. Thus the chosen value of the infectious period is $18.9 - 1.5 = 17.4$ days. Therefore $r_1$ is estimated to be $\dfrac{1}{17.4}$.
 
@@ -125,7 +123,7 @@ n_1k p_1 + \widehat{n_2} p_2 &\approx \dfrac{R_0}{r_1}
 \\ n_1k p_1 + \widehat{n_2} p_2 &\approx 0.2586 \label{eqn 5.32}
 \end{align}
 thus, 
-$p_1 \approx   0.1293- 0.5 \widehat{n_2} p_2$ , in terms of small world parameters $\widehat{n_2}$ and $p_2$.
+$p_1 \approx   0.1293 - 0.5 \widehat{n_2} p_2$, in terms of small world parameters $\widehat{n_2}$ and $p_2$.
 
 Now $n_1$ and $n_2$ represent the number of interactions an individual has each day. Hence the  $n_1 + n_2$ is the lower bound is a lower bound of the number of active acquaintances because it is a number of links that are sufficiently intimate to support transmission of the virus. In reality some links would be closer than others and more likely to lead to transmission. We assume that all $n_1$ links are infected with probability $p_1$ and $n_2$ with probability $p_2$ each day. The probabilities $p_1$ and $p_2$ are not necessarily  the same.
 
@@ -149,9 +147,9 @@ E(- \Delta S) = (n_1 k p_1 + \widehat{n}_2    p_2 - r_1) I \label{5.18}
 E(- \Delta S) = (2 p_1 + 8 p_2 - 0.057) I  \label{5.1.9}
 \end{align}
  
-From equation \ref{eqn 5.32}, it can be shown that $p_1$ and $p_2$ have natural bounds. That is taking $p_2 = 0$, implies that $p_1 \leq 0.1293$ . For $p_1 = 0$, we get $p_2 \leq 0.03232$.
+From equation \ref{eqn 5.32}, it can be shown that $p_1$ and $p_2$ have natural bounds. That is taking $p_2 = 0$, implies that $p_1 \leq 0.1293$. For $p_1 = 0$, we get $p_2 \leq 0.03232$.
 
-Further, from the analysis of the stability of the difference equation of the SEIR compartmental from the largest eigenvalue value, we obtain  the rate of spread of infection is given by ;
+Further, from the analysis of the stability of the difference equation of the SEIR compartmental from the largest eigenvalue value, we obtain  the rate of spread of infection is given by;
 \begin{equation}
 1- \dfrac{r_o + r_1}{2} + \sqrt{\dfrac{1}{4}(r_o - r_1)^2 + n_k r_o} \label{eqn 5.3.10},
 \end{equation}
@@ -159,36 +157,30 @@ where as before $n_k = n_1kp_1 + \widehat{n}_2 p_2$ \citep{fu2013propagation}.
 From equations \ref{5.18}, it can be seen that the disease will be contained if $n_k < r_1$. If $n_k < r_1$ there will be a negative the increase in the number of infected individuals thus, the disease will be contained. When the probability of recovery is greater than the probability of infection. Individuals will recover before they can infect others, this will result in the out break being contained.
 
 \section{Simulation}
-To investigate how disease propagation varies depending on $p_1, p_2, $ and $r_1$ we ran a couple of simulations on a small work network. The code for the simulation is attached in the appendix. 
+To investigate how disease propagation varies depending on $p_1, p_2 $ and $r_1$ we ran a number of simulations on a small work network. The code for the simulation is attached in the appendix. 
 
 We initiate the model with one infected individual and an $r_1$ which is relatively small .We simulated our models with various parameters and observe they dynamics  of the infection. 
+In the first  and third cases we investigate the boundary cases, when$p_1 = 0$ and  $p_2 = 0$ respectively.  In the second case we investigate a case where $p_1 = p_2$. In the  fourth case we investigate and intermediate, where $p_1$ is greater than $p_2$. Lastly we investigate the case where we increase the infectious rate from the initial 17.4 days to 50 days and look at the intermediate case where $p_1 > p_2$. 
+
 
 We ran simulations for 5 cases;
 \begin{enumerate}
-\item $p_1 = 0.129$ , $p_2 =0$ and $r_1 = 1/17.4$
+\item $p_1 = 0.129$, $p_2 =0$ and $r_1 = 1/17.4$
 \item $p_1 = p_2 = 0.02580$ and $r_1 = 1/17.4$ 
-\item $p_1 =0 $,$p_2 = 0.0323$ and $r_1 = 1/17.4$
-\item $p_1 = 0.0693$ ,$p_2 = 0.0173$ and $r_1 = 1/17.4$
-\item $p_1 = 0.045$ ,$p_2 = 0.01125$ and $r_1 = 1/50$
+\item $p_1 =0 $, $p_2 = 0.0323$ and $r_1 = 1/17.4$
+\item $p_1 = 0.0693$, $p_2 = 0.0173$ and $r_1 = 1/17.4$
+\item $p_1 = 0.045$, $p_2 = 0.01125$ and $r_1 = 1/50$
 \end{enumerate}
 
-In the first  and third cases we investigate the boundary cases, when$p_1 = 0$ and  $p_2 = 0$ respectively.  In the second case we investigate a case where $p_1 = p_2$. In the    fourth case we investigate and intermediate, where $p_1$ is greater than $p_2$. Lastly we investigate the case where we increase the infectious rate from the initial 17.4 days to 50 days and look at the intermediate case where $p_1 > p_2$. 
 
 \newpage
 \section{Results}
-
-\Jnote{Make clear that you are comparing your simulation to determinstic SEIR.
-  Also, what are your parameters for SEIR? Shouldn't they be the same
-for the first four cases?}
-
+case
 From our simulated model for the transmission dynamics of Zika virus the following results were obtained. In figure \ref{pics:res} we depict the evolution of infected individuals at 20 day intervals in all the cases starting from day 60 to day 120 of the infection.
 
 \textbf{Case 1}
 
 It can be observed that the increase in the number of infected individuals overtime is stochastic in figure \ref{a1}.  From figure \ref{a1} it be seen that the outbreak takes a long time before it dies off. When $p_0$ it implies that the spread of the infection is local. In the first row  of figure \ref{pics:res}, at different time steps infected nodes can be seen in clumps. There are few infections in the first 80 days of the infection as can be seen  in figure \ref{pics:res}, this implies that the infection does not spread rapidly when the spread is only via local links. In figure \ref{a2}, we observe that there few infected and exposed individuals over time. There is a steady decrease in the number of susceptibles and a gradual increase in the number of individuals recovering over time.
-
-\Jnote{Comment on the fact that in our model it's not really an epidemic
-  (look at y axes).}
 
 \begin{figure}[h!]
     \centering
@@ -224,8 +216,7 @@ In this case we observe that the number of infected individuals over time increa
   \caption{Infection dynamics for  $p_1 = p_2 = 0.02586$ and $r_1 = 1/17.4$}
 \end{figure}
  
-
- 
+\newpage 
 \textbf{Case 3}
 
 In this case the spread will only be through distant links. The infection will increase sharply, but not as much as in case 2 and will have a lower peak than in case 2 as can be seen in figure \ref{a31}. In figure \ref{a32}, it can be observed that the number of susceptible individuals decreases gradually for a time then decrease sharply. Similar to case 2, the number of infected individuals does not drop to zero. Thus, the curve for susceptible will not go to zero. Some individuals will still be infected, but because most people will develop immunity hence there will no longer be spread of the infection. In the third row of figure \ref{pics:res}, we can observe that on each day of the infection, there are spatially uncorrelated infectious because there are no local infections.
@@ -284,10 +275,6 @@ In this case the spread will only be through distant links. The infection will i
 \label{pics:res}
 \end{minipage}
 
-\Jnote{Please check again your code. From the figure in the top row
-  it is clear that close links work only left-right.
-  Also case 4 looks suspicious to me, though I'm not sure about that.}
-
 \textbf{Case 4}
 In this case infection spreads across all links. The probability of of infecting distant neighbour is lower than that of infecting near neighbours. The infection in this case spread similar to cases 2 and 3, though the peak number of infected will be lager than in both cases. Comparing to cases 1 to 3 the infection reaches its peak in a shorter period of time than in the other model figure \ref{a41}. In the figure \ref{a42} the dynamics of the infection is similar to case 3. In the fourth row of figure \ref{pics:res}, we can observe that the infection  in this case will burst early than in all other cases.
 
@@ -325,7 +312,7 @@ In this case infection spreads across all links. The probability of of infecting
   \caption{Infection dynamics for $p_1 = 0.045 $, $p_2=0.01125$ and $r_1 = 1/50$ }
  \end{figure}
 
- From the first four cases, we can observe that the infections along the distant links  (small world parameters), have a significant effect on the spread of the infection. In case 1 where $p_2 =0$ the infection does not spread rapidly compared to case 3 , where $p_1 =0$. The spread of the infection when $p_1 =p_2$ is quite similar to the spread to case 3 when there are only infections across distant neighbours. The infection spread the faster in case 4 in relation to cases 1 to 3. 
+ From the first four cases, we can observe that the infections along the distant links  (small world parameters), have a significant effect on the spread of the infection. In case 1 where $p_2 =0$ the infection does not spread rapidly compared to case 3, where $p_1 =0$. The spread of the infection when $p_1 =p_2$ is quite similar to the spread to case 3 when there are only infections across distant neighbours. The infection spread the faster in case 4 in relation to cases 1 to 3. 
  In case 5, when the infectious period is increased the infection will spread slowly foe some time the later it will explored and spread rapidly because infected individuals will infect more people before they recover.
 
 \section{Conclusion}
@@ -339,5 +326,3 @@ The major limitation of this research is the unavailability of time series data 
 
 In this study we modelled the spread of Zika virus by assuming that an individual has four near neighbours. We would suggest as an area for future research to increase the number of near neighbours.
 That is changing the structure of the network. Another area for further research would be, comparing the spread of Zika virus on a random network model with the smallworld model. Further we would suggest modelling the spread of Zika virus by taking into account seasonality. That is building a model where the probabilities of infecting near and distant neighbours depends on the season.
-
-\Jnote{Please give it another pass for typos and grammar.}

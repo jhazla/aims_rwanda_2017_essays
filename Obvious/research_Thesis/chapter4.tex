@@ -3,18 +3,18 @@
 
 \section{SIR Model}
 
-In the SIR model the population is partitioned into three compartments susceptible, infected and recovered. This is the basis for most epidemiological models \citep{m1925applications}. In building the model the number of individuals susceptible, infected and recovered is assumed to be differentiable over time.
-The simple epidemic model is given by.
+In the SIR model the population is partitioned into three compartments susceptible, infected and recovered This is the basis for most epidemiological models \citep{m1925applications}. In building the model the number of individuals susceptible, infected and recovered is assumed to be differentiable over time.
+The simple epidemic model is given by,
 \begin{center}
 \begin{align} \label{eqn4.1}
 \frac{dS}{dt} &= -\beta SI,\\
  \frac{dI}{dt} &=\beta S I - \gamma  I, \\
- \frac{dR}{dt} &= \gamma  I,
+ \frac{dR}{dt} &= \gamma  I.
 \end{align}
 \end{center}
 
-$N = S + I + R$
-The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period . Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
+$N = S + I + R.$
+The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period. Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
 \begin{figure}[h!]
 \caption{SIR compartmental diagram}]\label{fig 4.1}
 \centering
@@ -30,19 +30,19 @@ We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S 
  \frac{dI}{dt} &= \beta S I - \gamma  I \label{eqn4.22}.
 \end{align}
  With $S(0) >0$, $I(0) > 0$ and $R(0) =0$ as the initial conditions for the model.
- We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly.That is, we cannot obtain an exact analytical expression for the dynamics of S and I
+ We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly. That is, we cannot obtain an exact analytical expression for the dynamics of S and I
 though time, instead the model has to be solved numerically.
 
 The equation \ref{eqn4.11} gives two import insights in understanding the spread of disease and has since been used in infectious disease modelling for a long time.
 
 \subsection{Threshold Phenomenon} 
-It is important to determine whether the infection will result in an epidemic or not and what factors could determine this. Consider the initial stage after $I (0) $ individuals have been infected in a population with $S (0) $ susceptible. Equation \ref{eqn4.22} can be rewritten as,
+It is important to determine whether the infection will result in an epidemic or not and what are the determining factors. Consider the initial stage after $I (0) $ individuals have been infected in a population with $S (0) $ susceptible. Equation \ref{eqn4.22} can be rewritten as,
 \begin{equation} 
 \frac{dI}{dt} = I \left(\beta S -\gamma \right)\label{4.14}
 \end{equation}
 In equation \ref{4.14} if the initial susceptible (S(0)) is less than $\frac{\gamma}{\beta}$, then $\frac{dI}{dt} < 0 $. This means that there will be no epidemic in this case.
 
-This result was coined by \cite{m1925applications} and  is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur.In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
+This result was coined by \cite{m1925applications} and  is refereed to as the threshold phenomenon. The initial S(0) must exceed the threshold $\frac{\gamma}{\beta}$ for an epidemic occur. In  other words the relative removal rate $\frac{\gamma}{\beta}$ must be small enough to allow the occurrence  of the epidemic.
  
  The reciprocal of the of relative removal rate is called the basic reproductive ratio and is one of the most important quantities in epidemiology. The basic reproduction ratio is defined as the average number of secondary cases arising from an average primary case in an entirely susceptible population. It measures measures the maximum reproductive potential for an infection. For the our SIR model in equation \ref{eqn4.1} it is given by:
 
@@ -118,10 +118,10 @@ I (\beta S -(\gamma+ \mu)) = 0
  $\left( \frac{1}{R_0}, \frac{\mu}{\beta} (R_0 -1), 1 -  \frac{1}{R_0} \frac{\mu}{\beta} (R_0 -1) - \frac{1}{R_0} \right)$
  
  
-  \subsection{stability of the model}
+  \subsection{Stability of the Model}
  Once an outbreak occurs, its important to understand the long term behaviour of the outbreak and finding the stability of the model gives an insight on this. In other words, calculating the stability of the model is establishing at which point the epidemic burn out will occur.
  \section{SEIR Model}
-The susceptible, Exposed, Infected and Recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected, they become infectious immediately. In this model an assumption is made that once a person is infected there is an intermediate stage between the time of infection and when they become infectious, this may be refereed to as the latent or incubation period of the infection. The system of equations will be;
+The susceptible, exposed, infected and recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected, they become infectious immediately. In this model an assumption is made that once a person is infected there is an intermediate stage between the time of infection and when they become infectious, this may be refereed to as the latent or incubation period of the infection. The system of equations will be;
 
 \begin{align}
 S'& = \mu -\beta S I - \mu S \label{5} \\
@@ -129,7 +129,7 @@ E' &= \beta S I - (\mu + \gamma) E  \label{6}\\
 I' &= \gamma E - (\alpha + \mu I) \label{7}\\
 R' &= \alpha I  - \mu R \label{8}
 \end{align}
-where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which infected individual become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection. $\alpha$ is the recovery rate.
+where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which infected individual become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection and$\alpha$ is the recovery rate.
 In this model the total number of infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that the birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
 \begin{figure}[h!]
  \caption{SEIR compartmental model}
@@ -142,7 +142,7 @@ Since $R = 1- S - E - I$
 we can be drop equation \ref{8} from the system and  calculate equilibrium point by equating equations \ref{5} to \ref{7} to zero and solving the system of equations.
 
 From equation \eqref{5} we get
-$S = \dfrac{\mu}{\beta I - \mu}$ and from equation \ref{7} we get $I = \frac{\gamma E}{ (\alpha + \mu)}$ and from equation \ref{7} we get $ E = \dfrac{ \beta S I}{(\mu + \gamma)}.$ Thus, for I = 0, E =0 and S = 1 hence, the disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
+$S = \dfrac{\mu}{\beta I - \mu}$ and from equation \ref{7} we get $I = \frac{\gamma E}{ (\alpha + \mu)}$ and from equation \ref{7} we get $ E = \dfrac{ \beta S I}{(\mu + \gamma)}$. Thus, for I = 0, E =0 and S = 1 hence, the disease free equilibrium of the system $S^*, E^*, I^* = (1,0,0)$.
 
  When $I^* \neq 0$ we find the disease pandemic equilibrium, which is given by
 \begin{equation*}
@@ -243,31 +243,31 @@ We will only consider an SIR model for the stochastic models. The total populati
 \begin{align}
 S(t), I(t), R(t) \in \left\lbrace 0,1,2,\dots , N \right\rbrace 
 \end{align}
-and $t \in \left\lbrace 0,\bigtriangleup t ,2 \bigtriangleup t, \dots \right\rbrace$. There are two independent discrete random variables  S, E and I because $R(t) = N(t) -S(t) -I(t)$. Therefore the stochastic process for the SIR model is a bivariate process $\left\lbrace S(t), I(t) \right \rbrace^{\inf}_{t =0}$ ha has a joint probability 
+and $t \in \left\lbrace 0,\Delta t ,2 \Delta t, \dots \right\rbrace$. There are two independent discrete random variables  S, E and I because $R(t) = N(t) -S(t) -I(t)$. Therefore the stochastic process for the SIR model is a bivariate process $\left\lbrace S(t), I(t) \right \rbrace^{\inf}_{t =0}$ ha has a joint probability 
 
 \begin{equation}
-p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= \Pr \left\lbrace( \bigtriangleup S ,\bigtriangleup I) = (k,j)\mid (S(t), I(t)) = (s,i) \right\rbrace
+p_{(s+k,i+j),(s,i)}(\Delta t )= \Pr \left\lbrace( \Delta S ,\Delta I) = (k,j)\mid (S(t), I(t)) = (s,i) \right\rbrace
 \end{equation}
-where $\bigtriangleup S = S(t + \bigtriangleup t) - S(t)$. Hence the transition probability of the SIR model is a follows;
+where $\Delta S = S(t + \Delta t) - S(t)$. Hence the transition probability of the SIR model is a follows;
 \begin{align}
-p_{(s+k,i+j),(s,i)}(\bigtriangleup t )= \left\lbrace \begin{array}{ll}
- \beta i s / N \bigtriangleup t & (k,j) = (-1,1)
- \\ \gamma i \bigtriangleup t, & (k,j) = (0,-1)
- \\ b (N- s -i)\bigtriangleup t & (k,j) = (1,-1)
- \\ 1 - \beta i s/N \bigtriangleup t - \left[\gamma i +b(N-s) \right]n\bigtriangleup t ,& (k,j) =(0,0)
+p_{(s+k,i+j),(s,i)}(\Delta t )= \left\lbrace \begin{array}{ll}
+ \beta i s / N \Delta t & (k,j) = (-1,1)
+ \\ \gamma i \Delta t, & (k,j) = (0,-1)
+ \\ b (N- s -i)\Delta t & (k,j) = (1,-1)
+ \\ 1 - \beta i s/N \Delta t - \left[\gamma i +b(N-s) \right]n\Delta t ,& (k,j) =(0,0)
  \\ 0, otherwise
  \end{array} \right.
 \end{align}
-The time step $\bigtriangleup t$t must be chosen small enough such that each transition probabilities lie in the interval [0,1]. Applying the Markov property, the difference equation satisfied by the probability $p_{(s,i)} (t +\bigtriangleup t)$ can be expressed in terms of the transition probabilities.
+The time step $\Delta t$t must be chosen small enough such that each transition probabilities lie in the interval [0,1]. Applying the Markov property, the difference equation satisfied by the probability $p_{(s,i)} (t +\Delta t)$ can be expressed in terms of the transition probabilities.
 \begin{align*}
-p_{(s,i)} (t + \bigtriangleup t) &= p_{(s+1, i-1)}(t) (t) +\bigtriangleup t)rac{\beta}{N}(i -1)(s +1) \bigtriangleup t + p _{(s,i+1)} (t) \gamma (i +1) \bigtriangleup t \\ &+ p_{(s-1,i+1)}(t) b(i+1) \bigtriangleup t + p_{(s-1,i)}(t)b(N-s+1- i) \bigtriangleup t  \\&
-+  {p_(s,i)}(t) \left(1 - \left[\dfrac{\beta}{N} is + \gamma i + b(N-s) \right] \bigtriangleup t\right)
+p_{(s,i)} (t + \Delta t) &= p_{(s+1, i-1)}(t) (t) +\Delta t)rac{\beta}{N}(i -1)(s +1) \Delta t + p _{(s,i+1)} (t) \gamma (i +1) \Delta t \\ &+ p_{(s-1,i+1)}(t) b(i+1) \Delta t + p_{(s-1,i)}(t)b(N-s+1- i) \Delta t  \\&
++  {p_(s,i)}(t) \left(1 - \left[\dfrac{\beta}{N} is + \gamma i + b(N-s) \right] \Delta t\right)
 \end{align*}
 
 The difference equations can be written as in matrix form as 
 \begin{equation*}
-p_{(s,i)}(t + \bigtriangleup t) = P (\bigtriangleup t)p(t),
+p_{(s,i)}(t + \Delta t) = P (\Delta t)p(t),
 \end{equation*}
-where $P(\bigtriangleup t)$ is the transition matrix and $p(t)$ is the probability distribution vector for the stochastic process.The state set is divided into two classes; the current and the transient.(N,0) is an adsorbing recurrent state while all other states are transient. The probability of an out break is given given as $1- \frac{1}{R_0}$ when $R_0 >1$ \citep{Brauer2017}.
+where $P(\Delta t)$ is the transition matrix and $p(t)$ is the probability distribution vector for the stochastic process.The state set is divided into two classes; the current and the transient.(N,0) is an adsorbing recurrent state while all other states are transient. The probability of an out break is given given as $1- \frac{1}{R_0}$ when $R_0 >1$ \citep{Brauer2017}.
 
 One the main aspects in which deterministic and stochastic models differ is extinction. In deterministic SIR model an epidemic never goes to extinction in a limited time frame  because the number of infectives declines exponentially and only reaches zero at infinity.  In a deterministic framework an epidemic is said to go into extinction if it has a negative growth rate. Where as in the stochastic SIR model an epidemic is the  epidemic becomes extinct in a more direct sense, the number of infects can go to zero without waiting forever.
