@@ -53,7 +53,9 @@ Based on the classification of Standard Generalizes Markup Language (SGML) a tas
 \item NUMEX : percentage, quantity
 \item TIMEX : time, date
 \end{enumerate}
-During a process of classification, Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc. Considering the English language text, if we are given a  particular token it is not by chance  to  determine whether it is a name or not. Some of the approaches to indicate a name are to  use capitalization  detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
+During a process of classification, Capitalization can be used in different ways such as the beginning of the proper noun, the abbreviation, the post of high level profile people etc.
+
+Considering the English language text, if we are given a  particular token it is not by chance  to  determine whether it is a name or not. Some of the approaches to indicate a name are to  use capitalization  detection of sentence boundaries and dictionaries \citep{baluja2000applying}.
 
 To handle this ambiguity, some systems use the special purpose-regular expression grammar, exception rule method, and so on.  David Palmer and Marti Hearst in  \citep{palmer1994adaptive} worked on punctuation marks and capitalization of words. They developed an efficient system with high accuracy in automatic sentences boundaries labelling   by using the feed forwarding neural-networks where the input was the Part-of-speech (POS) probabilities of all tokens which are surrounding the punctuation. Their output was found as the label of tokens.  David Palmer and Marti Hearst 's work was able to find correctly $98.5\%$ for punctuation of  sentence-boundaries. A proposed  new approach was how to represent the context of punctuation marks without ambiguities.
 
@@ -103,25 +105,33 @@ One of the limitations of HMM is that the researcher must have the notion of mod
 This model has an aim of classifying the named entities by separating the documents into two categories.  The document must belong to one category, either positive or negative.  SVM can classify linear data as well as non linear with a purpose of maximizing the margin between negative and positive documents.The plane which separate those two categories is called "hyperplane".
 
 The main idea behind SVM modelling is to work with features and find the hyperplane. The hyperplane must separate all given samples regardless the dimensions.
-\subsection{Linear Supporting Vector Machine }
-%\Jnote{Why do you enforce new page here? Please don't do that.}
-\begin{figure}
-\caption{Two dimensional SVM}
- \includegraphics[scale=.5]    	          {images/linear.png} \label{linear}
-\end{figure}  
-\begin{figure}
-\caption{Multi dimensional}
-    \includegraphics[scale=.7]    	              {images/multi.png}
-                \label{multi}
-\end{figure}
-%\Jnote{Fix this figure. You can put two parts on top of each other.}
-For linear sample data, it is simple to plot the hyperplane to handle the separation.  Data are spread separately between positive documents and negative documents. The way data are represented SVM decided  whether to use linear modelling or not. IFRC reports are considered as multi dimensional documents.
 
+\subsection{Linear Supporting Vector Machine }
+For linear sample data, it is simple to plot the hyperplane to handle the separation.  Data are spread separately between positive documents and negative documents. The way data are represented SVM decided  whether to use linear modelling or not. IFRC reports are considered as multi dimensional documents.
+\newpage                                                                                                                                                                                                                                          
+\begin{figure}
+\caption{Two dimensional SVM \citep{moreira2013finding}}
+ \includegraphics[scale=.4]    	          {images/linear.png} \label{linear}
+\end{figure}  
+
+In Figure \ref{linear}, blue circles represent negative documents and red circles represent positive documents.
+The aim of SVM is to maximize the margin between negative documents and positive documents. Hyperplane is perpendicular. Optimal hyperplane separate perfectly two categories for two dimensional data.
+ 
+Multidimensional documents whith separated classes are represented in Figure \ref{MDSVM}
+\begin{figure}[hbtp]
+\caption{Multi dimensional SVM}
+\includegraphics[scale=.6]{images/multi.png}\label{MDSVM}
+\end{figure}
+
+Documents classes are clearly separated as shown in Figure \ref{MDSVM}. we have positive samples on right hand side and negative samples on left hand side. for multidimensional representation, hyperplane is a plane instead of a line. When documents are mixed, hyperplane can't not be neither a straight plane nor a straight line. samples documents are classified as non linear documents.
+\newpage
 \subsection{Non Linear data} 
-Sometimes the representation of data is quite mixed way so that you cant plot hyperplane easily. When the hyperplane can not be plotted as a straight line,  SVM has a function to linearise non linear data.  When the data are not linear, SVM has a way to linearise them by using a function. $ \phi$ maps data to the higher dimensional space. Straightforwardly, the classification became linear. Figure \ref{SVMNL} shows the way a function $ \phi$ linearised the data.
+Sometimes the representation of data is quite mixed way so that you cant plot hyperplane easily. When the hyperplane can not be plotted as a straight line,  SVM looks for a way to linearise them by using a function. $ \phi$ maps data to the higher dimensional space. Straightforwardly, the classification became linear. Figure \ref{SVMNL} shows the way a function $ \phi$ linearised the data.
+
+
 
 \begin{figure}[hbtp]
-\caption{Nonlinear SVM classification}
+\caption{Nonlinear SVM classification \citep{moreira2013finding}}
 \centering
 \includegraphics[scale=.7]{images/SVMNL.png}\label{SVMNL}
 \end{figure}
@@ -148,9 +158,7 @@ Our research deals with reports generated through a template, compared to the wo
 
 It is one of the most important algorithm in text classification by using base rule and bag of words to classify the entities \citep{manning2012information}.The user instead of going through the report and start posing many queries, text classification algorithm transient the need information.
 Its aims is to build a function $\theta$ which takes the bag of words and returns the class of sentiment $C$ either positive or negative.
-%\Jnote{Please don't use newpage, here or elsewhere.}
-%\newpage
-
+ 
 {\centering{$\theta$}
 
 \centering{$\Updownarrow$}   
@@ -158,16 +166,18 @@ Its aims is to build a function $\theta$ which takes the bag of words and return
 \begin{figure}[hbtp]
 %\caption{a part of a sample reeport}
 \centering
-\includegraphics[scale=0.4]{images/report.png}\label{report}
+\includegraphics[scale=0.5]{images/report.png}\label{report}
 \end{figure}
 
 {\centering{$\Updownarrow$}}
 
 {\centering{C}}
 
-The procedure is to look for all words and retrieve those which form the subsets.  Bag of words are formed after throwing away  all words except the subsets.The use of the function $\theta$  is for  attributing  to each item of the bag of words a sentiment.}
+}
+The classes of documents are mostly used in sentiment analysis. For example for social media where readers can say if they like the article or not.
 
-The function $\theta$  assigns every word a class based on high probability.
+For class analysis, we look for every word. but there exist another way to consider some subset of word and ignore other words.
+The procedure is to look for all words and retrieve those which form the subsets.  Bag of words are formed after throwing away  all words except the subsets.The use of the function $\theta$  is for  attributing  to each item of the bag of words a sentiment. The function $\theta$  assigns every word a class based on high probability.
 
 %\Jnote{I did not understand what this algorithm is for and how it works. I don't see how the picture is relevant to the algorithm.Please provide the source for the picture.}
 

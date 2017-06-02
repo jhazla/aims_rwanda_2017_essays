@@ -43,22 +43,7 @@ By taking the sample file, We extracted names of entities in JSON format. JSON s
 
 
 Figure \ref{json}
-refers to the structure of our json file. It contains a small dictionary which has one feature of proper names. We are able to identify three people who participate in IFRC sample report.
-\newpage 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=.7]{images/BothNames.png}
-\caption{Persons Names Extracted by Hands}\label{Hand}
-\end{figure}
-
-After extracting three proper names as the Figure \ref{Hand} shows,  We are now going to do a comparison. We can compare the output of the algorithms.
-
-\begin{figure}[hbtp]
-\caption{Comparasion}
-\centering
-\includegraphics[scale=.8]{images/comparason.png}
-\end{figure}
-
+refers to the structure of our json file. It contains a small dictionary which has one feature of proper names.
 
 In Machine Learning, there are three ways of testing the quality of algorithms. As We extracted  entities from IFRC reports, to be sure on the work of algorithms,  We calculated recall, precision and accuracy. 
 
@@ -66,13 +51,48 @@ In Machine Learning, there are three ways of testing the quality of algorithms. 
 
 \textbf{Recall} has been gotten as a fraction of retrieved relevant instances over  sum of relevant instances.
 
-%\textbf{Accuracy}
+Prediction is made by algorithms to predict the name of persons in sample document. The correctness can be calculated based on comparison between what predicted and what extracted by hands. 
 
-%\textbf{Accuracy}
+ We extracted manually three people who participate in IFRC sample report.
 
-Prediction is made by algorithms to predict the name of persons in sample document. The correctness can be calculated based on comparison between what predicted and what extracted by hands. The figure \ref{prediction} is  the results of comparison between Polyglot names of 
 \begin{figure}[hbtp]
-\caption{Precision}
 \centering
-\includegraphics[scale=1]{images/precision.png}\label{prediction}
+\includegraphics[scale=.7]{images/BothNames.png}
+\caption{Comparison of names extracted by hands and Polyglot}\label{Hand}
+\end{figure}
+
+After extracting three proper names as the Figure \ref{Hand} shows,  We are now going to do a comparison. We can compare the output of the algorithms. 
+
+\begin{figure}[hbtp]
+\caption{Comparison between hands and Stanford NER}
+\centering
+\includegraphics[scale=.8]{images/1.png}
+\end{figure}
+
+
+\begin{figure}[hbtp]
+\caption{Comparison of names extracted by hands and Polyglot}
+\centering
+\includegraphics[scale=.8]{images/3.png}
+\end{figure}
+
+\begin{figure}[hbtp]
+\caption{Test of Polyglot compared to hands extraction}
+\centering
+\includegraphics[scale=1]{images/11.png}\label{prediction}
+\end{figure}
+\newpage 
+\begin{figure}[hbtp]
+\caption{Test of Stanford NER  compared to hands extraction}
+\centering
+\includegraphics[scale=1]{images/33.png}\label{prediction}
+\end{figure} 
+
+Summarized graph of personal names extracted using three machine learning algorithms compared to hand extraction.
+\newpage
+ 
+\begin{figure}[hbtp]
+\caption{Combined}
+\centering
+\includegraphics[scale=.5]{images/6.png}
 \end{figure}

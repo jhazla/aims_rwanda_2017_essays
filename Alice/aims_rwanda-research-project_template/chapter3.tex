@@ -61,7 +61,7 @@ ASCII characters are used to send and receive the e-mails, for text files and da
 \begin{figure}[hbtp]
 \caption{ASCII TABLE \citep{witte2002electronic}}
 \centering
-\includegraphics[scale=.6]{images/ASCII.png}\label{ASCII}
+\includegraphics[scale=.35]{images/ASCII.png}\label{ASCII}
 \end{figure}
 \end{itemize}
 %\end{itemize}
@@ -139,9 +139,7 @@ Stanford named entities recognition is  a able to identify correctly the named r
 
 We specified the named entities that we wanted to extract. We classified them into the four categories by Stanford classifier.  The last category called "others" combined all numerical entities such as time, amount of money, number of people, percentage, etc. 
 
-The reports from our corps are order by appeal numbers, the entities are in classified by nltk algorithm. 
-
-\newpage
+The reports from our corps are order by appeal numbers, the entities are in classified by Stanford algorithm. 
 
 \begin{figure}[hbtp]
 \caption{IFRC entities from Stanford NER}
@@ -168,11 +166,12 @@ For NLTK algorithms, some confusion between two categories "Location" and "Other
 \section{Polyglot Named classifier}
 
 Compared to previous entities extractor, Polyglot has only three categories which are "Persons", "Locations" and "Organizations". For nltk, any entity which is not classified into those three categories is not considered as named entity.
+\newpage
 
 \begin{figure}[hbtp]
 \caption{IFRC entities from Polyglot}
 \centering
-\includegraphics[scale=.38]{images/polyglot.png}\label{polyglot}
+\includegraphics[scale=.5]{images/polyglot.png}\label{polyglot}
 \end{figure}
 Let us take an example report "-Global-MAA000029 21 Jun 2016.txt" from Figure \ref{polyglot}, the entities which are classified as "Persons" Jaime, Sepulveda and  Christoper Murray.
 
