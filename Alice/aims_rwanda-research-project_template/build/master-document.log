@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.29)  29 MAY 2017 01:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.29)  2 JUN 2017 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -518,6 +518,13 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count114
 )
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen126
@@ -677,24 +684,35 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box31
 LaTeX Info: Redefining \\ on input line 3056.
 )
-(build/master-document.aux)
+(build/master-document.aux
+
+LaTeX Warning: Label `tree' multiply defined.
+
+
+LaTeX Warning: Label `prediction' multiply defined.
+
+)
 \openout1 = `master-document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 174.
 
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -744,7 +762,7 @@ LaTeX Font Info:    ... okay on input line 164.
 \everyMPtoPDFconversion=\toks35
 )
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 164.
+Package hyperref Info: Link coloring ON on input line 174.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -753,9 +771,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count154
 )
-LaTeX Info: Redefining \ref on input line 164.
-LaTeX Info: Redefining \pageref on input line 164.
-LaTeX Info: Redefining \nameref on input line 164.
+LaTeX Info: Redefining \ref on input line 174.
+LaTeX Info: Redefining \pageref on input line 174.
+LaTeX Info: Redefining \nameref on input line 174.
 
 (build/master-document.out) (build/master-document.out)
 \@outlinefile=\write5
@@ -768,229 +786,262 @@ Package caption Info: End \AtBeginDocument code.
 \ST@sf=\write6
 \openout6 = `master-document.sagetex.sage'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 182.
+LaTeX Font Info:    Try loading font information for U+msa on input line 192.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 182.
+LaTeX Font Info:    Try loading font information for U+msb on input line 192.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 182.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 192.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 182.
-
-
-<images/aimsrw_logo.png, id=116, 525.965pt x 96.36pt>
+<images/aimsrw_logo.png, id=104, 525.965pt x 96.36pt>
 File: images/aimsrw_logo.png Graphic file (type png)
 
 <use images/aimsrw_logo.png>
-Package pdftex.def Info: images/aimsrw_logo.png used on input line 182.
+Package pdftex.def Info: images/aimsrw_logo.png used on input line 192.
 (pdftex.def)             Requested size: 157.79071pt x 28.9082pt.
  [1
 Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/aimsrw_logo.png>]
- (./abstract.tex) [1
+ (./acknowledgement.tex
+<images/alice.png, id=116, 158.5925pt x 105.39375pt>
+File: images/alice.png Graphic file (type png)
+ <use images/alice.png>
+Package pdftex.def Info: images/alice.png used on input line 24.
+(pdftex.def)             Requested size: 51.37738pt x 34.14322pt.
 
-] (build/master-document.toc
-[2
+<images/yabe.png, id=117, 162.6075pt x 133.49875pt>
+File: images/yabe.png Graphic file (type png)
+ <use images/yabe.png>
+Package pdftex.def Info: images/yabe.png used on input line 28.
+(pdftex.def)             Requested size: 48.78262pt x 40.04991pt.
 
-])
+[1
+
+ <./images/alice.png> <./images/yabe.png>]) (./abstract.tex [2
+
+]) [3
+
+]
+(build/master-document.toc)
 \tf@toc=\write7
 \openout7 = `master-document.toc'.
 
- [3] (./chapter1.tex
- 1.
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 21.
+ [4
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 21.
+] (./chapter2.tex
+ 1.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 24.
+
+LaTeX Font Info:    No file OMScmss.fd. on input line 24.
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 21.
+(Font)              for symbol `textbullet' on input line 24.
 
-) (./chapter2.texpdfTeX warning (ext4): destination with the same identifier (n
-ame{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Literature review } [1
+l.35 \item V
+            BD: \textbf{Verbs, past tense}: 'indicated',             'injure...
+[1
 
-]
- 2.
-[2
-
-] <images/pos.png, id=192, 434.8245pt x 274.1442pt>
+] <images/pos.png, id=178, 434.8245pt x 274.1442pt>
 File: images/pos.png Graphic file (type png)
  <use images/pos.png>
-Package pdftex.def Info: images/pos.png used on input line 44.
+Package pdftex.def Info: images/pos.png used on input line 43.
 (pdftex.def)             Requested size: 304.37505pt x 191.89961pt.
 
-Overfull \hbox (23.40591pt too wide) in paragraph at lines 51--54
-\OT1/cmss/m/n/12 The term "Named en-tity" has been coined in 1996 in "sixth Mes
--sage un-der-stand-ing Conference"(MUC-
+Overfull \hbox (21.12471pt too wide) in paragraph at lines 45--45
+[] \T1/cmss/bx/n/17.28 Named En-tity Recog-na-tion and Clas-si-fi-ca-tion (NERC
+) 
  []
 
-[3 <./images/pos.png>] [4] [5]
-<images/linear.png, id=227, 742.775pt x 569.12625pt>
+[2 <./images/pos.png>] [3] [4]
+<images/linear.png, id=228, 742.775pt x 569.12625pt>
 File: images/linear.png Graphic file (type png)
  <use images/linear.png>
-Package pdftex.def Info: images/linear.png used on input line 119.
-(pdftex.def)             Requested size: 222.83421pt x 170.73918pt.
+Package pdftex.def Info: images/linear.png used on input line 114.
+(pdftex.def)             Requested size: 297.10474pt x 227.64647pt.
 
-<images/multi.png, id=229, 433.62pt x 311.1625pt>
+<images/multi.png, id=232, 433.62pt x 311.1625pt>
 File: images/multi.png Graphic file (type png)
  <use images/multi.png>
 Package pdftex.def Info: images/multi.png used on input line 123.
-(pdftex.def)             Requested size: 216.80946pt x 155.58087pt.
+(pdftex.def)             Requested size: 260.17401pt x 186.69894pt.
 
-Overfull \hbox (281.85585pt too wide) in paragraph at lines 118--126
-[]$[]$$[]$ 
- []
-
-<images/SVMNL.png, id=231, 578.16pt x 284.06125pt>
+[5 <./images/linear.png> <./images/multi.png>]
+<images/SVMNL.png, id=247, 578.16pt x 284.06125pt>
 File: images/SVMNL.png Graphic file (type png)
  <use images/SVMNL.png>
-Package pdftex.def Info: images/SVMNL.png used on input line 137.
+Package pdftex.def Info: images/SVMNL.png used on input line 136.
 (pdftex.def)             Requested size: 404.70924pt x 198.84149pt.
 
-[6 <./images/linear.png> <./images/multi.png> <./images/SVMNL.png>]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 145.
-
-
-[7] <images/report.png, id=258, 972.63374pt x 154.5775pt>
+[6 <./images/SVMNL.png>] <images/report.png, id=264, 972.63374pt x 154.5775pt>
 File: images/report.png Graphic file (type png)
 
 <use images/report.png>
-Package pdftex.def Info: images/report.png used on input line 173.
-(pdftex.def)             Requested size: 389.0466pt x 61.8299pt.
-) (./chapter3.tex [8 <./images/report.png>]
- 3.
+Package pdftex.def Info: images/report.png used on input line 169.
+(pdftex.def)             Requested size: 486.31567pt x 77.28854pt.
+
+Overfull \hbox (16.56068pt too wide) in paragraph at lines 169--170
+ [][][] 
+ []
+
+[7 <./images/report.png>]) (./chapter3.tex [8]
+ 2.
 [9
 
-] [10] <images/ASCII.png, id=276, 712.6625pt x 474.77374pt>
+] <images/ASCII.png, id=290, 721.69624pt x 633.36626pt>
 File: images/ASCII.png Graphic file (type png)
 
 <use images/ASCII.png>
-Package pdftex.def Info: images/ASCII.png used on input line 54.
-(pdftex.def)             Requested size: 356.33038pt x 237.38629pt.
- [11 <./images/ASCII.png>] [12]
-<images/corpus.png, id=289, 1084.05pt x 609.27625pt>
+Package pdftex.def Info: images/ASCII.png used on input line 64.
+(pdftex.def)             Requested size: 252.59747pt x 221.6815pt.
+ [10 <./images/ASCII.png>] [11]
+<images/corpus.png, id=303, 1084.05pt x 609.27625pt>
 File: images/corpus.png Graphic file (type png)
  <use images/corpus.png>
-Package pdftex.def Info: images/corpus.png used on input line 97.
+Package pdftex.def Info: images/corpus.png used on input line 113.
 (pdftex.def)             Requested size: 433.61232pt x 243.70618pt.
 
-[13 <./images/corpus.png>] [14]
-<images/stanford.png, id=301, 1011.78pt x 562.1pt>
+[12] [13 <./images/corpus.png>]
+<images/stanford.png, id=315, 1011.78pt x 562.1pt>
 File: images/stanford.png Graphic file (type png)
  <use images/stanford.png>
-Package pdftex.def Info: images/stanford.png used on input line 133.
+Package pdftex.def Info: images/stanford.png used on input line 146.
 (pdftex.def)             Requested size: 455.2968pt x 252.94266pt.
 
-[15 <./images/stanford.png>]
-<images/nltkalgo.png, id=309, 1030.85126pt x 559.08875pt>
+[14 <./images/stanford.png>]
+<images/nltkalgo.png, id=323, 1030.85126pt x 559.08875pt>
 File: images/nltkalgo.png Graphic file (type png)
 
 <use images/nltkalgo.png>
-Package pdftex.def Info: images/nltkalgo.png used on input line 147.
+Package pdftex.def Info: images/nltkalgo.png used on input line 159.
 (pdftex.def)             Requested size: 463.87878pt x 251.5876pt.
- [16 <./images/nltkalgo.png>]
-<images/polyglot.png, id=316, 1013.7875pt x 486.81876pt>
+ [15 <./images/nltkalgo.png>]
+<images/polyglot.png, id=330, 1013.7875pt x 486.81876pt>
 File: images/polyglot.png Graphic file (type png)
 
 <use images/polyglot.png>
-Package pdftex.def Info: images/polyglot.png used on input line 160.
-(pdftex.def)             Requested size: 456.20016pt x 219.0664pt.
-) (./chapter4.tex [17 <./images/polyglot.png>]
- 4.
-[18
+Package pdftex.def Info: images/polyglot.png used on input line 174.
+(pdftex.def)             Requested size: 506.89252pt x 243.40878pt.
 
-] <images/json.png, id=329, 636.3775pt x 139.52126pt>
+Overfull \hbox (37.13753pt too wide) in paragraph at lines 174--175
+ [][][] 
+ []
+
+) (./chapter4.tex [16 <./images/polyglot.png>]
+ 3.
+[17
+
+] <images/json.png, id=347, 636.3775pt x 139.52126pt>
 File: images/json.png Graphic file (type png)
  <use images/json.png>
-Package pdftex.def Info: images/json.png used on input line 42.
+Package pdftex.def Info: images/json.png used on input line 41.
 (pdftex.def)             Requested size: 445.46121pt x 97.6642pt.
 
-[19 <./images/json.png>]
-<images/BothNames.png, id=337, 387.4475pt x 69.25874pt>
+[18 <./images/json.png>]
+<images/BothNames.png, id=356, 387.4475pt x 69.25874pt>
 File: images/BothNames.png Graphic file (type png)
 
 <use images/BothNames.png>
-Package pdftex.def Info: images/BothNames.png used on input line 50.
+Package pdftex.def Info: images/BothNames.png used on input line 60.
 (pdftex.def)             Requested size: 271.2114pt x 48.48077pt.
+ <images/1.png, id=358, 448.67625pt x 131.49126pt>
+File: images/1.png Graphic file (type png)
 
-<images/comparason.png, id=339, 580.1675pt x 120.45pt>
-File: images/comparason.png Graphic file (type png)
+<use images/1.png>
+Package pdftex.def Info: images/1.png used on input line 69.
+(pdftex.def)             Requested size: 358.94148pt x 105.19313pt.
+ <images/3.png, id=359, 439.6425pt x 130.4875pt>
+File: images/3.png Graphic file (type png)
 
-<use images/comparason.png>
-Package pdftex.def Info: images/comparason.png used on input line 59.
-(pdftex.def)             Requested size: 464.13461pt x 96.3601pt.
+<use images/3.png>
+Package pdftex.def Info: images/3.png used on input line 76.
+(pdftex.def)             Requested size: 351.71446pt x 104.39012pt.
+ <images/11.png, id=360, 455.7025pt x 173.64874pt>
+File: images/11.png Graphic file (type png)
 
-<images/precision.png, id=341, 396.48125pt x 91.34125pt>
-File: images/precision.png Graphic file (type png)
+<use images/11.png>
+Package pdftex.def Info: images/11.png used on input line 82.
+(pdftex.def)             Requested size: 455.70137pt x 173.64832pt.
+ [19 <./images/BothNames.png> <./images/1.png> <./images/3.png>] <images/33.png
+, id=368, 440.64626pt x 173.64874pt>
+File: images/33.png Graphic file (type png)
+ <use images/33.png>
+Package pdftex.def Info: images/33.png used on input line 88.
+(pdftex.def)             Requested size: 440.64517pt x 173.64832pt.
 
-<use images/precision.png>
-Package pdftex.def Info: images/precision.png used on input line 77.
-(pdftex.def)             Requested size: 396.48027pt x 91.34102pt.
-) (./chapter5.tex [20 <./images/BothNames.png> <./images/comparason.png> <./ima
-ges/precision.png>]
- 5.
-) (./master-document.bbl [21
+[20 <./images/11.png> <./images/33.png>]
+<images/6.png, id=376, 903.375pt x 132.495pt>
+File: images/6.png Graphic file (type png)
+ <use images/6.png>
+Package pdftex.def Info: images/6.png used on input line 97.
+(pdftex.def)             Requested size: 451.6864pt x 66.24733pt.
+)
+(./chapter5.tex [21 <./images/6.png>]
+ 4.
+) (./master-document.bbl [22
 
 ])
 *********************************************************************
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
-[22
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
+[23
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
  (build/master-document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 228.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 228.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
 Package rerunfilecheck Info: File `master-document.out' has not changed.
-(rerunfilecheck)             Checksum: CC48688F37900C6026789CE106ADF1F5;773.
+(rerunfilecheck)             Checksum: B30E9BB634F593B11F66D03AC1BBBC0A;1912.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
- 10696 strings out of 494383
- 156281 string characters out of 6163743
- 256316 words of memory out of 5000000
- 13668 multiletter control sequences out of 15000+600000
- 15549 words of font info for 62 fonts, out of 8000000 for 9000
+ 10962 strings out of 494383
+ 159378 string characters out of 6163743
+ 255892 words of memory out of 5000000
+ 13903 multiletter control sequences out of 15000+600000
+ 22384 words of font info for 63 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 36i,10n,38p,852b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
-i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on build/master-document.pdf (26 pages, 948399 bytes).
+ 36i,10n,41p,823b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/alice/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1200.600pk> </home/a
+lice/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1728.600pk> </home/alice/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/alice/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecss1200.600pk> </home/alice/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecsx2488.600pk> </home/alice/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecsi0800.600pk> </home/alice/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1095.60
+0pk> </home/alice/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1440.600pk> </home
+/alice/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0600.600pk> </home/alice/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecss2074.600pk></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb>
+Output written on build/master-document.pdf (28 pages, 1321207 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 363 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 300 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 844 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 

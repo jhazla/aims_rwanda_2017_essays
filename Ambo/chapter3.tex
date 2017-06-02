@@ -33,7 +33,7 @@ using the strategy $f$ by prover 1. Whereas $h(y) \in T$ is the answer to the qu
 
 The role of the verifier is to accept or reject the answers given from both provers. Thus, the verifier is also a function. We denote the function  \say{\textit{verifier}}
 %\Jnote{Use Latex quotes (open with ``, close with ''), look at the code to see   the difference.}
-by $\phi$ and defined as: $\phi: (X,Y,S,T) \longrightarrow \{0,1\}: (x,y,f(x),h(y)) \longmapsto  \phi(x,y,f(x),h(y)).$ $\phi$ is a predicate on  $(X,Y,S,T).$
+by $\phi$ and defined as: $\phi: (X,Y,S,T) \longrightarrow \{0,1\}: (x,y,f(x),h(y)) \longmapsto  \phi(x,y,f(x),h(y)).$ The function $\phi$ is a predicate on  $(X,Y,S,T).$
 
 If $\phi(x,y,f(x),h(y))=1$, then the two players win. They lose if $\phi(x,y,f(x),h(y))=0.$ 
 
@@ -69,7 +69,7 @@ The game $G$ is \textit{unique} if for every $(x,y) \in X \times Y$ the function
 When sets $T, S = \{0, 1\}$, then the unique game is called a \textit{XOR} game. That is, when sets of question are composed only of $0$ and $1.$
 %\Jnote{s/only by/only of}
 
-There are more special kinds of prover games considered in the literature \citep*{verbitsky1996towards, cleve2007perfect, raz2010parallel, rao2011parallel, moshkovitz2014parallel, tamaki2015parallel, bavarian2015anchoring, dinur2016multiplayer, hkazla2016forbidden}.
+There are more special kinds of prover games treated in the literature \citep*{verbitsky1996towards, cleve2007perfect, raz2010parallel, rao2011parallel, moshkovitz2014parallel, tamaki2015parallel, bavarian2015anchoring, dinur2016multiplayer, hkazla2016forbidden}.
 %\cite{raz2010parallel} gave three nice definitions of kinds of prover games: projection game, unique game and XOR game.
 %\Jnote{Change this: There are more special kinds of games
 %  considered in the literature (cite Raz).}
@@ -98,14 +98,14 @@ where the probability is taken over the edge $(x,y) \in E$ and the maximum of pr
 \subsection{Expander graphs}
 
 Prover games used to be associated to the expander graph. Expander graph has some interesting properties. 
-\cite{nielsen2005introduction} defines an expander graph as \say{\emph{ a graph $G = (V, E)$ in which every subset $S$ of vertices expands quickly, in the sense that it is connected to many vertices in the set $S$ of complementary vertices.}} Expander graph is characterized by some expansion parameters: vertex expansion, edge expansion and spectral expansion. The spectral gap denoted by $\lambda$, namely the difference between the largest and second-largest eigenvalues is used to measure the spectral expansion. 
+\cite{nielsen2005introduction} defines an expander graph as \say{\emph{ a graph $G = (V, E)$ in which every subset $S$ of vertices expands quickly, in the sense that it is connected to many vertices in the set $S$ of complementary vertices.}} Expander graph is characterized by some expansion parameters: vertex expansion, edge expansion and spectral expansion. The spectral gap denoted by $\lambda$,is the difference between the largest and second-largest eigenvalues. The spectral gap is used to measure the spectral expansion. 
 
-The connectedness  property is one of the fundamental properties of expander graph. Thus, every connected graph is an expander. Hence, a cycle graph and a complete graph are expander graph.
+The connectedness  property is one of the fundamental properties of expander graph. Thus, every connected graph is an expander graph. Hence, a cycle graph and a complete graph are expander graph.
 
 An expander graph is based on regular graph. A good expander graph is an expander which has high expansion parameters and a low degree.  For instance, a random graph is a good expander graph. However a complete graph is not a good expander graph because it has the largest degree although it has the best expansion properties.
 
 
- \subsection{Multi-prover games.} The rules of the multi-prover games are similar to two-prover games. But, as indicated by the term "multi", this game is played
+ \subsection{Multi-prover games} The rules of the multi-prover games are similar to two-prover games. But, as indicated by the term "multi", this game is played
 % \Jnote{s/playing/played}
  with several provers (more than two players). That is, we are dealing with the general case.
 
@@ -138,7 +138,7 @@ $$\val (G)= \max_{f^1, \cdots , f^k} \Pr[\phi (x^1, \cdots , x^k, f^1(x^1), \cdo
 
 Let $G$ be a two-prover game and $n$ a positive integer. Knowing the value of the game $G$, we are interested 
 %\Jnote{s/interesting/interested}
-to establish the relationship between $\val (G)$ and $\val (G^n).$  By executing  $n$ independent copies of $G$ in parallel, we obtain what we call an $n-$\textit{product game G} or a \textit{product game} $G^n$ or an \textit{n-fold parallel repetition} $G^n.$ Hence, a parallel repetition of a two-prover game $G$ is a product game $G^n$, that is approximately
+to establish the relationship between $\val (G)$ and $\val (G^n).$  By executing  $n$ independent copies of $G$ in parallel, we obtain what we call an $n$-\textit{product game G} or a \textit{product game} $G^n$ or an \textit{n-fold parallel repetition} $G^n.$ Hence, a parallel repetition of a two-prover game $G$ is a product game $G^n$, that is approximately
 %\Jnote{s/approximatively/approximately}
 speaking when $n$ copies of the game $G$ is tried to be won simultaneously by the two players. The game $G$ is called  the \textit{base game} of the parallel repeated game $G^n.$
 
@@ -159,7 +159,7 @@ The function $\phi^n$ is defined similarly to the function $ \phi$ as:
 \phi^n: & X^n \times Y^n \times S^n \times T^n  \longrightarrow  \{0,1\}\\ 
 & (\bar{x}, \bar{y},\bar{s}, \bar{t})  \longmapsto  \phi^n(\bar{x}, \bar{y},\bar{s}, \bar{t}) = \bigwedge\limits_{i=1}^n \phi [x_i,y_i, f_i(\bar{x}), h_i(\bar{y})]
 \end{align*}
-Where $\bigwedge$ represents the logical connective "AND" (conjunction).
+Where the symbol $\bigwedge$ represents the logical connective "AND" (conjunction).
 %\Jnote{Very nice explanation so far. You can underline the fact that  $f_i$ is a function of $\overline{x}$ and not just $x_i$.}
 Note that $f_i$ is a function of $\bar{x}$ and not just $x_i$  in the expression of the predicate $\phi^n$.
 
@@ -200,7 +200,7 @@ Let us show the inequalities in \eqref{3val} by splitting them into two parts:
 \begin{proof}
 We know that the value of the game $G$ is the optimal winning probability of provers over all possible strategies, that is the winning probability using the best couple of strategies. Le us denote by $(f,h)$ this optimal couple of strategies used for the game $G$. Strategies $f$ and $h$ are  defined as $f: X\longrightarrow S$ and  $h: Y\longrightarrow T.$  Then, $\val (G)= \max\limits_{f,g} \Pr[\phi(x,y,f(x),h(y))=1].$
 
-As far as, let us denote by $(F,H)$ a couple of strategies  used  to win the game $G^n$. $F$ and $G$ are $n-$tuple defined as: $F=(f_1, \ldots, f_n)$ and  $H=(h_1, \ldots, h_n)$. Strategies $F$ and $H$ are  defined as $F: X^n\longrightarrow S^n$ and  $H: Y^n\longrightarrow T^n.$ Here, notice that the couple $(F,H)$ of strategies are not necessary the optimal.
+As far as, let us denote by $(F,H)$ a couple of strategies  used  to win the game $G^n$. $F$ and $G$ are $n$-tuple defined as: $F=(f_1, \ldots, f_n)$ and  $H=(h_1, \ldots, h_n)$. Strategies $F$ and $H$ are  defined as $F: X^n\longrightarrow S^n$ and  $H: Y^n\longrightarrow T^n.$ Here, notice that the couple $(F,H)$ of strategies are not necessary the optimal.
 Then, the winning probability according to this couple of strategies is: $\Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right].$
 
 %Since, each couple $(x_i,y_i)$, for $ 1\leq i \leq n$ is chosen randomly  according to the  probability distribution measure $\mu$. Without loss of generality, for instance, let us assume that the couple $(x_i,y_i)$ is chosen independently. Then, the winning probability becomes: 
@@ -218,7 +218,7 @@ Let us chose the optimal strategies $f$ and $h$ of $G$ to play each parallel cop
 \end{align*}
 %\Jnote{Here the equation becomes true, but the reason for that is   that $f_i, h_i$ depend only on $x_i, y_i$. Otherwise it is false.} 
 
-$(f,h)$ is the optimal couple of strategies for the game $G$, this does not means that the couple $(F,H)$  is the optimal couple of the strategies for the parallel repetition $G^n$. Then, the winning probability for $G^n$ over the optimal couple of strategies is:
+The couple $(f,h)$ is the optimal couple of strategies for the game $G$, this does not means that the couple $(F,H)$  is the optimal couple of the strategies for the parallel repetition $G^n$. Then, the winning probability for $G^n$ over the optimal couple of strategies is:
 \begin{align*}
 \val (G^n)= & \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] 
  \geq  \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \\
@@ -359,7 +359,7 @@ That is, the lower bound value of parallel repetition of two-prover games is at 
 Since the odd cycle game is a projection game, a unique game, and a XOR game, this answers negatively most
 variants of the strong parallel repetition problem \citep{raz2011counterexample, raz2012strong}. That is there exists a two-prover game (odd cycle game) which does not have a strong parallel repetition theorem. 
 
-Moreover, \cite{dinur2014analytical} used projection games to study parallel repetition by using analytical approach based on a matrix analysis argument. Their
+Moreover, \cite{dinur2014analytical} used projection games to study the parallel repetition by using analytical approach based on a matrix analysis argument. Their
 %\Jnote{s/His/Their}
 result state that for every projection game $G$ with $\val (G) \leq \rho$, we have:  \begin{align}
 \val (G^n) \leq \left(\frac{2\sqrt{\rho}}{1+\rho} \right)^{n/2}. \label{st}
@@ -444,13 +444,13 @@ $$ \val (G^n)= \max_{F^1,F^2, \ldots, F^t} \Pr \left[  \bigwedge\limits_{i=1}^n 
 
 Given the value of the multi-prover game $G$, can we estimate or approximate the value of the parallel repetition of the multi-prover game $G$ using the value of $G$? 
 
-For a two-prover game, there are so many advanced studies about that, we can cite the works of \cite{feige1992two, verbitsky1996towards,raz1998parallel, holenstein2007parallel, barak2009strong,raz2010parallel, rao2011parallel,dinur2014analytical}.  Nevertheless, express $\val (G^n)$  in terms of power of $\val (G)$ or bound it with the power of $\val (G)$ does not seem to be easy.
+For  two-prover games, there are so many advanced studies about that, we can cite the works of \cite*{feige1992two, verbitsky1996towards,raz1998parallel, holenstein2007parallel, barak2009strong,raz2010parallel, rao2011parallel,dinur2014analytical}.  Nevertheless, express $\val (G^n)$  in terms of power of $\val (G)$ or bound it with the power of $\val (G)$ does not seem to be easy.
 
  Another question that we can ask is: does the value of parallel repetition of a multi-prover game decay exponentially like for a two-prover game?
 
-For some multiplayer games, for instance free game and anchored\footnote{ Related to quantum parallel repetition. Before being repeated in parallel, the base game $G$ is modified to an equivalent game $\tilde{G}$.} game, the exponentially decay bounds for parallel repetition are known \citep{barak2009strong,bavarian2015anchoring}.  A recent work of \cite{dinur2016multiplayer} gives an exponentially decay bound for the parallel repetition for  expander games. 
+For some multiplayer games, for instance free game and anchored\footnote{ Related to quantum parallel repetition. Before being repeated in parallel, the base game $G$ is modified to an equivalent game $\tilde{G}$.} game, the exponentially decay bounds for parallel repetition are known \citep*{barak2009strong,bavarian2015anchoring}.  A recent work of \cite*{dinur2016multiplayer} gives an exponentially decay bound for the parallel repetition for  expander games. 
 
-Expander game is based on expander graph (see \eqref{expander}).  Given a base game $G$, a related connected graph $G$, a spectral gap of the graph $G$ denoted by $\lambda$,  then the value of the repeated game, $\val (G^n)$  goes down exponentially in $n$ for sufficiently large $n$. \cite{dinur2016multiplayer} expresses it as follows:
+Expander game is based on expander graph (see \eqref{expander}).  Given a base game $G$, a related connected graph $G$, a spectral gap of the graph $G$ denoted by $\lambda$,  then the value of the repeated game, $\val (G^n)$  goes down exponentially in $n$ for sufficiently large $n$. \cite*{dinur2016multiplayer} expresses it as follows:
 \begin{align}
 \val (G^n) \leq \exp \left(-\frac{c \epsilon^5 \lambda^2 n }{\log |A|}\right) \label{exp}
 \end{align}

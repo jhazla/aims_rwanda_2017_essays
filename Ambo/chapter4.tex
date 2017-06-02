@@ -2,15 +2,15 @@
 
 \chapter{Connection between parallel repetition of multi-prover games and  Hales-Jewett theorem.}
 
-This chapter presents the relationship between parallel repetition of multiple provers with the density Hales-Jewett theorem. We give a parallel repetition bound using the density Hales-Jewett. Firstly, we show that the density Hales-Jewett theorem implies parallel repetition. Secondly, we show that the parallel repetition implies the density Hales-Jewett theorem.
+This chapter presents the relationship between parallel repetition of multiple provers and the density Hales-Jewett theorem. We give a parallel repetition bound using the density Hales-Jewett. Firstly, we show that the density Hales-Jewett theorem implies parallel repetition. Secondly, we show that the parallel repetition implies the density Hales-Jewett theorem.
 
 \section{Hales-Jewett theorem implies parallel repetition.}
 
 In both versions of Hales-Jewett theorem (see \eqref{hj1} and \eqref{hj2}), the concept which emphasizes this theorem is the \textit{combinatorial line.} The combinatorial line is the umbilical cord between the Hales-Jewett theorem and the parallel repetition. In section \eqref{hjt}, we have already explain in a detailed way
 %\Jnote{s/deeply/in a detailed way}
-and define what the combinatorial is. Let us recall some notions about a combinatorial line and the formulation of the Hales-Jewett theorem.
+and define what the combinatorial line is. Let us recall some notions about a combinatorial line and the formulation of the Hales-Jewett theorem.
 
-Let $k, n\in \mathbb{Z}^+$, $[k]=\{1,2, \ldots,k\}$ and an $x-$string $w(x)=a_1a_2\ldots a_n \in ([k]\times\{x\})^n\setminus [k]^n.$ That is, in $w(x)=a_1a_2\ldots a_n$, at least one of the symbol   $a_i$ contains the symbol  $x$ called wildcard. Let $w(x;i)$ be the string obtained by replacing $x$ by $i$.
+Let $k, n\in \mathbb{Z}^+$, $[k]=\{1,2, \ldots,k\}$ and an $x$-string $w(x)=a_1a_2\ldots a_n \in ([k]\times\{x\})^n\setminus [k]^n.$ That is, in $w(x)=a_1a_2\ldots a_n$, at least one of the symbol   $a_i$ contains the symbol  $x$ called wildcard. Let $w(x;i)$ be the string obtained by replacing $x$ by $i$.
 
 The \textit{combinatorial line} is the set of $k$ strings $\{w(x;i): \ i\in \{1,2,\ldots,k\} \}$, that is the set $\{w(x;1), w(x;2), \ldots, w(x;k)\}.$ 
  
@@ -20,18 +20,20 @@ As the name stipulates, the Hales-Jewett was proved by Hales and Jewett in 1963.
 
 Furthermore, there is a density formulation of Hales-Jewett theorem on which this section is mainly constructed. Given a subset $A$ of $[k]^n$, the density of $A$ is defined and denoted as $\delta(A)=\frac{|A|}{k^n}.$ By simplicity, $\delta$ denotes the density of $A$, that is $\delta=\delta(A).$
 
-Thereby, the density version of Hales-Jewett theorem states that for any positive number $k$ and real number $\delta$,  there exists a large enough number $n$ (depending on $k$ and $\delta$) such that  any subset of  $[k]^n $ with density $\delta$ contains a combinatorial line.
+Thereby, the density version of Hales-Jewett theorem states that for any positive number $k$ and positive real number $\delta$,  there exists a large enough number $n$ (depending on $k$ and $\delta$) such that  any subset of  $[k]^n $ with density $\delta$ contains a combinatorial line.
 %\Jnote{It is not necessary to repeat concepts from the previous chapter in   such detailed way.}
 In the following, essentially  we use  the density version of  Hales-Jewett theorem. Whenever we say the Hales-Jewett theorem, we mean the density version of Hales-Jewett theorem.
 %\Jnote{s/Whenever there is/Whenever we say} 
 
-We denote by $\Delta_{k,n}$ the maximum density of a subset $W$ of $[k]^n$ without a combinatorial line. $\Delta\_{k,n}$ was discussed in  \eqref{dhjn}.
+We denote by $\Delta_{k,n}$ the maximum density of a subset $W$ of $[k]^n$ without a combinatorial line. $\Delta_{k,n}$
+%\Jnote{Typo here.}
+was discussed in  \eqref{dhjn}.
 %\Jnote{Ref is broken. s/We have discussed a lot/Delta\_kn was discussed in}
 The number $\Delta_{k,n}$ is called density Hales-Jewett number.
 
 The density version of the Hales-Jewett theorem is equivalent to  $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$ for $k\geq 2$ \citep{furstenberg1991density}. Let us show it. \begin{itemize}
-\item The density version of the Hales-Jewett theorem implies   $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$. We assume that the density version of the Hales-Jewett theorem is true, that is $\forall k, \delta, \exists DHJ(k,\delta)  \in \mathbb{N} / \forall n\geq DHJ(k,\delta)$ and $\forall S \subseteq [k]^n, |S| \geq \delta k^n$, $S$ contains a combinatorial line. This means that  there is a subset $W \subseteq [k]^n$ which does not contain a combinatorial line with density $|W| < \delta k^n \Longleftrightarrow |\frac{|W|}{k^n}-0| <\delta \Longleftrightarrow |\Delta_{k,n}-0|<\delta $ . So, $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$.
-\item $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$ implies the density version of the Hales-Jewett theorem. $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$ is equivalent to $\forall , \delta >0, \exists N_0 \in \mathbb{N} /\forall n \geq N_0, \Delta_{k,n} < \delta$  fro a fixed $k.$ $ \Delta_{k,n}$ is the density of the largest subset of $[k]^n$ without a combinatorial line. Hence, $\forall n \geq N_0, \forall S \subseteq [k]^n$ with $|S| \geq \delta k^n$ contains a combinatorial line.
+\item The density version of the Hales-Jewett theorem implies   $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$. We assume that the density version of the Hales-Jewett theorem is true, that is $\forall k, \delta, \exists DHJ(k,\delta)  \in \mathbb{N} / \forall n\geq DHJ(k,\delta)$ and $\forall S \subseteq [k]^n, |S| \geq \delta k^n$, $S$ contains a combinatorial line. In this case,  there exists a subset $W \subseteq [k]^n$ which does not contain a combinatorial line. For $n$ big enough   its size must be $|W| < \delta k^n \Longleftrightarrow |\frac{|W|}{k^n}-0| <\delta \Longleftrightarrow |\Delta_{k,n}-0|<\delta $ . So, $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$.
+\item $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$ implies the density version of the Hales-Jewett theorem. $\lim\limits_{n\longrightarrow \infty} \Delta_{k,n}=0$ is equivalent to $\forall  \delta >0, \exists N_0 \in \mathbb{N} /\forall n \geq N_0, \Delta_{k,n} < \delta$ for  a fixed $k.$ $ \Delta_{k,n}$ is the density of the largest subset of $[k]^n$ without a combinatorial line. Hence, $\forall n \geq N_0, \forall S \subseteq [k]^n$ with $|S| \geq \delta k^n$ contains a combinatorial line.
 \end{itemize} 
 
 %\Jnote{It is still misleading. It was not demonstrated ``during their work on DHJ''.  It \emph{is} the DHJ! I mean it is easy to see that it is equivalent to Theorem 2.4.2.Please say this.}
@@ -46,7 +48,7 @@ will  necessarily contain  a combinatorial line when $n$ increases.
 %\Jnote{This paragraph belongs to previous chapter.}
 `
 
-The density Hales-Jewett number converges to $0$ when $n$ converges to infinity. Equally, the Raz theorem \eqref{prt} shows that the value of a parallel repetition of a game (non-trivial) decreases exponentially  fast to $0$ when $n$ converges to infinity.  Note that the convergence of the Raz theorem is fast than the convergence of the  density Hales-Jewett number.
+The density Hales-Jewett number converges to $0$ when $n$ converges to infinity. Equally, the Raz theorem \eqref{prt} shows that the value of a parallel repetition of a game (non-trivial) decreases exponentially  fast to $0$ when $n$ converges to infinity.  Note that the convergence of the Raz theorem is faster than the convergence of the  density Hales-Jewett number.
 %\Jnote{No, it is not. The theorems are uncomparable. If you take very large
  %nswer alphabet size Raz becomes useless while Verbitsky still works.
   %If you take constant alphabet size and epsilon Raz theorem is much faster.}
@@ -61,53 +63,52 @@ Knowing that the density Hales-Jewett number converges to $0$ when $n$ converges
 
 The theorem \eqref{ver96}  has been proved by \cite{verbitsky1996towards} for two-prover games.  His proof can be extended for  multi-prover games in our case,  that is, for $k$ players with $k\geq 2.$ To establish the truth of  this theorem, Oleg Verbitsky used the proof by contradiction. The general idea is: given a subset $K$ of $Q^n$ for which the provers win   for a given strategy, we must show that $K$ is  the subset  of $Q^n$ without a combinatorial line.
 %\Jnote{Say that $W$ is the subset of $Q^n$ for which the provers win   for a given strategy.} 
-So, we assume that there is a combinatorial line and then we show that there is  contradiction.
+So, we assume that there is a combinatorial line and then we show that there is a  contradiction.
 
 Let us adapt our proof from the proof of  \cite{verbitsky1996towards} to show the theorem \eqref{ver96} for multi-prover games, that is, we extend the proof of Oleg Verbitsky from two-prover games to multi-prover games.
 
 \begin{proof}
-  Let $G$ be a $k-$prover game (non-trivial), that is $G(\phi, Q\subseteq X^1 \times \ldots \times X^k, A^1 \times \ldots \times A^k, \mu)$ where $X^t$ and $A^t$ represent respectively the set of questions and the set of answers of the player $t$, for $1\leq t \leq k.$ The set $Q$ is a subset of the set $X^1 \times \ldots \times X^k$ where elements are chosen uniformly  according to the probability distribution $\mu$.
- % \Jnote{For this proof you have to assume that $\mu$ is uniform.}
+  Let $G$ be a $k-$prover game (non-trivial), that is $G(\phi, Q\subseteq X^1 \times \ldots \times X^k, A^1 \times \ldots \times A^k, \mu)$ where $X^t$ and $A^t$ represent respectively the set of questions and the set of answers of the player $t$, for $1\leq t \leq k.$ The set $Q$ is a subset of the set $X^1 \times \ldots \times X^k$ where elements are chosen uniformly  according to the probability distribution.  In this chapter we will assume that all our games sample questions  from a uniform distribution.
+ % \Jnote{Since they are chosen uniformly, do not mention $\mu$.    Also say in the beginning of this chapter sth like  ``In this chapter we will assume that all our games sample questions  from a uniform distribution.''}
 
- Let $|Q|=r$, with $Q=\{q_1, \ldots, q_r\}$ where $q_j=(q_j^1,\ldots, q_j^k)$, $q_j^t \in X^t$ for $j\leq r.$ The superscript  $t$ highlights the component (player), while the subscript $j$ denotes the number (order) of questions. For instance the question $q_j^t$ is the $j-$th question addressed to the player number $t.$  For the parallel repetition $G^n$, let us consider $F^1, \ldots, F^k$ like the $k$ optimal strategies of the game where each strategy is an $n-$tuple function of strategies, that is $F^t=(f_1^t,\ldots, f_n^t)$. We denote by $K$ the set of success questions using these strategies in $G^n.$ The set $K$ can be expressed as: 
+ Let $|Q|=r$, with $Q=\{q_1, \ldots, q_r\}$ where $q_j=(q_j^1,\ldots, q_j^k)$, $q_j^t \in X^t$ for $j\leq r.$ The superscript  $t$ highlights the component (player), while the subscript $j$ denotes the number (order) of questions. For instance the question $q_j^t$ is the $j$-th question addressed to the player number $t.$  For the parallel repetition $G^n$, let us consider $F^1, \ldots, F^k$ like the $k$ optimal strategies of the game where each strategy is an $n$-tuple function of strategies, that is $F^t=(f_1^t,\ldots, f_n^t)$. We denote by $K$ the set of success questions using these strategies in $G^n.$ The set $K$ can be expressed as: 
  
  $K=\{(s_1, \ldots, s_n) \in Q^n: \bigwedge\limits_{i=1}^n \phi \left[ s_i^1, \ldots, s_i^k, f_i^1(s_1^1, \ldots, s_n^1), \ldots, f_i^k(s_1^k, \ldots, s_n^k) \right]=1 \}.$
  %\Jnote{Before the proof you used $W$, now you use $K$. Be consistent.}
 
-Note that for $1\leq i \leq n$,  $s_i \in Q=\{q_1, \ldots, q_r\}.$ $s_i^t$ denotes an $i-$th question in parallel repetition addressed to the player $t$. This question can be any of the $t-$th component of the set  $q_j.$
+Note that for $1\leq i \leq n$,  $s_i \in Q=\{q_1, \ldots, q_r\}.$ The symbol $s_i^t$ denotes an $i$-th question in parallel repetition addressed to the player $t$. This question can be any of the $t$-th component of the set  $q_j.$
  
 As $K$ is the set of success questions, then the value of the game $G^n$ is: $\val (G^n) = \frac{|K|}{r^n}.$
 %\Jnote{Note that this is the place where you use uniform distribution assumption}.
  
 In this stage, we can not say that $\Delta_{r,n} \geq \frac{|K|}{r^n}$
 %\Jnote{Not equal, it should be $\ge$.}
-because we do not know if the set  $K$ does not contain any combinatorial lines. Let us show that $K$ is a set without a combinatorial line.
+because we do not know if the set  $K$ does not contain any combinatorial line. Let us show that $K$ is a set without a combinatorial line.
 
 Let us suppose by contradiction that there is a combinatorial line $L=\{\bar{b}_1, \ldots, \bar{b}_r \} \subseteq K.$ In this case,  the game  $G$ should be trivial.
 %\Jnote{Game $G$ has nothing to do with the proposition.}
  
 Let $C=C_1\ldots C_n$ be an $r \times n$ matrix whose $r$ rows are $\bar{b}_1, \ldots, \bar{b}_r$ and $n$ columns $C_1\ldots C_n$ each are either $(q_j,q_j,\ldots,q_j)^T$ for some $j\leq r$ or $(q_1,q_2,\ldots,q_r)^T.$ By definition of a combinatorial line, there exists at least one column $C_l=(q_1,q_2,\ldots,q_r)^T.$ We assume that $L$ is ordered so that the intersection of the row $\bar{b}_j$ and the column $C_l$ of the matrix is the element $q_j.$ The element $q_j=(q_j^1,\ldots, q_j^k)$ has $k$ components. So, the  matrix $C$ can be expanded to the $kr \times n$ matrix $D$ by replacing each matrix element $q_j$ with the column $(q_j^1,\ldots, q_j^k)^T.$ There are $kr$ rows of the matrix D and $n$ columns. Thus, let us denote by $\bar{x}_1^1, \ldots, \bar{x}_1^k, \ldots, \bar{x}_r^1, \ldots, \bar{x}_r^k$ the rows of the matrix $D$ where $\bar{x}_j^t \in  (X^t)^n.$
 
-Since $L$ is a combinatorial line, let us use one of the strategy of the matrix element in the column $C_l$ which is in the form $(q_1,q_2,\ldots,q_r)^T.$  Note that $q_j$ is a $k-$tuple. 
+Since $L$ is a combinatorial line, let us use one of the strategy of the matrix element in the column $C_l$ which is in the form $(q_1,q_2,\ldots,q_r)^T.$  Note that $q_j$ is a $k$-tuple. 
 Let us define strategies $f^1,f^2, \ldots, f^k$ in the game $G$ by $f^t(q^t)=f_l^t(\bar{x}_{n_t}^t)$ where $x_{n_t}^t=q^t$ for $1\leq t \leq k.$ 
 %These strategies $f^t$ are well defined, since for distinct such $n_t$ and $n_t'$ it holds $\bar{x}_{n_t}^t= \bar{x}_{n_t'}^t.$
-%\Jnote{I don't understand last sentence.}
 
 For  arbitrary $q_j= (q_j^1,\ldots, q_j^k) \in Q$, we have:
 $$\phi (q^1,\ldots, q^k, f^1(q^1), \ldots, f^k(q^k))= \phi (q_j^1,\ldots, q_j^k, f_l^1(\bar{x}_j^1), \ldots, f_l^k(\bar{x}_j^k))=1$$
 
-As $b_j \in K$, strategies $F^1, \ldots, F^k$ win in  the $l-$th copy of $G$. That is the game $G$ is  trivial. 
-%\Jnote{It \emph{is} trivial.}
+As $\bar{b}_j \in K$,
+%\Jnote{Put bar above $b_j$.}
+strategies $F^1, \ldots, F^k$ win in  the $l$-th copy of $G$. That is the game $G$ is  trivial. 
 
 Hence, there is a contradiction with our assumption that $K$ contains a combinatorial line.
 
 Therefore, $K$ does not contain a combinatorial line and $\Delta_{r,n} \geq  \frac{|K|}{r^n}$.
-%\Jnote{Change $=$ to $\le$.}
 
-It results that $\val (G^n) \leq \Delta_{r,n}.$
+It follows that $\val (G^n) \leq \Delta_{r,n}.$
 \end{proof}
 
-Let $\nu_{Q,n}=\max_G \val (G^n)$ where the maximum is over all non-trivial games $G$ with $|Q|=r$ the size of the set of questions $Q.$ 
+Moreover, let $\nu_{Q,n}=\max_G \val (G^n)$ where the maximum is over all non-trivial games $G$ with $|Q|=r$ the size of the set of questions $Q.$ 
 The Oleg Verbitsky's theorem \eqref{ver96} is applicable to $\nu_{Q,n}$, that is $\nu_{Q,n} \leq \Delta_{r,n}.$
 %\Jnote{What is $r$?}
 Then, $\lim\limits_{n\longrightarrow \infty} \nu_{Q,n}=0.$
@@ -116,7 +117,7 @@ Then, $\lim\limits_{n\longrightarrow \infty} \nu_{Q,n}=0.$
  
 To show that the parallel repetition implies the Hales-Jewett theorem, let us firstly define a set of questions on which will be constructed some multi-prover games.
 
-\begin{defn}Let $k\geq 2$ and $Q_k \subseteq \{0,1\}^k$ a question set of size $k.$ An \textit{k-prover question set} is a question set $Q_k$ where the $t-$th question contains $1$ in the $t-$th position and $0$ in the remaining positions. This question set can be expressed as:
+\begin{defn}Let $k\geq 2$ and $Q_k \subseteq \{0,1\}^k$ a question set of size $k.$ A \textit{k-prover question set} is a question set $Q_k$ where the $t$-th question contains $1$ in the $t$-th position and $0$ in the remaining positions. This question set can be expressed as:
 $$Q_k=\left\lbrace(q^1, \ldots, q^k): |\{t:q^t=1\}|=1\right\rbrace.$$		\end{defn}
  
  An extensional definition of the question set $Q_k$ is: $Q_k=\left\lbrace (1,\ldots,0), (0,1,\ldots,0), \ldots, (0,\ldots,1) \right\rbrace.$ $|Q_k|=k$ and the elements of the question set $Q_k$ are equivalent to the elements of the canonical basis, that is $Q_k= \left\lbrace e_1, e_2, \ldots, e_k\right\rbrace$ where $e_l=(\delta_{1l}, \delta_{2l}, \ldots, \delta_{kl} )$, $\delta_{ml}$ is the Kronecker delta which equals to $1$ if $l=m$ and $0$ whenever $l \neq m$ for $1 \leq l, m \leq  k.$ 
@@ -126,21 +127,23 @@ The following theorem highlights that there exists a game such that the parallel
 %\Jnote{Use \textbackslash cite* to cite.}
  \begin{thm}[\cite*{hkazla2016forbidden}] Let $k\geq 3$, $n\geq 1$ and $S\subseteq [k]^n$ with density $\delta=|S|/k^n$ such that $S$ does not contain a combinatorial line.	
  
-There exists a $k-$prover game $G_S$ with question set $Q_k$ and with answer alphabets,
+There exists a $k$-prover game $G_S$ with question set $Q_k$ and with answer alphabets,
 $A^t = 2^{[n]} \times [n]$ such that:
 \begin{itemize}
 \item $\val (G_S) \leq 1-1/k.$ 	\item $\val (G_S^n) \geq \delta(S).$
 \end{itemize} \label{hka}
  	\end{thm}
 
-Thus, from the theorem \eqref{hka} we can deduce the value of the $n-$fold parallel repetition $G_S^n$ when $S$ is the maximum subset of  $S\subseteq [k]^n$ without a combinatorial line, that is when the density of $S$ is $\Delta_{k,n}= |S|/k^n$ where $k\geq 3$, $n\geq 1$. This result given as theorem \eqref{hka1} is complementary to  Oleg Verbitsky theorem \eqref{ver96}.
+Thus, from the theorem \eqref{hka} we can deduce the value of the $n$-fold parallel repetition $G_S^n$ when $S$ is the maximum subset of  $S\subseteq [k]^n$ without a combinatorial line, that is when the density of $S$ is $\Delta_{k,n}= |S|/k^n$ where $k\geq 3$, $n\geq 1$. This result given as theorem \eqref{hka1} is complementary to  Oleg Verbitsky theorem \eqref{ver96}.
 
  \begin{thm} Let $k\geq 3$, $n\geq 1$ and $S\subseteq [k]^n$ with density $\Delta_{k,n}$. We have: 	
  $\val (G_S^n) \geq \Delta_{k,n}.$  \label{hka1}
  	\end{thm} 
 For this  game $G_S$, according to the theorems \eqref{ver96} and \eqref{hka1}, we conclude that $\val (G_S^n)=\Delta_{k,n}.$
 
-To prove  the theorem \eqref{hka}, we need to construct a game which  satisfies the conditions on theorem \eqref{hka}. So, let us construct a game $G_S$   as  defined by \cite{hkazla2016forbidden} based to the subset $S $ of the set $[k]^n$. 
+To prove  the theorem \eqref{hka}, we need to construct a game which  satisfies the conditions on theorem \eqref{hka}. So, let us construct a game $G_S$   as  defined by \cite*{hkazla2016forbidden}
+%\Jnote{Do not cite with et al., here and elsewhere.}
+based to the subset $S $ of the set $[k]^n$. 
 
 Let $k \geq 3$, $n \geq 1$ and $S \subseteq [k]^n$ with $\delta (S)= \frac{|S|}{k^n}$. The game $G_S$ with question set $Q_k$ which we will define must satisfy the  following requirements: 
 \begin{itemize}
@@ -156,32 +159,73 @@ The answer set of the game $G_S$ is the same for all provers: $A^t=2^{[n]} \time
 \item Let $\bar{s} = (s_1, s_2, \ldots, s_n)$ be the string over $[k]^n$ such that  $s_i = e$ if and only if $i \in  T ^e$ for $1\leq i \leq n.$ Then, $\bar{s} \in S.$
 \end{itemize}
 
-From the definition of the game $G_S$ we can deduce the following propositions given and proved by \cite{hkazla2016forbidden}. So, the proofs of these propositions are adapted from this latter paper.  
-\begin{pro} If $S$ has a combinatorial line, then the game $G_S$ is trivial	. \label{pr1}	\end{pro}
+From the definition of the game $G_S$ we can deduce the following propositions given and proved by \cite*{hkazla2016forbidden}. So, the proofs of the two  propositions are adapted from this latter paper.  
+\begin{pro} If $S$ has a combinatorial line, then the game $G_S$ is trivial. \label{pr1}	\end{pro}
 %\Jnote{You have to define $G_S$ before stating the proposition.}
 \begin{proof}
-We assume that $S \subseteq [k]^n$ has a combinatorial line. 
-Let $\bar{b}=w(x)=(b_1,\ldots, b_n)$ an $x-$string for which the  combinatorial line is $L(\bar{b})=\{w(x;i): i \in [k]\} \subseteq S$ and let fix a position $z \in [n]$ with $b_z=x$. Note that $b_1,\ldots, b_n \in [k] \cup \{x\}$. For $p \in [k] \cup \{x\}$, let us define a set $B(p)$ as: $B(p)=\{j: b_j=p\}$. The set $B(p)$ is the set of coordinates $j$ in which $b_j$ equals  to $p.$ Now, let us define the  strategy for which prover $e$ will use to answer questions:
-$$ f^e(q^e)=\left\lbrace \begin{array}{ll} (B(e),z) & \text{if } q^e=0, \\ (B(e) \cup B(x), z) & \text{if } q^e=1.\end{array} \right. $$
+We assume that $S \subseteq [k]^n$ has a combinatorial line and we show that the game $G_S$ is trivial, namely we will show that if the set $S$ contains a combinatorial line, then there exists strategy such that 
+%\Jnote{there exists strategy}
+all the four conditions above are satisfied. 
 
-Thus, the verifier checks the four conditions. The four conditions are all satisfied. In effect, the  first condition will be  always accepted by the verifier   because the sets $B(1), \ldots, B(k), B(x)$ from a partition. All $z^e$ are equal, that is $z^1=\ldots=z^k$, then the second condition is satisfied. Because the prover $t$ responds with  $(B(t) \cup B(x), z)$ and $z \in B(x)$, then $z \in T^t$: the third condition is satisfied. The fourth condition is also satisfied because $\bar{s}=\bar{b}$ and $\bar{s}=\bar{b} =w(t) \in L(\bar{b}) \subseteq S.$
+
+Let  $L=\{w(x;i): i \in [k]\} \subseteq S $ be the combinatorial line generated by the $x$-string $w(x)=(a_1,\ldots, a_n)$ where $a_j \in [k]  \cup \{x\}$ for $j \in [n]$ and at least one $a_j=x.$ Let us call $z$ a fixed position (coordinate) in $w(x)$ such that $a_z=x$ with $z \in [n].$ For  $p \in [k] \cup \{x\}$, let us look for coordinates $j$ in  $w(x)=(a_1,\ldots, a_n)$ such that $a_j=p.$  Let $A_p$ be the set which contains all such coordinates, that is $A_p=\{j: a_j=p\}.$ Note that, the set $A_x$ contains the coordinate $z$ and the set $A_p$ can be empty.  Sets $A_p$  and $A_x$ form a  partition of $[n].$ %$\sum\limits_{p=1}^{k+1} |A_p|=n.$
+%\Jnote{Rephrase to say $A_p$ sets form partition.}
+
+For the game $G_S$, we recall that the answers of provers are in the form $(T^e, z^e)$ for $e \in [k].$  Let us define the  strategy for which prover $e$ will use to answer according to the two kinds of questions $q^e$ as follows: \begin{itemize}
+\item If   $q^e=0$, that is the question is addressed to a normal prover, then the prover answers $(A_e,z).$ Namely, the form of the answer of the prover $e$ is a couple in which the first component  is the set of  all coordinates of his number $e$ in the pattern $w(x)$ and the second component is the fixed coordinate $z$ such that $a_z=x.$
+\item If   $q^e=1$, that is the question is addressed to the special prover, then the prover answers $(A_e \cup A_x,z).$ Namely, in this case  the first component of the answer is the set of  all coordinates of his number $e$ and the wildcard $x$ in the pattern $w(x)$ and the second component is the fixed coordinate $z$ such that $a_z=x.$
+\end{itemize}
+According to this strategy, all the four conditions are always  satisfied. In effect,  \begin{itemize}
+\item The sets $A_1, \ldots, A_k, A_x$ from a partition of $[n]$. Hence,  the  first condition is satisfied.
+\item All the second component of each answer of the provers are equal to $z$, that is $z^e=z.$ Hence,  the second condition is satisfied.
+\item $a_z=x$ and the fixed position $z \in A_x.$ The answer of the special prover $t$ is $(A_e \cup A_x,z)$, then $z \in T^t=A_t \cup A_x.$ Hence, the third condition is satisfied.
+\item The string $\bar{s}=w(x;t)=(a_1,\ldots, a_n)$ where the wildcard $x$ is replaced by $t$. Then, $\bar{s} \in L \subseteq S.$ Hence, the fourth condition is satisfied.
+\end{itemize}
 \end{proof}
 
 \begin{pro} If the game $G_S$ is trivial, then $S$ has a combinatorial line.	 \label{pr2}	\end{pro}
 
-\begin{proof}
-We assume that the game $G_S$ is trivial. As the game $G$ is trivial, there is a $k$-tuple of strategies for which the provers  always win.  Let $f^1, \ldots, f^k$ be this $k$-tuple of  strategies. The form of the answer of the prover $e$ to the question $q \in \{0,1\}$ is similar as in the definition of the game $G_S$ and is defined as: $(T_q^e, z_q^e)=f^e(q)$ where $e \in [k]$.  As the game is trivial we have $z_0^1=z_0^2= \ldots=z_0^k=z_1^1=z_1^2= \ldots=z_1^k=z$. 
-For any two $e\neq e'$, $T_0^e \cap T_0^{e'}= \emptyset$. If $t \neq e$ and $t\neq e'$, the verifier will reject.
-$z \notin T_0^1 \cup \ldots \cup T_0^k$, because if $z \in T_0^e$, the verifier rejects if $t \neq e$. Therefore, the word $\bar{b}=w(x)$ (combinatorial line)  is defined as: $$b_i=\left\lbrace \begin{array}{ll} e & \text{if } i \in T_0^e, \ \text{for }e \in [k], \\ x & \text{ otherwise}.\end{array} \right.$$
-For a fix $t \in [k]$, let us show that $w(t) \in S.$ By picking the special prover $t$, the verifier checks that the sets $T^e$ form a partition. In this case the answer of the prover $t$ is $T_1^t=[n] \setminus \left(T_0^1 \cup \ldots \cup T_0^{t-1} \cup T_0^{t+1} \cup \ldots T_0^k	 \right) .$ For every $t$, $w(t) \in S.$ Hence, $L(\bar{b}) \subseteq S.$
-\end{proof}
+We have omitted the proof of this proposition. This proof can be found in \cite*{hkazla2016forbidden}.
+%\begin{proof}
+%We assume that the game $G_S$ is trivial and we show that the set $S$ has a combinatorial line. As the game $G$ is trivial, there is a $k$-tuple of strategies for which the provers  always win.  Let $f^1, \ldots, f^k$ be this $k$-tuple of  strategies. Here, there are two kinds of questions: $q\in \{0,1\}.$ The form of the answer for the game $G_S$ is defined previously as a couple $(T^e, z^e)$ where $e\in [k].$ Thus, according to the strategy $f^e$ the answer to the question $q$ is: $f^e(q)=(T_q^e, z^e_q).$ Note that among all the $k$ provers, there is a special prover called $t$ for which the question $q=1.$
+%
+%The strategy we have defined makes the game $G_S$ trivial, that is all the four conditions have been accepted by the verifier. This implies:
+%\begin{itemize}
+%\item Under the first condition that the sets $T^e_q$ where the special prover has the question $q=1$ and other provers have the question $q=0$ form a partition of the set $[n].$ 
+%
+%Namely, $[n]=T_0^1 \cup \ldots \cup T_0^{t-1}\cup T_1^t  \cup T_0^{t+1} \ldots \cup T_0^k.$
+%\item  Under the second condition, all $z^e_q$ are equal. That is, for $z_0^e =z_1^t=z$ where $z_0^t$ for $t \in [k]$ is the second component of the answer for the special prover and $z_0^e$ is for other provers. 
+%\item As the sets $T_0^e$ form a partition, that is $T_0^e \cap T_0^{e'} =\emptyset $   for $e \neq e'$  and $T_0^e \cap T_1^{t}= \emptyset$ for $t \neq e.$ Hence, under the third condition, $z \in T_1^t$  and $z \notin T_0^1 \cup \ldots \cup T_0^{t-1} \cup T_0^{t+1} \ldots \cup T_0^k$.
+%\item Under the fourth condition the string $\bar{s}= (a_1,\ldots, a_n)$ belongs to $S$ where $a_j=e$ if and only if $j \in T_q^e.$  Thus, let us show that $\bar{s}$ has a combinatorial pattern.
+%As the set $[n]$ is partitioned to $k$ sets $T_q^e$ where one set is for the special prover $t$, then we expand the element $a_j$ as:
+%\begin{itemize}
+%\item If $j \in T_1^t$, then $a_j=x$. That is, if the coordinate $j$ belongs to the set of the special prover $t$, then the element $a_j$ equals to the wildcard $x.$
+%\item If $j \in T_0^e$, then $a_j=e$ for $e \in [k].$ 
+%\end{itemize}
+%Thus, the string $\bar{s}= (a_1,\ldots, a_n)$ forms a combinatorial pattern. 
+%\end{itemize}
+%Hence, $w(x)=\bar{s}=(a_1,\ldots, a_n)$ is an $x$-string. Then, the set $L=\{w(x;t): t\in [n]\} \subseteq S $ forms a combinatorial line.
+%
+%Therefore, the set $S$ contains a combinatorial line.
+%\end{proof}
 
 \begin{pro}	 The value of $G_S^n$ is at least $\delta(S)$	  \label{pr3} \end{pro}
 
 \begin{proof}
-For $1\leq e \leq k$, let $q^e$ be the question. Let $n \geq 1$ and $G^n$ be the $n$-fold parallel repetition. Note that question $q^e$ in the game $G^n_S$ is an $n$-tuple defined as: $q^e=(q_1^e, q_2^e, \ldots, q_n^e)$ where for a fixed $i \in \mathbb{N}$ there is necessary  one special $t$ for which $q_i^t=1$ and other $q_i^e=0$.  In other words, $(q_i^t)$  forms a  $k \times n$ matrix where in each column there is at most one element equals to $1.$ But, for a fixed $t$ there is at least one special $i$ for which $q_i^t=1$. In other words, in a line of the $k \times n$ matrix there is at least one one, that is the cardinality of the set $\{i \in [n]: q_i^e=1\}$ is at least one.
+  For $1\leq e \leq k$, let $q^e$ be the question addressed to the player $e$. Let $n \geq 1$ and $G^n$ be the $n$-fold parallel repetition. Note that question $q^e$ in the game $G^n_S$ is an $n$-tuple defined as: $q^e=(q_1^e, q_2^e, \ldots, q_n^e)$ where for a fixed $i \in \mathbb{N}$ there is necessary  one special $t$ for which $q_i^t=1$ and other $q_i^e=0$.  In other words, $(q_i^t)$  forms a  $k \times n$ matrix where in each column there is exactly 
+%  \Jnote{s/at most/exactly}
+  one element equals to $1.$ But, for a fixed $t$ there is at least one special $i$ for which $q_i^t=1$. 
+% In other words, in a line of the $k \times n$ matrix there is at least one one, that is for $e$ fixed the cardinality of the set $\{i \in [n]: q_i^e=1\}$ is at least one.
+%  \Jnote{No, this is false.}
 
-Let  $T^e=\{i \in [n]: q_i^e=1\}$. in coordinate (column) $i$ the prover $e$ responds with $(T^e,i).$ For $1\leq e \leq k$ and $1\leq i  \leq k$, let  $(a_i=t)$ where $q_i^t=1$, that is $a_1, \ldots, a_n$ form a sequence of special provers.  Then for a fixed $i$, sets $T^1, \ldots, T^k$ form a partition of $[n].$ Equally, $z_i^1=\ldots=z_i^k.$ Also, $i \in T^{a_i}$. Finally, $\bar{s}=(a_1, \ldots, a_n) \in S.$ Let us compute the value of $G_S^n$. The string $a_i$ can take $k$ different values. So the probability for $a_i$ to be a string of $\bar{s}$ is $\frac{1}{k^n}$. Now, the probability of $\bar{s}$ to be in $S$ is:  $\Pr (\bar{s} \in S)=  \frac{|S|}{k^n}=\delta(S).$ Hence, $\val (G_S^n) \geq \delta (S).$
+  Let  $T^e=\{i \in [n]: q_i^e=1\}$. In the coordinate (column) $i$, the prover $e$ responds with $(T^e,i).$ For $1\leq e \leq k$ and $1\leq i  \leq n$, let  $(a_i=t)$ where $q_i^t=1$, that is $a_1, \ldots, a_n$ form a sequence of special provers.  Then for a fixed $i$, the sets $T^1, \ldots, T^k$ form a partition of $[n].$ Equally, $z_i^1=\ldots=z_i^k=z.$
+ % \Jnote{$ = ...?$}
+  Also, $i \in T^{a_i}$.
+  Finally, as in the $k \times n$ matrix $(q_i^t)$ in each column there is exactly one element equals to $1$, then  $\bar{s}=(a_1, \ldots, a_n) \in S.$
+  %\Jnote{Last condition you have to check, it is not always true.}
+  Let us compute the value of $G_S^n$. The element 
+ % \Jnote{s/string/element}
+  $a_i$ can take $k$ different values. So the probability for $a_i$ to be an element of $\bar{s}$ is $\frac{1}{k^n}$. Now, the probability of $\bar{s}$ to be in $S$ is:  $\Pr (\bar{s} \in S)=  \frac{|S|}{k^n}=\delta(S).$ Hence, $\val (G_S^n) \geq \delta (S).$
 
 \end{proof}
 
