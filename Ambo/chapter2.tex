@@ -1,18 +1,18 @@
 \chapter{On the Hales-Jewett theorem}
 
-In this part, some notions about the Hales-Jewett theorem are presented. Firstly, we start with some basic notions on arithmetic progression, which are important for understanding the next point. After, we introduce some elementary notions about  Van der Waerden’s theorem and  Szemerédi's theorem. We highlight that  Van der Waerden's theorem is a particular case of Szemerédi's theorem. Ultimately, we present the two forms of the Hales-Jewett theorem and link these one to the two first theorems.
+In this chapter, some notions about the Hales-Jewett theorem are presented. Firstly, we start with some basic notions on arithmetic progression, which are important for understanding the next point. After, we introduce some elementary notions about the Van der Waerden’s theorem and the Szemerédi's theorem. We highlight that  the Van der Waerden's theorem is a particular case of the  Szemerédi's theorem. Ultimately, we present the two forms of the Hales-Jewett theorem and link these one to the two first theorems.
 
 \section{Arithmetic progression}
 
 
 \begin{defn}
-Let $a_1, a_2, \ldots, a_n, \ldots$ be a sequence of numbers.  
+Let $a_1, a_2, \ldots, a_n$ be a sequence of numbers.  
 
 This sequence of numbers forms an \textbf{arithmetic sequence} if every term of this sequence is obtained by adding a constant to the previous term.
 \end{defn}
 The constant is simply the difference between two consecutive terms.
 
-If $a_1$ and $a_n$ represent the first and the $n-$th term of a sequence, and $d$ the constant, then the general term $a_n$ of this sequence is expressed as:
+If $a_1$ and $a_n$ represent the first and the $n$-th term of a sequence, and $d$ the constant, then the general term $a_n$ of this sequence is expressed as:
 
 $$a_n=a_1+(n-1)d.$$
 
@@ -75,14 +75,13 @@ The Van der Waerden's theorem can also be formulated using partition \citep{dran
 For every $k, r \in \mathbb{Z}^+$ , there exists $N_0 \in \mathbb{Z}^+$ such that for every $N \geq N_0$ and for every partition $A_1, \ldots , A_r$ of $[N]$, there is $i$, $1 \leq i \leq r$, such that the block $A_i$ contains an arithmetic progression of  length $k.$   \label{vd2}
 \end{thm}
 
-Note that for this version a block in a partition can be empty. 
+Note that for this version a block in a partition can be empty. Thus, in many cases in this essay a block can be empty.
 
-The existence of the number $N_0$ for which any $r$-colouring of the integer $\{1, \ldots, N_0 \}$ is certain to have a monochromatic subset of cardinality $k$ of which elements form an arithmetic progression was demonstrated constructively in 1927 by Bartel Leendert Van der Waerden  \citep{van1927beweis}.
-
+The existence of the number $N_0$ for which any $r$-colouring of the integer $\{1, \ldots, N_0 \}$ is certain to have a monochromatic subset of cardinality $k$ of which elements form an arithmetic progression was demonstrated constructively in 1927 by Bartel Leendert Van der Waerden  \citep{van1927beweis}. 
 \cite{graham1974short} gave \emph{another} proof of this theorem. The book entitled "\textit{Purely Combinatorial Proofs of Van der Waerden-Type Theorem}" written by \cite{gasarch2010purely} condenses  the proof of Van der Waerden theorem.
 %\Jnote{Be careful with capitalization: it is   ``Van der Waerden's theorem''.}
 
-In this theorem, to find the number $N$ even showing that $N_0$ is not trivial are difficult. The least such number $N_0$ is called \textit{Van der Waerden number} denoted as $W(k,r).$ In the rest of this chapter, we will use $W(k,r)$ or simply $W$ to denote the least Van der Waerden number instead of $N_0.$
+In this theorem, to find the number $N$ even showing that $N$ is not trivial are difficult. The least such number $N_0$ is called \textit{Van der Waerden number} denoted as $W(k,r).$ In the rest of this chapter, we will use $W(k,r)$ or simply $W$ to denote the least Van der Waerden number instead of $N_0.$
 
 The general expression of $W(k,r)$ is not known, but for some $k$ and $r$ there are exact values known or there are some approximations of the  lower or upper bound of $W(k,r)$  \citep{dransfield2004}.
 
@@ -93,12 +92,12 @@ $W(1,r), \ W(k,1)$ and $W(2,r)$ are known as \textit{trivial} Van der Waerden nu
 \item $W(2,r)=r+1$: to obtain a monochromatic arithmetic progression of length $2$ by $r$-colouring a set, we need a set of at least $r+1$ elements.
 \end{itemize}
 
-For instance, let us find the Van der Waerden number $W(3,2)$, that is an number $W(3,2)$ such that every $2-$colouring  of the set $[W(3,2)]$ contains a monochromatic arithmetic progression of length $3.$
+For instance, let us find the Van der Waerden number $W(3,2)$, that is an number $W(3,2)$ such that every $2$-colouring  of the set $[W(3,2)]$ contains a monochromatic arithmetic progression of length $3.$
 %\Jnote{Rephrase: ...that is $N_0$ such that every $2$-coloring of $[N_0]$   contains a monochromatic...}
 
-The value of $W(3,2)$ is greater than $8$ because for any $2-$colouring of $[n],\ n\in \{3,4,5,6,7,8\}$, we can find a $2-$colouring which does not contain a monochromatic arithmetic progression of length 3. For instance, the set  $\{1,2,\ldots, 8\}$ does not contain a monochromatic  arithmetic progression of length $3$ by $2-$colouring the set  like in the table \eqref{van23}.
+The value of $W(3,2)$ is greater than $8$ because for any $2$-colouring of $[n],\ n\in \{3,4,5,6,7,8\}$, we can find a $2$-colouring which does not contain a monochromatic arithmetic progression of length 3. For instance, the set  $\{1,2,\ldots, 8\}$ does not contain a monochromatic  arithmetic progression of length $3$ by $2$-colouring the set  like in the table \eqref{van23}.
 
-So, when $W(3,2)=9$ we always find a monochromatic arithmetic progression of length 3 for any $2-$colouring of $[9].$ The table \eqref{van23} shows one of the possibilities of colouring $\{1,2,3,4,5,6,7,8,9\}.$  If the ninth number is {\color{blue} blue}, then{ \color{blue}3, 6, 9}  form an arithmetic progression. If the ninth number is {\color{red} red}, then {\color{red}1, 5, 9} form an arithmetic progression. Therefore, by adding a ninth number and colouring it using any of the two colors, we always create  a monochromatic arithmetic progression of length 3.
+So, when $W(3,2)=9$ we always find a monochromatic arithmetic progression of length 3 for any $2$-colouring of the set  $\{1,2,3,4,5,6,7,8,9\}.$ The table \eqref{van23} shows one of the possibilities of colouring of the  $\{1,2,3,4,5,6,7,8,9\}.$  If the ninth number is {\color{blue} blue}, then{ \color{blue}3, 6, 9}  form an arithmetic progression. If the ninth number is {\color{red} red}, then {\color{red}1, 5, 9} form an arithmetic progression. Therefore, by adding a ninth number and colouring it using any of the two colors, we always create  a monochromatic arithmetic progression of length 3.
 
 \begin{table}[h]
 \begin{center}
@@ -198,7 +197,7 @@ The Szemerédi's theorem is merely another formulation of  the Van der Waerden's
 
 Let us consider $A$ a nonempty subset of the set $[N]$. The density of $A$ inside $[N]$ is a positive real number $\delta=\frac{|A|}{N}$. It is clear that $0< \delta \leq 1.$ 
 
-The  theorem \eqref{sz1} is the famous Szemerédi’s theorem. Famous because the various proofs of the  Szemerédi's theorem connect disparate fields of mathematics (combinatorics, harmonic analysis, ergodic theory,  number theory, \ldots). \cite{arana2015depth} analysed the depth of th  Szemerédi's theorem by assembling the thoughts of some mathematicians (like Erdos and Terence Tao) about the major accomplishment of this theorem. According to \cite{polymath2012new}, the Szemerédi's theorem is formulated as:
+The  theorem \eqref{sz1} is the famous Szemerédi’s theorem. Famous because the various proofs of the  Szemerédi's theorem connect disparate fields of mathematics (combinatorics, harmonic analysis, ergodic theory,  number theory, \ldots). \cite{arana2015depth} analysed the depth of the  Szemerédi's theorem by assembling the thoughts of some mathematicians (like Erdos and Terence Tao) about the major accomplishment of this theorem. According to \cite{polymath2012new}, the Szemerédi's theorem is formulated as:
 
 \begin{thm}[Szemerédi's theorem]	For every  $k \in \mathbb{Z}^+$ and every $0< \delta \leq  1$ there exists an integer $N_0(k,\delta) \geq 1$ such that for every $N \geq N_0$ and every subset $A \subseteq [N]$ of size $|A|\geq \delta N$ contains an arithmetic progression of length $k.$  \label{sz1} \end{thm}
 %\Jnote{Don't cite Polymath above. This is still not fixed. You can say something like ``according to polymath2012new''.}
@@ -211,7 +210,7 @@ $\lim \sup\limits_{N\rightarrow \infty} \frac{|A \cap[-N,N]|}{|[-N,N]|} > 0.$
 %\Jnote{Put the formula on separate line.}
 Then, for any $k \geq  3$, $A$ contains infinitely many arithmetic progressions of length $k.$
 
-As conjecture, the Szemerédi's theorem was formulated by \cite{JLMS}. There are several proofs of this theorem. The cases $k=1$ and $k=2$ are trivial. \cite{roth1953certain, roth1970irregularities} proved the case $k=3.$ The case $k=4$ was proved by \cite{szemeredi1969sets} and he gave the general case \citep{szemeredi1975sets}.
+As conjecture, the Szemerédi's theorem was formulated by \cite{JLMS}. There are several proofs of this theorem. The cases $k=1$ and $k=2$ are easy to prove. \cite{roth1953certain, roth1970irregularities} proved the case $k=3.$ The case $k=4$ was proved by \cite{szemeredi1969sets} and he gave the general case \citep{szemeredi1975sets}.
 
 Some of proofs necessitated the use of other theories external to combinatorics. Thus, the ergodic theory (\textit{theory related to dynamical system with invariant measures and chaos theory})  has been used to prove this theorem by \cite*{furstenberg1977ergodic, furstenberg1982ergodic}.
 %\Jnote{Use \textbackslash cite* to avoid et al.}
@@ -226,7 +225,7 @@ Some of proofs necessitated the use of other theories external to combinatorics.
  % \Jnote{Better first sentence: Assume Szemeredi's theorem is true.}
   %\Jnote{s/From VDW theorem/To obtain VDW theorem}
 
-   Let $A_1,A_2, \ldots, A_r$ be a partition of the set $\{1, \ldots, N\}$ in $r$ blocks, that is $ \{1, \ldots, N\} =A_1 \cup A_2 \cup \ldots \cup A_r$. Sometimes a block can be empty for this $r$-colouring. For instance, it occurs when $r >N$, that is the number of colors is bigger than the number of elements of the set to colour. When $r <N$, it is obvious that there exist two blocks with the same colour. Note that the color of the block $A_i$ is indicated  by the number $i$  for $1\leq i \leq r.$ 
+   Let $A_1,A_2, \ldots, A_r$ be a partition of the set $\{1, \ldots, N\}$ in $r$ blocks, that is $ \{1, \ldots, N\} =A_1 \cup A_2 \cup \ldots \cup A_r$. This block can be empty for the $r$-colouring. For instance, it occurs when $r >N$, that is the number of colors is bigger than the number of elements of the set to colour. When $r <N$, it is obvious that there exist two blocks with the same colour. Note that the color of the block $A_i$ is indicated  by the number $i$  for $1\leq i \leq r.$ 
 
 Let $A_{max}$ be the set having the largest number of elements. For example, by partitioning $\{1, \ldots, N\}$ into $r$ equal parts, the cardinality of the largest set is: $A_{max}=A_i=\frac{N}{r}$.
 %  \Jnote{Make clear that last sentence is just an example.}
@@ -264,10 +263,8 @@ As for  Van der Waerden's numbers,  the general expression of Szemerédi's numbe
 
 \begin{defn} Let $N=N(k, \delta)$ be the Szemerédi's number. Let $V$ be the largest subset of $\{1,2,\ldots, N \}$ without an arithmetic progression of length $k.$ We denote by $r_{k,N}$ the size of the set $V$, that is  $r_{k,N}= |V|.$
 
-The \textit{density of $V$} denoted by $\delta_{k,N}$ is defined as: $\delta_{k,N}=\frac{|V|}{N}.$ We call  $\delta_{k,N}$ the \textit{density Szemerédi's number}. Sometimes, the number $r_{k,N}= |V|$ is also called \textit{density Szemerédi's number}.
-
+The \textit{density of $V$} denoted by $\delta_{k,N}$ is defined as: $\delta_{k,N}=\frac{|V|}{N}.$ We call  $\delta_{k,N}$ the \textit{density Szemerédi's number}. Sometimes, the number $r_{k,N}= |V|$ is also called \textit{density Szemerédi's number} if there is no confusion.
 \end{defn}
-
 
 In the following expressions for the estimation of lower and upper bounds of $\delta_{k,N}$, the logarithms used are binary.
 \begin{description}
@@ -335,7 +332,7 @@ for some absolute constant $c > 0.$
 \section{Hales-Jewett theorem and its density version.} \label{hjt}
 %\Jnote{Make section title: Hales-Jewett theorem and its density version.}
 
-Before announcing the Hales-Jewett theorem and its density version, let us introduce and define notions about combinatorial lines.  Combinatorial line is for Hales-Jewett theorem what arithmetic progression is for Van der Waerden's theorem, that is Hales-Jewett theorem is based on structures called combinatorial lines.
+Before announcing the Hales-Jewett theorem and its density version, let us introduce and define notions about combinatorial line.  Combinatorial line is for Hales-Jewett theorem what arithmetic progression is for Van der Waerden's theorem, that is Hales-Jewett theorem is based on structures called combinatorial lines.
 
 Let $k$ and $n$  be two positive integers. 
 
@@ -378,13 +375,13 @@ $\left(\begin{array}{cccccccc}
 
 %\Jnote{This is not consistent with your previous notation.}
 
-Sets which do not contain any combinatorial lines are called  \textit{line-free}.  So, according to \cite{polymath2012new}, the Hales-Jewett is stated as:
+Sets which do not contain any combinatorial line are called  \textit{line-free}.  So, according to \cite{polymath2012new}, the Hales-Jewett is stated as:
 
 \begin{thm}[Hales-Jewett theorem]   For every pair of positive integers $k$ and $r$ there exists a positive number $HJ(k, r)$ such that for every $n \geq HJ(k, r)$ and every $r$-colouring of the set $[k]^n$ there is a
 monochromatic combinatorial line.   \label{hj1} 	\end{thm}
 
 There are several proofs of the Hales-Jewett theorem. The original proof has been given by \cite{hales1987regularity}. \cite{shelah1988primitive} proved a primitive recursive\footnote{Primitive recursion is a procedure that defines the value of a function at an argument $n$ by using its value at the previous argument $n-1$.  In a computer, a primitive recursive bound can be implemented only using do-loops (see https://plato.stanford.edu/entries/recursive-functions/$\#1.3$).} bound for the Hales-Jewett number using simple induction.
-\cite{nilli1990shelah} presented a compact form of Shelah’s Proof of the Hales-Jewett Theorem.  This condensed form states that for every $k,r \geq 1$, $HJ(k,r) \leq \frac{1}{kr} h_4 (k+m+2)$ with $h_i$ is a function defined as: $h_1(n)=2n$; for $i>1$, $h_i=h_{i-1}(h_{i-1}(\ldots h_{i-1}(1))) $ where $h_{i-1}$  is taken  $n$ times.
+\cite{nilli1990shelah} presented a compact form of Shelah’s Proof of the Hales-Jewett Theorem.  This condensed form states that for every $k,r \geq 1$, $HJ(k,r) \leq \frac{1}{kr} h_4 (k+m+2)$ with $h_i$  a function defined as: $h_1(n)=2n$; for $i>1$, $h_i=h_{i-1}(h_{i-1}(\ldots h_{i-1}(1))) $ where $h_{i-1}$  is taken  $n$ times.
 %\Jnote{s/$h_i$/$h_i(n)$. Also put this formula as separate equation.}
 
  \cite{matet2007shelah} gave a variant of Shelah’s proof of the Hales–Jewett theorem by replacing Shelah’s pigeonhole lemma by an appeal to the Ramsey’s theorem.
@@ -397,7 +394,7 @@ Let denote by $DHJ(k, \delta)$ the density Hales-Jewett number. The density vers
 
 The proof of the density version of the Hales-Jewett theorem has been demonstrated by \cite{furstenberg1991density} using ergodic methods\footnote{Ergodic theory studies dynamical systems with an invariant measure and related problems. Ergodic theory can be described as the statistical and qualitative behavior of measurable group and semigroup actions on measure spaces.}. \cite{polymath2012new} gave an elementary non-ergodic proof of the density version of the Hales-Jewett theorem by giving a quantitative bound on how large $n$ needs to be and qualified this theorem as one of the fundamental results of Ramsey theory. A simplified version of \cite{polymath2012new} has been given by \cite{dodos2013simple} using  a purely combinatorial proof of the density Hales–Jewett Theorem.
 
-There are four important theorems we have talked about: the Van der Waerden's theorem \eqref{vd1}, the Szemerédi's theorem \eqref{sz1}, the  Hales-Jewett theorem \eqref{hj1} and the density Hales-Jewett theorem \eqref{hj2}. 
+Furthermore, there are four important theorems we have talked about: the Van der Waerden's theorem \eqref{vd1}, the Szemerédi's theorem \eqref{sz1}, the  Hales-Jewett theorem \eqref{hj1} and the density Hales-Jewett theorem \eqref{hj2}. 
 In \eqref{vsz} we have shown that the Szemeredi's theorem implies the Van der Waerden's theorem. It is reasonable to show these three implications: the density version of the Hales-Jewett theorem implies the Hales-Jewett theorem, the Hales-Jewett theorem implies the  Van der Waerden's theorem, and the density version of the Hales-Jewett theorem implies the Szemerédi's theorem.
 
 \subsection{Density version of the Hales-Jewett theorem implies the Hales-Jewett theorem}
@@ -406,7 +403,7 @@ To show that this density version of Hales-Jewett theorem implies the Hales-Jewe
 
 \subsection{Hales-Jewett theorem implies Van der Waerden's theorem}
 
-To show that the Hales-Jewett theorem implies Van der Waerden's theorem, we need only to show that combinatorial line corresponds to the arithmetic progression.
+To show that the Hales-Jewett theorem implies the Van der Waerden's theorem, we need only to show that combinatorial line corresponds to the arithmetic progression.
 %\Jnote{``combinatorial lines correspond to arithmetic progressions''.}
 %\Jnote{I'm not sure what you are trying to say here.}
 
@@ -414,7 +411,7 @@ Let us  assume that the Hales-Jewett theorem is true and show that the combinato
 
 We have defined $[k]$ as the set $\{1,2,\ldots, k\}.$ Instead to start by $1$, let us start by $0.$ In this part, $[k]$ expresses the set $\{0,1,\ldots, k-1\}.$ It is obvious that $[k]=\mathbb{Z}/k\mathbb{Z}.$
 
-Let $n$ be the positive number of the Hales-Jewett theorem, that is $n\geq HJ(k,r)$, then the set $[k]^n=(\mathbb{Z}/k\mathbb{Z})^n=\{(y_0,y_1, \ldots, y_{n-1}): \ y_i \in [k] \}$ has $k^n$ elements. Similarly, $[k^n]=\{0,1,\ldots, k^n-1\}$ has also $k^n$ elements. Note that the set $[k^n]$ contains natural number.
+Let $n$ be the positive number of the Hales-Jewett theorem, that is $n\geq HJ(k,r)$, then the set $[k]^n=(\mathbb{Z}/k\mathbb{Z})^n=\{(y_0,y_1, \ldots, y_{n-1}): \ y_i \in [k] \}$ has $k^n$ elements. Similarly, the set $[k^n]=\{0,1,\ldots, k^n-1\}$ has also $k^n$ elements. Note that the set $[k^n]$ contains natural number.
 While, elements of the set $[k]^n$ can be interpreted as 
 the digits  in base$-k$ number system of the numbers $\{0,1,\ldots,k^n-1\}.$
 
@@ -498,6 +495,8 @@ $\{112, 113, 121, 122, 131, 133, 211, 212, 221, 223, 232, 233, 311, 313, 322, 32
 Knowing that $d_{3,0}=1$, $d_{3,1}=2$,  \cite{polymath2010density} gave an upper bound of $d_{3,n}$ for $n= 0,\ldots,6$: $$d_{3,n+1} \leq 3 d_{3,n}$$
 
 and for large $n$ and for $k\geq 3$, $d_{k,n} \geq k^n \exp \left(-O(\log n)^{1/l}\right)$ where $\ell$ is the largest integer such that $2k > 2^{\ell}$. This lower bound can simply be written as: $d_{k,n} \geq k^n  \exp \left(-O(\log n)^{1/\lceil \log_2 k \rceil}\right)$ where $\lceil x \rceil$=ceilling$(x)$ is the least integer greater than or equal to $x.$ 
+
+This density Hales-Jewett number will be helpful to establish the connection between parallel repetition and the Hales-Jewett theorem.The next chapter deals with the parallel repetition of multi-prover games.
 %
 %For $k=2$, the density Hales-Jewett number is: $\Delta_{2,n}=\Theta(1/\sqrt{n})$ known by Sperner's theorem.
 
