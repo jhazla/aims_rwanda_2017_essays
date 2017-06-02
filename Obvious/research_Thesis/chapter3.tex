@@ -1,4 +1,4 @@
-\chapter{Background}
+,\chapter{Background}
 
 \section{Definitions}
 \subsection{Epidemic and Pandemic }
@@ -18,7 +18,7 @@ The population can be partitioned into different disease states and the movement
 
 The SIS model, are built to model disease transmission in the case were the population has only two compartments susceptible and infected. The number of people susceptible  at time $t$ is denoted by $S(t)$ and that of infected people is denoted by $I(t)$. The SIS model assumes that there is no immunity after recovery. It is used to model infections were once a person recovers from the infection, they become susceptible again. An example of such an infections disease is flu.
 
-If people have immunity after an infection another compartment $R(t)$, for the number revered people people who recover is added to the SI model. This leads to Susceptible, Infected and Recovered SIR models. For example a person who recovers from Chickenpox develops immunity against it. 
+If people have immunity after an infection another compartment $R(t)$, for the number revered people people who recover is added to the SI model. This leads to susceptible, infected and recovered (SIR) models. For example a person who recovers from Chickenpox develops immunity against it. 
 
 In the case where there is a latent period between when one gets infected and when they become infectious. An intermediate compartment for the number of people who are exposed $E(t)$ is added to the SIR model to make a susceptible, exposed infected and recovered (SEIR) model. 
 
@@ -31,7 +31,7 @@ The independent variable in the compartmental models is the time $t$. The rates 
 \end{align}
 where, $\alpha$ and $\gamma$ are parameters of the model and with assumptions that there is homogeneous mixing in the population. That is the rate of new infections is proportional to the current numbers of susceptibles and infectives in the population. This is the main assumption deterministic models are built on. Deterministic population  models are models where the behaviour of the population of determined completely by history and the rules which govern the model. 
 
-In formulating these models, in terms of derivatives of the sizes of the compartments it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established, but not valid at the beginning of a disease outbreak, when they are few infectives. When they are a few infectives, the number of infectious depends on random contacts of between a small number of individuals \citep{brauer2012mathematical}.
+In formulating these models, in terms of derivatives  the sizes of the compartments it is assumed that the number of members in each compartment is differentiable with time. This assumption is tenable only when the disease outbreak has been established, but not valid at the beginning of a disease outbreak. When they are a few infectives, the number of infectious depends on random contacts of between a small number of individuals \citep{brauer2012mathematical}.
  
 On the other hand, life phenomena are in general stochastic in nature and the dynamics cannot be well captured by deterministic models hence a need
 for stochastic models. Stochastic models take into account random variations associated with environmental and biological fluctuations of the factors that affect disease propagation. These random fluctuations may impact the evolution of the infection. Unlike deterministic models which assume homogeneous mix, an assumption which only holds in small populations. It is quite unlikely that all people will be equally susceptible to the disease and effective in spreading it \citep{ball1985deterministic}.
@@ -47,15 +47,15 @@ for stochastic models. Stochastic models take into account random variations ass
 \end{align*}  
 which implies that knowing $S(t),I(t)$ is knowing $R(t)$. Hence the model becomes an $S(t),I(t)$ model and thus the stochastic dynamical system can be written as;
  \begin{align}
- P((S(t + \triangle t), I(t + \triangle t) - (S(t) ,I(t)) = (-1,1)) &=  \beta S(t) I(t)  \triangle t + o (\triangle t).
- \\ P ((S(t + \triangle t), I(t + \triangle t) - (S(t) ,I(t)) &= ( 0,-1)) = \gamma I(t + \triangle t) -o (\triangle t).
+ P((S(t + \Delta t), I(t + \Delta t)) - (S(t) ,I(t)) = (-1,1)) &=  \beta S(t) I(t)  \Delta t + o (\Delta t).
+ \\ P ((S(t + \Delta t), I(t + \Delta t)) - (S(t) ,I(t)) &= ( 0,-1)) = \gamma I(t + \Delta t) -o (\Delta t).
  \end{align} 
  
 With a complementary equation,
 \begin{equation}
-P((S(t) + \bigtriangleup t, I(t)+ \bigtriangleup t) - S(t), I(t)) =(0,1)) =  -\left( \beta \dfrac{ S(t)}{N}\right) I(t) \bigtriangleup t + o\bigtriangleup t
+P(( S(t + \Delta t, I(t+ \Delta t)) - (S(t), I(t)) =(0,1)) =  -\left( \beta \dfrac{ S(t)}{N}\right) I(t) \Delta t + o\Delta t
 \end{equation}
-\Jnote{Fix typos in equation above.}
+
 which is refereed to as the general stochastic  epidemic model \citep{greenwood2009stochastic}.
 
 
@@ -162,7 +162,7 @@ D = \frac{\log N}{\log z}
 However,  random  networks  are  not  a  good  model  of  social  networks.  People’s  circles  of  
 acquaintances  tend  to  overlap  to  a  great  extent. Random models have a very low clustering coefficient.
 \subsection{Ordered Lattice:}
-In order to deal with real world networks, graphs must have both high clustering and small world effect properties.Random graphs as discussed earlier show a small world effect. Their  average vertex to vertex distance increase only logarithmically with N but they do not show low clustering \citep{newman2000models}. This leads us to another graph model which is an ordered lattice.
+In order to deal with real world networks, graphs must have both high clustering and small world effect properties. Random graphs as discussed earlier show a small world effect. Their  average vertex to vertex distance increase only logarithmically with N but they do not show low clustering \citep{newman2000models}. This leads us to another graph model which is an ordered lattice.
 
 The opposite of a random graph is a completely ordered lattice. An ordered lattice is a graph where each vertex is connected to its $z$ neighbours. A lattice can be drawn in many dimensions. For example, figure \ref{fig2222} shows two lattices drawn in different dimensions.
 \begin{figure}[h!]
@@ -230,5 +230,5 @@ The Watts-Strogatz network is essentially a regular lattice with some degree of 
         \caption{A Small world network, with $p$ = 0.8}
         \label{fig }
     \end{subfigure}
-    \caption{Watts- Strogatz}\label{fig networks}
+    \caption{Watts-Strogatz Small world network.}\label{fig networks}
 \end{figure}
