@@ -4,45 +4,45 @@ The top-level auxiliary file: master-document.aux
 The style file: plainnat.bst
 Database file #1: references.bib
 Warning--empty journal in bray2014javascript
-You've used 13 entries,
+You've used 15 entries,
             2773 wiz_defined-function locations,
-            671 strings with 6885 characters,
-and the built_in function-call counts, 5608 in all, are:
-= -- 511
-> -- 256
-< -- 14
-+ -- 88
-- -- 75
-* -- 396
-:= -- 837
-add.period$ -- 40
-call.type$ -- 13
-change.case$ -- 62
-chr.to.int$ -- 13
-cite$ -- 27
-duplicate$ -- 290
-empty$ -- 506
-format.name$ -- 100
-if$ -- 1205
+            684 strings with 7259 characters,
+and the built_in function-call counts, 6380 in all, are:
+= -- 583
+> -- 287
+< -- 16
++ -- 99
+- -- 84
+* -- 450
+:= -- 956
+add.period$ -- 46
+call.type$ -- 15
+change.case$ -- 71
+chr.to.int$ -- 15
+cite$ -- 31
+duplicate$ -- 329
+empty$ -- 578
+format.name$ -- 113
+if$ -- 1367
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 72
-num.names$ -- 52
-pop$ -- 142
+missing$ -- 16
+newline$ -- 82
+num.names$ -- 60
+pop$ -- 159
 preamble$ -- 1
-purify$ -- 51
+purify$ -- 58
 quote$ -- 0
-skip$ -- 226
+skip$ -- 255
 stack$ -- 0
-substring$ -- 208
-swap$ -- 41
+substring$ -- 243
+swap$ -- 43
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 133
+type$ -- 155
 warning$ -- 1
-while$ -- 57
+while$ -- 65
 width$ -- 0
-write$ -- 171
+write$ -- 196
 (There was 1 warning)
