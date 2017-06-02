@@ -1,7 +1,7 @@
 \chapter{Compartmental and Stochastic Models}
 \section{Deterministic Models}
 
-\section{SIR Model}
+\subsection{SIR Model}
 
 In the SIR model the population is partitioned into three compartments susceptible, infected and recovered This is the basis for most epidemiological models \citep{m1925applications}. In building the model the number of individuals susceptible, infected and recovered is assumed to be differentiable over time.
 The simple epidemic model is given by,
@@ -16,9 +16,9 @@ The simple epidemic model is given by,
 $N = S + I + R.$
 The model is based on the assumption that susceptible individuals become infected at a rate $\beta$ proportional to the number of people infected and susceptible at time $t$ and infected people recover at $\gamma$ rate. The reciprocal $\frac{1}{\gamma}$ is referred to as the average infectious period. Another assumption in this model is that the population remains constant, thus it does not take int account the demographic changes of the population. Figure \ref{fig 4.1} shows the compartmental diagram for an SIR model without demographic dynamics.
 \begin{figure}[h!]
-\caption{SIR compartmental diagram}]\label{fig 4.1}
 \centering
 \includegraphics[scale=0.5]{images/sir.jpg} 
+\caption{SIR compartmental diagram}\label{fig 4.1}
 \end{figure}
 
 
@@ -30,7 +30,7 @@ We determine the equilibrium and the stability of \ref{eqn4.1}, but since $N =S 
  \frac{dI}{dt} &= \beta S I - \gamma  I \label{eqn4.22}.
 \end{align}
  With $S(0) >0$, $I(0) > 0$ and $R(0) =0$ as the initial conditions for the model.
- We now calculate the disease free equilibrium and endemic equilibrium by equating \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model \ref{eqn4.1} cannot be solved explicitly. That is, we cannot obtain an exact analytical expression for the dynamics of S and I
+ We now calculate the disease free equilibrium and endemic equilibrium by equating equations \ref{eqn4.11} and \ref{eqn4.22} to zero then solving them. Despite its extreme simplicity, this model equation \ref{eqn4.1} cannot be solved explicitly. That is, we cannot obtain an exact analytical expression for the dynamics of S and I
 though time, instead the model has to be solved numerically.
 
 The equation \ref{eqn4.11} gives two import insights in understanding the spread of disease and has since been used in infectious disease modelling for a long time.
@@ -120,7 +120,7 @@ I (\beta S -(\gamma+ \mu)) = 0
  
   \subsection{Stability of the Model}
  Once an outbreak occurs, its important to understand the long term behaviour of the outbreak and finding the stability of the model gives an insight on this. In other words, calculating the stability of the model is establishing at which point the epidemic burn out will occur.
- \section{SEIR Model}
+ \subsection{SEIR Model}
 The susceptible, exposed, infected and recovered models add a new comportment to the previously discussed SIR Model. The earlier models assume that once a person is infected, they become infectious immediately. In this model an assumption is made that once a person is infected there is an intermediate stage between the time of infection and when they become infectious, this may be refereed to as the latent or incubation period of the infection. The system of equations will be;
 
 \begin{align}
@@ -132,9 +132,10 @@ R' &= \alpha I  - \mu R \label{8}
 where $\beta$ is the rate at which susceptible individuals become infectious, $\gamma$ the rate at which infected individual become infection. The quantity $\frac{1}{\gamma}$ is called the latent period of the  infection and$\alpha$ is the recovery rate.
 In this model the total number of infected individuals is given by $E +I$ and  we assume that our system is density dependant thus $S + E + I + R = 1$ and  that the population is constant implying that the birth rate ($\mu$)  = death rate $(\mu)$. Figure \ref{fig 4.2} shows the compartmental diagram of an SEIR model.
 \begin{figure}[h!]
- \caption{SEIR compartmental model}
+ 
  \centering
  \includegraphics[scale=0.5]{images/seir.png}\label{fig 4.2}
+ \caption{SEIR compartmental diagram}
  \end{figure}
   
  
