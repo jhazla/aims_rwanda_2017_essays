@@ -53,19 +53,19 @@ R_0 = \frac{\beta}{\gamma}\label{eqn 4.15}
 For initial susceptible $S(0) = 1$, if $R_0 >1$ then there will be an outbreak and if $R_0<1$ the will be no outbreak. It can be noted that every disease has a different $R_0 $ value and also depending on the population's contact pattern the $R_0$ value will differ.
 
  \subsection{Epidemic Burnout}
- The threshold phenomena gives a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state infection. From they system in equation \ref{eqn4.1} we take
+ The threshold phenomena gives a description of what happens in the initial stages after introduction of an infection. Another important quantity we get from the SIR model is the long term state of the infection. From they system in equation \ref{eqn4.1} we take
  
  \begin{align}
  \frac{dS}{dt} &= -\beta S I \label{4.16}
  \\ \frac{dR}{dt}& = \gamma I \label{4.17}
 \intertext{  dividing  equation \ref{4.14} by equation \ref{4.17} we get } \nonumber
 \\ \frac{dS}{dR}& = \frac{-\beta S}{\gamma}
-= R_0 S \label{4.19}
+= - R_0 S \label{4.19}
  \end{align}
  Integrating equation \ref{4.19} with respect to R, we get; 
  
  \begin{align}
- \int{\dfrac{dS}{S}} &= \int{ R_o dR}
+ \int{\dfrac{dS}{S}} &= -\int{ R_o dR}
  \\ ln S &= -R_0 R + k
  \\ e^{ln S} &= e^{-R_0 R + k}
  \\  S(t) &= e^{-R_0 R(t)} e^{k}
@@ -89,7 +89,7 @@ From equation \ref{eqn 4.1.13}, $s(t) \geq e^{-R_o}$ since $R(t) <1$. Thus, ther
 R_0 = \frac{\beta}{\mu + \gamma} \label{eqn 4.2.17}
 \end{equation}
  
- Now we calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero, that is $\dfrac{dS}{dt}= \dfrac{dI}{dt}= \dfrac{dR}{dt}= 0$ and denote by $S^*, I^* and R^*$  values of  S, I and R that satisfy this condition. 
+ Now we calculate the equilibria  of the model by setting  equation \ref{1}, \ref{2} and \ref{3} to zero, that is $\dfrac{dS}{dt}= \dfrac{dI}{dt}= \dfrac{dR}{dt}= 0$ and denote by $S^*, I^*$ and $R^*$  values of  S, I and R that satisfy this condition. 
  From equation \ref{1} we get
  \begin{align}
   \mu -\beta SI - \mu S = 0 
