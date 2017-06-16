@@ -98,7 +98,7 @@ where the probability is taken over the edge $(x,y) \in E$ and the maximum of pr
 \subsection{Expander graphs}
 
 Prover games used to be associated to the expander graph. Expander graph has some interesting properties. 
-\cite{nielsen2005introduction} defines an expander graph as \say{\emph{ a graph $G = (V, E)$ in which every subset $S$ of vertices expands quickly, in the sense that it is connected to many vertices in the set $S$ of complementary vertices.}} Expander graph is characterized by some expansion parameters: vertex expansion, edge expansion and spectral expansion. The spectral gap denoted by $\lambda$,is the difference between the largest and second-largest eigenvalues. The spectral gap is used to measure the spectral expansion. 
+\cite{nielsen2005introduction} defines an expander graph as \say{\emph{ a graph $G = (V, E)$ in which every subset $S$ of vertices expands quickly, in the sense that it is connected to many vertices in the set $S$ of complementary vertices.}} Expander graph is characterized by some expansion parameters: vertex expansion, edge expansion and spectral expansion. The spectral gap denoted by $\lambda$, is the difference between the largest and second-largest eigenvalues. The spectral gap is used to measure the spectral expansion. 
 
 The connectedness  property is one of the fundamental properties of expander graph. Thus, every connected graph is an expander graph. Hence, a cycle graph and a complete graph are expander graph.
 
@@ -163,7 +163,7 @@ Where the symbol $\bigwedge$ represents the logical connective "AND" (conjunctio
 %\Jnote{Very nice explanation so far. You can underline the fact that  $f_i$ is a function of $\overline{x}$ and not just $x_i$.}
 Note that $f_i$ is a function of $\bar{x}$ and not just $x_i$  in the expression of the predicate $\phi^n$.
 
-We know that in the truth table for the logical operator "AND", the only case so that the value of two propositions be true is when the two propositions are true. Then, the logical connective $\bigwedge$ from $\phi^n$ can be replaced by $\prod.$ That is,  $\bigwedge\limits_{i=1}^n \phi [x_i,y_i, f_i(\bar{x}), h_i(\bar{y})]=\prod\limits_{i=1}^n  \phi [x_i,y_i, f_i(\bar{x}), h_i(\bar{y})].$
+We know that in the truth table for the logical operator "AND", the only case so that the value of two propositions be true is when the two propositions are true. Then, the logical connective $\bigwedge$ from $\phi^n$ can be replaced by the product symbole $\prod.$ That is,  $\bigwedge\limits_{i=1}^n \phi [x_i,y_i, f_i(\bar{x}), h_i(\bar{y})]=\prod\limits_{i=1}^n  \phi [x_i,y_i, f_i(\bar{x}), h_i(\bar{y})].$
 
 As there are two provers, $n$-vectors (questions) are revealed to each prover:  $(x_1, \ldots , x_n)$ to prover 1 and  $(y_1, \ldots , y_n)$ to prover 2 who both respond with  couple of strategies $(F,H)$ with $F=(f_1, f_2, \ldots, f_n)$ and $H=(h_1, h_2, \ldots, h_n)$ where $f_i$ and $h_i$ represent respectively strategies associated to the questions $\bar{x}$ and $\bar{y}.$
 %\Jnote{Now you made mistake: It is not $f_1(x_1)$, but $f_1(\bar{x})$. It is important that you correct it above and below.}
@@ -232,7 +232,7 @@ Hence, $\val (G^n) \geq \val (G)^n.$
 \begin{proof}
  \begin{align*}
  \val (G^n) & = \max\limits_{F,H} \Pr \left[\bigwedge\limits_{i=1}^n \phi (x_i,y_i, f_i(\bar{x}), h_i(\bar{y}))=1 \right] \leq Pr \left[ \phi (x_1,y_1, f_1(\bar{x}), h_1(\bar{y}))=1 \right] \\
- &  \leq \max\limits_{f,g} \Pr[\phi(x_1,y_1,f(x),h(y))=1]  = \val (G).
+ &  \leq \max\limits_{f,g} \Pr[\phi(x_1,y_1,f(x_1),h(y_1))=1]  = \val (G).
  \end{align*}
  %\Jnote{\text{The second equation above is not true.}}
 %\Jnote{In the equations above, indicate over what the probability is taken.}
@@ -250,8 +250,8 @@ Let $G$ be a two-prover game and  $X=Y=\{0,1\}$ be sets of questions addressed r
 \end{itemize}
 This means that the winning cases are: $\phi[x,y, (x,A), (x,A)]$ and $\phi[x,y, (y,B), (y,B)]$.
 
-Let us define a couple of strategies $(f,g)$ used by the two players to answer as following:  $f(0)=(0,A), f(1)=(1,A)$ and  $g(0)=(0,A), g(1)=(1,A)$.
- Let us evaluate the probability to win this game. In our strategy, we always have $K_A=K_B=A$ in the second component of the answer. So, the two provers can win in two cases: $(0,0)$ and $(1,1)$. They also lose  in two cases: $(0,1)$ and $(0,1)$. Hence, the winning probability of the game according to this couple of strategies is: $\Pr [\phi(x,y, (a,K_A), (b,K_B))=1]=\frac{2}{4}=\frac{1}{2}.$
+Let us define a couple of strategies $(f,g)$ used by the two players to answer as follows:  $f(0)=(0,A), f(1)=(1,A)$ and  $g(0)=(0,A), g(1)=(1,A)$.
+ Let us evaluate the probability to win this game. In our strategy, we always have $K_A=K_B=A$ in the second component of the answer. So, the two provers can win in two cases: $(0,0)$ and $(1,1)$. They also lose  in two cases: $(0,1)$ and $(1,0)$. Hence, the winning probability of the game according to this couple of strategies is: $\Pr [\phi(x,y, (a,K_A), (b,K_B))=1]=\frac{2}{4}=\frac{1}{2}.$
  
  Let us define another couple of strategies $(s,t)$ such that $s(0)=(0,A), s(1)=(0,A)$ and  $t(0)=(0,A), t(1)=(0,A)$. For this couple of strategies, the two provers can win in two cases: $(0,0)$ and $(0,1)$. They also lose  in two cases: $(1,0)$ and $(1,1)$. Hence, the winning probability of the game according to this couple of strategies is: $\Pr [\phi(x,y, (a,K_A), (b,K_B))=1]=\frac{2}{4}=\frac{1}{2}.$
 
@@ -273,7 +273,7 @@ Hence, both provers $A$ and $B$ win in each column of the table \eqref{wc}.
 \begin{table}[h]
 \centering
 \begin{tabular}{c|cccccccc} 
-A & (0,0) & (0,0) &( 0,1) & (0,1) & (1,0) & (1,0) & (1,1) & (1,1) \\ 
+A & (0,0) & (0,0) &(0,1) & (0,1) & (1,0) & (1,0) & (1,1) & (1,1) \\ 
 \hline 
 B & (0,0) & (1,0) & (0,0) & (1,0) & (0,1) & (1,1) & (1,1) & (0,1) 
 \end{tabular} 

@@ -10,7 +10,7 @@ In both versions of Hales-Jewett theorem (see \eqref{hj1} and \eqref{hj2}), the 
 %\Jnote{s/deeply/in a detailed way}
 and define what the combinatorial line is. Let us recall some notions about a combinatorial line and the formulation of the Hales-Jewett theorem.
 
-Let $k, n\in \mathbb{Z}^+$, $[k]=\{1,2, \ldots,k\}$ and an $x$-string $w(x)=a_1a_2\ldots a_n \in ([k]\times\{x\})^n\setminus [k]^n.$ That is, in $w(x)=a_1a_2\ldots a_n$, at least one of the symbol   $a_i$ contains the symbol  $x$ called wildcard. Let $w(x;i)$ be the string obtained by replacing $x$ by $i$.
+Let $k, n\in \mathbb{Z}^+$, $[k]=\{1,2, \ldots,k\}$ and an $x$-string $w(x)=a_1a_2\ldots a_n \in ([k]\cup \{x\})^n\setminus [k]^n.$ That is, in $w(x)=a_1a_2\ldots a_n$, at least one of the symbol   $a_i$ contains the symbol  $x$ called wildcard. Let $w(x;i)$ be the string obtained by replacing $x$ by $i$.
 
 The \textit{combinatorial line} is the set of $k$ strings $\{w(x;i): \ i\in \{1,2,\ldots,k\} \}$, that is the set $\{w(x;1), w(x;2), \ldots, w(x;k)\}.$ 
  
@@ -79,29 +79,25 @@ Let us adapt our proof from the proof of  \cite{verbitsky1996towards} to show th
 Note that for $1\leq i \leq n$,  $s_i \in Q=\{q_1, \ldots, q_r\}.$ The symbol $s_i^t$ denotes an $i$-th question in parallel repetition addressed to the player $t$. This question can be any of the $t$-th component of the set  $q_j.$
  
 As $K$ is the set of success questions, then the value of the game $G^n$ is: $\val (G^n) = \frac{|K|}{r^n}.$
-%\Jnote{Note that this is the place where you use uniform distribution assumption}.
- 
 In this stage, we can not say that $\Delta_{r,n} \geq \frac{|K|}{r^n}$
 %\Jnote{Not equal, it should be $\ge$.}
 because we do not know if the set  $K$ does not contain any combinatorial line. Let us show that $K$ is a set without a combinatorial line.
 
-Let us suppose by contradiction that there is a combinatorial line $L=\{\bar{b}_1, \ldots, \bar{b}_r \} \subseteq K.$ In this case,  the game  $G$ should be trivial.
-%\Jnote{Game $G$ has nothing to do with the proposition.}
- 
-Let $C=C_1\ldots C_n$ be an $r \times n$ matrix whose $r$ rows are $\bar{b}_1, \ldots, \bar{b}_r$ and $n$ columns $C_1\ldots C_n$ each are either $(q_j,q_j,\ldots,q_j)^T$ for some $j\leq r$ or $(q_1,q_2,\ldots,q_r)^T.$ By definition of a combinatorial line, there exists at least one column $C_l=(q_1,q_2,\ldots,q_r)^T.$ We assume that $L$ is ordered so that the intersection of the row $\bar{b}_j$ and the column $C_l$ of the matrix is the element $q_j.$ The element $q_j=(q_j^1,\ldots, q_j^k)$ has $k$ components. So, the  matrix $C$ can be expanded to the $kr \times n$ matrix $D$ by replacing each matrix element $q_j$ with the column $(q_j^1,\ldots, q_j^k)^T.$ There are $kr$ rows of the matrix D and $n$ columns. Thus, let us denote by $\bar{x}_1^1, \ldots, \bar{x}_1^k, \ldots, \bar{x}_r^1, \ldots, \bar{x}_r^k$ the rows of the matrix $D$ where $\bar{x}_j^t \in  (X^t)^n.$
+Let us suppose by contradiction that there is a combinatorial line $L=\{\alpha_1, \ldots, \alpha_r \} \subseteq K.$  In this case,  we will show that  the game  $G$ is  trivial which is a contradiction with the hypothesis of the theorem that the game  $G$ is  non-trivial.
 
-Since $L$ is a combinatorial line, let us use one of the strategy of the matrix element in the column $C_l$ which is in the form $(q_1,q_2,\ldots,q_r)^T.$  Note that $q_j$ is a $k$-tuple. 
-Let us define strategies $f^1,f^2, \ldots, f^k$ in the game $G$ by $f^t(q^t)=f_l^t(\bar{x}_{n_t}^t)$ where $x_{n_t}^t=q^t$ for $1\leq t \leq k.$ 
-%These strategies $f^t$ are well defined, since for distinct such $n_t$ and $n_t'$ it holds $\bar{x}_{n_t}^t= \bar{x}_{n_t'}^t.$
+Let us consider an $r \times n$ matrix $C=C_1\ldots C_n$ where the $r$ rows are $\alpha_1, \ldots, \alpha_r$ and the $n$ columns $C_1\ldots C_n$  are formed by $(q_j,q_j,\ldots,q_j)^T$ for some $j\leq r$ and by $(q_1,q_2,\ldots,q_r)^T$ for at least one column $C_l.$ 
+The element $q_j=(q_j^1,\ldots, q_j^k)$ has $k$ components and it is the intersection of the row $\alpha_j$ and the column $C_l$ of the $r \times n$  matrix $C.$ The element $q_j$ is a $k$-tuple. So, when we replace in the matrix $C$ each  element $q_j$  by the column vector $(q_j^1,\ldots, q_j^k)^T$ we obtain a $kr \times n$ matrix. Let us call by $D$ this $kr \times n$ matrix. Now the matrix $D$ has $kr$ rows and $n$ columns. In the matrix $C$, rows are named  $\alpha_j$. For the matrix $D$, let us name each row by $\alpha_j^t \in  (X^t)^n$ where $2\leq t \leq k$ and $ j \leq r$. Namely,  $\alpha_1^1, \ldots, \alpha_1^k, \ldots, \alpha_r^1, \ldots, \alpha_r^k$ are rows of the matrix $D.$
 
-For  arbitrary $q_j= (q_j^1,\ldots, q_j^k) \in Q$, we have:
-$$\phi (q^1,\ldots, q^k, f^1(q^1), \ldots, f^k(q^k))= \phi (q_j^1,\ldots, q_j^k, f_l^1(\bar{x}_j^1), \ldots, f_l^k(\bar{x}_j^k))=1$$
+Since $L$ is a combinatorial line, let us use one of the strategy of the matrix element in the column $C_l$ which is in the form $(q_1,q_2,\ldots,q_r)^T.$  Note that $q_j$ is a $k$-tuple. To play the game $G$, the $k$ provers use a $k$-tuple of strategies. Let us call these strategies $f^1,f^2, \ldots, f^k$ and define them by $f^t(q^t)=f_l^t(\alpha_{n_t}^t)$ in order that  $q_{n_t}^t=q^t$ for $2\leq t \leq k$ and  $1\leq n_t \leq r.$ 
 
-As $\bar{b}_j \in K$,
+For  $q_j= (q_j^1,\ldots, q_j^k) \in Q$, we have:
+$$\phi (q^1,\ldots, q^k, f^1(q^1), \ldots, f^k(q^k))= \phi (q_j^1,\ldots, q_j^k, f_l^1(\alpha_j^1), \ldots, f_l^k(\alpha_j^k))=1$$
+
+As $\alpha_j \in K$,
 %\Jnote{Put bar above $b_j$.}
 strategies $F^1, \ldots, F^k$ win in  the $l$-th copy of $G$. That is the game $G$ is  trivial. 
 
-Hence, there is a contradiction with our assumption that $K$ contains a combinatorial line.
+Hence, there is a contradiction with the hypothesis of the theorem that the game  $G$ is  non-trivial.
 
 Therefore, $K$ does not contain a combinatorial line and $\Delta_{r,n} \geq  \frac{|K|}{r^n}$.
 
