@@ -1,15 +1,16 @@
 \chapter{Monte Carlo Computational Techniques}
 
-The name Monte Carlo method is a set of mathematical tools that was first used by scientists working on nuclear projects in Los Alamos. The essence of this is to generate numbers with probability that can be used to study physical phenomena. In our context, the definition of Monte Carlo method is the use of randomly generated numbers to imitate a physical behaviour that is considered to be random (quantum mechanical) \citep{montecarlo}.
+Monte Carlo methods are a set of mathematical tools that were first used by scientists working on nuclear projects in Los Alamos. The essence of this is to generate numbers with probability that can be used to model simple physical phenomena, those numbers are strung together to build up more complex groups that forms a full simulation. In our context, the definition of Monte Carlo method is the use of randomly generated numbers to imitate a quantum mechanical behaviour that is considered to be random \citep{montecarlo}.
 
 %\section{Generating Random Numbers with different PDFs}
 
-One of the most important components of the Monte Carlo method is generating samples of different probability distribution functions (pdf). This is essential since we are simulating various variables that have different numerical behaviour. For example if our pseudo-random numbers are uniformly\footnote{Uniform means that every value in the range of the distribution is equally likely to occur. This distribution is widely used for generating random numbers for other distributions, it is denoted by $U (0,1)$.} distributed in the interval $[0,1]$  and instead we need numbers that have normal distribution restricted to the same interval. This part of the essay  discusses two methods which are widely used for that purpose.
+One of the most important components of the Monte Carlo method is generating samples of numbers according to different probability distribution functions (pdf). For example if our random numbers are uniformly\footnote{Uniform means that every value in the range of the distribution is equally likely to occur. This distribution is widely used for generating random numbers for other distributions, it is denoted by $U (0,1)$.} distributed in the interval $[0,1]$  and instead we need numbers that have normal distribution restricted to the same interval. This is essential since we are simulating various variables that have different quantitative behaviour. This part of the essay  discusses two methods which are widely used for that purpose.
 
 
 \section{The Inverse Transform Method}
 
-The inverse transform method is used for generating random numbers that are distributed according to a specific distribution. Common case is that we assume that we are able to generate uniformly distributed numbers and we want to sample them according a specific distribution $p(x)$.
+The inverse transform method is used for generating random numbers that are distributed according to a specific distribution.
+% Common case is that we assume that we are able to generate uniformly distributed numbers and we want to sample them according a specific distribution $p(x)$.
 
 Let $x$ be a random variable distributed with probability density function $p(x)$. Let $u$ be a random variable that is uniformly distributed in $[0,1]$ and $P(x)$ is the cumulative density function (CDF), then we set 
 \begin{equation}
@@ -17,20 +18,24 @@ x = P^{-1} (u)
 \end{equation}\citep{Weinzierl}.
 
     
-The following pseudo-code shows the inverse-transform method algorithm 
+The pseudo-code \ref{inverse} shows the inverse-transform method algorithm 
+\begin{algorithm}
+\caption{Inverse Transform method}\label{inverse}
 \begin{algorithmic}
-\State Generate a uniform  random $u$ in $[0,1]$
+\State Generate a uniform  random $u$ in $[a,b]$
 \State \Return $x = P^{-1}(u)$
 \end{algorithmic}
-
-The inversion method is exact when an explicit form of the CDF is known. The CDF is a continuous and a strictly increasing function. It can be obtained either analytically through the integration of the PDF or numerically. Sometimes finding the CDF if computationally difficult, this causes the inverse transform method to become less efficient \citep{Devroye:1986:SNR:318242.318443}.
+\end{algorithm}
+The inversion method is exact when an explicit form of the CDF is known. The CDF is a continuous and a strictly increasing function. It can be obtained either analytically through the integration of the PDF or numerically. Sometimes finding the CDF is computationally difficult, this causes the inverse transform method to become less efficient \citep{Devroye:1986:SNR:318242.318443}.
 
 \section{The Accept Reject Method}
 As the inverse transform method, the accept reject method also is used for generating numbers according to a specific distribution.
 
-Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is the variable of interest. A different distribution of $x$ is required, let $p(x)$ denotes the pdf of the required distribution. Another  random uniformly distributed variable $y$ is generated, this will serve as the accept reject tool. First we calculate the maximum of $p(x)$, hence the $y$ is generated in the interval $[0,p(x)_{max}]$. Now we check if $y$ $\leq$ $p(x)$. If this is the case, accept $x$, otherwise reject and start again. 
+Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is the variable of interest. A different distribution of $x$ is required, let $p(x)$ denote the pdf of the required distribution. Another  random uniformly distributed variable $y$ is generated, this will serve as the accept reject tool. First we calculate the maximum of $p(x)$, and the $y$ is generated in the interval $[0,p(x)_{max}]$. Now we check if $y$ $\leq$ $p(x)$. If this is the case, accept $x$, otherwise reject and start again. 
+\begin{algorithm}
+\caption{Accept reject method}
 \begin{algorithmic} 
-\State $x \gets$ uniform in $[0, 1]$
+\State $x \gets$ uniform in $[a, b]$
 \State $y \gets$ uniform in $[0, p_{max}(x)]$
 \If {$y \leq p(x)$}
     \State accept $x$
@@ -39,6 +44,7 @@ Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is th
 \EndIf
 \State Begin again
 \end{algorithmic}
+\end{algorithm}
 %Assume we have access to a sample which is distributed according to the pdf $f(x)$,
 %and the let us denote the pdf of the required distribution by $p(x)$, we assume that for both $p(x)$ and $f(x)$ varies over a finite interval.
 % 
@@ -47,8 +53,12 @@ Let $x$ be a uniformly distributed variable in the interval $[0,1]$, which is th
 
 %If this the case then accept $x$, if not reject $x$ and start again,
  
-For example, if we have a number $x$ that falls under uniform distribution and we want to reshape this so that we get a number  that has the distribution $\frac{1}{x}$, then we find the maximum value of probability density function ($p(x)$) for $x$. Here, we add small number to $x$ so that we avoid the singular point when $x = 0$. After that we generate another sample $y$ that is also uniformly distributed in the interval $[0,p_{max}]$. 
-Now we check if $y $ is less than $p(x)$. If so, we add $x$ to our distribution, if not we start again \citep{Weinzierl}. 
+For example, the generation of numbers with  distribution function $\frac{1}{x}$. 
+%if we have a number $x$ that falls under uniform distribution and we want to reshape this so that we get a number  that has the distribution $\frac{1}{x}$, then we find the maximum value of probability density function ($p(x)$) for $x$. 
+Here, we add small number to $x$ so that we avoid the singular point when $x = 0$. The histogram in figure \ref{fig:2} demonstrates the previous example. 
+
+%After that we generate another sample $y$ that is also uniformly distributed in the interval $[0,p_{max}]$. 
+%Now we check if $y $ is less than $p(x)$. If so, we add $x$ to our distribution, if not we start again \citep{Weinzierl}. 
 %\begin{lstlisting}
 %eps = 0.01 #this value to avoid the singular point at x=0 
 %while True:
@@ -58,7 +68,6 @@ Now we check if $y $ is less than $p(x)$. If so, we add $x$ to our distribution,
 %		return x
 %\end{lstlisting} 
 
-The histogram in figure \ref{fig:2} demonstrate the example above. 
 %For the python code see \verb+Accept_reject.py+. 
 
 \begin{figure}[hbtp]
@@ -67,8 +76,9 @@ The histogram in figure \ref{fig:2} demonstrate the example above.
 \caption{Sampling 1000 numbers with distribution $\frac{1}{x+\epsilon}$ using accept-reject method, where $\epsilon$ is a small number added to avoid the singularity, here it is taken to be $0.01$.}\label{fig:2}
 \end{figure}
 
-Beside the fact that the numbers which are generated from Monte Carlo method  are not truly random, whereby the numbers are generated through a deterministic algorithms  \citep{montecarlo}. Monte Carlo method also faces another challenge which it requires generating large samples to give sensible results. The histograms in figure \ref{fig:1.1} demonstrate that, in which $pi$ is calculated using numbers generated using Monte Carlo method.    
-One sees that the error in the calculation when is decreasing as the number of the samples is increasing .
+%Beside the fact that the numbers which are generated from Monte Carlo method  are not truly random, whereby the numbers are generated through a deterministic algorithms  \citep{montecarlo}. 
+The accept reject method faces challenge that it requires generating large samples to give sensible results. The histograms in figure \ref{fig:1.1} demonstrate that, in which $pi$ is calculated using numbers generated using Monte Carlo method and also the error in the calculated for different number of samples.     
+One sees that the error in the calculation decreases as the number of the samples increases.
 
  
 

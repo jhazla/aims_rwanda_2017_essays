@@ -1,6 +1,6 @@
 \chapter{Jet Observables}
 
-The next step after performing the jet clustering on the generated parton shower, is to define final state observables, that can be used to extract specific properties of the underlying physics. Here, there are two kinds of observables, event observables and jet observables.  
+The next step after performing the jet clustering on the generated parton shower is to define final state observables that can be used to extract specific properties of the underlying physics. Here, there are two kinds of observables, event observables and jet observables.  
 
 The most important feature of the observables is that they can be defined both for the Monte Carlo simulation and the real collision data, allowing for tuning the underlying parameters of the model used to generate the parton shower. 
 \section{Single Jet Observables}
@@ -16,7 +16,7 @@ An example of a jet observable is the number of the constituents in the jet with
 %The histogram in figure \ref{nofcon} shows the data taken from running a jetty event 1000 times and then clustering  using anti-$k_t$ algorithm. Here, different values of the parameter $R$ were chosen.
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=.8]{images/n_of_con_obs.png}
+\includegraphics[scale=.5]{images/n_of_con_obs.png}
 \caption{The number of constituents of a jet observable for as it is calculated different  values of $R$.  
 %Note that here we are looking at the difference on the $y$ axis. The values that correspond to $R = .1$ are the differnce between the blue line $R = 1$ and maximum of $R = .1$.
 }\label{nofcon}
@@ -25,9 +25,9 @@ An example of a jet observable is the number of the constituents in the jet with
 %For the code and the documentation see
 %\verb+number_of_constituents_observable.py+ and for the histogram see \verb+hist_of_n_of_constituents.py+.               
 
-Another single jet observable that we have worked on is \textit{pseudo-mass} observable. This observable is described as follows \begin{equation}
+Another single jet observable is \textit{pseudo-mass} observable. This observable is described as follows \begin{equation}
 pseudo-mass(J) = E(j_1) \times E(j_2) \times \Delta_{ij} ,
-\end{equation}   Where $j_1$ and $j_2$ are the two highest  momenta of of the constituents of the jet J and $\Delta_{ij}$ as given above.
+\end{equation}   Where $j_1$ and $j_2$ are the two highest  momenta of of the constituents of the jet $J$ and $\Delta_{ij}$ as in \ref{dij}.
 %\Jnote{s/momenta/momenta of the constituents of}
 %These calculations were performed on the jets with highest energy.
 Conditions whenever
@@ -39,7 +39,7 @@ The histograms in figures \ref{nofcon} and  \ref{pseudomass} illustrate the resu
 %\Jnote{There are three histograms, not two.}
 \begin{figure}[hbtp]
  \centering
- \includegraphics[scale=.65]{images/figure_13.png}
+ \includegraphics[scale=.4]{images/figure_13.png}
  \caption{The pseudo-mass of jet observable for different values of $R$. 
 %  Note that here we are looking at the difference on the $y$ axis. The values that correspond to $R = .1$ are the differnce between the blue line $R = 1$ and maximum of $R = .1$.
 }
@@ -58,7 +58,7 @@ The histogram in figure \ref{nofjet} shows the results of clustering 1000 events
 
 \begin{figure}[hbtp]
  \centering
- \includegraphics[scale=.8]{images/n_of_jets_obs.png}
+ \includegraphics[scale=.5]{images/n_of_jets_obs.png}
  \caption{Number of jets for different values of $R$. Note that here we are looking at the difference on the $y$ axis. 
 % The values that correspond to $R = .1$ are the differnce between the blue line $R = 1$ and maximum of $R = .1$.  
  }\label{nofjet}
