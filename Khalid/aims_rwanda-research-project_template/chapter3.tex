@@ -1,14 +1,15 @@
 \chapter{Jet Reconstruction}\label{chapter4}
 
-After the process of the splitting and branching, the quarks and gluons start to hadronize leading to a collimated spray of stable colourless hadrons. Hence in practice
+After the process of the splitting and branching, the quarks and gluons start to hadronize leading to a collimated spray of stable colourless hadrons. Due to the fact that in practice
 %\Jnote{I don't think ``in practice'' is good choice of words. I would
 %  say ``the only directly observed outcome''.}
-the only outcome of this process is hadrons \ref{Lhc}. In order to study the quarks and the gluons, it is plausible to think of reversing this process. This process is called jet reconstruction, and the final outcome is called jets (quarks or gluons).     
+the  outcome of this process is stable hadrons \ref{Lhc}. It is plausible to think of reversing the parton shower process in order to study the initial quarks and the gluons produced in the collisions. This process is called jet reconstruction, and the final outcome is called a jet.     
 
-The jet reconstruction is essential in understanding the link between the observed physics or the long distance physics and the underlying physics (short distance physics) in the parton level.
+Jet reconstruction is essential in understanding the link between the observed physics or the long distance physics and the underlying physics (short distance physics) in the parton level. Moreover, 
+the definition of the jet is central in comparing the data and the theoretical predictions. The definition is provided in the form of the jet algorithm, this means the jet algorithm and its corresponding parameters and recombination scheme.
+
  %Also, the accurate reconstruction is very important in comparing the theoretical predictions and the data. 
 
-The definition of the jet is central in comparing the data and the theoretical predictions. The definition is provided in the form of the jet algorithm, this means the jet algorithm and its corresponding parameters and recombination scheme.
 % The paragraphs below gives a detailed description of the algorithm. 
 %In 
 %The concrete definition of what is the collimated spray is provided by the \textit{the jet clustering algorithm} \citep{Ellis:2007ib}.    
@@ -26,10 +27,11 @@ The definition of the jet is central in comparing the data and the theoretical p
 
 \section{Jet Algorithms}
 
-There are two broad classes of jet algorithms, the Cone algorithms and the Sequential algorithms. Both algorithms work on defining the jets by the idea of nearness.
+
 
 It is important to recognize that jet algorithms involve two distinct steps. The first step is to identify the members of the jet, i.e., the partons that make-up the final stable jets. The second step is to construct the kinematic properties that will characterize the jet \citep{Berger:2002jt}. For merging and combining the objects, we use the 4 -vector recombination scheme, whereby to combine two particles we add their four momenta \citep{Blazey:2000qt}. 
 
+There are two broad classes of jet algorithms, the Cone algorithms and the Sequential algorithms. Both algorithms work on defining the jets by the idea of nearness.
 Here, we will focus on the second class:
 %\Jnote{Put colon here.}
 the sequential algorithms.  
@@ -47,7 +49,7 @@ These algorithms work by defining a distance between pairs of objects, performin
 
 One starts by first defining these distances, $d_{ij}$ \eqref{dij} and $d_{iB}$ \eqref{dib}, where $d_{ij}$ is the distance between objects (pseudo-jets)\footnote{Pseudo-jet since it is neither a full jet, nor yet a full particle. It can be a single particle or a composition of particles.}
 %\Jnote{In footnote:s/full particle/full jet}
-$i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances and if it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and removing it from the list of objects. The distances are recalculated and the procedure repeated until no objects are left \citep{Cacciari:2008gp}. 
+$i$ and $j$, and $d_{iB}$ is the distance between the pseudo-jet $i$ and the beam B. The clustering proceeds by identifying the smallest of the distances . If it is $d_{ij}$ combine the pseudo-jets $i$ and $j$. Otherwise, if it is $d_{iB}$ calling $i$ a jet and remove it from the list of objects. The distances are recalculated and the procedure repeated until no objects are left \citep{Cacciari:2008gp}. 
 
 The difference between the sequential algorithms lies in the definition of the distances measures:
 \begin{equation}
@@ -57,7 +59,7 @@ d_{ij} = \min(k_{ti}^{2p}, k_{tj}^{2p}) \frac{\Delta_{ij}}{R^{2}},
 d_{iB} = k_{ti}^{2p} ,
 \label{dib}\end{equation}
 %\Jnote{Use \textbackslash min in math mode to get nicer font.}
-Where $\Delta_{ij}^{2} = (y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2$ and $k_{ti}$, $\eta_{i}$ and $\phi_{i}$ are the transverse momentum, rapidity and  the azimuth of the particle $i$ \citep{Cacciari:2008gp}. The exact formula for the transverse momentum depends on the beam axis, which is $z$ hence, $k_{t} = \sqrt{p_x^2 + p_y^2}$. The rapidity describes the angle relative to the beam axis.
+Where $\Delta_{ij}^{2} = (y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2$ and $k_{ti}$, $y_{i}$ and $\phi_{i}$ are the transverse momentum, rapidity and  the azimuth of the particle $i$ \citep{Cacciari:2008gp}. The exact formula for the transverse momentum depends on the beam axis, which is $z$ hence, $k_{t} = \sqrt{p_x^2 + p_y^2}$. The rapidity describes the angle relative to the beam axis.
 %It is defined as $- \ln \left[\tan\left(\frac{\theta}{2}\right)\right]$ where $\theta$ is the polar angle  \citep{Salam:2009jx}. 
 The rapidity is defined as $\frac{1}{2} \ln \frac{E_i + p_{zi}}{E_i - p_{zi}}$, where  $E_i$ and $p_{zi}$ are the energy and component of the momentum along the beam axis of the particle $i$ \citep{Cacciari:2011ma}. The parameter $R$ describes the jet radius. 
 %, it is a parameter of the algorithm that determines its angular reach \citep{Cacciari:2011ma}.
@@ -163,7 +165,8 @@ The inclusive $k_t$ algorithm is defined with choice of $p = 1$, the case where 
 %\section{Implementation of Anti-$k_t$}
 
 The implementation of anti-$k_t$ clustering algorithm can be illustrated by the following pseudocode
-%\Jnote{s/algorithm/pseudocode}
+\begin{algorithm}
+\caption{Anti-$k_{t}$ algorithm}
 \begin{algorithmic}
 \State Calculate all the $d_{ij}$ and $d_{iB}$
 \State Find the minimum of $d_{ij}$ and $d_{iB}$ 
@@ -176,6 +179,7 @@ The implementation of anti-$k_t$ clustering algorithm can be illustrated by the 
 \EndIf
 \State Repeat until no objects left 
 \end{algorithmic}
+\end{algorithm}
 %\Jnote{Better use a loop. Don't say ``return step one''. You can
 %  say ``goto step one''. Better yet write a loop such that it's not
 %  necessary.}

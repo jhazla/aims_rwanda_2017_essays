@@ -1,31 +1,31 @@
 \chapter{The Parton Shower}
 
-Parton showers are approximations of what is seen in the detectors (stable particles) to the hard scattering. The word "hard", means the process involves a transfer of large momentum, in which the parons are splitting and branching.  
+Parton showers are approximations of what is seen in the detectors (stable particles) to the hard scattering. The word "hard" means the process involves a transfer of large momentum, in which the partons are splitting and branching.  
 % either a violent scatter or creation of large mass. 
 They locally conserve flavour and four momentum, and also conserve the probability, in a sense that, the particle either splits into two or not.
 %\Jnote{Can you clarify ``conserve probability'' part? What are other choices
 %  for the particle?}
  
-Since the parton showers are simulations of the branching and splitting processes, the quality of their predictions depend on how precise is the implementation For example, the angular ordering, which accounts for knowing the prehistory of the splitting particles, i.e.,
+Since the parton showers are simulations of the branching and splitting processes, the quality of their predictions depend on how precise is the implementation. For example, a simulation can feature the angular ordering, which accounts for knowing the prehistory of the splitting particles, i.e.,
 %\Jnote{Don't write i.e., in math mode. One way to write it is how I just
 %  did it, that is first full stop, then comma at the end.}
-knowing exactly from which partons are they coming from. \citep{introduction}.
+knowing exactly from which partons are they coming from \citep{introduction}.
 %\Jnote{I didn't understand this sentence.}
 
 \section{The Parton Shower Model}\label{qcda}
-The parton shower model is built around the idea of successive one-to-two splittings, which are combined together forming a tree-like sequence.
+The parton shower model is built around the idea of successive one-to-two splittings, which are combined together forming a tree-like sequence. The Monte Carlo model of the parton shower can be described as a sequence of stochastic and deterministic processes. 
+
 %\Jnote{s/tree like/tree-like}
 %as in figure \ref{fig:partonshower}. 
 
-The Monte Carlo model of the parton shower can be described as a sequence of stochastic and deterministic processes. 
 
 The deterministic stage is where the particle is produced with some four momentum and travels for a finite time and distance.
-After the time distance travel, the particle will spilt into two,
+After some distance travel, the particle will split into two,
 with one the particles  which we call soft (radiated) having angle $\theta$ with respect to the original particle and taking $Z$ fraction of the initial particle energy, $\theta$ and $Z$ represents the stochastic part of the model.
 %\Jnote{Rephrase: ``... will split into two, with one of the particles
 %  (which we call ``radiated'' or ``emitted'') having angle $\theta$ with respect to the original particle and taking $Z$ fraction...''}
  
-There is one QCD approximation that will be useful regarding $\theta$ and $Z$ distributions. This is the \textit{soft} and \textit{collinear} approximation. \textit{Soft} implies that an emitted particle has a very little energy compare to the particle that emitted it. \textit{Collinear} means that it is emitted with angle very small relative to another particle in the event \citep{Salam:2010zt}. With each splitting the particle loses energy, at some point the particles will have low energy and then begin to stabilize (hadronize) leading to a colour neutral particles (hadrons).
+There is one QCD approximation that will be useful regarding $\theta$ and $Z$ distributions. This is the \textit{soft} and \textit{collinear} approximation. \textit{Soft} implies that an emitted particle has a very little energy compared to the particle that emitted it. \textit{Collinear} means that it is emitted with angle very small relative to another particle in the event \citep{Salam:2010zt}. With each splitting the particle loses energy, at some point the particles will have low energy and then begin to stabilize (hadronize) leading to a colour neutral particles (hadrons).
 %\begin{figure}
 %\centering
 %\includegraphics[scale=.3]{images/spilitting.png}
@@ -46,7 +46,7 @@ To reflect the colour neutrality of the particles in our model the partons will 
 
 \section{Parton Shower and Hadronization Simulation}
 
-The following is a simple simulation for a splitting of a single particle into two. The parton shower simulation describes the parton shower and hadronization. The general idea of the two processes, parton shower and the hadonization can be simplified by Algorithm \ref{logrithm}.
+The following is a simple simulation for a splitting of a single particle into two. The parton shower simulation describes the parton shower and hadronization. The general idea of the two processes, parton shower and the hadronization can be summarized by Algorithm \ref{logrithm}.
 \begin{algorithm}
 \caption{Parton shower}\label{logrithm}
 \begin{algorithmic}
@@ -65,7 +65,7 @@ The following is a simple simulation for a splitting of a single particle into t
 %  ``Begin hadronization'' is not clear to me.
 %  I would say ``return a hadron'' or similar.}
 
-This process can be simulated in two or three space dimensions, for the case of three dimensions, another angle $phi$ is needed to account for the third dimension.
+This process can be simulated in two or three space dimensions. For the case of three dimensions, another angle $\phi$ is needed to account for the third dimension.
 %\Jnote{Another to what? Don't talk about $\phi$ yet.}
 
 %\begin{figure}[]
@@ -102,13 +102,13 @@ This process can be simulated in two or three space dimensions, for the case of 
 \caption{Illusration describing the splitting of a prticle into in two dimensions.}\label{fig:tt}
 \end{figure}
 
-The two dimensional model accounts for one rotation with angle $\theta$ (see figure \ref{fig:tt}). It involves
+The two dimensional model accounts for one rotation with angle $\theta$ (see figure \ref{fig:tt}). It involves the 
 %\Jnote{s/evolves/requires (?)}
-generation of two random numbers, one of them represent the angle and the other represents the energy of the radiated particle. Here, both the energy fraction $Z$ and the angle $\theta$ are following the distribution $1/Z$, this comes from the QCD approximation that was mentioned in \ref{qcda}.
+generation of two random numbers, one of them represent the angle and the other represents the energy of the radiated particle. Here, both the energy fraction $Z$ and the angle $\theta$ are following the distribution $1/Z$, this comes from the soft and collinear QCD approximation that was described in \ref{qcda}.
 %\Jnote{Are you sure this is correct ref? I would link two sections ago.}
-Where $Z$ lies in the interval $[0, 1]$.
+The variable $Z$ is chosen to lie in the interval $[0, 1]$.
 %\Jnote{Grammar.}
-To avoid the singularity at $Z = 0$, a cutoff value of $\epsilon = 0.01$ is added to the denominator by setting  $p(Z) = \frac{1}{\epsilon + z}$. Considering the later in the interval [0,$\pi/2$], $\theta$ is modified in a similar way as $Z$. The variables $\theta$ and $z$ are generated by applying the accept-reject method on a set of numbers that are uniformly distributed.
+To avoid the singularity at $Z = 0$, a cutoff value of $\epsilon = 0.01$ is added to the denominator by setting  $p(Z) = \frac{1}{\epsilon + z}$. The variable $\theta$ in the interval [0,$\pi/2$], $\theta$ is modified in a similar way as $Z$. The variables $\theta$ and $z$ are generated by applying the accept-reject method on a set of numbers that are uniformly distributed.
 %\Jnote{Be consistent. Small or capital $z$? Say what value of $\epsilon$
 %  you use.}
 
@@ -158,7 +158,7 @@ P_{part}^{\mu} = P^{\mu}_{i} - P_{rad}^{\mu}
 
 As in the algorithm \ref{logrithm},
 %\Jnote{I think you need captions for correct referencing of algorithms.}
-a tunable parameter (energy threshold)
+a tunable parameter (S)
 %\Jnote{s/parameter/energy threshold}
 is made to account for the hadronization. The figure \ref{fig:2d} shows a graphical representation of the two dimensions parton shower as explained above.
 %\Jnote{Give value of your energy threshold so that the results can be reproduced.}
@@ -179,10 +179,10 @@ is made to account for the hadronization. The figure \ref{fig:2d} shows a graphi
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=.5]{images/three-dimentions.png}
+\includegraphics[scale=.3]{images/three-dimentions.png}
 \caption{An illustration of the azimuthal angle $\phi$ of a one-to-two splitting occurring in three dimensions.}\label{fig:3d}
 \end{figure}
-Since the real physics we are modelling is in three dimension, we need to modify our model to account for this. An additional splitting angle $\phi$ will be included, which is the azimuthal angle of the decay  around the direction of travel of the initial particle, as shown in figure \ref{fig:3d}.
+Since the real physics we are modelling is in three dimension, we need to modify our model to account for this. An additional splitting angle $\phi$ is included, which is the azimuthal angle of the decay  around the direction of travel of the initial particle, as shown in figure \ref{fig:3d}.
 
 Unlike the angle $\theta$, there is no preference for the value of this angle and it should therefore be chosen from a uniform distribution within the interval $[0,2\pi]$ \citep{Salam:2010zt}.
 
@@ -202,7 +202,7 @@ u_z u_x (1 - \cos\theta) - u_y \sin\theta & u_z u_y (1 - cos\theta) + u_x \sin\t
 %\Jnote{``In order to compute the momentum of radiated particle in three dimensions...''}
 In order to compute the momentum of radiated particle in three dimensions, first the momentum vector is rotated angle $\theta$ around an arbitrary axis that is perpendicular to it, after that the resulting vector is rotated around the original vector with the angle $\phi$.
 %\Jnote{Say that the rest of the model is without changes.}
-The figure \ref{fig:3dparton} shows a graphical representation of the three dimensional parton shower. 
+Figure \ref{fig:3dparton} shows a graphical representation of the three dimensional parton shower. 
 %For the python code see \verb+partonshower3d.py+.
 
 %The 3D simulation of the parton shower is essentially the same as for python code with few changes, in which now we have two rotation angles, $\theta$ and also $\phi$ which is the azimuthal angle which is uniformly distributed in the interval [0,2$\pi$]. To simulate the rotation in three dimensions, the function \verb+normv(u)+ and function \verb!rotation(v,angle)!, the former returns the axis of the rotation, the function input and the vector [1,1,1] from a plane, from which we find a vector that is orthogonal to this plane, and the later is matrix of rotation, it takes the angle rotation and the axis of rotation as inputs. 
@@ -216,7 +216,7 @@ The figure \ref{fig:3dparton} shows a graphical representation of the three dime
 \begin{figure}[H]
 \centering
 \includegraphics[scale=.3]{images/3D_partonshower.png}
-\caption{A three dimensions simulation of the spliting of a single parton. In this ilustraion the blue colour represents the paricles with energy $\geq 0.8$, the green colour represnts the particles with energy $\geq 0.5$, the yellow colour represents the particles with energy $\leq 0.5$ and the red colour represents the particles with energy $\leq 0.1$.}\label{fig:3dparton}
+\caption{A three dimensional simulation of the splitting of a single parton. In this illustraion the blue colour represents the particles with energy $\geq 0.8$, the green colour represents the particles with energy $\geq 0.5$, the yellow colour represents the particles with energy $\leq 0.5$ and the red colour represents the particles with energy $\leq 0.1$.}\label{fig:3dparton}
 \end{figure}
 %
 %\begin{figure}[hbtp]
@@ -225,10 +225,8 @@ The figure \ref{fig:3dparton} shows a graphical representation of the three dime
 %\caption{Illustration representation of a proton-proton collision event similar to that in the LHC.}\label{fig:twopartons}
 %\end{figure}
 \section{An Improved Model}
-In order to build more realistic model, it is necessary to include more details, as we did with the three dimensions model. Here we start by looking at the particle in the moment of production, right after the collision of the two protons. For simplicity One can assume that the collision of the protons conserves the momentum. Hence the produced particle also conserve momentum.
-%\Jnote{I don't think we assume momentum is conserved. We assume that the
-%  total momentum is zero.}
-Following this assumption, it can be said the produced particles come in pairs that have opposite directions. The produced particles have energy that is randomly distributed as well as the polar angle $\theta$ and the azimuthal $\phi$ angle. As for the energy, it has the exponential distribution $e^{- \alpha E_{parton}}$, where $\alpha$ is a physically meaningful parameter that characterizes the collisions at the LHC and $E_{parton}$ is randomly chosen energy of the parton. As for the polar and the azimuthal angles, the collision has no preferred angle in terms of the both angles $\theta$ and $\phi$,
+In order to build more realistic model, it is necessary to include more details, as we did with the three dimensions model. Here we start by looking at the particle in the moment of production, right after the collision of the two protons. For simplicity, one can assume that the collision of the protons conserves the momentum, hence, the produced particle also conserves momentum.
+Following this assumption, it can be said that the produced particles come in pairs that have opposite directions. The produced particles have energy that is randomly distributed as well as the angles of production, the polar angle $\theta$ and the azimuthal $\phi$ angle. As for the energy, it has the exponential distribution $e^{- \alpha E_{parton}}$, where $\alpha$ is a physically meaningful parameter that characterizes the collisions at the LHC and $E_{parton}$ is randomly chosen energy of the parton. As for the polar and the azimuthal angles, the collision has no preferred angle in terms of the both angles $\theta$ and $\phi$,
 %\Jnote{Delete figure ref.}
 hence, the former is uniformly distributed in the range $[0, \pi]$ and the later is uniformly distributed in the range $[0,2 \pi]$. \citep{Salam:2010zt}.  
 %In the LHC collision, usually two partons are emitted, it is very rare to produce a single parton. Since the collision was between two particles travelling opposite to each other, a simplification assumption can be made. That the particles are in a configuration that conserve the momentum, this is as a result of the initial momentum $= 0$. There are some aspects of this configuration which are stochastic, these are :

@@ -1,7 +1,7 @@
 \chapter{Results and discussions}
 This chapter presents the results obtained from the series of algorithms implemented in Python and detailed discussions of the results are also presented. 
 \section{Removal of red cross-specific stop words}
-Prior to plotting figure \text{\eqref{Fig. 4.1}} the top ten occurring words in the dictionary of the 1259 text documents are "red", "cross",  "support", "ifrc", "national", "activities","operation", "volunteers", "people" and "emergency". These words were removed because they are perceived  to be often used in almost all the text documents, considering the nature of the reports and the source. In other words they are key words that are always used in reporting events concerning disaster and  related issue. Even though there is no clear motive for removing these words, one reason thought to be convincing is that these words repeats more frequently in almost all the topics when trained on the LDA model. And also it was difficult to identify unique topics as result of this repetitions. However these repetitions may be viewed to make sense because the reports talks about similar issues. These repetition effect continued even after the initial top words in the documents were removed, but the repetitions decreased with the next set of frequently occurring words.
+Prior to plotting figure \ref{Fig. 4.1} the top ten occurring words in the dictionary of the 1259 text documents are "red", "cross",  "support", "ifrc", "national", "activities","operation", "volunteers", "people" and "emergency". These words were removed because they are perceived  to be often used in almost all the text documents, considering the nature of the reports and the source. In other words they are key words that are always used in reporting events concerning disaster and  related issue. Even though there is no clear motive for removing these words, one reason thought to be convincing is that these words repeats more frequently in almost all the topics when trained on the LDA model. And also it was difficult to identify unique topics as result of this repetitions. However these repetitions may be viewed to make sense because the reports talks about similar issues. These repetition effect continued even after the initial top words in the documents were removed, but the repetitions decreased with the next set of frequently occurring words.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.35]{c4_1_orig.png}
@@ -53,13 +53,13 @@ The LDA topic model informs us about the fact that documents constitutes multipl
 The nature of the distribution of the terms in each of the topics can predict how the documents are related. That is to say if some of the terms are found in many topics, then the topics can be said to be  related and hence the documents. 
 \end{flushleft}
 \begin{flushleft}
-From figure \eqref{figure 4.5} circles (0-29) are the topics and below it are the terms constituents of each topic. This implies that red circle (topic 26) is composed of the words "appeal" down to "allocations", these words are the top most 30 terms connected to topic 26.
+From figure \ref{figure 4.5} circles (0-29) are the topics and below it are the terms constituents of each topic. This implies that red circle (topic 26) is composed of the words "appeal" down to "allocations", these words are the top most 30 terms connected to topic 26.
 \end{flushleft}
 \begin{flushleft}
-The size of the circle tells how prevalent it is in the corpus. That is, the bigger the circle the more prevalent that topic is in the documents. Figure \eqref{figure 4.5} shows how frequent topic 1 occurs in the documents more than the other 29 topics.
+The size of the circle tells how prevalent it is in the corpus. That is, the bigger the circle the more prevalent that topic is in the documents. Figure \ref{figure 4.5} shows how frequent topic 1 occurs in the documents more than the other 29 topics.
 \end{flushleft}
 \begin{flushleft}
-The map  also reveals the semantic distances between the topics. Figure \eqref{figure 4.5} shows that nineteen of the topics are crowded in one region, the extreme  right end of the horizontal axes. This means that more than $50\%$ of the topics are similar and hence gives an indication that most of documents in the corpus share similar topics.
+The map  also reveals the semantic distances between the topics. Figure \ref{figure 4.5} shows that nineteen of the topics are crowded in one region, the extreme  right end of the horizontal axes. This means that more than $50\%$ of the topics are similar and hence gives an indication that most of documents in the corpus share similar topics.
 \end{flushleft}
 \begin{figure}[h!]
     \centering

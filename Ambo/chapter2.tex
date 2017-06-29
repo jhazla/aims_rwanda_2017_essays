@@ -95,8 +95,7 @@ $W(1,r), \ W(k,1)$ and $W(2,r)$ are known as \textit{trivial} Van der Waerden nu
 For instance, let us find the Van der Waerden number $W(3,2)$, that is an number $W(3,2)$ such that every $2$-colouring  of the set $[W(3,2)]$ contains a monochromatic arithmetic progression of length $3.$
 %\Jnote{Rephrase: ...that is $N_0$ such that every $2$-coloring of $[N_0]$   contains a monochromatic...}
 
-The value of $W(3,2)$ is greater than $8$ because for any $2$-colouring of $[n],\ n\in \{3,4,5,6,7,8\}$, we can find a $2$-colouring which does not contain a monochromatic arithmetic progression of length 3. For instance, the set  $\{1,2,\ldots, 8\}$ does not contain a monochromatic  arithmetic progression of length $3$ by $2$-colouring the set  like in the table \eqref{van23}.
-
+The value of $W(3,2)$ is greater than $8$ because for any $2$-colouring of $[n],\ n\in \{3,4,5,6,7,8\}$, we can find a $2$-colouring which does not contain a monochromatic arithmetic progression of length 3. For instance, the set  $\{1,2,\ldots, 8\}$ does not contain a monochromatic  arithmetic progression of length $3$ by $2$-colouring the set  like in the table \eqref{van23}. The table \eqref{van23} has been adapted from  \cite{wiki:Van_der_Waerden's_theorem}.
 So, when $W(3,2)=9$ we always find a monochromatic arithmetic progression of length 3 for any $2$-colouring of the set  $\{1,2,3,4,5,6,7,8,9\}.$ The table \eqref{van23} shows one of the possibilities of colouring of the  $\{1,2,3,4,5,6,7,8,9\}.$  If the ninth number is {\color{blue} blue}, then{ \color{blue}3, 6, 9}  form an arithmetic progression. If the ninth number is {\color{red} red}, then {\color{red}1, 5, 9} form an arithmetic progression. Therefore, by adding a ninth number and colouring it using any of the two colors, we always create  a monochromatic arithmetic progression of length 3.
 
 \begin{table}[h]
@@ -108,7 +107,8 @@ So, when $W(3,2)=9$ we always find a monochromatic arithmetic progression of len
 \hline 
 \end{tabular} 
 \end{center}
-\caption{A $2-$colouring of $\{1,2,\ldots, 9\}$} \label{van23}
+\caption{A $2-$colouring of $\{1,2,\ldots, 9\}$}
+  \label{van23}
 \end{table}
 
 %\Jnote{This example is now very well explained!} 
@@ -180,16 +180,11 @@ Hence, for $p=k-1$, the expression \eqref{berlk} becomes:
 So, $W(6,2) >5 \times 2^5=160$, $W(8,2) >7 \times 2^7= 896$ and $W(12,2) >11 \times 2^11= 22528.$
 \citep{dransfield2004} improve this lower bound by using propositional satisfiability solvers  for some small Van der Waerden numbers, for instance $W( 8,2) > 1322$. \cite{rabung2012} performs more. Thus, as related in table \eqref{vdw1}, most of the lower bounds used, came from \cite{rabung2012}.
 
-The best known upper bound of $W(k,r)$ is the expression  \eqref{gow} which came from the work of \cite{gowers2001new} on a  new proof of the Szemerédi's theorem. Section \eqref{sz} will talk about this theorem. The  Szemerédi's theorem is the extension of the Van der Waerden's theorem, that is the Van der Waerden's theorem is implied by the  Szemerédi's theorem:
+The best known upper bound of $W(k,r)$ is the expression  \eqref{gow} which came from the work of \cite{gowers2001new} on a  new proof of the Szemerédi's theorem. Section \eqref{sz} will talk about this theorem. The  Szemerédi's theorem is the extension of the Van der Waerden's theorem, that is the Van der Waerden's theorem is implied by the  Szemerédi's theorem.
 %\Jnote{s/is a particular case/is implied by}
 \begin{equation}
 W(k,r) \leq 2^{2^{r^{2^{2^{k+9}}}}}     \label{gow}
 \end{equation}
-
-%\Jnote{This section is well written, good job.}
-
-%\subsection{Off-diagonal Van der Waerden numbers: w(k,r,n}
-
 
 \section{Szemerédi's theorem} \label{sz}
 
@@ -208,7 +203,7 @@ Let $A$ be a subset of the integers $\mathbb{Z}$ with positive upper  density, t
 
 $\lim \sup\limits_{N\rightarrow \infty} \frac{|A \cap[-N,N]|}{|[-N,N]|} > 0.$
 %\Jnote{Put the formula on separate line.}
-Then, for any $k \geq  3$, $A$ contains infinitely many arithmetic progressions of length $k.$
+Then, for any $k \geq  1 $, $A$ contains infinitely many arithmetic progressions of length $k.$
 
 As conjecture, the Szemerédi's theorem was formulated by \cite{JLMS}. There are several proofs of this theorem. The cases $k=1$ and $k=2$ are easy to prove. \cite{roth1953certain, roth1970irregularities} proved the case $k=3.$ The case $k=4$ was proved by \cite{szemeredi1969sets} and he gave the general case \citep{szemeredi1975sets}.
 
@@ -340,16 +335,11 @@ We know that $[k]^n= \underbrace{[k] \times [k] \times \ldots \times [k]}_{n \te
 
 For instance, for $k=3$ and $n=2$, $[3]^2=\{11,12,13,21,22,23,31,32,33\}.$ For $k=3$ and $n=6$, an element of the set $[3]^6$ is : $121132.$ In total, in the set $[3]^6$ there are  729 different elements.
 
-Let us consider the set $([k]\times \{x\})^n.$ Similarly, the set $([k]\times \{x\})^n$ contains $(k+1)^n$ elements. $x$ is called \textit{wildcard.}
-
-%Elements of $([k]\times \{x\})^n$ are called \textit{coordinates.}
-%\Jnote{No, coordinate is something else.}
-
-%Given ${k,N\in{\mathbb N}}$, a ${N}-$dimensional \textit{variable word} on ${k}$ letters is an element of  $\displaystyle \left([k]\cup\{x\}\right)^d\setminus[k]^N.$ Similarly, given ${k,N, m\in{\mathbb N}}$, a ${N}-$dimensional  ${m}-$\textit{variable word} on ${k}$ letters is an element of ${\left([k]\cup\{x_1, \ldots,x_m\}\right)^N\setminus [k]^N}$ that uses all the symbols ${x_i}$ at least once.
+Let us consider the set $([k]\cup \{x\})^n.$ Similarly, the set $([k]\cup \{x\})^n$ contains $(k+1)^n$ elements. $x$ is called \textit{wildcard.}
 
 Given ${k,n\in{\mathbb N}}$, we call $x$-\textit{string} (or ${n}$-dimensional \textit{variable word} with ${k}$ letters or alphabets),  a finite word $a_1a_2\ldots a_n$ of the symbols
 %\Jnote{s/symboles/symbols}
-$a_i \in [k] \cup \{x\}$, where at least one symbol $a_i$ is $x.$ We denote an $x$-string by $w(x)$. Let $D$ denote  the set of all strings: $D=\{w(x)\}$. The cardinality of $D$ is: $D=(k+1)^n-k^n.$ 
+$a_i \in [k] \cup \{x\}$, where at least one symbol $a_i$ is $x.$ We denote an $x$-string by $w(x)$. Let $D$ denote  the set of all strings: $D=\{w(x)\}$. The cardinality of $D$ is: $(k+1)^n-k^n.$ 
 
 For any integer $i \in [k]$ and $x$-string $w(x)$, we  denote by $w(x;i)$ the string obtained from $w(x)$ by replacing each $x$ by $i.$
  \begin{defn}
@@ -380,7 +370,7 @@ Sets which do not contain any combinatorial line are called  \textit{line-free}.
 \begin{thm}[Hales-Jewett theorem]   For every pair of positive integers $k$ and $r$ there exists a positive number $HJ(k, r)$ such that for every $n \geq HJ(k, r)$ and every $r$-colouring of the set $[k]^n$ there is a
 monochromatic combinatorial line.   \label{hj1} 	\end{thm}
 
-There are several proofs of the Hales-Jewett theorem. The original proof has been given by \cite{hales1987regularity}. \cite{shelah1988primitive} proved a primitive recursive\footnote{Primitive recursion is a procedure that defines the value of a function at an argument $n$ by using its value at the previous argument $n-1$.  In a computer, a primitive recursive bound can be implemented only using do-loops (see https://plato.stanford.edu/entries/recursive-functions/$\#1.3$).} bound for the Hales-Jewett number using simple induction.
+There are several proofs of the Hales-Jewett theorem. The original proof has been given by \cite{hales1987regularity}. \cite{shelah1988primitive} proved a primitive recursive\footnote{Primitive recursion is a procedure that defines the value of a function at an argument $n$ by using its value at the previous argument $n-1$.  In a computer, a primitive recursive bound can be implemented only using do-loops \citep{sep-recursive-functions}.} bound for the Hales-Jewett number using simple induction.
 \cite{nilli1990shelah} presented a compact form of Shelah’s Proof of the Hales-Jewett Theorem.  This condensed form states that for every $k,r \geq 1$, $HJ(k,r) \leq \frac{1}{kr} h_4 (k+m+2)$ with $h_i$  a function defined as: $h_1(n)=2n$; for $i>1$, $h_i=h_{i-1}(h_{i-1}(\ldots h_{i-1}(1))) $ where $h_{i-1}$  is taken  $n$ times.
 %\Jnote{s/$h_i$/$h_i(n)$. Also put this formula as separate equation.}
 
@@ -392,7 +382,7 @@ Let denote by $DHJ(k, \delta)$ the density Hales-Jewett number. The density vers
 
 \begin{thm}[Density version of Hales-Jewett theorem]   For any $k \in \mathbb{Z}^+$ and any real number $0< \delta \leq 1$,  there exists a positive integer $DHJ(k, \delta)$ such that if $n \geq DHJ(k,\delta)$ and $A$ is any subset of $[k] ^n$ with $|A| \geq \delta k^n$, then $A$ contains a combinatorial line.  \label{hj2}	\end{thm}
 
-The proof of the density version of the Hales-Jewett theorem has been demonstrated by \cite{furstenberg1991density} using ergodic methods\footnote{Ergodic theory studies dynamical systems with an invariant measure and related problems. Ergodic theory can be described as the statistical and qualitative behavior of measurable group and semigroup actions on measure spaces.}. \cite{polymath2012new} gave an elementary non-ergodic proof of the density version of the Hales-Jewett theorem by giving a quantitative bound on how large $n$ needs to be and qualified this theorem as one of the fundamental results of Ramsey theory. A simplified version of \cite{polymath2012new} has been given by \cite{dodos2013simple} using  a purely combinatorial proof of the density Hales–Jewett Theorem.
+The proof of the density version of the Hales-Jewett theorem has been demonstrated by \cite{furstenberg1991density} using ergodic methods.  \cite{polymath2012new} gave an elementary non-ergodic proof of the density version of the Hales-Jewett theorem by giving a quantitative bound on how large $n$ needs to be and qualified this theorem as one of the fundamental results of Ramsey theory. A simplified version of \cite{polymath2012new} has been given by \cite{dodos2013simple} using  a purely combinatorial proof of the density Hales–Jewett Theorem.
 
 Furthermore, there are four important theorems we have talked about: the Van der Waerden's theorem \eqref{vd1}, the Szemerédi's theorem \eqref{sz1}, the  Hales-Jewett theorem \eqref{hj1} and the density Hales-Jewett theorem \eqref{hj2}. 
 In \eqref{vsz} we have shown that the Szemeredi's theorem implies the Van der Waerden's theorem. It is reasonable to show these three implications: the density version of the Hales-Jewett theorem implies the Hales-Jewett theorem, the Hales-Jewett theorem implies the  Van der Waerden's theorem, and the density version of the Hales-Jewett theorem implies the Szemerédi's theorem.
@@ -435,10 +425,8 @@ Let $w(x;0)=(y_{0,0},y_{1,0},\ldots, y_{n-1,0})$ be the first element of the com
 
 Let us call  $a$ the image of $w(x;0)$ by $f$, that is $a=f(w(x;0))$ and  $d$ the image of $l$ by $f$, that is $d=f(l).$ $a$ and $d$ are both integers.  We denote by $J$ the set $\{j: \ y_{j,i}\neq y_{j,i+1} \}.$ The integer $d$ can be expressed as:
 $$d=f(l)=l_0+l_1k+\ldots+l_{n-1}k^{n-1}=\sum_{j=0}^{n-1}l_jk^j= \sum_{j\in J} k^j.$$
-Thus, $f(w(x;i))=a+id$, $a$ and $d$ fixed, $0\leq i \leq k-1$. Hence, the set $\{a+id: \ i\in [k]\}$ forms an arithmetic progression of length $k.$ So, for any combinatorial line of $k$ elements corresponds an arithmetic progression of length $k.$
-
-Therefore, the Hales-Jewett theorem implies the Van der Waerden's theorem where $k$ and $r$ are the same and $HJ(k,r) \geq W(k,r).$
-%\Jnote{Your explanation so far was good, but you are not finished yet.   You are proving VdW, so you have $k$ and $r$.  What $k$ and $r$ do you choose for HJ (the same, but you have to say it).   What is $N_0$ that you get for VdW in terms of $HJ(k, r)$?}
+Thus, $f(w(x;i))=a+id$, $a$ and $d$ fixed, $0\leq i \leq k-1$. Hence, the set $\{a+id: \ i\in [k]\}$ forms an arithmetic progression of length $k.$ So, for any combinatorial line of $k$ elements corresponds an arithmetic progression of length $k.$ 
+Therefore, the Hales-Jewett theorem implies the Van der Waerden's theorem where $k$ and $r$ are the same .
 
 \subsection{Density version of the Hales-Jewett theorem implies the  Szemerédi's theorem}
 
@@ -449,7 +437,7 @@ As we have shown in \eqref{vsz} that the Szemerédi's theorem implies the  Van d
 
 \subsection{Density Hales-Jewett number} \label{dhjn}
 
-Let $n \geq 0$ and $k \geq 1.$ The \textit{density Hales-Jewett number}	denoted by $d_{k,n}$ is defined as the size of the largest subset of the set $[k]^n=\{1,2, \ldots, k\}^n$ which contains no combinatorial	line.  Let $W$ be this largest subset, then $d_{k,n}=|W|.$  Note that $W$ is also called a \textit{line-free}. Furthermore, the density of $W$ can also be defined by the quotient $\frac{|W|}{n^k}$. In this case, the density is denoted by $\Delta_{k,n}$, that is  $\Delta_{k,n}=\frac{|W|}{n^k}.$ 
+Let $n \geq 0$ and $k \geq 1.$ The \textit{density Hales-Jewett number}	denoted by $d_{k,n}$ is defined as the size of the largest subset of the set $[k]^n=\{1,2, \ldots, k\}^n$ which contains no combinatorial	line.  Let $W$ be this largest subset, then $d_{k,n}=|W|.$  Note that $W$ is also called a \textit{line-free}. Furthermore, the density of $W$ can also be defined by the quotient $\frac{|W|}{k^n}$. In this case, the density is denoted by $\Delta_{k,n}$, that is  $\Delta_{k,n}=\frac{|W|}{k^n}.$ 
 
 The combinatorial line is to $d_{k,n}$ what the arithmetic progression is to $\delta_{k,N}$ (for the Szemerédi's theorem). That is, the major  difference between $d_{k,n}$ and $\delta_{k,N}$ is located on the definition of the largest subset: combinatorial line for the first and arithmetic progression for the second. 
 

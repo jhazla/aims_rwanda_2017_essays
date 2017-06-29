@@ -1,0 +1,15 @@
+This is METAFONT, Version 2.718281 (TeX Live 2013/Debian) (base=mf 2016.5.29)  2 JUN 2017 20:30
+**\mode:=ljfour; mag:=1+0/600; nonstopmode; input fcssi12
+(/usr/share/texlive/texmf-dist/fonts/source/jknappen/fc/fcssi12.mf
+(/usr/share/texlive/texmf-dist/fonts/source/jknappen/fc/b-fcssi.mf
+(/usr/share/texlive/texmf-dist/fonts/source/public/cm/cmbase.mf)
+! I can't find file `c-cmss'.
+l.9 input c-cmss
+                ;              % compute cm sans serif parameters
+Please type another input file name
+! Emergency stop.
+l.9 input c-cmss
+                ;              % compute cm sans serif parameters
+*** (job aborted, file error in nonstop mode)
+
+
